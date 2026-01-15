@@ -152,7 +152,7 @@ def call_model(model_choice, system_prompt, messages_history):
             "messages": full_messages
         }
         # URL à adapter selon la documentation de l'API Albert
-        api_url = "https://api.albert.example/v1/chat/completions"
+        api_url = "https://albert.api.etalab.gouv.fr/v1/chat/completions"
         response = requests.post(api_url, json=payload, headers=headers)
         response.raise_for_status()
         return response.json()["choices"][0]["message"]["content"]
