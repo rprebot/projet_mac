@@ -152,7 +152,7 @@ def call_model(model_choice, system_prompt, messages_history):
             "messages": full_messages
         }
         # URL à adapter selon la documentation de l'API Albert
-        api_url = "https://api.albert.example/v1/chat/completions"
+        api_url = "https://albert.api.etalab.gouv.fr/v1/chat/completions"
         response = requests.post(api_url, json=payload, headers=headers)
         response.raise_for_status()
         return response.json()["choices"][0]["message"]["content"]
@@ -274,27 +274,9 @@ with tab1:
 # ONGLET 2 : FICHIERS DE CONCLUSIONS
 # ============================================================
 with tab2:
-    for i, (name, content) in enumerate(CONCLUSION_FILES.items(), 1):
-        # Afficher le contenu dans un expander
+    st.markdown("Cliquez sur l'icône 📋 en haut à droite de chaque bloc pour copier le contenu.")
+    for name, content in CONCLUSION_FILES.items():
         with st.expander(name):
-            # Bouton de copie avec confirmation
-            if st.button("📋 Copier le contenu", key=f"copy_btn_{i}", use_container_width=True):
-                # Afficher le toast de confirmation
-                st.toast("✅ Contenu copié dans le presse-papier !", icon="✅")
-
-                # JavaScript pour copier dans le presse-papier
-                import streamlit.components.v1 as components
-                components.html(
-                    f"""
-                    <script>
-                    const text = {repr(content)};
-                    navigator.clipboard.writeText(text);
-                    </script>
-                    """,
-                    height=0,
-                )
-
-            # Afficher le contenu
             st.code(content, language=None, line_numbers=False)
 
 # Information sur les clés API dans la sidebar
