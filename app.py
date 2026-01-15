@@ -274,27 +274,9 @@ with tab1:
 # ONGLET 2 : FICHIERS DE CONCLUSIONS
 # ============================================================
 with tab2:
-    for i, (name, content) in enumerate(CONCLUSION_FILES.items(), 1):
-        # Afficher le contenu dans un expander
+    st.markdown("Cliquez sur l'icône 📋 en haut à droite de chaque bloc pour copier le contenu.")
+    for name, content in CONCLUSION_FILES.items():
         with st.expander(name):
-            # Bouton de copie avec confirmation
-            if st.button("📋 Copier le contenu", key=f"copy_btn_{i}", use_container_width=True):
-                # Afficher le toast de confirmation
-                st.toast("✅ Contenu copié dans le presse-papier !", icon="✅")
-
-                # JavaScript pour copier dans le presse-papier
-                import streamlit.components.v1 as components
-                components.html(
-                    f"""
-                    <script>
-                    const text = {repr(content)};
-                    navigator.clipboard.writeText(text);
-                    </script>
-                    """,
-                    height=0,
-                )
-
-            # Afficher le contenu
             st.code(content, language=None, line_numbers=False)
 
 # Information sur les clés API dans la sidebar
