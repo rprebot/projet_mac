@@ -101,7 +101,7 @@ st.sidebar.header("Configuration")
 # Sélection du modèle
 model_choice = st.sidebar.selectbox(
     "Modèle LLM",
-    ["Albert Large", "Mixtral 8x22B (Mistral)", "GPT-OSS-120B (Nebius)", "Llama 3.3 70B (Nebius)"]
+    ["Albert Large", "Mixtral 8x22B (Mistral)", "Mistral Medium 2508", "GPT-OSS-120B (Nebius)", "Llama 3.3 70B (Nebius)"]
 )
 
 # Sélection du prompt système
@@ -165,6 +165,18 @@ def call_model(model_choice, system_prompt, messages_history):
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-large-latest",
+            messages=full_messages
+        )
+        return response.choices[0].message.content
+
+    # Mistral Medium 2508
+    elif model_choice == "Mistral Medium 2508":
+        if not MISTRAL_API_KEY:
+            raise ValueError("La clé API Mistral n'est pas configurée.")
+
+        client = Mistral(api_key=MISTRAL_API_KEY)
+        response = client.chat.complete(
+            model="mistral-medium-2505",
             messages=full_messages
         )
         return response.choices[0].message.content
