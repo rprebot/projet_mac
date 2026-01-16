@@ -261,8 +261,8 @@ with tab1:
                 st.markdown("---")
                 st.markdown("📝 **Donner votre avis sur cette réponse**")
                 components.iframe(
-                    src=tally_url,
-                    height=500,
+                    src=tally_url + "&hideTitle=1",
+                    height=300,
                     scrolling=True
                 )
 
