@@ -261,10 +261,10 @@ with tab1:
                 st.markdown("---")
                 st.markdown("📝 **Donner votre avis sur cette réponse**")
                 components.html(
-                    f'''<iframe src="{tally_url}&hideTitle=1"
-                        style="width:100%; height:280px; border:none; margin-top:-20px;">
+                    f'''<iframe src="{tally_url}&hideTitle=1&transparentBackground=1&alignLeft=1"
+                        style="width:100%; height:250px; border:none; margin:0; padding:0; display:block;">
                     </iframe>''',
-                    height=260
+                    height=250
                 )
 
     # Zone de saisie - désactivée si on a déjà 5 questions posées
