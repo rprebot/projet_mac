@@ -1,5 +1,7 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import os
+from urllib.parse import urlencode
 from openai import OpenAI
 from mistralai import Mistral
 import requests
@@ -223,7 +225,7 @@ with tab1:
     st.header("Chat")
 
     # Afficher l'historique des messages
-    for message in st.session_state.messages:
+    for idx, message in enumerate(st.session_state.messages):
         with st.chat_message(message["role"]):
             content = message["content"]
 
@@ -239,6 +241,30 @@ with tab1:
                     st.markdown(content)
             else:
                 st.markdown(content)
+
+            # Afficher le formulaire Tally après chaque réponse de l'assistant
+            if message["role"] == "assistant":
+                # Récupérer la question de l'utilisateur (message précédent)
+                user_question = ""
+                if idx > 0 and st.session_state.messages[idx - 1]["role"] == "user":
+                    user_question = st.session_state.messages[idx - 1]["content"]
+
+                # Construire l'URL Tally avec les hidden fields
+                tally_params = {
+                    "Question": user_question[:5000],  # Limiter la taille
+                    "Answer": content[:5000],  # Limiter la taille
+                    "Prompt": system_prompt[:2000],  # Limiter la taille
+                    "LLMmodel": model_choice
+                }
+                tally_url = f"https://tally.so/r/QKRE97?{urlencode(tally_params)}"
+
+                st.markdown("---")
+                st.markdown("📝 **Donner votre avis sur cette réponse**")
+                components.iframe(
+                    src=tally_url,
+                    height=500,
+                    scrolling=True
+                )
 
     # Zone de saisie - désactivée si on a déjà 5 questions posées
     max_questions = 5
