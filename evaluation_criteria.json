@@ -1,0 +1,43 @@
+1{
+  "Résumé Conclusions": {
+    "description": "Évaluation d'un résumé de conclusions juridiques",
+    "criteres": [
+      ["identification_parties", "Les parties (appelant, intimé, demandeur, défendeur) sont-elles clairement identifiées ?"],
+      ["faits_pertinents", "Les faits pertinents du litige sont-ils correctement résumés ?"],
+      ["pretentions", "Les prétentions de chaque partie sont-elles bien identifiées ?"],
+      ["moyens_droit", "Les moyens de droit invoqués sont-ils mentionnés ?"],
+      ["structure_clarte", "Le résumé est-il bien structuré et clair ?"]
+    ]
+  },
+  "Synthèse Faits & Procédure": {
+    "description": "Évaluation d'une synthèse des faits et de la procédure",
+    "criteres": [
+      ["chronologie_faits", "La chronologie des faits est-elle respectée et complète ?"],
+      ["identification_parties", "Les parties sont-elles clairement identifiées avec leurs rôles ?"],
+      ["etapes_procedure", "Les étapes procédurales sont-elles correctement retracées ?"],
+      ["decisions_anterieures", "Les décisions antérieures sont-elles mentionnées ?"],
+      ["coherence_globale", "La synthèse est-elle cohérente et fidèle au document source ?"]
+    ]
+  },
+  "Synthèse Faits, Procédure & Moyens": {
+    "description": "Évaluation d'une synthèse complète (faits, procédure et moyens)",
+    "criteres": [
+      ["faits_complets", "Les faits sont-ils présentés de manière complète et chronologique ?"],
+      ["procedure_claire", "La procédure est-elle clairement exposée ?"],
+      ["moyens_demandeur", "Les moyens du demandeur/appelant sont-ils bien identifiés ?"],
+      ["moyens_defendeur", "Les moyens du défendeur/intimé sont-ils bien identifiés ?"],
+      ["pretentions_parties", "Les prétentions de chaque partie sont-elles clairement exposées ?"],
+      ["articulation_logique", "L'articulation entre faits, procédure et moyens est-elle logique ?"]
+    ]
+  },
+  "Synthèse Moyens": {
+    "description": "Évaluation d'une synthèse des moyens juridiques",
+    "criteres": [
+      ["moyens_demandeur", "Les moyens du demandeur/appelant sont-ils exhaustivement listés ?"],
+      ["moyens_defendeur", "Les moyens du défendeur/intimé sont-ils exhaustivement listés ?"],
+      ["fondements_juridiques", "Les fondements juridiques (textes, jurisprudence) sont-ils mentionnés ?"],
+      ["arguments_cles", "Les arguments clés de chaque partie sont-ils bien restitués ?"],
+      ["neutralite", "La synthèse est-elle neutre et objective ?"]
+    ]
+  }
+}

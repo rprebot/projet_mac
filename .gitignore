@@ -3,7 +3,7 @@ venv/
 env/
 .venv/
 
-# Variables d'environnement
+# Variables d'envicronnement
 .env
 
 # Python
