@@ -287,16 +287,6 @@ prompt_choice = st.sidebar.selectbox(
 # Récupérer le prompt système sélectionné
 system_prompt = SYSTEM_PROMPTS[prompt_choice]
 
-# Option d'évaluation automatique
-st.sidebar.markdown("---")
-st.sidebar.header("Évaluation LLM")
-enable_evaluation = st.sidebar.checkbox(
-    "Activer l'évaluation Magistral",
-    value=False,
-    key="enable_magistral_evaluation",
-    help="Évalue automatiquement chaque réponse avec Magistral Medium (modèle de raisonnement)"
-)
-
 # Éditeur du prompt sélectionné
 with st.sidebar.expander("✏️ Éditer le prompt"):
     edited_prompt = st.text_area(
@@ -313,6 +303,16 @@ with st.sidebar.expander("✏️ Éditer le prompt"):
                 f.write(edited_prompt)
             st.success("✅ Sauvegardé !")
             st.rerun()
+
+# Option d'évaluation automatique
+st.sidebar.markdown("---")
+st.sidebar.header("Évaluation LLM")
+enable_evaluation = st.sidebar.checkbox(
+    "Activer l'évaluation Magistral",
+    value=False,
+    key="enable_magistral_evaluation",
+    help="Évalue automatiquement chaque réponse avec Magistral Medium (modèle de raisonnement)"
+)
 
 # Fonction pour appeler le modèle
 def call_model(model_choice, system_prompt, messages_history):
