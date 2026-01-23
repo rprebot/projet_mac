@@ -100,7 +100,7 @@ ALBERT_API_KEY = os.getenv("ALBERT_API_KEY", "")
 
 # Limites de tokens par modèle (contexte d'entrée)
 MODEL_TOKEN_LIMITS = {
-    "Albert Large": 8000,
+    "Albert Large": 128000,
     "Mixtral 8x22B (Mistral)": 64000,
     "Mistral-medium-2508 (modèle assistant numérique)": 128000,
     "GPT-OSS-120B (Nebius)": 128000,
