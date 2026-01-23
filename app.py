@@ -293,6 +293,7 @@ st.sidebar.header("Évaluation LLM")
 enable_evaluation = st.sidebar.checkbox(
     "Activer l'évaluation Magistral",
     value=False,
+    key="enable_magistral_evaluation",
     help="Évalue automatiquement chaque réponse avec Magistral Medium (modèle de raisonnement)"
 )
 
