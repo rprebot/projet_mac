@@ -412,7 +412,37 @@ def call_model(model_choice, system_prompt, messages_history):
             messages=full_messages,
             temperature=0.7
         )
-        return response.choices[0].message.content
+
+        # Extraire le contenu principal et le thinking
+        message = response.choices[0].message
+        main_content = message.content or ""
+
+        # Vérifier si le thinking est présent dans les balises <think>
+        thinking_content = ""
+        if "<think>" in main_content and "</think>" in main_content:
+            import re
+            # Extraire le contenu thinking
+            think_match = re.search(r'<think>(.*?)</think>', main_content, re.DOTALL)
+            if think_match:
+                thinking_content = think_match.group(1).strip()
+                # Retirer le thinking du contenu principal
+                main_content = re.sub(r'<think>.*?</think>', '', main_content, flags=re.DOTALL).strip()
+
+        # Formater la réponse avec le thinking visible
+        if thinking_content:
+            formatted_response = f"""<details>
+<summary>🧠 Raisonnement du modèle (cliquez pour afficher/masquer)</summary>
+
+{thinking_content}
+
+</details>
+
+---
+
+{main_content}"""
+            return formatted_response
+        else:
+            return main_content
 
 
 # Créer les onglets
