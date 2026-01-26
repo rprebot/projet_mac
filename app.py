@@ -361,7 +361,7 @@ def call_model(model_choice, system_prompt, messages_history):
 
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
-            model="mistral-medium-2505",
+            model="mistral-medium-2508",
             messages=full_messages
         )
         return response.choices[0].message.content

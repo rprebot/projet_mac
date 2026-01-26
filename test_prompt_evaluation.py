@@ -34,7 +34,7 @@ def load_evaluation_prompt():
     with open("prompts/evaluation_prompt.md", 'r', encoding='utf-8') as f:
         return f.read()
 
-def generate_summary(system_prompt, document, model="mistral-medium-2505"):
+def generate_summary(system_prompt, document, model="mistral-medium-2508"):
     """Génère un résumé avec Mistral-medium-2508"""
     print(f"\n🤖 Génération du résumé avec {model}...")
 

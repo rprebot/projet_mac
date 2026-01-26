@@ -128,10 +128,10 @@ def test_simple_call():
         client = Mistral(api_key=MISTRAL_API_KEY)
 
         # Appel très simple (peu de tokens)
-        print("Envoi d'une requête test avec mistral-medium-2505...\n")
+        print("Envoi d'une requête test avec mistral-medium-2508...\n")
 
         response = client.chat.complete(
-            model="mistral-medium-2505",
+            model="mistral-medium-2508",
             messages=[{"role": "user", "content": "Bonjour"}]
         )
 
@@ -177,7 +177,7 @@ def main():
    → https://console.mistral.ai/limits
 
 2. Vérifiez vos limites par modèle:
-   • mistral-medium-2505 (votre modèle principal)
+   • mistral-medium-2508 (votre modèle principal)
    • magistral-medium-2506 (modèle d'évaluation)
 
 3. Si vous dépassez les limites:

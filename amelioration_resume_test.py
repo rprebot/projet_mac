@@ -16,7 +16,7 @@ load_dotenv()
 
 # Configuration
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY", "")
-MODEL = "mistral-medium-2505"  # Modèle assistant numérique
+MODEL = "mistral-medium-2508"  # Modèle assistant numérique
 
 
 # =============================================================================
