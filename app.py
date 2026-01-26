@@ -407,10 +407,17 @@ def call_model(model_choice, system_prompt, messages_history):
             base_url="https://api.studio.nebius.ai/v1/",
             api_key=NEBIUS_API_KEY
         )
+
+        # Activer explicitement le thinking mode via extra_body
         response = client.chat.completions.create(
             model="Qwen/Qwen3-235B-A22B-Thinking-2507",
             messages=full_messages,
-            temperature=0.7
+            temperature=0.7,
+            extra_body={
+                "chat_template_kwargs": {
+                    "enable_thinking": True
+                }
+            }
         )
 
         # Extraire le contenu principal et le thinking
@@ -419,8 +426,9 @@ def call_model(model_choice, system_prompt, messages_history):
 
         # Vérifier si le thinking est présent dans les balises <think>
         thinking_content = ""
+        import re
+
         if "<think>" in main_content and "</think>" in main_content:
-            import re
             # Extraire le contenu thinking
             think_match = re.search(r'<think>(.*?)</think>', main_content, re.DOTALL)
             if think_match:
@@ -430,14 +438,15 @@ def call_model(model_choice, system_prompt, messages_history):
 
         # Formater la réponse avec le thinking visible
         if thinking_content:
-            formatted_response = f"""<details>
-<summary>🧠 Raisonnement du modèle (cliquez pour afficher/masquer)</summary>
+            formatted_response = f"""**🧠 Raisonnement du modèle:**
 
+```
 {thinking_content}
-
-</details>
+```
 
 ---
+
+**📝 Réponse finale:**
 
 {main_content}"""
             return formatted_response
