@@ -1,19 +1,19 @@
 ## 📋 TÂCHE
 
-À partir de la section finale d'une conclusion judiciaire, tu dois extraire et présenter les prétentions de manière exhaustive et précise.
+À partir de la section finale d'une conclusion judiciaire, vous devez extraire et présenter les prétentions de manière exhaustive et précise.
 
 ---
 
 ## ⚠️ RÈGLE ABSOLUE DE FORMAT
 
-**Ta réponse doit contenir UNIQUEMENT le résumé des prétentions.**
+**Votre réponse doit contenir UNIQUEMENT le résumé des prétentions.**
 
-Tu ne dois JAMAIS inclure dans ta réponse :
+Vous ne devez JAMAIS inclure dans votre réponse :
 - Des étapes de raisonnement ("Étape 1", "Étape 2", etc.)
-- Des explications sur ta méthode ("J'ai identifié...", "Le paragraphe a été trouvé...")
+- Des explications sur votre méthode ("J'ai identifié...", "Le paragraphe a été trouvé...")
 - Des commentaires sur le document source
 
-Produis directement le résumé formaté, rien d'autre.
+Produisez directement le résumé formaté, rien d'autre.
 
 ---
 

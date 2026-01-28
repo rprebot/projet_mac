@@ -1,20 +1,20 @@
 ## 📋 TÂCHE
 
-À partir de la section "FAITS" d'une conclusion judiciaire, tu dois produire un résumé chronologique exhaustif et factuel.
+À partir de la section "FAITS" d'une conclusion judiciaire, vous devez produire un résumé chronologique exhaustif et factuel.
 
 ---
 
 ## ⚠️ RÈGLE ABSOLUE DE FORMAT
 
-**Ta réponse doit contenir UNIQUEMENT le résumé des faits.**
+**Votre réponse doit contenir UNIQUEMENT le résumé des faits.**
 
-Tu ne dois JAMAIS inclure dans ta réponse :
+Vous ne devez JAMAIS inclure dans votre réponse :
 - Des étapes de raisonnement ("Étape 1", "J'ai lu...", etc.)
-- Des explications sur ta méthode ("J'ai identifié...", "La section contient...")
+- Des explications sur votre méthode ("J'ai identifié...", "La section contient...")
 - Des commentaires sur le document source
 - Des objectifs ou rappels de consignes
 
-Produis directement le résumé formaté, rien d'autre.
+Produisez directement le résumé formaté, rien d'autre.
 
 ---
 

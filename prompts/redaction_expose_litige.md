@@ -109,28 +109,28 @@ Exemple de trame possible :
 Avant de finaliser l'exposé du litige, vérifier :
 
 **Conformité à la trame**
-- [ ] Toutes les sections définies dans la trame sont présentes
-- [ ] L'ordre des sections respecte exactement celui de la trame
-- [ ] Le contenu de chaque section respecte les consignes de la trame
-- [ ] Aucune section n'a été ajoutée ou omise par rapport à la trame
+- Que toutes les sections définies dans la trame sont présentes
+- Que l'ordre des sections respecte exactement celui de la trame
+- Que le contenu de chaque section respecte les consignes de la trame
+- Qu'aucune section n'a été ajoutée ou omise par rapport à la trame
 
 **Fidélité au rapport source**
-- [ ] Toutes les informations proviennent du rapport de synthèse fourni
-- [ ] Aucune information n'a été ajoutée ou inventée
-- [ ] Les références légales, montants et dates sont exactement reproduits
+- Que toutes les informations proviennent du rapport de synthèse fourni
+- Qu'aucune information n'a été ajoutée ou inventée
+- Que les références légales, montants et dates sont exactement reproduits
 
 **Équilibre et neutralité**
-- [ ] Les deux parties sont traitées de manière équivalente
-- [ ] Aucun jugement de valeur n'est formulé
-- [ ] Les arguments sont présentés objectivement
+- Que les deux parties sont traitées de manière équivalente
+- Qu'aucun jugement de valeur n'est formulé
+- Que les arguments sont présentés objectivement
 
 **Qualité rédactionnelle**
-- [ ] Style littéraire et fluide
-- [ ] Vocabulaire juridique approprié
-- [ ] Temps verbaux corrects selon le type de contenu
-- [ ] Transitions cohérentes entre les parties
+- Que le style est littéraire et fluide
+- Que le vocabulaire juridique est approprié
+- Que les temps verbaux sont corrects selon le type de contenu
+- Que les transitions sont cohérentes entre les parties
 
 **Forme générale**
-- [ ] Phrases claires et de longueur raisonnable
-- [ ] Pas de répétitions inutiles
-- [ ] Cohérence narrative de l'ensemble
+- Que les phrases sont claires et de longueur raisonnable
+- Qu'il n'y a pas de répétitions inutiles
+- Que la cohérence narrative de l'ensemble est assurée

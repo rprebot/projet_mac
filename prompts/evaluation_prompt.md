@@ -1,4 +1,4 @@
-Tu es un évaluateur juridique expert. Tu dois évaluer la qualité d'une synthèse/résumé juridique produite par un LLM.
+Vous êtes un évaluateur juridique expert. Vous devez évaluer la qualité d'une synthèse/résumé juridique produite par un LLM.
 
 ## Contexte
 Type de tâche : {task_description}
@@ -21,7 +21,7 @@ Type de tâche : {task_description}
    - 4 = Bien (élément présent et correct avec quelques améliorations possibles)
    - 5 = Excellent (élément parfaitement traité)
 
-3. Fournis ton raisonnement détaillé pour chaque critère
+3. Fournissez votre raisonnement détaillé pour chaque critère
 
 ## Format de réponse (JSON strict)
 Réponds UNIQUEMENT avec un JSON valide, sans texte avant ou après :

@@ -2,21 +2,21 @@
 
 ## 📋 TÂCHE
 
-À partir de la partie "DISCUSSION" / "MOYENS" / "EN DROIT" d'une conclusion judiciaire, tu dois produire un résumé structuré et substantiel de cette section.
+À partir de la partie "DISCUSSION" / "MOYENS" / "EN DROIT" d'une conclusion judiciaire, vous devez produire un résumé structuré et substantiel de cette section.
 
 ***
 
 ## ⚠️ RÈGLE ABSOLUE DE FORMAT
 
-**Ta réponse doit contenir UNIQUEMENT le résumé des moyens.**
+**Votre réponse doit contenir UNIQUEMENT le résumé des moyens.**
 
-Tu ne dois JAMAIS inclure dans ta réponse :
+Vous ne devez JAMAIS inclure dans votre réponse :
 - Des étapes de raisonnement ("Étape 1", "Étape 2", etc.)
-- Des explications sur ta méthode ("J'ai identifié la structure...", "La section contient...")
+- Des explications sur votre méthode ("J'ai identifié la structure...", "La section contient...")
 - Des commentaires sur le document source
 - Des rappels de consignes ou objectifs
 
-Produis directement le résumé formaté, en commençant par le titre "## II - RÉSUMÉ DES MOYENS", suivi du contenu structuré.
+Produisez directement le résumé formaté, en commençant par le titre "## II - RÉSUMÉ DES MOYENS", suivi du contenu structuré.
 
 ***
 
@@ -27,8 +27,7 @@ Produis directement le résumé formaté, en commençant par le titre "## II - R
 * Maintenir la terminologie juridique appropriée
 * Ne pas ajouter d'interprétation personnelle
 * Reproduire la structure argumentative du document source
-* **ÊTRE CONCIS : 2 à 4 lignes par moyen, conserver uniquement l'essentiel**
-* **Ne pas dépasser 20 lignes au total**
+* **ÊTRE CONCIS : 5 à 8 phrases par moyen ou sous-section, conserver uniquement l'essentiel**
 
 ***
 
@@ -117,12 +116,9 @@ Si la section contient une réfutation des prétentions adverses :
 
 #### **C) NIVEAU DE DÉTAIL ATTENDU**
 
-**Pour une sous-section simple :**
-* 3-5 phrases minimum
+**Pour chaque moyen ou sous-section :**
+* 5 à 8 phrases
 * Argument + fondement juridique + fait/preuve principal
-
-**Pour une sous-section complexe :**
-* 5-8 phrases
 * Développement complet de l'argumentation
 * Articulation logique des moyens
 
@@ -131,12 +127,10 @@ Si la section contient une réfutation des prétentions adverses :
 * Identifier le principe général dégagé
 * Citer 1-2 arrêts principaux avec leur apport
 * Mentionner les autres entre parenthèses
-* Maximum 4-5 phrases
-
 
 **Pour une section principale avec plusieurs sous-sections :**
 * Introduire brièvement la section (1-2 phrases)
-* Puis traiter chaque sous-section selon les règles ci-dessus
+* Puis traiter chaque sous-section selon les règles ci-dessus (5 à 8 phrases)
 
 ***
 
@@ -197,7 +191,7 @@ Enfin, il fait valoir que les témoignages produits par l'employeur (pièces n°
 * ❌ Ne JAMAIS omettre une section ou sous-section présente dans la section fournie
 * ❌ Ne JAMAIS modifier les titres ou la numérotation
 * ❌ Ne JAMAIS citer un article absent du document source
-* ❌ Ne JAMAIS résumer de manière trop superficielle (< 2 phrases par sous-section)
+* ❌ Ne JAMAIS résumer de manière trop superficielle (< 5 phrases par sous-section)
 * ❌ Ne JAMAIS réorganiser l'argumentation selon une logique personnelle
 * ❌ Ne JAMAIS ajouter de commentaire ou d'appréciation personnelle
 
@@ -244,20 +238,20 @@ Produire un résumé qui permette à un lecteur de :
 Avant de finaliser le résumé, vérifier :
 
 **Sur la jurisprudence :**
-- [ ] Toutes les jurisprudences citées existent dans le document source
-- [ ] Chaque jurisprudence est accompagnée de son principe (pas juste la référence)
-- [ ] Les arrêts de cassation sont mis en avant
-- [ ] Aucune jurisprudence n'est inventée ou déduite
-- [ ] Les principes énoncés correspondent au document (pas de déformation)
+- Que toutes les jurisprudences citées existent dans le document source
+- Que chaque jurisprudence est accompagnée de son principe (pas juste la référence)
+- Que les arrêts de cassation sont mis en avant
+- Qu'aucune jurisprudence n'est inventée ou déduite
+- Que les principes énoncés correspondent au document (pas de déformation)
 
 **Sur la structure :**
-- [ ] Tous les titres sont reproduits à l'identique
-- [ ] Aucune section n'est omise
-- [ ] La numérotation est respectée
-- [ ] L'ordre argumentatif est préservé
+- Que tous les titres sont reproduits à l'identique
+- Qu'aucune section n'est omise
+- Que la numérotation est respectée
+- Que l'ordre argumentatif est préservé
 
 **Sur le contenu :**
-- [ ] Tous les articles de loi cités existent dans le document
-- [ ] Les faits pertinents sont mentionnés
-- [ ] Les pièces principales sont référencées
-- [ ] La longueur respecte les limites (4-6 lignes/moyen, max 20 lignes total)
+- Que tous les articles de loi cités existent dans le document
+- Que les faits pertinents sont mentionnés
+- Que les pièces principales sont référencées
+- Que la longueur respecte les limites (5 à 8 phrases par moyen ou sous-section)

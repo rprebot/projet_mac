@@ -180,7 +180,7 @@ Le paragraphe "PRÉTENTIONS DE L'INTIMÉ" débutera par : **"Par conclusions rem
 
 ## 6️⃣ QUESTION JURIDIQUE
 
-À partir des prétentions et moyens des parties, peux-tu déterminer quelles sont les questions de droit et de fait à trancher ?
+À partir des prétentions et moyens des parties, déterminez quelles sont les questions de droit et de fait à trancher.
 
 ---
 
@@ -188,14 +188,14 @@ Le paragraphe "PRÉTENTIONS DE L'INTIMÉ" débutera par : **"Par conclusions rem
 
 Avant de finaliser le rapport, vérifier :
 
-- [ ] Objectivité et neutralité maintenues tout au long du rapport
-- [ ] Chronologie respectée dans la section FAITS
-- [ ] Toutes les dates, montants et références exactement reproduits
-- [ ] Toutes les prétentions de l'appelant/demandeur reprises intégralement
-- [ ] Toutes les prétentions de l'intimé/défendeur reprises intégralement
-- [ ] Vocabulaire juridique approprié et varié
-- [ ] Phrases claires et de longueur raisonnable
-- [ ] Transitions fluides entre les paragraphes
-- [ ] Éléments formels supprimés (PAR CES MOTIFS, PLAÎT À LA COUR, visas)
-- [ ] Aucune interprétation personnelle ajoutée
-- [ ] Toutes les sections présentes et complètes
+- Que l'objectivité et la neutralité sont maintenues tout au long du rapport
+- Que la chronologie est respectée dans la section FAITS
+- Que toutes les dates, montants et références sont exactement reproduits
+- Que toutes les prétentions de l'appelant/demandeur sont reprises intégralement
+- Que toutes les prétentions de l'intimé/défendeur sont reprises intégralement
+- Que le vocabulaire juridique est approprié et varié
+- Que les phrases sont claires et de longueur raisonnable
+- Que les transitions sont fluides entre les paragraphes
+- Que les éléments formels sont supprimés (PAR CES MOTIFS, PLAÎT À LA COUR, visas)
+- Qu'aucune interprétation personnelle n'a été ajoutée
+- Que toutes les sections sont présentes et complètes
