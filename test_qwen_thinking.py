@@ -1,5 +1,5 @@
 """
-Script pour tester le format de réponse de Qwen3-235B-A22B thinking
+Script pour tester le format de réponse de QwQ-32B (modèle de raisonnement)
 """
 
 import os
@@ -18,7 +18,7 @@ def test_qwen_thinking():
         print("❌ Erreur: NEBIUS_API_KEY non configurée")
         return
 
-    print("🧪 Test de Qwen3-235B-A22B thinking\n")
+    print("🧪 Test de QwQ-32B (modèle de raisonnement)\n")
 
     client = OpenAI(
         base_url="https://api.studio.nebius.ai/v1/",
@@ -37,7 +37,7 @@ def test_qwen_thinking():
     print("-" * 60)
 
     response = client.chat.completions.create(
-        model="Qwen/Qwen3-235B-A22B-Thinking-2507",
+        model="Qwen/Qwen3-32B-fast",
         messages=messages,
         temperature=0.7
     )
@@ -51,7 +51,7 @@ def test_qwen_thinking():
     print("-" * 60)
 
     response2 = client.chat.completions.create(
-        model="Qwen/Qwen3-235B-A22B-Thinking-2507",
+        model="Qwen/Qwen3-32B-fast",
         messages=messages,
         temperature=0.7,
         extra_body={

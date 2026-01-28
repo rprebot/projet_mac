@@ -21,7 +21,8 @@ PROMPT_FILES = {
     "Résumé Conclusions": "prompts/resume_conclusions.md",
     "Synthèse Faits & Procédure": "prompts/synthese_faits_procedure.md",
     "Synthèse Faits, Procédure & Moyens": "prompts/synthese_faits_procedure_moyens.md",
-    "Synthèse Moyens": "prompts/synthese_moyens.md"
+    "Synthèse Moyens": "prompts/synthese_moyens.md",
+    "Rédaction Exposé du Litige": "prompts/redaction_expose_litige.md"
 }
 
 # Charger les prompts système depuis les fichiers .md
@@ -36,7 +37,8 @@ def load_system_prompts():
         ("Résumé Conclusions", "prompts/resume_conclusions.md"),
         ("Synthèse Faits & Procédure", "prompts/synthese_faits_procedure.md"),
         ("Synthèse Faits, Procédure & Moyens", "prompts/synthese_faits_procedure_moyens.md"),
-        ("Synthèse Moyens", "prompts/synthese_moyens.md")
+        ("Synthèse Moyens", "prompts/synthese_moyens.md"),
+        ("Rédaction Exposé du Litige", "prompts/redaction_expose_litige.md")
     ]
 
     # Charger chaque fichier
@@ -92,6 +94,28 @@ if "message_count" not in st.session_state:
 if "evaluations" not in st.session_state:
     st.session_state.evaluations = {}  # Clé = index du message assistant
 
+if "custom_prompt" not in st.session_state:
+    st.session_state.custom_prompt = "Vous êtes un assistant juridique. Répondez aux questions de l'utilisateur de manière précise et professionnelle."
+
+if "custom_trame" not in st.session_state:
+    st.session_state.custom_trame = """[TRAME À COMPLÉTER]
+
+Renseignez ici la structure de l'exposé du litige que vous souhaitez obtenir.
+
+Exemple :
+## I. EXPOSÉ DU LITIGE
+### A. Les faits
+[Consignes pour cette section...]
+
+### B. La procédure
+[Consignes pour cette section...]
+
+### C. Les prétentions des parties
+[Consignes pour cette section...]
+
+### D. Les moyens des parties
+[Consignes pour cette section...]
+"""
 
 # Clés API depuis les variables d'environnement
 NEBIUS_API_KEY = os.getenv("NEBIUS_API_KEY", "")
@@ -103,9 +127,7 @@ MODEL_TOKEN_LIMITS = {
     "Albert Large": 128000,
     "Mixtral 8x22B (Mistral)": 64000,
     "Mistral-medium-2508 (modèle assistant numérique)": 128000,
-    "GPT-OSS-120B (Nebius)": 128000,
-    "Llama 3.3 70B (Nebius)": 128000,
-    "Qwen3-235B-A22B thinking (Nebius)": 128000
+    "GPT-OSS-120B (Nebius)": 128000
 }
 
 def estimate_tokens(text):
@@ -276,34 +298,58 @@ st.sidebar.header("Configuration")
 # Sélection du modèle
 model_choice = st.sidebar.selectbox(
     "Modèle LLM",
-    ["Albert Large", "Mixtral 8x22B (Mistral)", "Mistral-medium-2508 (modèle assistant numérique)", "GPT-OSS-120B (Nebius)", "Llama 3.3 70B (Nebius)", "Qwen3-235B-A22B thinking (Nebius)"]
+    ["Albert Large", "Mixtral 8x22B (Mistral)", "Mistral-medium-2508 (modèle assistant numérique)", "GPT-OSS-120B (Nebius)"]
 )
 
-# Sélection du prompt système
+# Sélection du prompt système (incluant le prompt personnalisable)
+prompt_options = list(SYSTEM_PROMPTS.keys()) + ["Prompt personnalisable"]
 prompt_choice = st.sidebar.selectbox(
     "Prompt système",
-    list(SYSTEM_PROMPTS.keys())
+    prompt_options
 )
 
 # Récupérer le prompt système sélectionné
-system_prompt = SYSTEM_PROMPTS[prompt_choice]
+if prompt_choice == "Prompt personnalisable":
+    system_prompt = st.session_state.custom_prompt
+elif prompt_choice == "Rédaction Exposé du Litige":
+    # Insérer automatiquement la trame de l'utilisateur dans le prompt
+    base_prompt = SYSTEM_PROMPTS[prompt_choice]
+    # Remplacer le placeholder par la trame de l'utilisateur
+    trame_placeholder = """```
+[TRAME À COMPLÉTER PAR L'UTILISATEUR]
 
-# Éditeur du prompt sélectionné
-with st.sidebar.expander("✏️ Éditer le prompt"):
-    edited_prompt = st.text_area(
-        "Contenu du prompt",
-        value=system_prompt,
-        height=250,
-        key=f"sidebar_prompt_editor_{prompt_choice}",
-        label_visibility="collapsed"
-    )
-    if st.button("💾 Sauvegarder", use_container_width=True):
-        filename = PROMPT_FILES.get(prompt_choice)
-        if filename:
-            with open(filename, 'w', encoding='utf-8') as f:
-                f.write(edited_prompt)
-            st.success("✅ Sauvegardé !")
-            st.rerun()
+Insérez ici la structure et les consignes spécifiques pour la rédaction de l'exposé du litige.
+
+Exemple de trame possible :
+- Section 1 : [Titre et consignes]
+- Section 2 : [Titre et consignes]
+- Section 3 : [Titre et consignes]
+- ...
+
+```"""
+    system_prompt = base_prompt.replace(trame_placeholder, f"```\n{st.session_state.custom_trame}\n```")
+else:
+    system_prompt = SYSTEM_PROMPTS[prompt_choice]
+
+# Éditeur du prompt sélectionné (sauf pour le prompt personnalisable qui a son propre onglet)
+if prompt_choice != "Prompt personnalisable":
+    with st.sidebar.expander("✏️ Éditer le prompt"):
+        edited_prompt = st.text_area(
+            "Contenu du prompt",
+            value=system_prompt,
+            height=250,
+            key=f"sidebar_prompt_editor_{prompt_choice}",
+            label_visibility="collapsed"
+        )
+        if st.button("💾 Sauvegarder", use_container_width=True):
+            filename = PROMPT_FILES.get(prompt_choice)
+            if filename:
+                with open(filename, 'w', encoding='utf-8') as f:
+                    f.write(edited_prompt)
+                st.success("✅ Sauvegardé !")
+                st.rerun()
+else:
+    st.sidebar.info("✏️ Éditez votre prompt dans l'onglet 'Prompt personnalisable'")
 
 # Option d'évaluation automatique
 st.sidebar.markdown("---")
@@ -366,7 +412,7 @@ def call_model(model_choice, system_prompt, messages_history):
         )
         return response.choices[0].message.content
 
-    # GPT-OSS-120B via Nebius (OpenAI compatible)
+    # GPT-OSS-120B via Nebius (OpenAI compatible) avec reasoning
     elif model_choice == "GPT-OSS-120B (Nebius)":
         if not NEBIUS_API_KEY:
             raise ValueError("La clé API Nebius n'est pas configurée.")
@@ -378,84 +424,18 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.completions.create(
             model="openai/gpt-oss-120b",
             messages=full_messages,
-            temperature=0.7
-        )
-        return response.choices[0].message.content
-
-    # Llama 3.3 70B via Nebius (OpenAI compatible)
-    elif model_choice == "Llama 3.3 70B (Nebius)":
-        if not NEBIUS_API_KEY:
-            raise ValueError("La clé API Nebius n'est pas configurée.")
-
-        client = OpenAI(
-            base_url="https://api.studio.nebius.ai/v1/",
-            api_key=NEBIUS_API_KEY
-        )
-        response = client.chat.completions.create(
-            model="meta-llama/Llama-3.3-70B-Instruct",
-            messages=full_messages,
-            temperature=0.7
-        )
-        return response.choices[0].message.content
-
-    # Qwen3-235B-A22B thinking via Nebius (OpenAI compatible)
-    elif model_choice == "Qwen3-235B-A22B thinking (Nebius)":
-        if not NEBIUS_API_KEY:
-            raise ValueError("La clé API Nebius n'est pas configurée.")
-
-        client = OpenAI(
-            base_url="https://api.studio.nebius.ai/v1/",
-            api_key=NEBIUS_API_KEY
-        )
-
-        # Activer explicitement le thinking mode via extra_body
-        response = client.chat.completions.create(
-            model="Qwen/Qwen3-235B-A22B-Thinking-2507",
-            messages=full_messages,
             temperature=0.7,
             extra_body={
-                "chat_template_kwargs": {
-                    "enable_thinking": True
+                "reasoning": {
+                    "effort": "high"
                 }
             }
         )
-
-        # Extraire le contenu principal et le thinking
-        message = response.choices[0].message
-        main_content = message.content or ""
-
-        # Vérifier si le thinking est présent dans les balises <think>
-        thinking_content = ""
-        import re
-
-        if "<think>" in main_content and "</think>" in main_content:
-            # Extraire le contenu thinking
-            think_match = re.search(r'<think>(.*?)</think>', main_content, re.DOTALL)
-            if think_match:
-                thinking_content = think_match.group(1).strip()
-                # Retirer le thinking du contenu principal
-                main_content = re.sub(r'<think>.*?</think>', '', main_content, flags=re.DOTALL).strip()
-
-        # Formater la réponse avec le thinking visible
-        if thinking_content:
-            formatted_response = f"""**🧠 Raisonnement du modèle:**
-
-```
-{thinking_content}
-```
-
----
-
-**📝 Réponse finale:**
-
-{main_content}"""
-            return formatted_response
-        else:
-            return main_content
+        return response.choices[0].message.content
 
 
 # Créer les onglets
-tab1, tab2 = st.tabs(["💬 Chat", "📄 Fichiers de conclusions"])
+tab1, tab2, tab3, tab4 = st.tabs(["💬 Chat", "📄 Fichiers de conclusions", "✏️ Prompt personnalisable", "📐 Modèle de trame"])
 
 # ============================================================
 # ONGLET 1 : CHAT
@@ -634,6 +614,105 @@ with tab2:
         with st.expander(name):
             st.code(content, language=None, line_numbers=False)
 
+# ============================================================
+# ONGLET 3 : PROMPT PERSONNALISABLE
+# ============================================================
+with tab3:
+    st.header("Prompt personnalisable")
+    st.markdown("""
+    Créez votre propre prompt système pour personnaliser le comportement de l'assistant.
+    Une fois sauvegardé, sélectionnez **"Prompt personnalisable"** dans la liste des prompts système de la barre latérale.
+    """)
+
+    # Zone d'édition du prompt personnalisé
+    new_custom_prompt = st.text_area(
+        "Votre prompt personnalisé",
+        value=st.session_state.custom_prompt,
+        height=400,
+        key="custom_prompt_editor",
+        help="Décrivez le comportement souhaité de l'assistant. Par exemple : 'Vous êtes un expert en droit du travail...'"
+    )
+
+    col1, col2 = st.columns([1, 4])
+    with col1:
+        if st.button("💾 Sauvegarder", type="primary", use_container_width=True):
+            st.session_state.custom_prompt = new_custom_prompt
+            st.success("✅ Prompt personnalisé sauvegardé !")
+            st.rerun()
+    with col2:
+        if st.button("🔄 Réinitialiser", use_container_width=True):
+            st.session_state.custom_prompt = "Vous êtes un assistant juridique. Répondez aux questions de l'utilisateur de manière précise et professionnelle."
+            st.success("✅ Prompt réinitialisé !")
+            st.rerun()
+
+    # Afficher un aperçu
+    with st.expander("📋 Aperçu du prompt actuel"):
+        st.code(st.session_state.custom_prompt, language=None)
+
+    # Compteur de caractères
+    st.caption(f"📊 {len(st.session_state.custom_prompt):,} caractères | ~{len(st.session_state.custom_prompt) // 4:,} tokens estimés")
+
+# ============================================================
+# ONGLET 4 : MODÈLE DE TRAME
+# ============================================================
+with tab4:
+    st.header("Modèle de trame")
+    st.markdown("""
+    Définissez ici la **trame** (structure et ordre des sections) pour la rédaction de l'exposé du litige.
+
+    Cette trame sera **automatiquement insérée** dans le prompt lorsque vous sélectionnerez
+    **"Rédaction Exposé du Litige"** dans la liste des prompts système.
+    """)
+
+    # Avertissement si le prompt n'est pas sélectionné
+    if prompt_choice != "Rédaction Exposé du Litige":
+        st.info("💡 Pour utiliser cette trame, sélectionnez **\"Rédaction Exposé du Litige\"** dans la liste des prompts système de la barre latérale.")
+
+    # Zone d'édition de la trame
+    new_custom_trame = st.text_area(
+        "Votre trame personnalisée",
+        value=st.session_state.custom_trame,
+        height=450,
+        key="custom_trame_editor",
+        help="Définissez la structure de l'exposé du litige : titres des sections, ordre, et consignes spécifiques pour chaque partie."
+    )
+
+    col1, col2 = st.columns([1, 4])
+    with col1:
+        if st.button("💾 Sauvegarder", type="primary", use_container_width=True, key="save_trame"):
+            st.session_state.custom_trame = new_custom_trame
+            st.success("✅ Trame sauvegardée !")
+            st.rerun()
+    with col2:
+        if st.button("🔄 Réinitialiser", use_container_width=True, key="reset_trame"):
+            st.session_state.custom_trame = """[TRAME À COMPLÉTER]
+
+Renseignez ici la structure de l'exposé du litige que vous souhaitez obtenir.
+
+Exemple :
+## I. EXPOSÉ DU LITIGE
+### A. Les faits
+[Consignes pour cette section...]
+
+### B. La procédure
+[Consignes pour cette section...]
+
+### C. Les prétentions des parties
+[Consignes pour cette section...]
+
+### D. Les moyens des parties
+[Consignes pour cette section...]
+"""
+            st.success("✅ Trame réinitialisée !")
+            st.rerun()
+
+    # Afficher un aperçu
+    with st.expander("📋 Aperçu de la trame actuelle"):
+        st.markdown(st.session_state.custom_trame)
+
+    # Compteur de caractères
+    st.caption(f"📊 {len(st.session_state.custom_trame):,} caractères | ~{len(st.session_state.custom_trame) // 4:,} tokens estimés")
+
 # Information sur les clés API dans la sidebar
 st.sidebar.markdown("---")
 with st.sidebar.expander("ℹ️ Configuration des clés API"):
@@ -643,7 +722,7 @@ with st.sidebar.expander("ℹ️ Configuration des clés API"):
 
     - `ALBERT_API_KEY` pour Albert Large
     - `MISTRAL_API_KEY` pour Mixtral 8x22B
-    - `NEBIUS_API_KEY` pour GPT-OSS-120B et Llama 3.3 70B
+    - `NEBIUS_API_KEY` pour GPT-OSS-120B
 
     Vous pouvez les définir dans un fichier `.env` à la racine du projet.
     """)
