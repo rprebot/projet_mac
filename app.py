@@ -328,8 +328,9 @@ model_choice = st.sidebar.selectbox(
     ["Albert Large", "Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "GPT-OSS-120B (Nebius)"]
 )
 
-# Sélection du prompt système (incluant les prompts chaînés et personnalisable)
-prompt_options = list(SYSTEM_PROMPTS.keys()) + list(CHAINED_PROMPTS.keys()) + ["Prompt personnalisable"]
+# Sélection du prompt système (incluant le prompt personnalisable)
+# Note: les prompts chaînés (2 étapes) sont désactivés pour l'instant mais le code reste disponible
+prompt_options = list(SYSTEM_PROMPTS.keys()) + ["Prompt personnalisable"]
 prompt_choice = st.sidebar.selectbox(
     "Prompt système",
     prompt_options
