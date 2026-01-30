@@ -19,7 +19,7 @@
       ["coherence_globale", "La synthèse est-elle cohérente et fidèle au document source ?"]
     ]
   },
-  "Synthèse Faits, Procédure & Moyens": {
+  "Rapport de synthèse": {
     "description": "Évaluation d'une synthèse complète (faits, procédure et moyens)",
     "criteres": [
       ["faits_complets", "Les faits sont-ils présentés de manière complète et chronologique ?"],

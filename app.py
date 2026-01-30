@@ -21,10 +21,36 @@ st.title("Assistant Juridique IA - Résumé de conclusion et rédaction de l'exp
 PROMPT_FILES = {
     "Résumé Conclusions": "prompts/resume_conclusions.md",
     "Synthèse Faits & Procédure": "prompts/synthese_faits_procedure.md",
-    "Synthèse Faits, Procédure & Moyens": "prompts/synthese_faits_procedure_moyens.md",
     "Synthèse Moyens": "prompts/synthese_moyens.md",
+    "Rapport de synthèse": "prompts/synthese_faits_procedure_moyens.md",
     "Rédaction Exposé du Litige": "prompts/redaction_expose_litige.md"
 }
+
+# Prompts chaînés (2 étapes)
+CHAINED_PROMPTS = {
+    "Résumé Conclusions (2 étapes)": {
+        "etape1": "prompts_chaines/resume_conclusions_etape1_structure.md",
+        "etape2": "prompts_chaines/resume_conclusions_etape2_resume.md"
+    }
+}
+
+def load_chained_prompts():
+    """
+    Charge les prompts chaînés (2 étapes) depuis les fichiers markdown
+    """
+    prompts = {}
+    for name, files in CHAINED_PROMPTS.items():
+        prompts[name] = {}
+        for etape, filename in files.items():
+            try:
+                with open(filename, 'r', encoding='utf-8') as f:
+                    prompts[name][etape] = f.read()
+            except FileNotFoundError:
+                prompts[name][etape] = f"Erreur : Le fichier {filename} n'a pas été trouvé."
+    return prompts
+
+# Charger les prompts chaînés
+SYSTEM_PROMPTS_CHAINED = load_chained_prompts()
 
 # Charger les prompts système depuis les fichiers .md
 def load_system_prompts():
@@ -37,8 +63,8 @@ def load_system_prompts():
     prompt_files = [
         ("Résumé Conclusions", "prompts/resume_conclusions.md"),
         ("Synthèse Faits & Procédure", "prompts/synthese_faits_procedure.md"),
-        ("Synthèse Faits, Procédure & Moyens", "prompts/synthese_faits_procedure_moyens.md"),
         ("Synthèse Moyens", "prompts/synthese_moyens.md"),
+        ("Rapport de synthèse", "prompts/synthese_faits_procedure_moyens.md"),
         ("Rédaction Exposé du Litige", "prompts/redaction_expose_litige.md")
     ]
 
@@ -302,16 +328,22 @@ model_choice = st.sidebar.selectbox(
     ["Albert Large", "Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "GPT-OSS-120B (Nebius)"]
 )
 
-# Sélection du prompt système (incluant le prompt personnalisable)
-prompt_options = list(SYSTEM_PROMPTS.keys()) + ["Prompt personnalisable"]
+# Sélection du prompt système (incluant les prompts chaînés et personnalisable)
+prompt_options = list(SYSTEM_PROMPTS.keys()) + list(CHAINED_PROMPTS.keys()) + ["Prompt personnalisable"]
 prompt_choice = st.sidebar.selectbox(
     "Prompt système",
     prompt_options
 )
 
+# Indicateur si le prompt sélectionné est un prompt chaîné
+is_chained_prompt = prompt_choice in CHAINED_PROMPTS
+
 # Récupérer le prompt système sélectionné
 if prompt_choice == "Prompt personnalisable":
     system_prompt = st.session_state.custom_prompt
+elif is_chained_prompt:
+    # Pour les prompts chaînés, on utilise le prompt de l'étape 1 comme référence
+    system_prompt = SYSTEM_PROMPTS_CHAINED[prompt_choice]["etape1"]
 elif prompt_choice == "Rédaction Exposé du Litige":
     # Insérer automatiquement la trame de l'utilisateur dans le prompt
     base_prompt = SYSTEM_PROMPTS[prompt_choice]
@@ -436,6 +468,46 @@ def call_model(model_choice, system_prompt, messages_history):
             }
         )
         return response.choices[0].message.content
+
+
+def call_model_chained(model_choice, prompt_choice, user_query):
+    """
+    Appelle le modèle en 2 étapes pour les prompts chaînés.
+    Étape 1 : Extraction de la structure
+    Étape 2 : Résumé avec la structure fournie
+    Retourne un dictionnaire avec les résultats des 2 étapes.
+    """
+    prompts = SYSTEM_PROMPTS_CHAINED[prompt_choice]
+
+    # ÉTAPE 1 : Extraction de la structure
+    prompt_etape1 = prompts["etape1"]
+    messages_etape1 = [{"role": "user", "content": user_query}]
+
+    structure_extraite = call_model(model_choice, prompt_etape1, messages_etape1)
+
+    # ÉTAPE 2 : Résumé avec la structure fournie
+    prompt_etape2 = prompts["etape2"]
+
+    # Construire le message pour l'étape 2 avec le document ET la structure
+    message_etape2 = f"""## DOCUMENT SOURCE (Conclusion juridique)
+
+{user_query}
+
+---
+
+## STRUCTURE EXTRAITE (À suivre impérativement)
+
+{structure_extraite}
+"""
+
+    messages_etape2 = [{"role": "user", "content": message_etape2}]
+
+    resume_final = call_model(model_choice, prompt_etape2, messages_etape2)
+
+    return {
+        "etape1_structure": structure_extraite,
+        "etape2_resume": resume_final
+    }
 
 
 # Créer les onglets
@@ -576,38 +648,48 @@ with tab1:
 
             # Générer et afficher la réponse
             with st.chat_message("assistant"):
-                with st.spinner("Génération de la réponse..."):
-                    try:
-                        response_text = call_model(
-                            model_choice,
-                            system_prompt,
-                            st.session_state.messages
-                        )
+                try:
+                    # Vérifier si c'est un prompt chaîné (2 étapes)
+                    if is_chained_prompt:
+                        # Appel chaîné en 2 étapes
+                        with st.spinner("Analyse en 2 étapes en cours..."):
+                            result = call_model_chained(model_choice, prompt_choice, user_query)
 
-                        # Ajouter la réponse à l'historique
-                        st.session_state.messages.append({"role": "assistant", "content": response_text})
+                        # Afficher uniquement le résultat de l'étape 2
+                        response_text = result["etape2_resume"]
+                    else:
+                        # Appel simple (1 étape)
+                        with st.spinner("Génération de la réponse..."):
+                            response_text = call_model(
+                                model_choice,
+                                system_prompt,
+                                st.session_state.messages
+                            )
 
-                        # Évaluation automatique si activée
-                        if enable_evaluation:
-                            with st.spinner("Évaluation avec Magistral Medium..."):
-                                # Récupérer le document source (question de l'utilisateur)
-                                document_source = user_query
-                                eval_result = evaluate_with_magistral(
-                                    document_source,
-                                    response_text,
-                                    prompt_choice
-                                )
-                                # Stocker l'évaluation avec l'index du message
-                                eval_index = len(st.session_state.messages) - 1
-                                st.session_state.evaluations[eval_index] = eval_result
+                    # Ajouter la réponse à l'historique
+                    st.session_state.messages.append({"role": "assistant", "content": response_text})
 
-                        st.rerun()
+                    # Évaluation automatique si activée
+                    if enable_evaluation:
+                        with st.spinner("Évaluation avec Magistral Medium..."):
+                            # Récupérer le document source (question de l'utilisateur)
+                            document_source = user_query
+                            eval_result = evaluate_with_magistral(
+                                document_source,
+                                response_text,
+                                prompt_choice
+                            )
+                            # Stocker l'évaluation avec l'index du message
+                            eval_index = len(st.session_state.messages) - 1
+                            st.session_state.evaluations[eval_index] = eval_result
 
-                    except Exception as e:
-                        error_msg = f"Erreur lors de la génération de la réponse : {str(e)}"
-                        st.error(error_msg)
-                        st.session_state.messages.pop()
-                        st.session_state.message_count -= 1
+                    st.rerun()
+
+                except Exception as e:
+                    error_msg = f"Erreur lors de la génération de la réponse : {str(e)}"
+                    st.error(error_msg)
+                    st.session_state.messages.pop()
+                    st.session_state.message_count -= 1
 
 # ============================================================
 # ONGLET 2 : FICHIERS DE CONCLUSIONS
