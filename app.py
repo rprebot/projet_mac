@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import os
 import json
 from urllib.parse import urlencode
@@ -11,10 +12,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configuration de la page
-st.set_page_config(page_title="Assistant Juridique LLM", layout="wide")
+st.set_page_config(page_title="Assistant Juridique IA", layout="wide")
 
 # Titre de l'application
-st.title("Assistant Juridique - Résumé de Conclusions")
+st.title("Assistant Juridique IA - Résumé de conclusion et rédaction de l'exposé du litige")
 
 # Mapping des noms de prompts vers les fichiers
 PROMPT_FILES = {
@@ -126,7 +127,7 @@ ALBERT_API_KEY = os.getenv("ALBERT_API_KEY", "")
 MODEL_TOKEN_LIMITS = {
     "Albert Large": 128000,
     "Mixtral 8x22B (Mistral)": 64000,
-    "Mistral-medium-2508 (modèle assistant numérique)": 128000,
+    "Mistral-medium-2508": 128000,
     "GPT-OSS-120B (Nebius)": 128000
 }
 
@@ -298,7 +299,7 @@ st.sidebar.header("Configuration")
 # Sélection du modèle
 model_choice = st.sidebar.selectbox(
     "Modèle LLM",
-    ["Albert Large", "Mixtral 8x22B (Mistral)", "Mistral-medium-2508 (modèle assistant numérique)", "GPT-OSS-120B (Nebius)"]
+    ["Albert Large", "Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "GPT-OSS-120B (Nebius)"]
 )
 
 # Sélection du prompt système (incluant le prompt personnalisable)
@@ -380,7 +381,8 @@ def call_model(model_choice, system_prompt, messages_history):
         }
         payload = {
             "model": "albert-large",
-            "messages": full_messages
+            "messages": full_messages,
+            "temperature": 0.3
         }
         # URL à adapter selon la documentation de l'API Albert
         api_url = "https://albert.api.etalab.gouv.fr/v1/chat/completions"
@@ -396,19 +398,21 @@ def call_model(model_choice, system_prompt, messages_history):
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-large-latest",
-            messages=full_messages
+            messages=full_messages,
+            temperature=0.3
         )
         return response.choices[0].message.content
 
     # Mistral Medium 2508 (modèle assistant numérique)
-    elif model_choice == "Mistral-medium-2508 (modèle assistant numérique)":
+    elif model_choice == "Mistral-medium-2508":
         if not MISTRAL_API_KEY:
             raise ValueError("La clé API Mistral n'est pas configurée.")
 
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-medium-2508",
-            messages=full_messages
+            messages=full_messages,
+            temperature=0.3
         )
         return response.choices[0].message.content
 
@@ -424,7 +428,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.completions.create(
             model="openai/gpt-oss-120b",
             messages=full_messages,
-            temperature=0.7,
+            temperature=0.3,
             extra_body={
                 "reasoning": {
                     "effort": "high"
