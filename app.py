@@ -2,6 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import os
 import json
+import html
 from urllib.parse import urlencode
 from openai import OpenAI
 from mistralai import Mistral
@@ -10,6 +11,45 @@ from dotenv import load_dotenv
 
 # Charger les variables d'environnement depuis .env
 load_dotenv()
+
+
+def copy_button(text: str, button_id: str):
+    """Génère un bouton HTML/JS pour copier du texte dans le presse-papiers"""
+    # Échapper le texte pour JavaScript
+    escaped_text = html.escape(text).replace('\n', '\\n').replace('\r', '').replace("'", "\\'")
+
+    html_code = f"""
+    <button id="{button_id}" onclick="copyText_{button_id}()" style="
+        background-color: #f0f2f6;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: background-color 0.2s;
+    " onmouseover="this.style.backgroundColor='#e0e2e6'" onmouseout="this.style.backgroundColor='#f0f2f6'">
+        <span id="icon_{button_id}">📋</span> <span id="label_{button_id}">Copier la réponse</span>
+    </button>
+    <script>
+        function copyText_{button_id}() {{
+            const text = '{escaped_text}';
+            const decodedText = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#x27;/g, "'");
+            navigator.clipboard.writeText(decodedText).then(function() {{
+                document.getElementById('icon_{button_id}').innerText = '✅';
+                document.getElementById('label_{button_id}').innerText = 'Copié !';
+                setTimeout(function() {{
+                    document.getElementById('icon_{button_id}').innerText = '📋';
+                    document.getElementById('label_{button_id}').innerText = 'Copier la réponse';
+                }}, 2000);
+            }});
+        }}
+    </script>
+    """
+    components.html(html_code, height=50)
+
 
 # Configuration de la page
 st.set_page_config(page_title="Assistant Juridique IA", layout="wide")
@@ -88,10 +128,13 @@ def load_conclusion_files():
     conclusion_files = {
         "Dossier 4 - Conclusion Appelante": "dossiers/Dossier_4_conclusion_appelante.txt",
         "Dossier 4 - Conclusion Intimée": "dossiers/Dossier_4_conclusion_intimee.txt",
+        "Dossier 5 - Leonard (Employeur)": "dossiers/Dossier_5_Leonard_(employeur).txt",
+        "Dossier 5 - Leonard (Salarié)": "dossiers/Dossier_5_Leonard_(salarie).txt",
         "Dossier 6 - Conclusion Appelant": "dossiers/Dossier_6_conclusion_appelant.txt",
         "Dossier 6 - Conclusion Intimée": "dossiers/Dossier_6_conclusion_intimee.txt",
         "Dossier 8 - Demandeur": "dossiers/Dossier_8_demandeur.txt",
         "Dossier 8 - Intimée": "dossiers/Dossier_8_intimee.txt",
+        "Dossier 13 - Conclusion Défendeur": "dossiers/dossier_13_conclusion_defendeur.txt",
         "Dossier 15 - Défendeur": "dossiers/Dossier_15_defendeur.txt",
         "Dossier 15 - Demandeur": "dossiers/Dossier_15_demandeur.txt"
     }
@@ -512,7 +555,7 @@ def call_model_chained(model_choice, prompt_choice, user_query):
 
 
 # Créer les onglets
-tab1, tab2, tab3, tab4 = st.tabs(["💬 Chat", "📄 Fichiers de conclusions", "✏️ Prompt personnalisable", "📐 Modèle de trame"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["💬 Chat", "📄 Fichiers de conclusions", "✏️ Prompt personnalisable", "📐 Modèle de trame", "📖 Guide d'utilisation"])
 
 # ============================================================
 # ONGLET 1 : CHAT
@@ -554,8 +597,12 @@ with tab1:
             }
             tally_url = f"https://tally.so/r/9qZx9X?{urlencode(tally_params)}"
 
-            # Lien qui ouvre dans un nouvel onglet
-            st.link_button("📝 Donner votre avis sur cette réponse", tally_url, type="secondary")
+            # Boutons d'action : Copier + Feedback
+            col_copy, col_feedback = st.columns([1, 1])
+            with col_copy:
+                copy_button(content, f"copy_btn_{idx}")
+            with col_feedback:
+                st.link_button("📝 Donner votre avis", tally_url, type="secondary", use_container_width=True)
 
             # Afficher l'évaluation si disponible
             if idx in st.session_state.evaluations:
@@ -799,6 +846,78 @@ Exemple :
 
     # Compteur de caractères
     st.caption(f"📊 {len(st.session_state.custom_trame):,} caractères | ~{len(st.session_state.custom_trame) // 4:,} tokens estimés")
+
+# ============================================================
+# ONGLET 5 : GUIDE D'UTILISATION
+# ============================================================
+with tab5:
+    st.header("Guide d'utilisation")
+    st.markdown("""
+### Mode d'emploi de Streamlit : comment tester les LLM
+
+**Utiliser exclusivement les conclusions anonymisées pour les tests**
+
+#### Étapes pour tester :
+
+1. **Choisir un modèle et un prompt** dans la barre latérale
+
+2. **Faire une phrase introductive**, par exemple :
+   > *"Peux-tu résumer les conclusions jointes en respectant les consignes du prompt ? Voici les conclusions de l'appelante"*
+
+3. **Coller les conclusions anonymisées** dans la zone de saisie
+
+4. **Copier le résultat obtenu** dans un document Word qui sera intitulé selon les consignes ci-dessous
+
+5. **Analyser le résultat** en comparant avec les conclusions :
+   - Vous pouvez faire des commentaires sur le document Word en soulignant les erreurs, les interprétations, les approximations juridiques, etc.
+   - Pour effectuer la comparaison, ouvrir les conclusions non anonymisées (c'est plus facile)
+   - Ne pas trop s'attarder sur la conformité des prétentions : un autre système que l'IA pourra les reprendre in extenso
+
+6. **Répondre au questionnaire** (bouton "Donner votre avis" après chaque réponse)
+
+7. **Poursuivre la conversation** si nécessaire en demandant à l'IA d'améliorer sa réponse, puis répondre à nouveau au questionnaire
+
+8. **Ajouter des compléments sur Notion** dans la cellule réservée si vous avez des nouveaux commentaires
+
+9. **Glisser le document Word sur Notion**
+
+---
+
+### Répéter l'opération
+
+Pour les autres conclusions et prompts, cliquer sur **"Nouvelle conversation"** à chaque fois.
+
+💡 **Conseil** : Il est plus efficace de tester pour chaque prompt les différents LLM. Cela permet aussi de copier-coller la question posée.
+
+---
+
+### Intitulé des documents Word
+
+Les résultats obtenus seront copiés dans un document Word intitulé selon ce format :
+
+```
+[N° Dossier] [NOM DU PROMPT] [appelant ou intimé] [Initiales]
+```
+
+**Exemples :**
+- `6 synthèse faits proced prétention`
+- `6 synthèse des moyens`
+- `6 exposé du litige avec sans trame`
+
+---
+
+### Mode d'emploi de Notion
+
+- Chaque testeur dispose d'une vue avec son nom → cliquer dessus et remplir les cellules
+- **Pour glisser un document** :
+  1. Cliquer sur le bouton avec 6 points
+  2. Puis **OUVRIR** dans aperçu latéral
+  3. Cliquer sur **Ajouter un commentaire**
+  4. Puis sur le **trombone** 📎
+  5. Sélectionner votre fichier
+
+📝 *L'enregistrement est automatique*
+    """)
 
 # Information sur les clés API dans la sidebar
 st.sidebar.markdown("---")
