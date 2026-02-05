@@ -14,7 +14,7 @@ load_dotenv()
 
 
 def copy_button(text: str, button_id: str):
-    """Génère un bouton HTML/JS pour copier du texte dans le presse-papiers"""
+    """Génère un bouton HTML/JS pour copier du texte dans le presse-papiers (format Word)"""
     # Échapper le texte pour JavaScript
     escaped_text = html.escape(text).replace('\n', '\\n').replace('\r', '').replace("'", "\\'")
 
@@ -34,10 +34,45 @@ def copy_button(text: str, button_id: str):
         <span id="icon_{button_id}">📋</span> <span id="label_{button_id}">Copier la réponse</span>
     </button>
     <script>
+        function markdownToPlainText(md) {{
+            let text = md;
+            // Supprimer les blocs de code
+            text = text.replace(/```[\\s\\S]*?```/g, function(match) {{
+                return match.replace(/```\\w*\\n?/g, '').replace(/```/g, '');
+            }});
+            // Supprimer le code inline
+            text = text.replace(/`([^`]+)`/g, '$1');
+            // Convertir les titres (### Titre -> Titre)
+            text = text.replace(/^#{1,6}\\s+(.*)$/gm, '$1');
+            // Supprimer le gras et italique
+            text = text.replace(/\\*\\*\\*(.+?)\\*\\*\\*/g, '$1');
+            text = text.replace(/\\*\\*(.+?)\\*\\*/g, '$1');
+            text = text.replace(/\\*(.+?)\\*/g, '$1');
+            text = text.replace(/___(.+?)___/g, '$1');
+            text = text.replace(/__(.+?)__/g, '$1');
+            text = text.replace(/_(.+?)_/g, '$1');
+            // Convertir les listes à puces en tirets simples
+            text = text.replace(/^\\s*[\\*\\-\\+]\\s+/gm, '- ');
+            // Convertir les listes numérotées
+            text = text.replace(/^\\s*\\d+\\.\\s+/gm, '');
+            // Supprimer les liens [texte](url) -> texte
+            text = text.replace(/\\[([^\\]]+)\\]\\([^)]+\\)/g, '$1');
+            // Supprimer les images
+            text = text.replace(/!\\[([^\\]]*)\\]\\([^)]+\\)/g, '$1');
+            // Supprimer les lignes horizontales
+            text = text.replace(/^[\\-\\*_]{{3,}}$/gm, '');
+            // Nettoyer les espaces multiples
+            text = text.replace(/  +/g, ' ');
+            // Nettoyer les lignes vides multiples
+            text = text.replace(/\\n{{3,}}/g, '\\n\\n');
+            return text.trim();
+        }}
+
         function copyText_{button_id}() {{
             const text = '{escaped_text}';
             const decodedText = text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#x27;/g, "'");
-            navigator.clipboard.writeText(decodedText).then(function() {{
+            const plainText = markdownToPlainText(decodedText);
+            navigator.clipboard.writeText(plainText).then(function() {{
                 document.getElementById('icon_{button_id}').innerText = '✅';
                 document.getElementById('label_{button_id}').innerText = 'Copié !';
                 setTimeout(function() {{
