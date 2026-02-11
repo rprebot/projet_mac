@@ -170,6 +170,8 @@ def load_conclusion_files():
         "Dossier 8 - Demandeur": "dossiers/Dossier_8_demandeur.txt",
         "Dossier 8 - Intimée": "dossiers/Dossier_8_intimee.txt",
         "Dossier 13 - Conclusion Défendeur": "dossiers/dossier_13_conclusion_defendeur.txt",
+        "Dossier 14 - Défendeur": "dossiers/Doissier 14 - defendeur.txt",
+        "Dossier 14 - Demandeur": "dossiers/Dossier 14 - demandeur.txt",
         "Dossier 15 - Défendeur": "dossiers/Dossier_15_defendeur.txt",
         "Dossier 15 - Demandeur": "dossiers/Dossier_15_demandeur.txt"
     }
