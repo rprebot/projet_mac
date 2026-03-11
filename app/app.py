@@ -232,7 +232,7 @@ MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY", "")
 MODEL_TOKEN_LIMITS = {
     "Mixtral 8x22B (Mistral)": 64000,
     "Mistral-medium-2508": 128000,
-    "Mistral Large 2": 128000,
+    "Mistral Large 2": 131072,
     "GPT-OSS-120B (Nebius)": 128000
 }
 
