@@ -483,7 +483,7 @@ def call_model(model_choice, system_prompt, messages_history):
     full_messages = [{"role": "system", "content": system_prompt}] + messages_history
 
     # Mixtral 8x22B via Mistral
-    elif model_choice == "Mixtral 8x22B (Mistral)":
+    if model_choice == "Mixtral 8x22B (Mistral)":
         if not MISTRAL_API_KEY:
             raise ValueError("La clé API Mistral n'est pas configurée.")
 
