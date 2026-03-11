@@ -227,13 +227,12 @@ Exemple :
 # Clés API depuis les variables d'environnement
 NEBIUS_API_KEY = os.getenv("NEBIUS_API_KEY", "")
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY", "")
-ALBERT_API_KEY = os.getenv("ALBERT_API_KEY", "")
 
 # Limites de tokens par modèle (contexte d'entrée)
 MODEL_TOKEN_LIMITS = {
-    "Albert Large": 128000,
     "Mixtral 8x22B (Mistral)": 64000,
     "Mistral-medium-2508": 128000,
+    "Mistral Large 2": 128000,
     "GPT-OSS-120B (Nebius)": 128000
 }
 
@@ -405,7 +404,7 @@ st.sidebar.header("Configuration")
 # Sélection du modèle
 model_choice = st.sidebar.selectbox(
     "Modèle LLM",
-    ["Albert Large", "Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "GPT-OSS-120B (Nebius)"]
+    ["Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "Mistral Large 2", "GPT-OSS-120B (Nebius)"]
 )
 
 # Sélection du prompt système (incluant le prompt personnalisable)
@@ -483,26 +482,6 @@ def call_model(model_choice, system_prompt, messages_history):
     # Construire les messages avec le système + historique
     full_messages = [{"role": "system", "content": system_prompt}] + messages_history
 
-    # Albert Large
-    if model_choice == "Albert Large":
-        if not ALBERT_API_KEY:
-            raise ValueError("La clé API Albert n'est pas configurée.")
-
-        headers = {
-            "Authorization": f"Bearer {ALBERT_API_KEY}",
-            "Content-Type": "application/json"
-        }
-        payload = {
-            "model": "albert-large",
-            "messages": full_messages,
-            "temperature": 0.3
-        }
-        # URL à adapter selon la documentation de l'API Albert
-        api_url = "https://albert.api.etalab.gouv.fr/v1/chat/completions"
-        response = requests.post(api_url, json=payload, headers=headers)
-        response.raise_for_status()
-        return response.json()["choices"][0]["message"]["content"]
-
     # Mixtral 8x22B via Mistral
     elif model_choice == "Mixtral 8x22B (Mistral)":
         if not MISTRAL_API_KEY:
@@ -524,6 +503,19 @@ def call_model(model_choice, system_prompt, messages_history):
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-medium-2508",
+            messages=full_messages,
+            temperature=0.3
+        )
+        return response.choices[0].message.content
+
+    # Mistral Large 2 (modèle flagship)
+    elif model_choice == "Mistral Large 2":
+        if not MISTRAL_API_KEY:
+            raise ValueError("La clé API Mistral n'est pas configurée.")
+
+        client = Mistral(api_key=MISTRAL_API_KEY)
+        response = client.chat.complete(
+            model="mistral-large-2411",
             messages=full_messages,
             temperature=0.3
         )
@@ -963,7 +955,6 @@ with st.sidebar.expander("ℹ️ Configuration des clés API"):
     Pour utiliser cette application, vous devez configurer les clés API suivantes
     dans vos variables d'environnement :
 
-    - `ALBERT_API_KEY` pour Albert Large
     - `MISTRAL_API_KEY` pour Mixtral 8x22B
     - `NEBIUS_API_KEY` pour GPT-OSS-120B
 
