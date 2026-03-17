@@ -558,7 +558,7 @@ def call_model(model_choice, system_prompt, messages_history):
             api_key=NEBIUS_API_KEY
         )
         response = client.chat.completions.create(
-            model="nvidia/nemotron-3-super-120b-a12b",
+            model="nvidia/nemotron-3-super-120b-a12b-fast",
             messages=full_messages,
             temperature=0.3
         )
