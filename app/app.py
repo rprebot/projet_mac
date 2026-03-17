@@ -239,7 +239,8 @@ MODEL_TOKEN_LIMITS = {
     "Mixtral 8x22B (Mistral)": 64000,
     "Mistral-medium-2508": 128000,
     "Mistral Large 2": 131072,
-    "GPT-OSS-120B (Nebius)": 128000
+    "GPT-OSS-120B (Nebius)": 128000,
+    "Nemotron Super 120B (Nebius)": 128000
 }
 
 def estimate_tokens(text):
@@ -411,7 +412,7 @@ st.sidebar.header("Configuration")
 # Sélection du modèle
 model_choice = st.sidebar.selectbox(
     "Modèle LLM",
-    ["Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "Mistral Large 2", "GPT-OSS-120B (Nebius)"]
+    ["Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "Mistral Large 2", "GPT-OSS-120B (Nebius)", "Nemotron Super 120B (Nebius)"]
 )
 
 # Sélection du prompt système (incluant le prompt personnalisable)
@@ -546,6 +547,22 @@ def call_model(model_choice, system_prompt, messages_history):
                     "effort": "high"
                 }
             }
+        )
+        return response.choices[0].message.content
+
+    # Nemotron Super 120B via Nebius (OpenAI compatible)
+    elif model_choice == "Nemotron Super 120B (Nebius)":
+        if not NEBIUS_API_KEY:
+            raise ValueError("La clé API Nebius n'est pas configurée.")
+
+        client = OpenAI(
+            base_url="https://api.studio.nebius.ai/v1/",
+            api_key=NEBIUS_API_KEY
+        )
+        response = client.chat.completions.create(
+            model="nvidia/nemotron-3-super-120b-a12b",
+            messages=full_messages,
+            temperature=0.3
         )
         return response.choices[0].message.content
 
