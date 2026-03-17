@@ -8,6 +8,7 @@ from openai import OpenAI
 from mistralai import Mistral
 import requests
 from dotenv import load_dotenv
+import tiktoken
 
 # Charger les variables d'environnement depuis .env
 load_dotenv()
@@ -244,12 +245,13 @@ MODEL_TOKEN_LIMITS = {
 
 def estimate_tokens(text):
     """
-    Estime le nombre de tokens dans un texte.
-    Approximation : 1 token ≈ 4 caractères pour le français.
+    Compte le nombre de tokens dans un texte en utilisant tiktoken.
+    Utilise l'encodage cl100k_base (GPT-4, compatible avec la plupart des LLMs modernes).
     """
     if not text:
         return 0
-    return len(text) // 4
+    encoding = tiktoken.get_encoding("cl100k_base")
+    return len(encoding.encode(text))
 
 def count_messages_tokens(system_prompt, messages_history):
     """
