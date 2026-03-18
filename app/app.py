@@ -240,7 +240,7 @@ MODEL_TOKEN_LIMITS = {
     "Mistral-medium-2508": 128000,
     "Mistral Large 2": 131072,
     "GPT-OSS-120B (Nebius)": 128000,
-    "Nemotron Super 120B (Nebius)": 128000
+    "Nemotron Super 120B (Nebius)": 1000000
 }
 
 def estimate_tokens(text):
