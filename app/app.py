@@ -539,7 +539,8 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-small-2503",
             messages=full_messages,
-            temperature=0.3
+            temperature=0.3,
+            max_tokens=16384
         )
         return response.choices[0].message.content
 
