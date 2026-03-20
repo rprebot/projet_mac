@@ -239,7 +239,7 @@ MODEL_TOKEN_LIMITS = {
     "Mixtral 8x22B (Mistral)": 64000,
     "Mistral-medium-2508": 128000,
     "Mistral Large 2": 131072,
-    "Mistral Small 4": 32000,
+    "Mistral Small 4": 256000,
     "GPT-OSS-120B (Nebius)": 128000,
     "Nemotron Super 120B (Nebius)": 1000000
 }
