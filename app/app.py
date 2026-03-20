@@ -239,6 +239,7 @@ MODEL_TOKEN_LIMITS = {
     "Mixtral 8x22B (Mistral)": 64000,
     "Mistral-medium-2508": 128000,
     "Mistral Large 2": 131072,
+    "Mistral Small 4": 32000,
     "GPT-OSS-120B (Nebius)": 128000,
     "Nemotron Super 120B (Nebius)": 1000000
 }
@@ -412,7 +413,7 @@ st.sidebar.header("Configuration")
 # Sélection du modèle
 model_choice = st.sidebar.selectbox(
     "Modèle LLM",
-    ["Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "Mistral Large 2", "GPT-OSS-120B (Nebius)", "Nemotron Super 120B (Nebius)"]
+    ["Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "Mistral Large 2", "Mistral Small 4", "GPT-OSS-120B (Nebius)", "Nemotron Super 120B (Nebius)"]
 )
 
 # Sélection du prompt système (incluant le prompt personnalisable)
@@ -524,6 +525,19 @@ def call_model(model_choice, system_prompt, messages_history):
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-large-2411",
+            messages=full_messages,
+            temperature=0.3
+        )
+        return response.choices[0].message.content
+
+    # Mistral Small 4 (modèle compact performant)
+    elif model_choice == "Mistral Small 4":
+        if not MISTRAL_API_KEY:
+            raise ValueError("La clé API Mistral n'est pas configurée.")
+
+        client = Mistral(api_key=MISTRAL_API_KEY)
+        response = client.chat.complete(
+            model="mistral-small-2503",
             messages=full_messages,
             temperature=0.3
         )
