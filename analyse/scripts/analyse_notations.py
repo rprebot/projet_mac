@@ -1,10 +1,45 @@
+"""
+=============================================================================
+SCRIPT : analyse_notations.py
+=============================================================================
+
+DESCRIPTION :
+    Script d'analyse statistique des notations de modèles LLM.
+    Compare les performances des différents modèles sur 4 critères d'évaluation
+    en utilisant des moyennes post-stratifiées avec intervalles de confiance
+    calculés par bootstrap.
+
+FONCTIONNALITÉS :
+    - Charge les données de notation depuis un fichier CSV Tally
+    - Calcule les moyennes post-stratifiées par prompt pour corriger le biais
+      de distribution des prompts entre modèles
+    - Génère des intervalles de confiance à 95% par bootstrap (1000 itérations)
+    - Produit un graphique comparatif des modèles LLM
+
+CRITÈRES ANALYSÉS :
+    - Clarté : structure satisfaisante du résumé
+    - Précision : exactitude des éléments reportés
+    - Exhaustivité : tous les éléments clés sont-ils présents
+    - Intelligibilité : qualité du langage juridique
+
+OUTPUTS GÉNÉRÉS :
+    - ../output/graphique_moyennes_llm.png : Graphique des moyennes par modèle
+
+DONNÉES D'ENTRÉE :
+    - ../data/Notation assistant_Submissions_2026-02-26.csv
+
+USAGE :
+    python analyse_notations.py
+=============================================================================
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
 # Charger les données enrichies (avec colonne Dossier)
-df = pd.read_csv('../data/Notation assistant_Submissions_2026-02-09_enrichi.csv')
+df = pd.read_csv('../data/Notation assistant_Submissions_2026-02-26.csv')
 
 
 # =============================================================================
@@ -123,7 +158,7 @@ def bootstrap_multi_criteres(data, modele_col, strat_cols, criteres,
 df = df.rename(columns={
     'Clarté /  Est-ce que la structure est satisfaisante ? ': 'Clarté',
     'Précision / Est-ce que tous les éléments reportés sont exacts ? ': 'Précision',
-    'Fidélité / Est-ce que le résumé est fidèle au(x) document(s) source(s) ? ': 'Fidélité',
+    'Exhaustivité / tous les élément clés sont-ils présent ? ': 'Exhaustivité',
     'Intelligibilité de la réponse en langage juridique': 'Intelligibilité',
     'LLMmodel': 'Modèle',
     'Prompt': 'Type_Prompt'
@@ -149,6 +184,28 @@ df['Prompt_court'] = df['Type_Prompt'].replace({
     'Prompt personnalisable': 'Personnalisable'
 })
 
+# =============================================================================
+# FILTRAGE : Ne garder que les évaluations complètes (4 critères renseignés)
+# =============================================================================
+criteres_filtrage = ['Clarté', 'Précision', 'Exhaustivité', 'Intelligibilité']
+df_complet = df.dropna(subset=criteres_filtrage)
+
+print(f"=== FILTRAGE DES DONNÉES INCOMPLÈTES ===")
+print(f"Données initiales: {len(df)} évaluations")
+print(f"Données complètes (4 critères): {len(df_complet)} évaluations")
+print(f"Évaluations exclues: {len(df) - len(df_complet)} (données manquantes)")
+print()
+
+# Afficher ce qui a été exclu
+prompts_exclus = df[~df.index.isin(df_complet.index)].groupby('Prompt_court').size()
+print("Évaluations exclues par prompt:")
+for prompt, count in prompts_exclus.items():
+    print(f"  - {prompt}: {count}")
+print()
+
+# Utiliser les données filtrées pour l'analyse
+df = df_complet
+
 # Configuration du style
 plt.style.use('seaborn-v0_8-whitegrid')
 plt.rcParams['font.size'] = 10
@@ -156,8 +213,8 @@ plt.rcParams['axes.titlesize'] = 12
 plt.rcParams['axes.labelsize'] = 10
 
 # Critères et couleurs globaux
-criteres = ['Clarté', 'Précision', 'Fidélité', 'Intelligibilité']
-colors = {'Clarté': '#3498db', 'Précision': '#2ecc71', 'Fidélité': '#e74c3c', 'Intelligibilité': '#9b59b6'}
+criteres = ['Clarté', 'Précision', 'Exhaustivité', 'Intelligibilité']
+colors = {'Clarté': '#3498db', 'Précision': '#2ecc71', 'Exhaustivité': '#e74c3c', 'Intelligibilité': '#9b59b6'}
 n_bootstrap = 1000
 
 # =============================================================================
@@ -174,8 +231,8 @@ def generer_graphique_moyennes(data, output_file, titre_suffix="", n_bootstrap=1
         n_bootstrap: Nombre d'itérations bootstrap
         strat_cols: Colonne(s) de stratification (str ou list)
     """
-    criteres = ['Clarté', 'Précision', 'Fidélité', 'Intelligibilité']
-    colors = {'Clarté': '#3498db', 'Précision': '#2ecc71', 'Fidélité': '#e74c3c', 'Intelligibilité': '#9b59b6'}
+    criteres = ['Clarté', 'Précision', 'Exhaustivité', 'Intelligibilité']
+    colors = {'Clarté': '#3498db', 'Précision': '#2ecc71', 'Exhaustivité': '#e74c3c', 'Intelligibilité': '#9b59b6'}
 
     # Calculer les résultats bootstrap pour tous les critères
     results_bootstrap = bootstrap_multi_criteres(
@@ -202,9 +259,20 @@ def generer_graphique_moyennes(data, output_file, titre_suffix="", n_bootstrap=1
     for i, critere in enumerate(criteres):
         offset = (i - 1.5) * width
         moyennes_critere = [results_bootstrap[critere]['moyennes'].get(m, np.nan) for m in modeles_sorted]
+        ci_lower = [results_bootstrap[critere]['ci_lower'].get(m, np.nan) for m in modeles_sorted]
+        ci_upper = [results_bootstrap[critere]['ci_upper'].get(m, np.nan) for m in modeles_sorted]
+
+        # Calculer les erreurs pour les barres d'erreur
+        yerr_lower = [m - l if not (np.isnan(m) or np.isnan(l)) else 0 for m, l in zip(moyennes_critere, ci_lower)]
+        yerr_upper = [u - m if not (np.isnan(m) or np.isnan(u)) else 0 for m, u in zip(moyennes_critere, ci_upper)]
 
         bars = ax.bar(x + offset, moyennes_critere, width,
                        label=critere, color=colors[critere])
+
+        # Ajouter les barres d'erreur IC 95% (affichage discret)
+        ax.errorbar(x + offset, moyennes_critere, yerr=[yerr_lower, yerr_upper],
+                    fmt='none', ecolor='#555555', capsize=1.5, capthick=0.5,
+                    linewidth=0.5, alpha=0.6)
 
         # Ajouter les valeurs sur les barres
         for j, bar in enumerate(bars):
@@ -249,39 +317,16 @@ def generer_graphique_moyennes(data, output_file, titre_suffix="", n_bootstrap=1
 print("Calcul des moyennes post-stratifiées avec bootstrap (1000 itérations)...")
 print(f"  - Données complètes: {len(df)} lignes")
 
-criteres = ['Clarté', 'Précision', 'Fidélité', 'Intelligibilité']
+criteres = ['Clarté', 'Précision', 'Exhaustivité', 'Intelligibilité']
 n_bootstrap = 1000
 
 results_bootstrap, modeles_sorted = generer_graphique_moyennes(
     df,
     '../output/graphique_moyennes_llm.png',
-    titre_suffix='(Toutes les données - correction biais distribution prompts)',
+    titre_suffix='(Évaluations complètes uniquement - 4 critères renseignés)',
     n_bootstrap=n_bootstrap
 )
 
-print("✓ Graphique 1 sauvegardé : ../output/graphique_moyennes_llm.png")
+print("✓ Graphique sauvegardé : ../output/graphique_moyennes_llm.png")
 
-# =============================================================================
-# GRAPHIQUE 1 SMALL PROMPT : Moyennes (sans dossiers 5 et 6, mais avec tests sans dossier)
-# =============================================================================
-# Filtrer: Exclure seulement les dossiers 5 et 6 (garder les tests sans dossier)
-df_small = df[~df['Dossier'].isin([5, 6])].copy()
-
-print(f"\n  - Données filtrées (sans dossiers 5 et 6, tests sans dossier inclus): {len(df_small)} lignes")
-dossiers_inclus = df_small['Dossier'].dropna().unique()
-n_sans_dossier = df_small['Dossier'].isna().sum()
-print(f"    Dossiers inclus: {sorted(dossiers_inclus)} + {n_sans_dossier} tests sans dossier")
-
-if len(df_small) > 0:
-    generer_graphique_moyennes(
-        df_small,
-        '../output/graphique_moyennes_llm_small_prompt.png',
-        titre_suffix='(Sans dossiers 5 et 6 - Post-stratification par Prompt)',
-        n_bootstrap=n_bootstrap,
-        strat_cols='Prompt_court'  # Stratification par prompt uniquement
-    )
-    print("✓ Graphique 1 small prompt sauvegardé : ../output/graphique_moyennes_llm_small_prompt.png")
-else:
-    print("⚠ Pas assez de données filtrées pour générer le graphique small prompt")
-
-print("\n✅ Graphiques générés avec succès !")
+print("\n✅ Analyse terminée avec succès !")

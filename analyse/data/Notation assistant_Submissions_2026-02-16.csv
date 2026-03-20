@@ -1,5 +1,5 @@
-Submission ID,Respondent ID,Submitted at,Clarté /  Est-ce que la structure est satisfaisante ? ,Précision / Est-ce que tous les éléments reportés sont exacts ? ,En particulier est ce que les fais constants sont correctement repris ? ,Fidélité / Est-ce que le résumé est fidèle au(x) document(s) source(s) ? ,Y a-t-il des faits inventés ?,Exhaustivité / tous les élément clés sont-ils présent ? ,Intelligibilité de la réponse en langage juridique,Est-ce que le temps employé est bien le passé composé ?,Le résumé est-il utilisable,Pourquoi ?,Question,Answer,Prompt,LLMmodel,Autre chose à rajouter ?,Notation de la longueur de la réponse,Dossier
-44bRkZA,687NLx5,2026-01-19 15:40:16,,1.0,,,,,,,Non,manque de raisonnement,"Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
+﻿"Submission ID","Respondent ID","Submitted at","Clarté /  Est-ce que la structure est satisfaisante ? ","Précision / Est-ce que tous les éléments reportés sont exacts ? ","En particulier est ce que les fais constants sont correctement repris ? ","Fidélité / Est-ce que le résumé est fidèle au(x) document(s) source(s) ? ","Y a-t-il des faits inventés ?","Exhaustivité / tous les élément clés sont-ils présent ? ","Intelligibilité de la réponse en langage juridique","Est-ce que le temps employé est bien le passé composé ?","Le résumé est-il utilisable","Pourquoi ?","Question","Answer","Prompt","LLMmodel","Autre chose à rajouter ?","Notation de la longueur de la réponse"
+"44bRkZA","687NLx5","2026-01-19 15:40:16","","1","","","","","","","Non","manque de raisonnement","Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
 ONCLUSIONS D'APPEL n°3
    
 
@@ -23,8 +23,8 @@ ONCLUSIONS D'APPEL n°3
 
 Monsieur [A] [L], né le [Date naissance 4] 1938, s'est marié en premières noces avec Madame [M] [X] en 1969. De cette union sont nées deux filles, [W] [L] née le [Date naissance 2] 1963 et [U] [L] née le [Date naissance 3] 1969. Madame [M] [X] est décédée le [Date décès 1] 2003.
 
-En 2007, Monsieur [A] [L] a entamé une relation avec Madame [J] [H] [Z] [N], de 26 ans sa cadette. En 2012, ils ont créé une SCI nommée [Personne Morale 6] pour",Synthèse Rapport,Albert Large,prompt à partir des conclusions brutes,Appropriée,
-MexlY8Y,687NLx5,2026-01-19 15:48:25,,1.0,,,,,,,Non,,"Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
+En 2007, Monsieur [A] [L] a entamé une relation avec Madame [J] [H] [Z] [N], de 26 ans sa cadette. En 2012, ils ont créé une SCI nommée [Personne Morale 6] pour","Synthèse Rapport","Albert Large","prompt à partir des conclusions brutes","Appropriée"
+"MexlY8Y","687NLx5","2026-01-19 15:48:25","","1","","","","","","","Non","","Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
 ONCLUSIONS D'APPEL n°3
    
 
@@ -50,8 +50,8 @@ ONCLUSIONS D'APPEL n°3
 
 **a. Contexte familial et relationnel**
 - Monsieur [A] [L], né le [Date naissance 4] 1938, était marié en premières noces avec Madame [M] [X] sous le régime de la communauté universelle. De cette union sont nées deux filles, Mesdames [I] [O] [L] (née en 1963) et [B] [W] [L] (née en 1969). Madame [M] [X] est décédée le [Date décès 1] 2003.
-- En 2007, Monsieur [A] [L] entame une",Synthèse Rapport,Mixtral 8x22B (Mistral),prompt synthèse avec conclu brutes,manque raisonnellent car pas d'expression littéraire,
-lbEXgYo,687NLx5,2026-01-19 16:24:14,,2.0,,,,,,,Non,pas d'identification des faits constants,"A l'aide de ces deux résumés des faits, peux selon prompt sélection rédiger une synthèse des deux résumés ?","### **SYNTHÈSE DES FAITS ET DE LA PROCÉDURE**
+- En 2007, Monsieur [A] [L] entame une","Synthèse Rapport","Mixtral 8x22B (Mistral)","prompt synthèse avec conclu brutes","manque raisonnellent car pas d'expression littéraire"
+"lbEXgYo","687NLx5","2026-01-19 16:24:14","","2","","","","","","","Non","pas d'identification des faits constants","A l'aide de ces deux résumés des faits, peux selon prompt sélection rédiger une synthèse des deux résumés ?","### **SYNTHÈSE DES FAITS ET DE LA PROCÉDURE**
 *(Affaire n°20/10075 – Cour d’appel de Paris, Pôle 1, Chambre 1)*
 
 ---
@@ -61,8 +61,8 @@ Monsieur [A] [L]/[E]¹, né en 1938, a été marié en premières noces avec Mad
 - Madame [I]/[W] [O]/[D] [L]/[E], née en **1963**,
 - Madame [B]/[U] [W]/[T] [L]/[E], née en **1969**.
 
-En **2003/2007**, Monsieur [A] [L]/[E] entame",Synthèse Rapport,Mixtral 8x22B (Mistral),,,
-pb2X97q,687NLx5,2026-01-19 16:31:10,,3.0,,,,,,,En partie,il faut élaguer les faits constants mais les moyens sont bien résumés,"Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
+En **2003/2007**, Monsieur [A] [L]/[E] entame","Synthèse Rapport","Mixtral 8x22B (Mistral)","",""
+"pb2X97q","687NLx5","2026-01-19 16:31:10","","3","","","","","","","En partie","il faut élaguer les faits constants mais les moyens sont bien résumés","Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
 ONCLUSIONS D'APPEL n°3
    
 
@@ -86,8 +86,8 @@ ONCLUSIONS D'APPEL n°3
 Monsieur [A] [L], né le [Date naissance 4] 1938, était marié avec Madame [M] [X] sous le régime de la communauté universelle au dernier vivant. Ils ont eu deux filles : Madame [I] [O] [L], née le [Date naissance 1] 1963, et Madame [B] [W] [L], née le [Date naissance 2] 1969. Madame [M] [X] est décédée le [Date décès 1] 2003.
 
 #### **Relation entre Monsieur [A] [L] et Madame [D] [N] (2007)**
-En 2007, Monsieur [A] [L] a entamé ",Synthèse Rapport,Mistral-medium-2508 (modèle assistant numérique),,Appropriée,
-81lVylr,687NLx5,2026-01-19 16:36:44,,1.0,,,,,,,Non,,"Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
+En 2007, Monsieur [A] [L] a entamé ","Synthèse Rapport","Mistral-medium-2508 (modèle assistant numérique)","","Appropriée"
+"81lVylr","687NLx5","2026-01-19 16:36:44","","1","","","","","","","Non","","Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
 ONCLUSIONS D'APPEL n°3
    
 
@@ -109,16 +109,16 @@ ONCLUSIONS D'APPEL n°3
 
 - **Première union** – Monsieur [A] [L] (né le [Date naissance 4] 1938) a contracté son premier mariage avec Madame [M] [X] sous le régime de la communauté universelle. Cette union a donné naissance aux deux filles, Madame [I] [O] [L] (née le [Date naissance 1] 1963) et Madame [B] [W] [L] (née le [Date naissance 2] 1969). Madame [M] [X] est décédée le [Date décès 1] 2003.  
 
-- **Relation avec Madame [N]** – En 2007, Monsieur [A] [L] a commencé une relation avec Madame [J] [H] [Z] ",Synthèse Rapport,GPT-OSS-120B (Nebius),synthèse à partir des conclu brutes ,pas assez ltérraire et manque de raisonnement,
-0QWzzM6,687NLx5,2026-01-19 16:42:18,,4.0,,,,,,,Oui,,"Peux tu à l'aide des deux résumés de conclusions me synthétiser les moyens de l'appelante et de l'intimé PARTIES
+- **Relation avec Madame [N]** – En 2007, Monsieur [A] [L] a commencé une relation avec Madame [J] [H] [Z] ","Synthèse Rapport","GPT-OSS-120B (Nebius)","synthèse à partir des conclu brutes ","pas assez ltérraire et manque de raisonnement"
+"0QWzzM6","687NLx5","2026-01-19 16:42:18","","4","","","","","","","Oui","","Peux tu à l'aide des deux résumés de conclusions me synthétiser les moyens de l'appelante et de l'intimé PARTIES
 APPELANTES (Demanderesses à l'appel)
 Madame [I] [O] [L] Née le [Date naissance 1] 1963 à [Localité 1] (75), de nationalité française, demeurant [Adresse 1] à [Localité 2], exerçant la profession de médiatrice chez [Personne Morale 1].
 Madame [B] [W] [L] Née le [Date naissance 2] 1969 à [Localité 3] (75), de nationalité française, demeurant [Adresse 2] (22), exerçant la profession de c","**MOYENS DE L’APPELANTE / DEMANDERESSE**  
 
 L’appelante fait valoir que, le 18 février 2017, Monsieur [A] [L] était atteint d’une altération exclusive de ses facultés physiques et mentales, le privant de tout consentement valable ; elle s’appuie sur les articles 146, 184, 187 et 210 du Code civil ainsi que sur la jurisprudence (Cass. civ. 1ᵉ, 4 mai 2011, n° 09‑68‑983 ; CA Bordeaux, 5 mai 2009 ; CA Toulouse, 30 mai 2017 ; CA Versailles, 26 oct. 2006).  
 
-Elle invoque l’historique médical de Monsi",Synthèse Rapport,GPT-OSS-120B (Nebius),synthèse des résumés des moyens des 2 parties ,Appropriée,
-xXWEqE9,687NLx5,2026-01-19 17:07:51,,1.0,,,,,,,Non,pas assez articulé,"Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
+Elle invoque l’historique médical de Monsi","Synthèse Rapport","GPT-OSS-120B (Nebius)","synthèse des résumés des moyens des 2 parties ","Appropriée"
+"xXWEqE9","687NLx5","2026-01-19 17:07:51","","1","","","","","","","Non","pas assez articulé","Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? Voici les conclusions de l’appelante :
 ONCLUSIONS D'APPEL n°3
    
 
@@ -147,9 +147,9 @@ Les faits sont les suivants :
 - Il a eu deux filles, Madame [I] [O] [L] et Madame [B] [W] [L].
 - Madame [M] [X] est décédée le 11 [Date décès 1] 2003.
 - Monsieur [A] [L] a ensuite entamé une relation avec Madame [J] [H] [Z] [N], qui deviendra son épouse.
-- Les f",Synthèse Rapport,Llama 3.3 70B (Nebius),"prompt synthèse conclusions brutes; c'est tellement résumé que la partie faits constants est presque bonne. 
-mais les moyens sont trop succincts et pas assez articulés",Trop courte (il manque des informations importantes),
-7RkOGMz,687NLx5,2026-01-19 17:19:17,,1.0,,,,,,,Non,,"A partir des résumés joints peux tu me synthétiser les moyens des parties. voici le résumé des conclusions de l'appelante résumé ccl appelante 
+- Les f","Synthèse Rapport","Llama 3.3 70B (Nebius)","prompt synthèse conclusions brutes; c'est tellement résumé que la partie faits constants est presque bonne. 
+mais les moyens sont trop succincts et pas assez articulés","Trop courte (il manque des informations importantes)"
+"7RkOGMz","687NLx5","2026-01-19 17:19:17","","1","","","","","","","Non","","A partir des résumés joints peux tu me synthétiser les moyens des parties. voici le résumé des conclusions de l'appelante résumé ccl appelante 
 
 APPELANTES (Demanderesses à l'appel)
 Madame [I] [O] [L] Née le [Date naissance 1] 1963 à [Localité 1] (75), de nationalité française, demeurant [Adresse 1] à [Localité 2], exerçant la profession de médiatrice chez [Personne Morale 1].
@@ -157,8 +157,8 @@ Madame [B] [W] [L] Née le [Date naissance 2] 1969 à [Localité 3] (75), de nat
 
 Les appelantes invoquent les moyens suivants pour demander l'annulation du mariage de leur père, Monsieur [A] [L], avec Madame [J] [H] [Z] [N] :
 
-1. **Incacité de Monsieur [A] [L] à consentir valablement à son mariage** : Ils arguent que leur père était atteint d'un méningiome du lobe frontal gauche diagnostiqué en 2010, ce qui a entraîné une altération progressive de ses facultés cognitives et physiques. Les experti",Synthèse Rapport,Llama 3.3 70B (Nebius),sauf à vouloir une synthèse light,Trop courte (il manque des informations importantes),
-q4lq5M2,687NLx5,2026-01-19 17:42:55,,1.0,,,,,,,Non,,"Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? 
+1. **Incacité de Monsieur [A] [L] à consentir valablement à son mariage** : Ils arguent que leur père était atteint d'un méningiome du lobe frontal gauche diagnostiqué en 2010, ce qui a entraîné une altération progressive de ses facultés cognitives et physiques. Les experti","Synthèse Rapport","Llama 3.3 70B (Nebius)","sauf à vouloir une synthèse light","Trop courte (il manque des informations importantes)"
+"q4lq5M2","687NLx5","2026-01-19 17:42:55","","1","","","","","","","Non","","Bonjour peux tu établir une synthèse de deux conclusions ci-dessous en respectant les consignes données dans le prompt ? 
 voici les conclusions de l’appelante
 Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
@@ -186,8 +186,8 @@ Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 
 
 Le 12 juin 2015, la société [Personne Morale 1] (bailleur) a donné à bail à la société [Personne Morale 4] (preneur) des locaux commerciaux situés [Adresse 4] à [Localité 1], destinés à une activité de « boucherie, triperie, salaisons, volaille, traiteur, sandwicherie élaborée à partir des produits précités avec possibilité de consommation sur place, à l'exclusion de toute autre utilisation ».
 
-Le bail commercial d'une durée de 9 ans a p",Synthèse Rapport,Albert Large,mauvaise identification des faits constants ; devpt des moyens pas assez articulé,,15
-GxPPv0L,687NLx5,2026-01-20 08:34:36,,2.0,,,,,,,En partie,Il y a eu des faits oubliés ou mal restitués,"Peux tu rédiger une synthèse selon les consignes du prompt à partir des deux résumés de conclusions suivants :voici le résumé des conclusions du demandeur PARTIES
+Le bail commercial d'une durée de 9 ans a p","Synthèse Rapport","Albert Large","mauvaise identification des faits constants ; devpt des moyens pas assez articulé",""
+"GxPPv0L","687NLx5","2026-01-20 08:34:36","","2","","","","","","","En partie","Il y a eu des faits oubliés ou mal restitués","Peux tu rédiger une synthèse selon les consignes du prompt à partir des deux résumés de conclusions suivants :voici le résumé des conclusions du demandeur PARTIES
 À Madame le Président du Tribunal judiciaire de Paris statuant en référé
 CONCLUSIONS EN RÉPONSE N°3
 Pour :
@@ -198,8 +198,8 @@ La société [Personne Morale 1], société civile de placement immobilier, dont
 
 ### **1. FAITS**
 
-Par acte sous seing privé en date du **12 juin 2015**, la société **[Personne Morale 1]** (ci-après « le bailleur »), société civile de placement immobilier, a consenti à bail commercial à la société **[Personne Morale 4]** des locaux situés **[Adresse 4] à [Localité 1]**, pour une durée de neuf ans prenant effet le **1er juin 2015**. Le bail autorisait une activité exclusive ",Synthèse Rapport,Mixtral 8x22B (Mistral),les faits constants et la procédure ne ressort pas suffisamment bien ,Appropriée,15
-ODNNzYk,687NLx5,2026-01-20 09:21:22,,2.0,,,,,,,Non,,"Peux tu résumer de façon littérale les conclusions jointes en utilisant le présent et le passé composé tout en respectant la concordance des temps  et en limitant les bullets points : Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+Par acte sous seing privé en date du **12 juin 2015**, la société **[Personne Morale 1]** (ci-après « le bailleur »), société civile de placement immobilier, a consenti à bail commercial à la société **[Personne Morale 4]** des locaux situés **[Adresse 4] à [Localité 1]**, pour une durée de neuf ans prenant effet le **1er juin 2015**. Le bail autorisait une activité exclusive ","Synthèse Rapport","Mixtral 8x22B (Mistral)","les faits constants et la procédure ne ressort pas suffisamment bien ","Appropriée"
+"ODNNzYk","687NLx5","2026-01-20 09:21:22","","2","","","","","","","Non","","Peux tu résumer de façon littérale les conclusions jointes en utilisant le présent et le passé composé tout en respectant la concordance des temps  et en limitant les bullets points : Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -227,8 +227,8 @@ ODNNzYk,687NLx5,2026-01-20 09:21:22,,2.0,,,,,,,Non,,"Peux tu résumer de façon 
 La société [Personne Morale 1], société civile de placement immobilier, dont le siège social est situé [Adresse 1], immatriculée au Registre du Commerce et des Sociétés de Nanterre sous le n°317 326 155, agissant poursuites et diligences de son représentant légal en exercice, domicilié en cette qualité audit siège.
 
 **Ayant pour avocat :**
-SELARL d'avocats inter-barreaux, représentée par Maître Nicolas BOYTCHEV, avocat au Bar",Résumé Conclusions,Mistral-medium-2508 (modèle assistant numérique),,n'a pas bien suivi les consignes du prompt,15
-eqXX7jx,687NLx5,2026-01-20 09:50:57,,2.0,,,,,,,Non,présentation sous forme de bullet point sans rédaction suffisante,"Selon les consignes du prompt peux tu établir un  résumé des conclusions du défendeur A Monsieur le Président  du Tribunal Judiciaire de PARIS statuant en référé
+SELARL d'avocats inter-barreaux, représentée par Maître Nicolas BOYTCHEV, avocat au Bar","Résumé Conclusions","Mistral-medium-2508 (modèle assistant numérique)","","n'a pas bien suivi les consignes du prompt"
+"eqXX7jx","687NLx5","2026-01-20 09:50:57","","2","","","","","","","Non","présentation sous forme de bullet point sans rédaction suffisante","Selon les consignes du prompt peux tu établir un  résumé des conclusions du défendeur A Monsieur le Président  du Tribunal Judiciaire de PARIS statuant en référé
    
 
 
@@ -260,8 +260,8 @@ Siège social : [Adresse 1]
 Agissant pour les poursuites et diligences de son représentant légal domicilié audit siège, ès qualité.
 
 **Défenderesse demanderesse reconventionnelle**  
-Représentée par : **SAS [Pers",Résumé Conclusions,GPT-OSS-120B (Nebius),,Appropriée,15
-gDooQM1,687NLx5,2026-01-20 09:57:40,,0.0,,,,,,,Non,Il y a des moyens qui n'ont pas été repris,"Selon les consignes du prompt peux tu résumer les conclusions du défendeur PARTIES
+Représentée par : **SAS [Pers","Résumé Conclusions","GPT-OSS-120B (Nebius)","","Appropriée"
+"gDooQM1","687NLx5","2026-01-20 09:57:40","","0","","","","","","","Non","Il y a des moyens qui n'ont pas été repris","Selon les consignes du prompt peux tu résumer les conclusions du défendeur PARTIES
 POUR :
 La Société [Personne Morale 1]
 Société par Actions Simplifiée immatriculée au RCS de [Localité 1] sous le n° [N° SIREN/SIRET 1]
@@ -275,8 +275,8 @@ CONTR","RÉSUMÉ DE CONCLUSION [Type d'acte : Conclusions de défendeur demander
 
 ### PARTIES
 
-* **La Société [Personne Morale 1]** : Société par Actions Simplifiée, immatriculée au RCS de [Localité 1] sous le n° [N° SIREN/SIRET 1], siège social : [Adresse 1]. Agissant pour les poursuites et diligences de son représentant légal domicilié audit siège, ès qualité. Défenderesse demanderesse reconventionnelle, représentée par : SAS [Personne Morale 2], Maître [P] [Q] – Avocat au Barreau ",Résumé Conclusions,Llama 3.3 70B (Nebius),,Trop courte (il manque des informations importantes),15
-b5JJNOe,687NLx5,2026-01-20 10:02:27,,0.0,,,,,,,Non,Il y a des moyens qui n'ont pas été repris,"Peux tu en respectant les consignes du prompt établir une synthèse des conclusions du demandeur et du défendeur: voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+* **La Société [Personne Morale 1]** : Société par Actions Simplifiée, immatriculée au RCS de [Localité 1] sous le n° [N° SIREN/SIRET 1], siège social : [Adresse 1]. Agissant pour les poursuites et diligences de son représentant légal domicilié audit siège, ès qualité. Défenderesse demanderesse reconventionnelle, représentée par : SAS [Personne Morale 2], Maître [P] [Q] – Avocat au Barreau ","Résumé Conclusions","Llama 3.3 70B (Nebius)","","Trop courte (il manque des informations importantes)"
+"b5JJNOe","687NLx5","2026-01-20 10:02:27","","0","","","","","","","Non","Il y a des moyens qui n'ont pas été repris","Peux tu en respectant les consignes du prompt établir une synthèse des conclusions du demandeur et du défendeur: voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -304,8 +304,8 @@ Le présent litige oppose la société [Personne Morale 1], demanderesse, et la 
 
 ### Faits
 
-- Le bail commercial a été conclu le 12 juin 2015 pou",Synthèse Rapport,Llama 3.3 70B (Nebius),"trop court, oubli de faits et prétentions; moyens non articulés",Trop courte (il manque des informations importantes),15
-D4GGxeN,687NLx5,2026-01-20 10:11:35,,1.0,,,,,,,Non,Il y a des moyens qui n'ont pas été repris,"Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes : voici les conclusions du demandeur :Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+- Le bail commercial a été conclu le 12 juin 2015 pou","Synthèse Rapport","Llama 3.3 70B (Nebius)","trop court, oubli de faits et prétentions; moyens non articulés","Trop courte (il manque des informations importantes)"
+"D4GGxeN","687NLx5","2026-01-20 10:11:35","","1","","","","","","","Non","Il y a des moyens qui n'ont pas été repris","Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes : voici les conclusions du demandeur :Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -330,8 +330,8 @@ D4GGxeN,687NLx5,2026-01-20 10:11:35,,1.0,,,,,,,Non,Il y a des moyens qui n'ont p
 **FAITS**
 
 - Le 12 juin 2015, la société [Personne Morale 3] a donné à bail à la société [Personne Morale 6] des locaux commerciaux situés [Adresse 2] à [Localité 2] pour une durée de 9 ans, à usage exclusif de commerce de boucherie, triperie, salaisons, volaille, traiteur, et de sandwicherie élaborée à partir de ces produits avec possibilité de consommation sur place.
-- La société",Synthèse Rapport,Llama 3.3 70B (Nebius),"la structure est bonne mais c'est trop court, pas assez précis et donc incomplet",Trop courte (il manque des informations importantes),15
-xXWWzOG,687NLx5,2026-01-20 10:27:49,,2.0,,,,,,,Non,Il y a eu des faits oubliés ou mal restitués,"Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes : Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+- La société","Synthèse Rapport","Llama 3.3 70B (Nebius)","la structure est bonne mais c'est trop court, pas assez précis et donc incomplet","Trop courte (il manque des informations importantes)"
+"xXWWzOG","687NLx5","2026-01-20 10:27:49","","2","","","","","","","Non","Il y a eu des faits oubliés ou mal restitués","Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes : Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -355,8 +355,8 @@ xXWWzOG,687NLx5,2026-01-20 10:27:49,,2.0,,,,,,,Non,Il y a eu des faits oubliés 
 
 1. Le 12 juin 2015, la société [Personne Morale 1] a conclu un bail commercial d’une durée de neuf ans avec la société [Personne Morale 4] portant sur des locaux situés [Adresse 4] à [Localité 1]. Le bail autorise exclusivement les activités de « boucherie – triperie – salaisons – volaille – traiteur » ainsi que la « sandwicherie élaborée avec consommation sur place » (pièce n° 1).  
 
-2. La société [Personne Morale 2] a successivement repris le fonds de commerce de la société [Perso",Synthèse Rapport,GPT-OSS-120B (Nebius),ce n'est pas assez précis; la  structure est bonne,Appropriée,15
-9qKKrK5,687NLx5,2026-01-20 10:31:30,,3.0,,,,,,,Oui,,"Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes : Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+2. La société [Personne Morale 2] a successivement repris le fonds de commerce de la société [Perso","Synthèse Rapport","GPT-OSS-120B (Nebius)","ce n'est pas assez précis; la  structure est bonne","Appropriée"
+"9qKKrK5","687NLx5","2026-01-20 10:31:30","","3","","","","","","","Oui","","Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes : Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -381,8 +381,8 @@ xXWWzOG,687NLx5,2026-01-20 10:27:49,,2.0,,,,,,,Non,Il y a eu des faits oubliés 
 #### **1. Contexte locatif initial**
 Par acte en date du 12 juin 2015, la société [Personne Morale 1] (le bailleur) a donné à bail à la société [Personne Morale 4] des locaux commerciaux situés [Adresse 4] à [Localité 1]. Ce bail, d'une durée de 9 ans prenant effet le 1er juin 2015, prévoyait une destination exclusive des lieux pour les activités suivantes :
 - Boucherie, triperie, salaisons, volaille, traiteur.
-- Sandwicherie élaborée à partir des produits précités, avec possibili",Synthèse Rapport,Mistral-medium-2508 (modèle assistant numérique),,Appropriée,15
-2E66yoA,687NLx5,2026-01-20 10:47:55,,4.0,,,,,,,Oui,,"Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes : voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+- Sandwicherie élaborée à partir des produits précités, avec possibili","Synthèse Rapport","Mistral-medium-2508 (modèle assistant numérique)","","Appropriée"
+"2E66yoA","687NLx5","2026-01-20 10:47:55","","4","","","","","","","Oui","","Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes : voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -411,8 +411,8 @@ Par acte en date du 12 juin 2015, la société [Personne Morale 1] (le bailleur)
 ## **1️⃣ FAITS**
 
 ### **Contexte locatif**
-Par acte sous seing privé en date du **12 juin 2015**, la **société [Personne Morale 1]** (ci-après « le bailleur »), société civile de placement immobilier, a consenti un bail commercial d’une durée de **9 ans** à la **société [Personne Morale 4]** pour des locaux situés **[Adresse 4] à [Localité 1]**, à usage exc",Synthèse Rapport,Mixtral 8x22B (Mistral),"trop de faits constants, à élaguer ",Appropriée,15
-0QWWYK6,687NLx5,2026-01-20 11:01:47,,2.0,,,,,,,Non,Il y a eu des faits oubliés ou mal restitués,"
+Par acte sous seing privé en date du **12 juin 2015**, la **société [Personne Morale 1]** (ci-après « le bailleur »), société civile de placement immobilier, a consenti un bail commercial d’une durée de **9 ans** à la **société [Personne Morale 4]** pour des locaux situés **[Adresse 4] à [Localité 1]**, à usage exc","Synthèse Rapport","Mixtral 8x22B (Mistral)","trop de faits constants, à élaguer ","Appropriée"
+"0QWWYK6","687NLx5","2026-01-20 11:01:47","","2","","","","","","","Non","Il y a eu des faits oubliés ou mal restitués","
 Peux tu en respectant les consignes générales du prompt, établir une synthèse des parties ""faits"" ""procédure"" et ""prétentions"" contenues dans les deux jeux de conclusions suivantes :
 voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
@@ -440,8 +440,8 @@ voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54
 
 Le **12 juin 2015**, la société **[Personne Morale 1]** (bailleur) a conclu un bail commercial avec la société **[Personne Morale 4]** pour des locaux situés **[Adresse 4]** à **[Localité 1]**. Ce bail, d'une durée de 9 ans prenant effet le **1er juin 2015**, autorisait les activités suivantes :
 - Boucherie, triperie, salaisons, volaille, traiteur ;
-- Sandwicherie élaborée à partir des produits précités avec possibilité de consommation s",Synthèse Rapport,Albert Large,il manque des faits ; consignes pas respectées puisque les moyens sont mentionnés : manque assignation ,Trop courte (il manque des informations importantes),15
-QKQQlo7,687NLx5,2026-01-20 11:10:44,,3.0,,,,,,,En partie,Il y a eu des faits oubliés ou mal restitués,"en respectant les consignes du prompt, peux tu établir une synthèses des deux conclusions ci dessous. Voici les conclusions du demandeur : Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+- Sandwicherie élaborée à partir des produits précités avec possibilité de consommation s","Synthèse Rapport","Albert Large","il manque des faits ; consignes pas respectées puisque les moyens sont mentionnés : manque assignation ","Trop courte (il manque des informations importantes)"
+"QKQQlo7","687NLx5","2026-01-20 11:10:44","","3","","","","","","","En partie","Il y a eu des faits oubliés ou mal restitués","en respectant les consignes du prompt, peux tu établir une synthèses des deux conclusions ci dessous. Voici les conclusions du demandeur : Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -467,8 +467,8 @@ QKQQlo7,687NLx5,2026-01-20 11:10:44,,3.0,,,,,,,En partie,Il y a eu des faits oub
 
 Le 12 juin 2015, la société [Personne Morale 1], bailleur, a donné à bail à la société [Personne Morale 4] des locaux commerciaux situés [Adresse 4] à [Localité 1], destinés à l'usage exclusif de commerce de boucherie, triperie, salaisons, volaille, traiteur et sandwicherie élaborée à partir des produits précités avec possibilité de consommation sur place. Ce bail commercial d'une durée de 9 ans a pris effet le 1er juin 2015.
 
-Par la suite, la ",Synthèse Rapport,Albert Large,manque assignation ; mais rédaction littéraire bonne ,Appropriée,15
-ZjB7EkB,687NLx5,2026-01-20 12:12:58,,2.0,,,,,,,Non,trop de tirets et raisonnement pas assez articulé,"en respectant les consignes du prompt peux tu établir une synthèse de conclusions suivantes. voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+Par la suite, la ","Synthèse Rapport","Albert Large","manque assignation ; mais rédaction littéraire bonne ","Appropriée"
+"ZjB7EkB","687NLx5","2026-01-20 12:12:58","","2","","","","","","","Non","trop de tirets et raisonnement pas assez articulé","en respectant les consignes du prompt peux tu établir une synthèse de conclusions suivantes. voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -497,8 +497,8 @@ ZjB7EkB,687NLx5,2026-01-20 12:12:58,,2.0,,,,,,,Non,trop de tirets et raisonnemen
 ## **1️⃣ FAITS**
 
 ### **Contexte locatif**
-Par acte sous seing privé en date du **12 juin 2015**, la société **[Personne Morale 1]** (ci-après « le bailleur »), société civile de placement immobilier, a consenti un bail commercial d’une durée de **9 ans** à la société **[Personne Morale 4]**, prenant effet le **1er juin 2015**, pour des locaux situés **[Adr",Synthèse Rapport,Mixtral 8x22B (Mistral),,Appropriée,15
-ODN2GzK,687NLx5,2026-01-20 12:23:03,,1.0,,,,,,,Non,Il y a eu des faits oubliés ou mal restitués,"en respectant les consignes du prompt peux tu établir une synthèse de conclusions suivantes. voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+Par acte sous seing privé en date du **12 juin 2015**, la société **[Personne Morale 1]** (ci-après « le bailleur »), société civile de placement immobilier, a consenti un bail commercial d’une durée de **9 ans** à la société **[Personne Morale 4]**, prenant effet le **1er juin 2015**, pour des locaux situés **[Adr","Synthèse Rapport","Mixtral 8x22B (Mistral)","","Appropriée"
+"ODN2GzK","687NLx5","2026-01-20 12:23:03","","1","","","","","","","Non","Il y a eu des faits oubliés ou mal restitués","en respectant les consignes du prompt peux tu établir une synthèse de conclusions suivantes. voici les conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -527,9 +527,9 @@ Audience du 26 mars 2024 – Référé – RG n° 23/54687
 
 1. **12 juin 2015** – Par acte sous seing‑privé, la société **[Personne Morale 1]** (bailleur) a conclu un bail commercial d’une durée de neuf ans avec la société **[Personne Morale 4]** (locataire initial) portant sur les locaux situés **[Adresse 4]** (Localité 1). Le bail autorise exclusivement les activités de :  
    - boucherie, triperie, salaisons, volaille, traiteur ;  
-  ",Synthèse Rapport,GPT-OSS-120B (Nebius),"la sommation d'exécuter est mal reformulé avec une hallucination (l'huissier se transforme en président du tribunal)
-manque des faits procédure ; arguments bruts sans appropriation par la partie",Trop courte (il manque des informations importantes),15
-dWyM6Bo,687NLx5,2026-01-20 12:34:13,,0.0,,,,,,,Non,,"voici les conclusions du demandeur et du défendeur à partir desquelles tu dois exécuter le prompt. conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
+  ","Synthèse Rapport","GPT-OSS-120B (Nebius)","la sommation d'exécuter est mal reformulé avec une hallucination (l'huissier se transforme en président du tribunal)
+manque des faits procédure ; arguments bruts sans appropriation par la partie","Trop courte (il manque des informations importantes)"
+"dWyM6Bo","687NLx5","2026-01-20 12:34:13","","0","","","","","","","Non","","voici les conclusions du demandeur et du défendeur à partir desquelles tu dois exécuter le prompt. conclusions du demandeur Audience du 26 mars 2024 à 13h30 RG n°23/54687 Notifiées par RPVA le 22 mars 2024
    
 
 
@@ -560,8 +560,8 @@ CONCLUSIONS EN REPONSE N°3
 Pour :
 La
 société [Personne Morale 1]
-, société civile de placement immobilier, dont le siège  social est situé [Adresse 1]), immatriculée au  Registre ",Résumé Parallèle (faits+moyens+prétentions),Albert Large,je pense que l'IA ne comprend pas le prompt parallèle ,,15
-EkOpWbL,687NLx5,2026-01-20 18:00:45,,1.0,,,,,,,Non,Il y a des moyens qui n'ont pas été repris,"Selon les consignes mentionnées dans le prompt peux tu me résumer les conclusions suivantes en privilégiant une rédaction fluide sans bullet point lorsque cela n'est pas indispensable : Cour d'Appel de PARIS
+, société civile de placement immobilier, dont le siège  social est situé [Adresse 1]), immatriculée au  Registre ","Résumé Parallèle (faits+moyens+prétentions)","Albert Large","je pense que l'IA ne comprend pas le prompt parallèle ",""
+"EkOpWbL","687NLx5","2026-01-20 18:00:45","","1","","","","","","","Non","Il y a des moyens qui n'ont pas été repris","Selon les consignes mentionnées dans le prompt peux tu me résumer les conclusions suivantes en privilégiant une rédaction fluide sans bullet point lorsque cela n'est pas indispensable : Cour d'Appel de PARIS
    
 
 
@@ -614,8 +614,8 @@ EkOpWbL,687NLx5,2026-01-20 18:00:45,,1.0,,,,,,,Non,Il y a des moyens qui n'ont p
   - Date et lieu de naissance : [Date naissance 1] 1913 / [Adresse 5] (ITALIE)
 
 **Avocats :**
-- **Avocat",Résumé Conclusions,Albert Large,"trop synthétique, mais le prompt limite à 5 pages... ",Trop courte (il manque des informations importantes),
-vG9RAEv,687NLx5,2026-01-20 18:09:27,,3.0,,,,,,,Oui,,"Selon les consignes mentionnées dans le prompt peux tu me résumer les conclusions suivantes en privilégiant une rédaction fluide sans bullet point lorsque cela n'est pas indispensable : Cour d'Appel de PARIS
+- **Avocat","Résumé Conclusions","Albert Large","trop synthétique, mais le prompt limite à 5 pages... ","Trop courte (il manque des informations importantes)"
+"vG9RAEv","687NLx5","2026-01-20 18:09:27","","3","","","","","","","Oui","","Selon les consignes mentionnées dans le prompt peux tu me résumer les conclusions suivantes en privilégiant une rédaction fluide sans bullet point lorsque cela n'est pas indispensable : Cour d'Appel de PARIS
    
 
 
@@ -674,8 +674,8 @@ vG9RAEv,687NLx5,2026-01-20 18:09:27,,3.0,,,,,,,Oui,,"Selon les consignes mention
 
 #### **INTIMÉE**
 **Madame [M] [C] [D], épouse [E]**
-*Demeurant [Adresse",Résumé Conclusions,Mixtral 8x22B (Mistral),,Appropriée,
-GxG1NM2,eq6zj0E,2026-01-23 13:54:47,3.0,3.0,,,,4.0,4.0,,Oui,,"Cour d'Appel de PARIS
+*Demeurant [Adresse","Résumé Conclusions","Mixtral 8x22B (Mistral)","","Appropriée"
+"GxG1NM2","eq6zj0E","2026-01-23 13:54:47","3","3","","","","4","4","","Oui","","Cour d'Appel de PARIS
    
 
 
@@ -759,8 +759,8 @@ GxG1NM2,eq6zj0E,2026-01-23 13:54:47,3.0,3.0,,,,4.0,4.0,,Oui,,"Cour d'Appel de PA
 
 #### **INTIMÉE**
 **Madame [M] [C] [D], épouse [E]**
-- Demeurant : ",Résumé Conclusions,Mixtral 8x22B (Mistral),,,
-KYE0V6M,eq6zj0E,2026-01-23 14:25:33,2.0,2.0,,,,2.0,1.0,,Non,Il y a des moyens qui n'ont pas été repris,"Cour d'Appel de PARIS
+- Demeurant : ","Résumé Conclusions","Mixtral 8x22B (Mistral)","",""
+"KYE0V6M","eq6zj0E","2026-01-23 14:25:33","2","2","","","","2","1","","Non","Il y a des moyens qui n'ont pas été repris","Cour d'Appel de PARIS
    
 
 
@@ -847,9 +847,9 @@ Toque L 0075
 - **Monsieur [S] [Y] [J]**  
   Demeurant [Adresse 3]  
 
-- **Madame [Q] [O] [A] [T] [Y]",Résumé Conclusions,GPT-OSS-120B (Nebius),"Gpt a fait un résumé du résumé préliminaire pour la première partie; cela déséquilibre la synthèse et permet pas de rentrer assez dans le détail; 
-tournure de phrase non juridique et imprécise ",,
-aQLGdrE,eq6zj0E,2026-01-23 14:30:25,0.0,0.0,,,,0.0,0.0,,,,"Cour d'Appel de PARIS
+- **Madame [Q] [O] [A] [T] [Y]","Résumé Conclusions","GPT-OSS-120B (Nebius)","Gpt a fait un résumé du résumé préliminaire pour la première partie; cela déséquilibre la synthèse et permet pas de rentrer assez dans le détail; 
+tournure de phrase non juridique et imprécise ",""
+"aQLGdrE","eq6zj0E","2026-01-23 14:30:25","0","0","","","","0","0","","","","Cour d'Appel de PARIS
    
 
 
@@ -921,8 +921,8 @@ Cour d'Appel de PARIS, Pôle 03 Chambre 05 N° R.G 20/17147
 **RÉSUMÉ DES FAITS**
 
 1. Madame [M] [D] a intenté une action en reconnaissance de paternité contre M. [G] [Y] [J] devant les juridictions italiennes en 2006.
-2. M. [G] [Y] [J] a contesté ce prétendu lien de paternit",Résumé Conclusions,Llama 3.3 70B (Nebius),résumé en 1 page... ,,
-Pdx05gP,eq6zj0E,2026-01-23 14:35:19,0.0,0.0,,,,0.0,0.0,,Non,Il y a des moyens qui n'ont pas été repris,Peux tu résumer les conclusions en 5 pages environ,"**RÉSUMÉ DE CONCLUSION D'APPELANT N° 4**
+2. M. [G] [Y] [J] a contesté ce prétendu lien de paternit","Résumé Conclusions","Llama 3.3 70B (Nebius)","résumé en 1 page... ",""
+"Pdx05gP","eq6zj0E","2026-01-23 14:35:19","0","0","","","","0","0","","Non","Il y a des moyens qui n'ont pas été repris","Peux tu résumer les conclusions en 5 pages environ","**RÉSUMÉ DE CONCLUSION D'APPELANT N° 4**
 
 **INTRODUCTION**
 
@@ -930,8 +930,8 @@ Les Consorts [Y] [J] ont interjeté appel du jugement du Tribunal judiciaire de 
 
 **I. LES FAITS**
 
-Madame [M] [D] a intenté une action en reconnaissance de paternité contre M. [G] [Y] [J]",Résumé Conclusions,Llama 3.3 70B (Nebius),"bcp trop court inexploitable même avec une demande de résumé en 5 pages, cela ne fait qu'une page (sans les en tête)",,
-b5pOLM0,eq6zj0E,2026-01-23 14:56:10,3.0,3.0,,,,4.0,4.0,,Oui,,"Cour d'Appel de PARIS
+Madame [M] [D] a intenté une action en reconnaissance de paternité contre M. [G] [Y] [J]","Résumé Conclusions","Llama 3.3 70B (Nebius)","bcp trop court inexploitable même avec une demande de résumé en 5 pages, cela ne fait qu'une page (sans les en tête)",""
+"b5pOLM0","eq6zj0E","2026-01-23 14:56:10","3","3","","","","4","4","","Oui","","Cour d'Appel de PARIS
    
 
 
@@ -1023,8 +1023,8 @@ Demeurant [Adresse 4]
 
 **APPELANTS**
 
-Ayant pour avocat postulant Maître ",Résumé Conclusions,Mistral-medium-2508 (modèle assistant numérique),une rédaction littéraire mais qui ne traduit pas toujours bien le raisonnement et qui n'insiste pas forcément sur les éléments les plus pertinents,,
-gDl4WDl,eq6zj0E,2026-01-23 15:14:12,3.0,2.0,,,,1.0,2.0,,,,"N° R.G 20/17147
+Ayant pour avocat postulant Maître ","Résumé Conclusions","Mistral-medium-2508 (modèle assistant numérique)","une rédaction littéraire mais qui ne traduit pas toujours bien le raisonnement et qui n'insiste pas forcément sur les éléments les plus pertinents",""
+"gDl4WDl","eq6zj0E","2026-01-23 15:14:12","3","2","","","","1","2","","","","N° R.G 20/17147
   
 
    Conclusions notifiées par RPVA le 12 octobre 2021
@@ -1066,8 +1066,8 @@ avocat associé du cabinet [Personne Morale 1], demeurant [Adresse 2] - Téléph
 [Courriel 1].
 
 CONTRE :
-1",Résumé Conclusions,Llama 3.3 70B (Nebius),bcp trop court; pas bien articulé; sélection des éléments pas pertinentes; prétentions mal reprises,,
-dWMPgxr,eq6zj0E,2026-01-23 15:45:23,3.0,3.0,,,,2.0,2.0,,En partie,,"N° R.G 20/17147
+1","Résumé Conclusions","Llama 3.3 70B (Nebius)","bcp trop court; pas bien articulé; sélection des éléments pas pertinentes; prétentions mal reprises",""
+"dWMPgxr","eq6zj0E","2026-01-23 15:45:23","3","3","","","","2","2","","En partie","","N° R.G 20/17147
   
 
    Conclusions notifiées par RPVA le 12 octobre 2021
@@ -1109,8 +1109,8 @@ RÉSUMÉ DE CONCLUSION [Type d'acte : Conclusions en réponse et d'appel inciden
 - demeurant **[Adresse 1] (Italie)**  
 
 **Avocat** : Maître **[U] [S]**, avocat associé du cabinet **[Personne Morale 1]**,  
-adresse **[Adresse 2]**, téléphone **[XXXXXXXX01]**, télécopie **[XXXXXXXX02]**, toque **L0090**, co",Résumé Conclusions,GPT-OSS-120B (Nebius),pas assez précis et circonstancié dans la relation Droit-application à l'espèce,,
-QKZ0yqp,eq6zj0E,2026-01-23 15:56:17,2.0,3.0,,,,2.0,2.0,,En partie,Il y a des moyens qui n'ont pas été repris,"N° R.G 20/17147
+adresse **[Adresse 2]**, téléphone **[XXXXXXXX01]**, télécopie **[XXXXXXXX02]**, toque **L0090**, co","Résumé Conclusions","GPT-OSS-120B (Nebius)","pas assez précis et circonstancié dans la relation Droit-application à l'espèce",""
+"QKZ0yqp","eq6zj0E","2026-01-23 15:56:17","2","3","","","","2","2","","En partie","Il y a des moyens qui n'ont pas été repris","N° R.G 20/17147
   
 
    Conclusions notifiées par RPVA le 12 octobre 2021
@@ -1147,8 +1147,8 @@ Ayant pour avocat Maître [U] [S], avocat associé du cabinet [Personne Morale 1
 
 #### CONTRE :
 
-1. Madame [L] [P] [B] [Y] [H] [E], veuve [A] [R], née le [Dat",Résumé Conclusions,Mistral-medium-2508 (modèle assistant numérique),le raisonnement juridique ne ressort pas assez. ,,
-2EWr2Oj,eq6zj0E,2026-01-23 16:44:54,4.0,4.0,,,,4.0,4.0,,Oui,,"N° R.G 20/17147
+1. Madame [L] [P] [B] [Y] [H] [E], veuve [A] [R], née le [Dat","Résumé Conclusions","Mistral-medium-2508 (modèle assistant numérique)","le raisonnement juridique ne ressort pas assez. ",""
+"2EWr2Oj","eq6zj0E","2026-01-23 16:44:54","4","4","","","","4","4","","Oui","","N° R.G 20/17147
   
 
    Conclusions notifiées par RPVA le 12 octobre 2021
@@ -1189,8 +1189,8 @@ Ayant pour avocat Maître [U] [S], avocat associé du cabinet [Personne Morale 1
   - Maître [U] [S], avocat associé du cabinet [Personne Morale 1]
   - Adresse : [Adresse 2]
   - Téléphone : [XXXXXXXX01] – Télécopie : [XXXXXXXX02]
-  - Toque : L0090 – Courriel : [Courriel 1]",Résumé Conclusions,Mixtral 8x22B (Mistral),résumé assez complet qui permet de comprendre l'argumentation de l'intimé,,
-gDlpabl,eq6zj0E,2026-01-26 08:43:36,,0.0,,,,0.0,,,Non,Il y a eu des faits oubliés ou mal restitués,"Peux rédiger la synthèse demandée. Voici les conclusions de l'appelant : Cour d'Appel de PARIS
+  - Toque : L0090 – Courriel : [Courriel 1]","Résumé Conclusions","Mixtral 8x22B (Mistral)","résumé assez complet qui permet de comprendre l'argumentation de l'intimé",""
+"gDlpabl","eq6zj0E","2026-01-26 08:43:36","","0","","","","0","","","Non","Il y a eu des faits oubliés ou mal restitués","Peux rédiger la synthèse demandée. Voici les conclusions de l'appelant : Cour d'Appel de PARIS
    
 
 
@@ -1242,8 +1242,8 @@ gDlpabl,eq6zj0E,2026-01-26 08:43:36,,0.0,,,,0.0,,,Non,Il y a eu des faits oubli�
 
     Madame [Q","### FAITS
 
-Madame [I] [X] [Z] [W], née [Y] [J], et Monsieur [S] [Y] [J], ont assigné Madame [M] [C] [B] [T] [Y] [J], née [R], devant le Tribunal judiciaire de Paris aux fins de voir déclarer les Décisions italiennes inopposables en France. Par un jugement du 25 novembre 2020, le Tribunal judiciaire de Paris a débouté les Consorts [Y] [J] et a déclaré les Décisions italiennes exécutoires en France. Le 26 novembre 2020, les Consorts [Y] [J] ont interjeté appel de ce jugement devant la Cour de céan",Synthèse Faits & Procédure,Albert Large,,,
-jaRp6oQ,eq6zj0E,2026-01-26 08:55:10,,,,,,4.0,2.0,,En partie,,"Peux rédiger la synthèse demandée. Voici les conclusions de l'appelant : Cour d'Appel de PARIS
+Madame [I] [X] [Z] [W], née [Y] [J], et Monsieur [S] [Y] [J], ont assigné Madame [M] [C] [B] [T] [Y] [J], née [R], devant le Tribunal judiciaire de Paris aux fins de voir déclarer les Décisions italiennes inopposables en France. Par un jugement du 25 novembre 2020, le Tribunal judiciaire de Paris a débouté les Consorts [Y] [J] et a déclaré les Décisions italiennes exécutoires en France. Le 26 novembre 2020, les Consorts [Y] [J] ont interjeté appel de ce jugement devant la Cour de céan","Synthèse Faits & Procédure","Albert Large","",""
+"jaRp6oQ","eq6zj0E","2026-01-26 08:55:10","","","","","","4","2","","En partie","","Peux rédiger la synthèse demandée. Voici les conclusions de l'appelant : Cour d'Appel de PARIS
    
 
 
@@ -1303,8 +1303,8 @@ jaRp6oQ,eq6zj0E,2026-01-26 08:55:10,,,,,,4.0,2.0,,En partie,,"Peux rédiger la s
 |------|-----------|
 | **1947‑1952** | Madame [C] [T] travaille comme gouvernante auprès de la famille [Y] [J]; en août 1950, alors âgée de 37 ans, elle aurait eu des relations avec Monsieur [G] [Y] [J] (16 ans), donnant naissance à Madame [M] [D] le 13 mai 1951. |
 | **1951‑1952** | La mère confie l’enfant à sa sœur aînée et quitte la famille [Y] [J]. |
-| **2006** | Mad",Synthèse Faits & Procédure,GPT-OSS-120B (Nebius),les temps employés ne sont pas bons; la rédaction est imprécise; ,,
-68l97JO,eq6zj0E,2026-01-26 09:21:49,,0.0,,,,,,,Non,,"Peux rédiger la synthèse demandée. Voici les conclusions de l'appelant : Cour d'Appel de PARIS
+| **2006** | Mad","Synthèse Faits & Procédure","GPT-OSS-120B (Nebius)","les temps employés ne sont pas bons; la rédaction est imprécise; ",""
+"68l97JO","eq6zj0E","2026-01-26 09:21:49","","0","","","","","","","Non","","Peux rédiger la synthèse demandée. Voici les conclusions de l'appelant : Cour d'Appel de PARIS
    
 
 
@@ -1362,8 +1362,8 @@ Les faits sont les suivants :
 
 * Madame [M] [D], de nationalité italienne, allègue être la fille de Monsieur [G] [Y] [J], décédé le [Date décès 1] 2015, qui était de nationalité française et résidait en France.
 * Madame [M] [D] a intenté une action en reconnaissance de paternité devant les juridictions italiennes en 2006.
-* Les juridictions italiennes ont reconnu le lien de filiation entre Madame [M] [D] et ",Synthèse Faits & Procédure,Llama 3.3 70B (Nebius),pas assez précis trop court,,
-kdopYgM,eq6zj0E,2026-01-26 09:30:50,,2.0,,,,2.0,2.0,,En partie,,"peux tu faire la synthèse demandée. Voici les conclusions d'appelants Cour d'Appel de PARIS
+* Les juridictions italiennes ont reconnu le lien de filiation entre Madame [M] [D] et ","Synthèse Faits & Procédure","Llama 3.3 70B (Nebius)","pas assez précis trop court",""
+"kdopYgM","eq6zj0E","2026-01-26 09:30:50","","2","","","","2","2","","En partie","","peux tu faire la synthèse demandée. Voici les conclusions d'appelants Cour d'Appel de PARIS
    
 
 
@@ -1415,8 +1415,8 @@ kdopYgM,eq6zj0E,2026-01-26 09:30:50,,2.0,,,,2.0,2.0,,En partie,,"peux tu faire l
 
     Madame [Q] [","### FAITS
 
-Madame [M] [C] [T], née [Y] [J], a intenté devant les juridictions italiennes une action en reconnaissance de paternité contre Monsieur [G] [Y] [J] devant les juridictions italiennes. Madame [D] soutenait qu'elle serait née d'une relation sexuelle que sa mère, gouvernante auprès de la famille [Y] [J] entre 1947 et 1952, aurait entretenue avec Monsieur [G] [Y] [J] lorsque celui-ci était âgé de 16 ans. Monsieur [G] [Y] [J] a contesté ce prétendu lien de paternité et a refusé de se soume",Synthèse Faits & Procédure,Albert Large,"2ème essai un peu plus concluant; les éléments y sont, il faut élaguer ",,
-EkRY7WX,eq6zj0E,2026-01-26 14:25:26,2.0,3.0,,,,3.0,3.0,,En partie,,"peux tu améliorer ta réponse sur le résumé des moyens, en  introduisant les moyens par  l'appelant soutient que, fait valoir etc","**SYNTHESE JUDICIAIRE – COUR D’APPEL DE PARIS (Pôle 03, Chambre 05, RG 20/17147)**
+Madame [M] [C] [T], née [Y] [J], a intenté devant les juridictions italiennes une action en reconnaissance de paternité contre Monsieur [G] [Y] [J] devant les juridictions italiennes. Madame [D] soutenait qu'elle serait née d'une relation sexuelle que sa mère, gouvernante auprès de la famille [Y] [J] entre 1947 et 1952, aurait entretenue avec Monsieur [G] [Y] [J] lorsque celui-ci était âgé de 16 ans. Monsieur [G] [Y] [J] a contesté ce prétendu lien de paternité et a refusé de se soume","Synthèse Faits & Procédure","Albert Large","2ème essai un peu plus concluant; les éléments y sont, il faut élaguer ",""
+"EkRY7WX","eq6zj0E","2026-01-26 14:25:26","2","3","","","","3","3","","En partie","","peux tu améliorer ta réponse sur le résumé des moyens, en  introduisant les moyens par  l'appelant soutient que, fait valoir etc","**SYNTHESE JUDICIAIRE – COUR D’APPEL DE PARIS (Pôle 03, Chambre 05, RG 20/17147)**
 
 ---
 
@@ -1424,8 +1424,8 @@ EkRY7WX,eq6zj0E,2026-01-26 14:25:26,2.0,3.0,,,,3.0,3.0,,En partie,,"peux tu amé
 
 1. En 2006, Madame [M] [D] (appelante) a intenté une action de reconnaissance de paternité devant les juridictions italiennes contre Monsieur [G] [Y] [J] (défendeur), alléguant que ce dernier, alors âgé de 16 ans, avait eu une relation sexuelle avec sa mère, gouvernante auprès de la famille [Y] [J] entre 1947 et 1952.
 
-2. Le Tribunal de Verbania (Italie) a rendu, le 22 novembre 2010, un jugement","Synthèse Faits, Procédure & Moyens",Albert Large,"meilleure réponse au 2ème essai en demandant "" peux tu améliorer ta réponse sur le résumé des moyens, en introduisant les moyens par l'appelant soutient que, fait valoir etc""  Les moyens sont mieux développés. Exploitable ",,
-Zj7yxzv,eq6zj0E,2026-01-26 14:41:09,,1.0,,,,0.0,1.0,,Non,Il y a des moyens qui n'ont pas été repris,"peux tu effectuer la synthèse demandée. Voici les conclusions des appelants Cour d'Appel de PARIS
+2. Le Tribunal de Verbania (Italie) a rendu, le 22 novembre 2010, un jugement","Synthèse Faits, Procédure & Moyens","Albert Large","meilleure réponse au 2ème essai en demandant "" peux tu améliorer ta réponse sur le résumé des moyens, en introduisant les moyens par l'appelant soutient que, fait valoir etc""  Les moyens sont mieux développés. Exploitable ",""
+"Zj7yxzv","eq6zj0E","2026-01-26 14:41:09","","1","","","","0","1","","Non","Il y a des moyens qui n'ont pas été repris","peux tu effectuer la synthèse demandée. Voici les conclusions des appelants Cour d'Appel de PARIS
    
 
 
@@ -1478,8 +1478,8 @@ Zj7yxzv,eq6zj0E,2026-01-26 14:41:09,,1.0,,,,0.0,1.0,,Non,Il y a des moyens qui n
     Madame","Voici la synthèse demandée :
 
 ### Section FAITS
-Les parties sont impliquées dans un litige relatif à la reconnaissance en France d'une décision italienne établissant un lien de filiation entre Monsieur [G] [Y] [J] et Madame [M] [D]. Les Consorts [Y] [J] ont interjeté appel du jugement du 25 novembre 2020, qui a débouté leur demande tendant à faire déclarer inopposables en France les décisions italiennes. Madame [D] a initié l'action en Italie en 2006, où elle a obtenu un jugement du Tribunal de ","Synthèse Faits, Procédure & Moyens",Llama 3.3 70B (Nebius),"trop cour, imprécis, (1,5 page)",,
-446ye8O,eq6zj0E,2026-01-26 17:29:51,3.0,4.0,,,,4.0,3.0,,Oui,,"Peux tu améliorer ta réponse en utilisant le passé composé pour la section ""fait"" et ""procédure et en introduisant les moyens des parties par les expressions "" elle soutient que"", ""fait valoir que "" afin que l'argumentation de chaque partie ressorte mieux","### **SYNTHÈSE DES CONCLUSIONS**
+Les parties sont impliquées dans un litige relatif à la reconnaissance en France d'une décision italienne établissant un lien de filiation entre Monsieur [G] [Y] [J] et Madame [M] [D]. Les Consorts [Y] [J] ont interjeté appel du jugement du 25 novembre 2020, qui a débouté leur demande tendant à faire déclarer inopposables en France les décisions italiennes. Madame [D] a initié l'action en Italie en 2006, où elle a obtenu un jugement du Tribunal de ","Synthèse Faits, Procédure & Moyens","Llama 3.3 70B (Nebius)","trop cour, imprécis, (1,5 page)",""
+"446ye8O","eq6zj0E","2026-01-26 17:29:51","3","4","","","","4","3","","Oui","","Peux tu améliorer ta réponse en utilisant le passé composé pour la section ""fait"" et ""procédure et en introduisant les moyens des parties par les expressions "" elle soutient que"", ""fait valoir que "" afin que l'argumentation de chaque partie ressorte mieux","### **SYNTHÈSE DES CONCLUSIONS**
 **Cour d’appel de Paris – Pôle 03, Chambre 05 – RG 20/17147**
 
 ---
@@ -1487,8 +1487,8 @@ Les parties sont impliquées dans un litige relatif à la reconnaissance en Fran
 ### **FAITS**
 
 #### **1. Contexte initial et action en reconnaissance de paternité en Italie**
-- En **2006**, Mme [M] [D] **a intenté** une action en reconnaissance de paternité contre M. [G] [Y] [J] devant les juridictions italiennes. Elle **a soutenu** que sa mère, gouvernante au service de la famille [Y] [J] entre **1947 et 1952**, **aurait eu** une relation avec M. [G] [Y] [J], alors âgé de *","Synthèse Faits, Procédure & Moyens",Mistral-medium-2508 (modèle assistant numérique),"au 2ème essai; emploi du passé composé pour les faits, les moyens sont assez bien retranscrits",,
-WOWaxxR,eq6zj0E,2026-01-27 11:33:31,,,,,,,,,Non,Autre,"
+- En **2006**, Mme [M] [D] **a intenté** une action en reconnaissance de paternité contre M. [G] [Y] [J] devant les juridictions italiennes. Elle **a soutenu** que sa mère, gouvernante au service de la famille [Y] [J] entre **1947 et 1952**, **aurait eu** une relation avec M. [G] [Y] [J], alors âgé de *","Synthèse Faits, Procédure & Moyens","Mistral-medium-2508 (modèle assistant numérique)","au 2ème essai; emploi du passé composé pour les faits, les moyens sont assez bien retranscrits",""
+"WOWaxxR","eq6zj0E","2026-01-27 11:33:31","","","","","","","","","Non","Autre","
    Demandeur
   
 
@@ -1538,8 +1538,8 @@ Tribunal de céans
 
 **Numéro RG / numéro de rôle :**
 
-- RG 12-24-000137 (référ",Résumé Conclusions,Albert Large,c'est une copie des conclusions sauf dans l'ordre des sections (les prétentions sont déplacés),,
-QKZNgL8,eq6zj0E,2026-01-27 11:42:05,5.0,5.0,,,,5.0,4.0,,Oui,,"   Demandeur
+- RG 12-24-000137 (référ","Résumé Conclusions","Albert Large","c'est une copie des conclusions sauf dans l'ordre des sections (les prétentions sont déplacés)",""
+"QKZNgL8","eq6zj0E","2026-01-27 11:42:05","5","5","","","","5","4","","Oui","","   Demandeur
   
 
 
@@ -1585,8 +1585,8 @@ Qualité procédurale : Défendeur
 
 #### **Éléments procéduraux**
 - **Juridiction saisie** : Juge des contentieux de la protection du Tribunal judiciaire
-- **Numéro RG** : 11-25-87 (renvoi du juge des référés sous RG 12-24-0",Résumé Conclusions,Mixtral 8x22B (Mistral),,,
-Me4pMGl,eq6zj0E,2026-01-27 13:14:41,5.0,4.0,,,,5.0,4.0,,Oui,,"   Demandeur
+- **Numéro RG** : 11-25-87 (renvoi du juge des référés sous RG 12-24-0","Résumé Conclusions","Mixtral 8x22B (Mistral)","",""
+"Me4pMGl","eq6zj0E","2026-01-27 13:14:41","5","4","","","","5","4","","Oui","","   Demandeur
   
 
 
@@ -1633,8 +1633,8 @@ Demeurant [Adresse 3]
 *Qualité procédurale* : Défendeur, intimé
 
 #### **ÉLÉMENTS PROCÉDURAUX**
-- **Juridiction saisie** : Juge des contentieux de la protection du Tribunal ",Résumé Conclusions,Mixtral 8x22B (Mistral),,,
-OD2MgJA,eq6zj0E,2026-01-27 13:27:57,4.0,3.0,,,,3.0,3.0,,En partie,,"   Demandeur
+- **Juridiction saisie** : Juge des contentieux de la protection du Tribunal ","Résumé Conclusions","Mixtral 8x22B (Mistral)","",""
+"OD2MgJA","eq6zj0E","2026-01-27 13:27:57","4","3","","","","3","3","","En partie","","   Demandeur
   
 
 
@@ -1685,8 +1685,8 @@ Monsieur **[S] [D]**, demeurant **[Adresse 3]**
 **Éléments procéduraux**  
 
 - Juridiction saisie : Tribunal de céans (Juge des référés puis Juge du fond)  
-- Numéro de rôle : RG 12‑24‑000137 (ordonnance du 4 févr",Résumé Conclusions,GPT-OSS-120B (Nebius),erreur dans les termes choisis; oubli d'un fait important ,,
-yPQ5kW4,eq6zj0E,2026-01-27 13:33:48,5.0,3.0,,,,4.0,3.0,,En partie,,"   Demandeur
+- Numéro de rôle : RG 12‑24‑000137 (ordonnance du 4 févr","Résumé Conclusions","GPT-OSS-120B (Nebius)","erreur dans les termes choisis; oubli d'un fait important ",""
+"yPQ5kW4","eq6zj0E","2026-01-27 13:33:48","5","3","","","","4","3","","En partie","","   Demandeur
   
 
 
@@ -1741,8 +1741,8 @@ Défendeur
 * Qualité procédurale : Défendeur
 
 ### ÉLÉMENTS PROCÉDURAUX
-",Résumé Conclusions,Llama 3.3 70B (Nebius),,,
-GxGAGJZ,eq6zj0E,2026-01-27 14:04:37,4.0,4.0,,,,4.0,3.0,,,,"peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
+","Résumé Conclusions","Llama 3.3 70B (Nebius)","",""
+"GxGAGJZ","eq6zj0E","2026-01-27 14:04:37","4","4","","","","4","3","","","","peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
    Demandeur
   
 
@@ -1775,8 +1775,8 @@ GxGAGJZ,eq6zj0E,2026-01-27 14:04:37,4.0,4.0,,,,4.0,3.0,,,,"peux tu faire la synt
 
 Monsieur [S] [D] a assuré la fonction de gardien de l'immeuble situé au [Adresse 4] à [Localité 3], alors propriété de Monsieur [Z] [B], à compter du 1er mars 1999. Dans le cadre de son contrat de travail, Monsieur [D] bénéficiait d'un logement de fonction sur place.
 
-Le 24 juin 2021, la société [Localité 1] [Adresse 5] a procédé au rachat de l'ensemble immobilier sis [Adresse 6] à [Localité 1], se substituant aux consorts [B], ayan","Synthèse Faits, Procédure & Moyens",Albert Large,"erreur de formulation cour/tribunal, appelant/demandeur,  ",,
-D486QZX,eq6zj0E,2026-01-27 14:16:49,4.0,3.0,,,,4.0,3.0,,En partie,,"peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
+Le 24 juin 2021, la société [Localité 1] [Adresse 5] a procédé au rachat de l'ensemble immobilier sis [Adresse 6] à [Localité 1], se substituant aux consorts [B], ayan","Synthèse Faits, Procédure & Moyens","Albert Large","erreur de formulation cour/tribunal, appelant/demandeur,  ",""
+"D486QZX","eq6zj0E","2026-01-27 14:16:49","4","3","","","","4","3","","En partie","","peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
    Demandeur
   
 
@@ -1809,8 +1809,8 @@ D486QZX,eq6zj0E,2026-01-27 14:16:49,4.0,3.0,,,,4.0,3.0,,En partie,,"peux tu fair
 
 Le 1er mars 1999, Monsieur [S] [D] (ci-après « Monsieur [D] ») est engagé en qualité de gardien de l’immeuble sis [Adresse 4] à [Localité 3], propriété de Monsieur [Z] [B]. Dans le cadre de son contrat de travail, il bénéficie d’un logement de fonction sur place.
 
-Le 24 juin 2021, la société [Localité 1] [Adresse 5] (ci-après « la SNC ») rachète l’ensemble immobilier et se sub","Synthèse Faits, Procédure & Moyens",Mixtral 8x22B (Mistral),redite de la proced ; un paragraphe en trop dans les faits qui a été mal identifié; ,,
-KYEjplz,eq6zj0E,2026-01-27 14:39:05,4.0,2.0,,,,4.0,3.0,,En partie,,"peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
+Le 24 juin 2021, la société [Localité 1] [Adresse 5] (ci-après « la SNC ») rachète l’ensemble immobilier et se sub","Synthèse Faits, Procédure & Moyens","Mixtral 8x22B (Mistral)","redite de la proced ; un paragraphe en trop dans les faits qui a été mal identifié; ",""
+"KYEjplz","eq6zj0E","2026-01-27 14:39:05","4","2","","","","4","3","","En partie","","peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
    Demandeur
   
 
@@ -1845,8 +1845,8 @@ KYEjplz,eq6zj0E,2026-01-27 14:39:05,4.0,2.0,,,,4.0,3.0,,En partie,,"peux tu fair
 ### **Contexte professionnel et locatif initial**
 Le **1er mars 1999**, Monsieur **[S] [D]** (ci-après ""M. [D]"") fut engagé en qualité de **gardien d’immeuble** par Monsieur **[Z] [B]** pour un ensemble immobilier situé **[Adresse 4] à [Localité 3]**. Son contrat de travail prévoyait un **logement de fonction** sur place.
 
-Le **24 juin 2021**, la **SNC [Localité ","Synthèse Faits, Procédure & Moyens",Mistral-medium-2508 (modèle assistant numérique),il y a de graves interprétations/hallucinations dans les moyens du def; ,,
-5B7AJEP,eq6zj0E,2026-01-27 16:44:08,4.0,1.0,,,,4.0,3.0,,Non,,"Peux tu améliorer ta synthèse en utilisant le passé composé pour la section ""faits"" , en reprenant in extenso les prétentions des parties et en résumant les moyens sans ajouter d'interprétation","### **SYNTHÈSE JURIDIQUE DES CONCLUSIONS**
+Le **24 juin 2021**, la **SNC [Localité ","Synthèse Faits, Procédure & Moyens","Mistral-medium-2508 (modèle assistant numérique)","il y a de graves interprétations/hallucinations dans les moyens du def; ",""
+"5B7AJEP","eq6zj0E","2026-01-27 16:44:08","4","1","","","","4","3","","Non","","Peux tu améliorer ta synthèse en utilisant le passé composé pour la section ""faits"" , en reprenant in extenso les prétentions des parties et en résumant les moyens sans ajouter d'interprétation","### **SYNTHÈSE JURIDIQUE DES CONCLUSIONS**
 *(Demandeur : SNC [Localité 1] / Défendeur : Monsieur [S] [D] alias [W] [B])*
 
 ---
@@ -1855,8 +1855,8 @@ Le **24 juin 2021**, la **SNC [Localité ","Synthèse Faits, Procédure & Moyens
 
 Le **1er mars 1999**, Monsieur **[S] [D]** a été engagé en qualité de **gardien d’immeuble** par Monsieur **[Z] [B]** pour un ensemble immobilier situé **[Adresse 4] à [Localité 3]**. Son contrat de travail a inclus un **logement de fonction** sur place.
 
-Le **24 juin 2021**, la **SNC [Localité 1] [Adresse 5]** a racheté l’immeuble aux consorts **[B]**,","Synthèse Faits, Procédure & Moyens",Mistral-medium-2508 (modèle assistant numérique),interprétations et hallucinations,,
-Y56A8NN,eq6zj0E,2026-01-27 16:52:38,4.0,2.0,,,,4.0,3.0,,,,"peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
+Le **24 juin 2021**, la **SNC [Localité 1] [Adresse 5]** a racheté l’immeuble aux consorts **[B]**,","Synthèse Faits, Procédure & Moyens","Mistral-medium-2508 (modèle assistant numérique)","interprétations et hallucinations",""
+"Y56A8NN","eq6zj0E","2026-01-27 16:52:38","4","2","","","","4","3","","","","peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
    Demandeur
   
 
@@ -1883,8 +1883,8 @@ Y56A8NN,eq6zj0E,2026-01-27 16:52:38,4.0,2.0,,,,4.0,3.0,,,,"peux tu faire la synt
    Dans le cadre de son contrat de travail, Monsieur [D] bénéficiait d'un logement de fonction sur place.
 ","**FAITS**  
 
-Le 1er mars 1999, Monsieur [S] [D] a été engagé comme gardien de l’immeuble sis [Adresse 4] à [Localité 3], propriété de Monsieur [Z] [B]; le contrat de travail prévoyait un logement de fonction sur place. Le 24 juin 2021, la société [Localité 1] [Adresse 5] a racheté l’ensemble immobilier, se substituant aux consorts [B] en qualité d’employeur. Le 30 septembre 2021, la SNC [Localité 1] [Personne Morale 1] a notifié à Monsieur [D] son licenciement pour cause réelle et sérieuse, entr","Synthèse Faits, Procédure & Moyens",GPT-OSS-120B (Nebius),des confusions entre ddeur/defendeur conduisant à des contre sens ,,
-zx99jYk,eq6zj0E,2026-01-27 17:14:14,2.0,2.0,,,,2.0,2.0,,Non,Il y a eu des faits oubliés ou mal restitués,"peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
+Le 1er mars 1999, Monsieur [S] [D] a été engagé comme gardien de l’immeuble sis [Adresse 4] à [Localité 3], propriété de Monsieur [Z] [B]; le contrat de travail prévoyait un logement de fonction sur place. Le 24 juin 2021, la société [Localité 1] [Adresse 5] a racheté l’ensemble immobilier, se substituant aux consorts [B] en qualité d’employeur. Le 30 septembre 2021, la SNC [Localité 1] [Personne Morale 1] a notifié à Monsieur [D] son licenciement pour cause réelle et sérieuse, entr","Synthèse Faits, Procédure & Moyens","GPT-OSS-120B (Nebius)","des confusions entre ddeur/defendeur conduisant à des contre sens ",""
+"zx99jYk","eq6zj0E","2026-01-27 17:14:14","2","2","","","","2","2","","Non","Il y a eu des faits oubliés ou mal restitués","peux tu faire la synthèse demandée. voici les conclusions du demandeur : 
    Demandeur
   
 
@@ -1916,8 +1916,8 @@ Les faits constants de l'affaire sont les suivants :
 - Le 1er mars 1999, Monsieur [S] [D] a commencé à travailler comme gardien de l'immeuble situé à [Adresse 4] à [Localité 3], qui appartenait à Monsieur [Z] [B].
 - Dans le cadre de son contrat de travail, Monsieur [D] bénéficiait d'un logement de fonction sur place.
 - Le 24 juin 2021, la société [Localité 1] [Adresse 5] a racheté l'ensemble immobilier et est devenue l'employeur de Monsieur [D].
-- Le 30 septembre 2021, la SNC [Locali","Synthèse Faits, Procédure & Moyens",Llama 3.3 70B (Nebius),il manque des dates dans les faits; les moyens sont trop résumés ,,
-A7EGBNo,eq6zj0E,2026-02-02 16:14:41,5.0,5.0,,,Non,5.0,5.0,,Oui,,"peux tu résumer les conclusions ci après selon les consignes du prompt : voici les conclusions de l'appelant TRIBUNAL JUDICIAIRE DE PARIS
+- Le 30 septembre 2021, la SNC [Locali","Synthèse Faits, Procédure & Moyens","Llama 3.3 70B (Nebius)","il manque des dates dans les faits; les moyens sont trop résumés ",""
+"A7EGBNo","eq6zj0E","2026-02-02 16:14:41","5","5","","","Non","5","5","","Oui","","peux tu résumer les conclusions ci après selon les consignes du prompt : voici les conclusions de l'appelant TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -1967,8 +1967,8 @@ Bénéficiaire de l'aide juridictionnelle (2021/027771)
 
 **Ayant pour avocat :**
 Maître [O] [D]
-A",Résumé Conclusions,Mixtral 8x22B (Mistral),,,4
-2EpykQe,eq6zj0E,2026-02-02 16:33:17,5.0,3.0,,,Non,3.0,2.0,,En partie,Il y a eu des faits oubliés ou mal restitués,"peux tu résumer les conclusions ci après selon les consignes du prompt : voici les conclusions de l'appelant TRIBUNAL JUDICIAIRE DE PARIS
+A","Résumé Conclusions","Mixtral 8x22B (Mistral)","",""
+"2EpykQe","eq6zj0E","2026-02-02 16:33:17","5","3","","","Non","3","2","","En partie","Il y a eu des faits oubliés ou mal restitués","peux tu résumer les conclusions ci après selon les consignes du prompt : voici les conclusions de l'appelant TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2014,8 +2014,8 @@ A",Résumé Conclusions,Mixtral 8x22B (Mistral),,,4
 - **Avocat** : Maître **[O] [D]**, Barreau de Paris, **[Adresse 2]**, Toque : D1601
 
 #### **Intimé**
-**LE PROCUREUR",Résumé Conclusions,Mistral-medium-2508,la rédaction est essentiellement sous forme de bullet points. Il s'agit plus d'une synthèse en un clin d'oeil que d'un résumé. Cela peut conduire à des erreurs d'interprétations du document tellement c'est synthétique sous forme de bullet points,,4
-QKbWB4G,eq6zj0E,2026-02-02 16:50:31,4.0,4.0,,,,4.0,2.0,,En partie,Autre,"Peux tu résumer les conclusions ci dessous : TRIBUNAL JUDICIAIRE DE PARIS
+**LE PROCUREUR","Résumé Conclusions","Mistral-medium-2508","la rédaction est essentiellement sous forme de bullet points. Il s'agit plus d'une synthèse en un clin d'oeil que d'un résumé. Cela peut conduire à des erreurs d'interprétations du document tellement c'est synthétique sous forme de bullet points",""
+"QKbWB4G","eq6zj0E","2026-02-02 16:50:31","4","4","","","","4","2","","En partie","Autre","Peux tu résumer les conclusions ci dessous : TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2056,8 +2056,8 @@ QKbWB4G,eq6zj0E,2026-02-02 16:50:31,4.0,4.0,,,,4.0,2.0,,En partie,Autre,"Peux tu
 
 ### **I. OBJET DE L’APPEL**
 Madame [C] [L] [N], assistante d’éducation, de nationalité française, **appelle** du jugement rendu le **28 mai 2021** par le Tribunal judiciaire de Paris (RG n°19/13068), qui a :
-- **Annulé** l’enregistrement de sa déclaration de nationalité française (dossier 2018DX005405), souscrite le **13 septembre 2018** sur le fondement de l’*",Prompt personnalisable,Mistral-medium-2508,"la rédaction n'est toujours pas assez littéraire. trop de bullet point avec un peu plus d'articulation qu'avec le ""prompt résumé ccl""il y faits cités dans la partie faits qui appartenaient exclusivement à la partie discussion. ",,4
-1AL0aa4,eq6zj0E,2026-02-03 09:18:52,4.0,3.0,,,,4.0,4.0,,,,"Peux tu résumer les conclusions de l'appelant en respectant le prompt ? voici les conclusions TRIBUNAL JUDICIAIRE DE PARIS
+- **Annulé** l’enregistrement de sa déclaration de nationalité française (dossier 2018DX005405), souscrite le **13 septembre 2018** sur le fondement de l’*","Prompt personnalisable","Mistral-medium-2508","la rédaction n'est toujours pas assez littéraire. trop de bullet point avec un peu plus d'articulation qu'avec le ""prompt résumé ccl""il y faits cités dans la partie faits qui appartenaient exclusivement à la partie discussion. ",""
+"1AL0aa4","eq6zj0E","2026-02-03 09:18:52","4","3","","","","4","4","","","","Peux tu résumer les conclusions de l'appelant en respectant le prompt ? voici les conclusions TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2101,8 +2101,8 @@ Madame **[C] [L] [N]**, née le **[Date naissance 1]** à **[Localité 1
 
 *Pièce 1 : Décision d’aide juridictionnelle*  
 
-**Ayant pour avocat :** Maître **[",Résumé Conclusions,GPT-OSS-120B (Nebius),,,4
-Me0NLyE,eq6zj0E,2026-02-05 15:03:02,4.0,5.0,,4.0,Non,5.0,4.0,,Oui,,tu n'as pas respecté le temps employé (passé composé). Peux tu modifier le résumé afin de respecter les consignes ,"**RÉSUMÉ DES CONCLUSIONS D'APPELANTE**
+**Ayant pour avocat :** Maître **[","Résumé Conclusions","GPT-OSS-120B (Nebius)","",""
+"Me0NLyE","eq6zj0E","2026-02-05 15:03:02","4","5","","4","Non","5","4","","Oui","","tu n'as pas respecté le temps employé (passé composé). Peux tu modifier le résumé afin de respecter les consignes ","**RÉSUMÉ DES CONCLUSIONS D'APPELANTE**
 *(Tribunal Judiciaire de Paris - RG 21/15415 - Pôle 3, Chambre 5)*
 
 ---
@@ -2111,8 +2111,8 @@ Me0NLyE,eq6zj0E,2026-02-05 15:03:02,4.0,5.0,,4.0,Non,5.0,4.0,,Oui,,tu n'as pas r
 
 **Madame [C] [L] [N]**, née le **[Date naissance 1]** à **[Localité 1]** (Côte d'Ivoire), de nationalité française, assistante d'éducation, demeurant **[Adresse 1]**, bénéficiaire de l'aide juridictionnelle (décision n°2021/027771), a interjeté appel.
 
-Elle **a été représentée** par Maître **[O] [D]**, avocat au Barreau de Paris (Toque D1601), dont le cabinet **se situ",Résumé Conclusions,Mistral-medium-2508, mais pb du temps employé ,,
-EkpdV4A,eq6zj0E,2026-02-05 16:21:01,3.0,4.0,,3.0,Non,5.0,4.0,,Oui,,"Peux tu résumer les conclusions ci dessous en respectant les consignes du prompt. Tu rédigeras de façon littéraire en respectant les temps employés dans le document source. voici les conclusions Cour d'appel de Paris Parouet Général
+Elle **a été représentée** par Maître **[O] [D]**, avocat au Barreau de Paris (Toque D1601), dont le cabinet **se situ","Résumé Conclusions","Mistral-medium-2508"," mais pb du temps employé ",""
+"EkpdV4A","eq6zj0E","2026-02-05 16:21:01","3","4","","3","Non","5","4","","Oui","","Peux tu résumer les conclusions ci dessous en respectant les consignes du prompt. Tu rédigeras de façon littéraire en respectant les temps employés dans le document source. voici les conclusions Cour d'appel de Paris Parouet Général
   
 
    Département des affaires civiles, des mineurs et de la famille - Service civil -
@@ -2146,8 +2146,8 @@ EkpdV4A,eq6zj0E,2026-02-05 16:21:01,3.0,4.0,,3.0,Non,5.0,4.0,,Oui,,"Peux tu rés
 #### **APPELANTE**
 **Madame [F] [U] [M] [T]**
 Née le [Date naissance 1] 1989 à [Localité 1] (Côte d’Ivoire), de nationalité ivoirienne.
-Mariée le [Date mariage 1] 2013 à [Localité 2] (Côte d’Ivoire) avec [D] [J], de nat",Résumé Conclusions,Mixtral 8x22B (Mistral),"des sous sections sont créés qui compte tenu de la brièveté du des conclusions n'étaient pas indispensables,",,4
-Pdo1qdb,eq6zj0E,2026-02-05 16:29:13,4.0,5.0,,4.0,Non,2.0,3.0,,Oui,,"Peux tu résumer les conclusions ci dessous en respectant les consignes du prompt. Tu rédigeras de façon littéraire en respectant les temps employés dans le document source. voici les conclusions Cour d'appel de Paris Parouet Général
+Mariée le [Date mariage 1] 2013 à [Localité 2] (Côte d’Ivoire) avec [D] [J], de nat","Résumé Conclusions","Mixtral 8x22B (Mistral)","des sous sections sont créés qui compte tenu de la brièveté du des conclusions n'étaient pas indispensables,",""
+"Pdo1qdb","eq6zj0E","2026-02-05 16:29:13","4","5","","4","Non","2","3","","Oui","","Peux tu résumer les conclusions ci dessous en respectant les consignes du prompt. Tu rédigeras de façon littéraire en respectant les temps employés dans le document source. voici les conclusions Cour d'appel de Paris Parouet Général
   
 
    Département des affaires civiles, des mineurs et de la famille - Service civil -
@@ -2177,8 +2177,8 @@ Madame **[F] [T]**, née le **[Date naissance 1]** 1989 à **[Localité 1]** (C�
 Épouse de **[D] [J]**, de nationalité française,
 Mère de **[G]**, né le **[Date naissance 2]** 2015 à **[Localité 3]**.
 Domiciliée **[Adresse non précisée dans le document source]**.
-Représentée par Maître **[U] BR",Résumé Conclusions,Mistral-medium-2508,"trop court, il manque certaines références à des articles importants pour comprendre le raisonnement du MP ",,4
-RGOMOgv,eq6zj0E,2026-02-05 16:43:33,2.0,2.0,,1.0,Non,4.0,3.0,,En partie,Il y a des moyens qui ne sont pas assez ou mal développés,"Peux tu résumer les conclusions ci dessous en respectant les consignes du prompt. Tu rédigeras de façon littéraire en respectant les temps employés dans le document source. voici les conclusions Cour d'appel de Paris Parouet Général
+Représentée par Maître **[U] BR","Résumé Conclusions","Mistral-medium-2508","trop court, il manque certaines références à des articles importants pour comprendre le raisonnement du MP ",""
+"RGOMOgv","eq6zj0E","2026-02-05 16:43:33","2","2","","1","Non","4","3","","En partie","Il y a des moyens qui ne sont pas assez ou mal développés","Peux tu résumer les conclusions ci dessous en respectant les consignes du prompt. Tu rédigeras de façon littéraire en respectant les temps employés dans le document source. voici les conclusions Cour d'appel de Paris Parouet Général
   
 
    Département des affaires civiles, des mineurs et de la famille - Service civil -
@@ -2208,8 +2208,8 @@ Pôle 3 – Chambre 5 – R.G. N° 21/15415
 ### PARTIES  
 
 **APPELANTE**  
-Madame **[F] [T]**, née le **[Date naissance 1] 1989** à **[Localité 1]** (Côte d’Ivoire), de nationalité ivoirienne, mariée le **[Date mariage 1] 2013** à **[Localité 2]** (Côte d’Ivoire) av",Résumé Conclusions,GPT-OSS-120B (Nebius),il y a une mauvaise interprétation de ce que soutient la partie; Il ya des sous section ajoutées qui sont artificielles,,4
-Npz6EVG,eq6zj0E,2026-02-06 12:18:46,5.0,5.0,,4.0,Non,5.0,4.0,,Oui,,"Peux tu résumer les conclusions ci dessous en respectant le prompt TRIBUNAL JUDICIAIRE DE PARIS
+Madame **[F] [T]**, née le **[Date naissance 1] 1989** à **[Localité 1]** (Côte d’Ivoire), de nationalité ivoirienne, mariée le **[Date mariage 1] 2013** à **[Localité 2]** (Côte d’Ivoire) av","Résumé Conclusions","GPT-OSS-120B (Nebius)","il y a une mauvaise interprétation de ce que soutient la partie; Il ya des sous section ajoutées qui sont artificielles",""
+"Npz6EVG","eq6zj0E","2026-02-06 12:18:46","5","5","","4","Non","5","4","","Oui","","Peux tu résumer les conclusions ci dessous en respectant le prompt TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2263,8 +2263,8 @@ Avocat au Barreau de PARIS
 Toque : D1601
 
 #### **INTIMÉ**
-LE PROCUREUR GENERAL - SERV",Résumé Conclusions,Albert Large,,,4
-2E2ezye,eq6zj0E,2026-02-06 12:41:22,5.0,5.0,,5.0,Non,5.0,5.0,,Non,,"peux tu résumer les conclusions ci après en respectant les consignes du prompts : Cour d'appel de Paris Parouet Général
+LE PROCUREUR GENERAL - SERV","Résumé Conclusions","Albert Large","",""
+"2E2ezye","eq6zj0E","2026-02-06 12:41:22","5","5","","5","Non","5","5","","Non","","peux tu résumer les conclusions ci après en respectant les consignes du prompts : Cour d'appel de Paris Parouet Général
   
 
    Département des affaires civiles, des mineurs et de la famille - Service civil -
@@ -2319,8 +2319,8 @@ Ayant pour avocat Maître [U] BRIDJI
 
 **LE MINISTÈRE PUBLIC**
 
-Représenté par le Procureur général près la cour d'appel de Paris, ",Résumé Conclusions,Albert Large,ce n'est pas un résumé mais une copie des conclusions du Mp avec une présentation conforme au prompt !!! ,,4
-5BNzNd6,eq6zj0E,2026-02-06 13:15:56,5.0,5.0,,5.0,Non,5.0,4.0,,Oui,,"Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
+Représenté par le Procureur général près la cour d'appel de Paris, ","Résumé Conclusions","Albert Large","ce n'est pas un résumé mais une copie des conclusions du Mp avec une présentation conforme au prompt !!! ",""
+"5BNzNd6","eq6zj0E","2026-02-06 13:15:56","5","5","","5","Non","5","4","","Oui","","Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2356,8 +2356,8 @@ Représenté par le Procureur général près la cour d'appel de Paris, ",Résum
 
 Les époux [C] et [S] ont contracté mariage devant l'officier de l'état civil d'[Localité 3] (Côte d'Ivoire) le [Date mariage 1] 2013, sans contrat de mariage.
 
-Madame [C] est arrivée en France en février 2014 pour y vivre auprès de son mari. La communauté de vie tant affective que matérielle s'est poursuivie entre les époux, et un enfant, [Q], [E], [T] [S], est né d",Rapport de synthèse,Albert Large,,,4
-819Kvor,eq6zj0E,2026-02-06 13:32:22,5.0,5.0,,5.0,Non,5.0,5.0,,Oui,,"Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
+Madame [C] est arrivée en France en février 2014 pour y vivre auprès de son mari. La communauté de vie tant affective que matérielle s'est poursuivie entre les époux, et un enfant, [Q], [E], [T] [S], est né d","Rapport de synthèse","Albert Large","",""
+"819Kvor","eq6zj0E","2026-02-06 13:32:22","5","5","","5","Non","5","5","","Oui","","Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2395,8 +2395,8 @@ Madame [C] est arrivée en France en février 2014 pour y vivre auprès de son m
 
 Madame [C] [L] [N], née le [Date naissance 1] 1989 à [Localité 1] (Côte d'Ivoire) et de nationalité ivoirienne à l'époque des faits, a épousé Monsieur [S] [R], de nationalité française, le [Date mariage 1] 2013 à [Localité 3] (Côte d'Ivoire), sans contrat de mariage (pièce 3).
 
-Elle est arrivée en France en février 2014 pour vivre auprès de son époux. De cette",Rapport de synthèse,Mixtral 8x22B (Mistral),,,4
-WO4AJLQ,eq6zj0E,2026-02-06 13:48:35,5.0,5.0,,5.0,Non,5.0,4.0,,Oui,,"Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
+Elle est arrivée en France en février 2014 pour vivre auprès de son époux. De cette","Rapport de synthèse","Mixtral 8x22B (Mistral)","",""
+"WO4AJLQ","eq6zj0E","2026-02-06 13:48:35","5","5","","5","Non","5","4","","Oui","","Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2429,8 +2429,8 @@ WO4AJLQ,eq6zj0E,2026-02-06 13:48:35,5.0,5.0,,5.0,Non,5.0,4.0,,Oui,,"Peux tu éta
 
 ### **1️⃣ FAITS**
 
-Madame **[C] [L] [N]**, née le **[Date naissance 1]** à **[Localité 1]** (Côte d’Ivoire), de nationalité française, et Monsieur **[S] [R]**, de nationalité française, ont contracté mariage le **[Date mariage 1]** à **[Localité 3]** (Côte d’Ivoire), sans contrat de mariage. Madame **[C]** est arrivée en France en **février 2014** pour rejoindre son époux. De cette un",Rapport de synthèse,Mistral-medium-2508,5 pages;  assez synthétique,,4
-BzvGKYe,eq6zj0E,2026-02-06 13:56:26,5.0,5.0,,4.0,Non,3.0,3.0,,En partie,Il y a des moyens qui ne sont pas assez ou mal développés,"Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
+Madame **[C] [L] [N]**, née le **[Date naissance 1]** à **[Localité 1]** (Côte d’Ivoire), de nationalité française, et Monsieur **[S] [R]**, de nationalité française, ont contracté mariage le **[Date mariage 1]** à **[Localité 3]** (Côte d’Ivoire), sans contrat de mariage. Madame **[C]** est arrivée en France en **février 2014** pour rejoindre son époux. De cette un","Rapport de synthèse","Mistral-medium-2508","5 pages;  assez synthétique",""
+"BzvGKYe","eq6zj0E","2026-02-06 13:56:26","5","5","","4","Non","3","3","","En partie","Il y a des moyens qui ne sont pas assez ou mal développés","Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2463,8 +2463,8 @@ BzvGKYe,eq6zj0E,2026-02-06 13:56:26,5.0,5.0,,4.0,Non,3.0,3.0,,En partie,Il y a d
 
 ### **1️⃣ FAITS**
 
-Madame **[C] [L] [N]**, née le **[Date naissance 1]** à **[Localité 1]** (Côte d’Ivoire), de nationalité française, et Monsieur **[S] [R]**, de nationalité française, ont contracté mariage le **[Date mariage 1]** à **[Localité 3]** (Côte d’Ivoire), sans contrat de mariage. Madame **[C]** est arrivée en France en **février 2014** pour rejoindre son époux. De cette un",Rapport de synthèse,Mistral-medium-2508,manque de précision; usage du présent inaproprié,,4
-KYXMVM7,eq6zj0E,2026-02-06 14:07:24,5.0,5.0,,4.0,Non,3.0,2.0,,En partie,Il y a eu des faits oubliés ou mal restitués,"Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
+Madame **[C] [L] [N]**, née le **[Date naissance 1]** à **[Localité 1]** (Côte d’Ivoire), de nationalité française, et Monsieur **[S] [R]**, de nationalité française, ont contracté mariage le **[Date mariage 1]** à **[Localité 3]** (Côte d’Ivoire), sans contrat de mariage. Madame **[C]** est arrivée en France en **février 2014** pour rejoindre son époux. De cette un","Rapport de synthèse","Mistral-medium-2508","manque de précision; usage du présent inaproprié",""
+"KYXMVM7","eq6zj0E","2026-02-06 14:07:24","5","5","","4","Non","3","2","","En partie","Il y a eu des faits oubliés ou mal restitués","Peux tu établir le rapport de synthèse demandé en respectant les consignes du prompt. Voici les conclusions de l'appelant : TRIBUNAL JUDICIAIRE DE PARIS
    
 
 
@@ -2496,4 +2496,228 @@ KYXMVM7,eq6zj0E,2026-02-06 14:07:24,5.0,5.0,,4.0,Non,3.0,2.0,,En partie,Il y a e
 ### 1. FAITS  
 
 1. Le [Date mariage 1] 2013, Mme [C] (née le [Date naissance 2] à [Localité 1], Côte d’Ivoire) et M. [S] (de nationalité française) contractent mariage à [Localité 3] en Côte d’Ivoire, sans contrat de mariage.  
-2. Mme [C] rejoint la France en février 2014 pour vivre auprès de son époux. Le couple fonde une communauté de vie affective et matérielle ; ils ont un enfant, [Q E T S]",Rapport de synthèse,GPT-OSS-120B (Nebius),pb de style; faits et procédure trop imprécis ,,4
+2. Mme [C] rejoint la France en février 2014 pour vivre auprès de son époux. Le couple fonde une communauté de vie affective et matérielle ; ils ont un enfant, [Q E T S]","Rapport de synthèse","GPT-OSS-120B (Nebius)","pb de style; faits et procédure trop imprécis ",""
+"Zj0E79a","eq6zj0E","2026-02-13 14:17:11","","","","","","","","","En partie","","Peux tu résumer les conclusions selon le prompt. A Madame, Monsieur le Juge des référés du Tribunal Judiciaire de Paris
+  
+
+   RG n° 23/56683
+  
+
+   Audience des référés du mardi 26 mars 2024
+  
+
+   Signifiées par RPVA le 25 mars 2024
+  
+
+   CONCLUSIONS EN RÉPONSE n°2
+  
+
+
+    POUR:
+   
+
+
+   Le Syndicat des Copropriétaires de la Tour Maine Montparnasse sis [Adresse 1] à [Localité 1], pris en la personne de son syndic la société [Personne Morale 1], société par actions simplifiée immatriculée au ","### **RÉSUMÉ DE CONCLUSION**
+**Conclusions en réponse n°2 – Procédure de référé**
+**Juge des référés du Tribunal Judiciaire de Paris**
+**RG n° 23/56683 – Audience du 26 mars 2024**
+
+---
+
+### **PARTIES**
+
+#### **Demandeur (Intimé)**
+**Le Syndicat des Copropriétaires de la Tour Maine Montparnasse**
+- **Siège** : [Adresse 1], [Localité 1]
+- **Représenté par** : son syndic, la société [Personne Morale 1] (SAS), immatriculée au RCS de [Localité 2] sous le numéro [N° SIREN/SIRET 1], dont le siège soci","Résumé Conclusions","Mixtral 8x22B (Mistral)","",""
+"MeB5WWp","9q9YAqG","2026-02-15 11:37:57","5","5","","5","Non","5","5","","Non","Résumé par points","Peux-tu résumer les conclusions du demandeur en respectant les consignes du prompt ? Voici les conclusions du demandeur CONCLUSIONS RECAPITULATIVES (signifiées par RPVA le 19 mars 2024)
+   
+
+
+    POUR : La Société [Personne Morale 1] ([Adresse 1]),
+   
+   société par actions simplifiée au capital social de  2.001.000 euros, immatriculée au RCS de [Localité 1] sous le n°[N° SIREN/SIRET 1],  prise en la personne de son Président en exercice domicilié en cette  qualité au siège sociale, [Adresse 2]","### **RÉSUMÉ DE CONCLUSION**
+**Type d'acte : Conclusions du demandeur (Société [Personne Morale 1])**
+
+---
+
+### **PARTIES**
+
+#### **DEMANDERESSE**
+**La Société [Personne Morale 1]**
+- Forme juridique : Société par actions simplifiée (SAS)
+- Capital social : 2 001 000 euros
+- Immatriculation : RCS de [Localité 1] sous le n°[N° SIREN/SIRET 1]
+- Représentant légal : Son Président en exercice, domicilié en cette qualité au siège social [Adresse 2]
+- Conseil : Maître [O], Avocat au Barreau de Paris –","Résumé Conclusions","Mixtral 8x22B (Mistral)","Le résumé sert de base, mais ne peut être utilisé tel quel. Il permet davantage une utilisation avant l'audience afin de permettre au juge de prendre rapidement connaissance des difficultés posées par le dossier. 
+Toutefois, les éléments essentiels de l'argumentation sont repris. L'IA n'a pas réussi à percevoir qu'il y avait de nombreuses redites, du fait d'une construction des conclusions au gré des évolutions procédurales (avec des arguments effectués presque année par année, ou procédure par procédure), donc difficilement exploitables.",""
+"J970aJo","9q9YAqG","2026-02-15 12:12:11","0","1","","2","Oui","1","1","","Non","Il y a des moyens qui n'ont pas été repris","Peux-tu résumer les conclusions du défendeur en respectant les consignes du prompt ? Voici les conclusions du défendeurCONCLUSIONS RECAPITULATIVES (signifiées par RPVA le 19 mars 2024)
+   
+
+
+    POUR : La Société [Personne Morale 1] ([Adresse 1]),
+   
+   société par actions simplifiée au capital social de  2.001.000 euros, immatriculée au RCS de [Localité 1] sous le n°[N° SIREN/SIRET 1],  prise en la personne de son Président en exercice domicilié en cette  qualité au siège sociale, [Adresse 2]
+","### RÉSUMÉ DE CONCLUSION (Type d'acte : Conclusions d'intimé)
+
+---
+
+### **PARTIES**
+
+#### **DÉFENDERESSE**
+**La Société [Personne Morale 1] ([Adresse 1])**
+- Société par actions simplifiée
+- Capital social : 2.001.000 euros
+- Immatriculée au RCS de [Localité 1] sous le n°[N° SIREN/SIRET 1]
+- Prise en la personne de son Président en exercice domicilié en cette qualité au siège sociale, [Adresse 2]
+
+**La SCP [T] PANEPINTO Société d'Avocats au Barreau de Paris – Palais P. 102**
+- Prise en la person","Résumé Conclusions","Albert Large","Aucune distance avec la présentation partiale des faits par le défendeur. Le résumé est donc empreint de cette même partialité. Les termes utilisés par le défendeur ne sont pas reformulés, on trouve donc des termes comme ""votre juridiction"", ""il est aisé de comprendre la stratégie du syndicat"". Les mêmes paragraphes sont repris plusieurs fois sur 13 pages. Il y a des hallucinations. Les faits relatifs à la procédure sont repris via copier-coller, sans aucune reformulation. Mais surtout, les moyens ne sont absolument pas repris (compétence JME, TMI, contestations sérieuses)",""
+"KYbLBOA","9q9YAqG","2026-02-15 14:20:13","4","4","","4","Non","5","5","","En partie","Le résumé n'est pas construit sous forme littéraire. Résumé sous forme de points","Peux-tu résumer les conclusions du défendeur en respectant les consignes du prompt ? Voici les conclusions du défendeurCONCLUSIONS RECAPITULATIVES (signifiées par RPVA le 19 mars 2024)
+   
+
+
+    POUR : La Société [Personne Morale 1] ([Adresse 1]),
+   
+   société par actions simplifiée au capital social de  2.001.000 euros, immatriculée au RCS de [Localité 1] sous le n°[N° SIREN/SIRET 1],  prise en la personne de son Président en exercice domicilié en cette  qualité au siège sociale, [Adresse 2]
+","---
+### **RÉSUMÉ DE CONCLUSIONS RÉCAPITULATIVES (Conclusions du défendeur – Signifiées par RPVA le 19 mars 2024)**
+
+---
+
+### **PARTIES**
+
+#### **Défenderesse**
+**La Société [Personne Morale 1]**
+- **Forme juridique** : Société par actions simplifiée (SAS)
+- **Capital social** : 2 001 000 €
+- **Immatriculation** : RCS [Localité 1] sous le n°[N° SIREN/SIRET 1]
+- **Siège social** : [Adresse 1]
+- **Représentant légal** : Président en exercice, domicilié en cette qualité au siège social, [Adresse 2]
+","Résumé Conclusions","Mistral-medium-2508","Quelques mots présents empruntés directement du défendeur (partialité). 
+Le rappel de la procédure est succinct et ne permet pas d'être appréhendé si l'on n'a pas lu les conclusions avant. 
+En revanche, les moyens sont tous repris et bien résumés, ce qui est plutôt une bonne surprise au regard du caractère confus des écritures en défense.",""
+"q46OkQ7","9q9YAqG","2026-02-15 14:54:20","3","4","","4","Non","2","3","","Non","B et C","Peux-tu résumer les conclusions du défendeur en respectant les consignes du prompt ? Voici les conclusions du défendeur CONCLUSIONS RECAPITULATIVES (signifiées par RPVA le 19 mars 2024)
+   
+
+
+    POUR : La Société [Personne Morale 1] ([Adresse 1]),
+   
+   société par actions simplifiée au capital social de  2.001.000 euros, immatriculée au RCS de [Localité 1] sous le n°[N° SIREN/SIRET 1],  prise en la personne de son Président en exercice domicilié en cette  qualité au siège sociale, [Adresse 2]","**RÉSUMÉ DE CONCLUSION**  
+*Type d’acte : Conclusions d’intimé (défendeur)*  
+
+---
+
+## PARTIES  
+
+**POUR :**  
+La Société **[Personne Morale 1]** – [Adresse 1],  
+Société par actions simplifiée au capital de **2 001 000 €**, immatriculée au RCS de **[Localité 1]** sous le n° **[N° SIREN/SIRET 1]**, prise en la personne de son Président en exercice, domicilié en cette qualité au siège social : **[Adresse 2]**.  
+
+**DEFENDERESSE :**  
+La SCP **[T] PANEPINTO** Société d’Avocats au Barreau de Paris ","Résumé Conclusions","GPT-OSS-120B (Nebius)","Erreur d'interprétation du sens de l'arrêt de la cour du 30 juin 2023. Reprend la présentation erratique des conclusions, ce qui conduit à un résumé peu clair des faits et prétentions. 
+Moyens pas assez développés, trop court.
+Présentation par points, résumé pas construit de façon littéraire",""
+"5BRLgRb","9q9YAqG","2026-02-15 15:48:33","5","","","5","Non","5","5","","En partie","Il y a des moyens qui ne sont pas assez ou mal développés","Peux-tu résumer les conclusions du demandeur en respectant les consignes du prompt ? Voici les conclusions A Madame, Monsieur le Juge des référés du Tribunal Judiciaire de Paris
+  
+
+   RG n° 23/56683
+  
+
+   Audience des référés du mardi 26 mars 2024
+  
+
+   Signifiées par RPVA le 25 mars 2024
+  
+
+   CONCLUSIONS EN RÉPONSE n°2
+  
+
+
+    POUR:
+   
+
+
+   Le Syndicat des Copropriétaires de la Tour Maine Montparnasse sis [Adresse 1] à [Localité 1], pris en la personne de son syndic la société [Personne ","### **RÉSUMÉ DE CONCLUSION**
+**Type d'acte : Conclusions du demandeur (Syndicat des Copropriétaires de la Tour Maine Montparnasse)**
+
+---
+
+### **PARTIES**
+
+#### **DEMANDEUR (INTIMÉ EN APPEL)**
+**Le Syndicat des Copropriétaires de la Tour Maine Montparnasse**
+- **Siège social** : [Adresse 1], [Localité 1]
+- **Représenté par** : son syndic, la société [Personne Morale 1], société par actions simplifiée
+  - **Immatriculation** : RCS de [Localité 2] sous le numéro [N° SIREN/SIRET 1]
+  - **Siège soci","Résumé Conclusions","Mixtral 8x22B (Mistral)","Résumé des faits et de la procédure plutôt complet. Résumé des moyens insuffisamment développés, même si les arguments sont là. Le fait qu'il soit repris par points rend le résumé trop haché et certains arguments sont trop peu développés (notamment sur la résiliation de plein droit).",""
+"ODvLxK8","9q9YAqG","2026-02-15 16:13:39","5","5","","5","Non","5","5","","Oui","","Peux-tu résumer les conclusions du demandeur en respectant les consignes du prompt ? Voici les conclusions du demandeur A Madame, Monsieur le Juge des référés du Tribunal Judiciaire de Paris
+  
+
+   RG n° 23/56683
+  
+
+   Audience des référés du mardi 26 mars 2024
+  
+
+   Signifiées par RPVA le 25 mars 2024
+  
+
+   CONCLUSIONS EN RÉPONSE n°2
+  
+
+
+    POUR:
+   
+
+
+   Le Syndicat des Copropriétaires de la Tour Maine Montparnasse sis [Adresse 1] à [Localité 1], pris en la personne de son syndic la socié","---
+### **RÉSUMÉ DE CONCLUSIONS EN RÉPONSE (Demandeur)**
+**Juridiction :** Tribunal Judiciaire de Paris – Juge des référés
+**RG n° 23/56683**
+**Audience :** 26 mars 2024
+**Signification :** RPVA le 25 mars 2024
+
+---
+
+### **PARTIES**
+
+#### **Demandeur**
+**Le Syndicat des Copropriétaires de la Tour Maine Montparnasse**
+- **Siège social :** [Adresse 1], [Localité 1]
+- **Représenté par son syndic :** [Personne Morale 1] (SAS)
+  - **RCS :** [Localité 2] – **N° SIRET :** [N° SIREN/SIRET 1]
+  - **Siège","Résumé Conclusions","Mistral-medium-2508","Résumé utilisable avant l'audience. Si tous les éléments sont présents, ça reste trop court. Le terme ""Ordonnance"" est utilisée sans précision du juge qui a rendu la décision (JME ou juge des référés).
+Sans avoir lu les conclusions avant, il est difficile de bien comprendre les faits et la procédure. En revanche, les moyens tels qu'ils sont exposés permettent de comprendre l'enjeu du litige",""
+"J97LP1J","9q9YAqG","2026-02-15 16:29:12","3","5","","5","Non","2","5","","Non","Il y a des moyens qui ne sont pas assez ou mal développés","Peux-tu résumer les conclusions du demandeur en respectant les consignes du prompt ? Voici les conclusions du demandeur A Madame, Monsieur le Juge des référés du Tribunal Judiciaire de Paris
+  
+
+   RG n° 23/56683
+  
+
+   Audience des référés du mardi 26 mars 2024
+  
+
+   Signifiées par RPVA le 25 mars 2024
+  
+
+   CONCLUSIONS EN RÉPONSE n°2
+  
+
+
+    POUR:
+   
+
+
+   Le Syndicat des Copropriétaires de la Tour Maine Montparnasse sis [Adresse 1] à [Localité 1], pris en la personne de son syndic la socié","**RÉSUMÉ DE CONCLUSION**  
+*Type d’acte : Conclusions du demandeur (Syndicat des Copropriétaires de la Tour Maine‑Montparnasse) – Référé devant le Tribunal Judiciaire de Paris*  
+
+---
+
+## PARTIES  
+
+**Demandeur**  
+- **Nom** : Syndicat des Copropriétaires de la Tour Maine‑Montparnasse  
+- **Forme juridique** : Syndicat de copropriétaires (personne morale)  
+- **Siège** : [Adresse 2] – [Localité 2]  
+- **Représenté par** : Société PAISNER LLP, avocat **Maître Henry RANCHON**, Avocat au Barreau de","Résumé Conclusions","GPT-OSS-120B (Nebius)","Beaucoup trop court. Cela est utile pour prendre connaissance du dossier avant l'audience. C'est court, même s'il est vrai que les enjeux essentiels du litige ressortent du résumé. Mais c'est trop court",""

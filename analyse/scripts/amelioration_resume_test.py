@@ -1,6 +1,34 @@
 """
-Test d'amélioration du résumé de conclusions
-Découpage déterministe + traitement parallèle des sections
+=============================================================================
+SCRIPT : amelioration_resume_test.py
+=============================================================================
+
+DESCRIPTION :
+    Script de test pour améliorer le résumé automatique de conclusions juridiques.
+    Utilise une approche hybride combinant :
+    1. Découpage déterministe par regex pour identifier les sections
+    2. Fallback LLM (Mistral) quand les regex échouent
+    3. Traitement parallèle des sections pour optimiser le temps d'exécution
+
+FONCTIONNALITÉS :
+    - Découpe les conclusions en sections : en-tête, faits, moyens, prétentions, pièces
+    - Résume chaque section en parallèle via l'API Mistral
+    - Vérifie et nettoie le format final du résumé
+    - Compare les méthodes regex seul vs hybride sur plusieurs dossiers
+
+OUTPUTS GÉNÉRÉS :
+    - resultat_resume_parallele.md : Résumé structuré des conclusions
+    - Affichage console : statistiques de découpage et temps d'exécution
+
+DÉPENDANCES :
+    - Fichiers de prompts : resume_faits.md, resume_moyens.md, resume_pretentions.md,
+      synthese_faits_procedure.md
+    - Fichiers de conclusions : Dossier_*.txt
+    - API Mistral (clé dans variable d'environnement MISTRAL_API_KEY)
+
+USAGE :
+    python amelioration_resume_test.py
+=============================================================================
 """
 
 import os

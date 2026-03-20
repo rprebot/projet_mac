@@ -1,10 +1,49 @@
+"""
+=============================================================================
+SCRIPT : analyse_prompts.py
+=============================================================================
+
+DESCRIPTION :
+    Script d'analyse comparative des différents types de prompts.
+    Compare les performances des prompts (et non des modèles) en utilisant
+    des moyennes post-stratifiées rééquilibrées par modèle LLM, avec
+    intervalles de confiance calculés par bootstrap.
+
+FONCTIONNALITÉS :
+    - Charge les données de notation enrichies
+    - Calcule les moyennes post-stratifiées par modèle pour chaque prompt
+      (chaque modèle LLM a le même poids dans le calcul final)
+    - Génère des intervalles de confiance à 95% par bootstrap (1000 itérations)
+    - Filtre les prompts avec moins de 4 observations
+    - Produit un graphique comparatif et un tableau récapitulatif
+
+CRITÈRES ANALYSÉS :
+    - Clarté, Précision, Exhaustivité, Intelligibilité
+
+PROMPTS COMPARÉS :
+    - Synthèse Rapport, Résumé Conclusions, Résumé Parallèle
+    - Faits & Procédure, Faits Proc. & Moyens, Personnalisable
+
+OUTPUTS GÉNÉRÉS :
+    - ../output/graphique_comparaison_prompts.png : Graphique comparatif avec IC 95%
+    - ../data/comparaison_prompts_resultats.csv : Tableau récapitulatif des moyennes
+    - Affichage console : distribution, résultats détaillés, tableaux croisés
+
+DONNÉES D'ENTRÉE :
+    - ../data/Notation assistant_Submissions_2026-02-26.csv
+
+USAGE :
+    python analyse_prompts.py
+=============================================================================
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
 # Charger les données enrichies
-df = pd.read_csv('../data/Notation assistant_Submissions_2026-02-09_enrichi.csv')
+df = pd.read_csv('../data/Notation assistant_Submissions_2026-02-26.csv')
 
 # =============================================================================
 # FONCTIONS POUR POST-STRATIFICATION ET BOOTSTRAP
@@ -89,7 +128,7 @@ def bootstrap_multi_criteres_prompts(data, prompt_col, modele_col, criteres,
 df = df.rename(columns={
     'Clarté /  Est-ce que la structure est satisfaisante ? ': 'Clarté',
     'Précision / Est-ce que tous les éléments reportés sont exacts ? ': 'Précision',
-    'Fidélité / Est-ce que le résumé est fidèle au(x) document(s) source(s) ? ': 'Fidélité',
+    'Exhaustivité / tous les élément clés sont-ils présent ? ': 'Exhaustivité',
     'Intelligibilité de la réponse en langage juridique': 'Intelligibilité',
     'LLMmodel': 'Modèle',
     'Prompt': 'Type_Prompt'
@@ -122,8 +161,8 @@ plt.rcParams['axes.titlesize'] = 12
 plt.rcParams['axes.labelsize'] = 10
 
 # Critères et couleurs
-criteres = ['Clarté', 'Précision', 'Fidélité', 'Intelligibilité']
-colors = {'Clarté': '#3498db', 'Précision': '#2ecc71', 'Fidélité': '#e74c3c', 'Intelligibilité': '#9b59b6'}
+criteres = ['Clarté', 'Précision', 'Exhaustivité', 'Intelligibilité']
+colors = {'Clarté': '#3498db', 'Précision': '#2ecc71', 'Exhaustivité': '#e74c3c', 'Intelligibilité': '#9b59b6'}
 n_bootstrap = 1000
 
 # =============================================================================
