@@ -552,13 +552,17 @@ Tu dois IMPÉRATIVEMENT rédiger en PROSE LITTÉRAIRE avec des paragraphes fluid
             model="mistral-small-2603",
             messages=enhanced_messages,
             temperature=0.3,
-            max_tokens=32768
+            max_tokens=65536  # Augmenté pour éviter la troncature
         )
         # Debug: stocker la raison d'arrêt pour affichage
         finish_reason = response.choices[0].finish_reason
         usage = response.usage
         st.session_state["debug_finish_reason"] = finish_reason
         st.session_state["debug_usage"] = f"Tokens: {usage.prompt_tokens} (prompt) + {usage.completion_tokens} (completion) = {usage.total_tokens} (total)"
+
+        # Log console pour debug supplémentaire
+        print(f"[DEBUG Mistral Small 4] finish_reason={finish_reason}, completion_tokens={usage.completion_tokens}, max_tokens=65536")
+
         return response.choices[0].message.content
 
     # GPT-OSS-120B via Nebius (OpenAI compatible) avec reasoning
@@ -668,6 +672,16 @@ with tab1:
 
         # Afficher le lien vers le formulaire Tally après chaque réponse de l'assistant
         if message["role"] == "assistant":
+            # Afficher les infos de debug si disponibles (Mistral Small 4)
+            if "debug_info" in message:
+                debug = message["debug_info"]
+                finish_reason = debug.get("finish_reason", "")
+                usage_info = debug.get("usage", "")
+                if finish_reason == "length":
+                    st.warning(f"⚠️ **Réponse tronquée** (finish_reason: `{finish_reason}`) - {usage_info}")
+                else:
+                    st.info(f"✅ finish_reason: `{finish_reason}` - {usage_info}")
+
             # Récupérer la question de l'utilisateur (message précédent)
             user_question = ""
             if idx > 0 and st.session_state.messages[idx - 1]["role"] == "user":
@@ -799,17 +813,21 @@ with tab1:
                                 st.session_state.messages
                             )
 
-                    # Ajouter la réponse à l'historique
-                    st.session_state.messages.append({"role": "assistant", "content": response_text})
-
-                    # Debug: afficher finish_reason si disponible (Mistral Small 4)
+                    # Récupérer les infos de debug si disponibles (Mistral Small 4)
+                    debug_info = None
                     if "debug_finish_reason" in st.session_state:
                         finish_reason = st.session_state.pop("debug_finish_reason")
                         usage_info = st.session_state.pop("debug_usage", "")
-                        if finish_reason == "length":
-                            st.warning(f"⚠️ Réponse tronquée (finish_reason: {finish_reason}) - {usage_info}")
-                        else:
-                            st.info(f"✅ finish_reason: {finish_reason} - {usage_info}")
+                        debug_info = {
+                            "finish_reason": finish_reason,
+                            "usage": usage_info
+                        }
+
+                    # Ajouter la réponse à l'historique (avec debug_info si disponible)
+                    message_data = {"role": "assistant", "content": response_text}
+                    if debug_info:
+                        message_data["debug_info"] = debug_info
+                    st.session_state.messages.append(message_data)
 
                     # Évaluation automatique si activée
                     if enable_evaluation:
