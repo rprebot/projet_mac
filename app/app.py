@@ -535,18 +535,30 @@ def call_model(model_choice, system_prompt, messages_history):
         if not MISTRAL_API_KEY:
             raise ValueError("La clé API Mistral n'est pas configurée.")
 
+        # Renforcer l'instruction de style littéraire pour ce modèle
+        style_instruction = """
+
+⚠️ INSTRUCTION CRITIQUE DE STYLE :
+Tu dois IMPÉRATIVEMENT rédiger en PROSE LITTÉRAIRE avec des paragraphes fluides et continus.
+- INTERDIT : les listes à puces, les tirets, les numérotations (sauf pour les prétentions/dispositif)
+- OBLIGATOIRE : des phrases complètes reliées par des connecteurs logiques (En effet, Par ailleurs, Toutefois, Dès lors, En outre, De surcroît)
+- Le texte doit ressembler à un arrêt de cour d'appel, PAS à des notes ou un plan.
+"""
+        enhanced_system_prompt = system_prompt + style_instruction
+        enhanced_messages = [{"role": "system", "content": enhanced_system_prompt}] + messages_history
+
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-small-2603",
-            messages=full_messages,
+            messages=enhanced_messages,
             temperature=0.3,
             max_tokens=32768
         )
-        # Debug: afficher la raison d'arrêt
+        # Debug: stocker la raison d'arrêt pour affichage
         finish_reason = response.choices[0].finish_reason
-        print(f"[DEBUG] Mistral Small 4 - finish_reason: {finish_reason}")
-        if finish_reason == "length":
-            print(f"[DEBUG] Réponse tronquée ! Tokens utilisés: {response.usage}")
+        usage = response.usage
+        st.session_state["debug_finish_reason"] = finish_reason
+        st.session_state["debug_usage"] = f"Tokens: {usage.prompt_tokens} (prompt) + {usage.completion_tokens} (completion) = {usage.total_tokens} (total)"
         return response.choices[0].message.content
 
     # GPT-OSS-120B via Nebius (OpenAI compatible) avec reasoning
@@ -789,6 +801,15 @@ with tab1:
 
                     # Ajouter la réponse à l'historique
                     st.session_state.messages.append({"role": "assistant", "content": response_text})
+
+                    # Debug: afficher finish_reason si disponible (Mistral Small 4)
+                    if "debug_finish_reason" in st.session_state:
+                        finish_reason = st.session_state.pop("debug_finish_reason")
+                        usage_info = st.session_state.pop("debug_usage", "")
+                        if finish_reason == "length":
+                            st.warning(f"⚠️ Réponse tronquée (finish_reason: {finish_reason}) - {usage_info}")
+                        else:
+                            st.info(f"✅ finish_reason: {finish_reason} - {usage_info}")
 
                     # Évaluation automatique si activée
                     if enable_evaluation:
