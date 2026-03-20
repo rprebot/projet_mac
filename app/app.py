@@ -555,7 +555,21 @@ def call_model(model_choice, system_prompt, messages_history):
 ⚠️ NE T'ARRÊTE PAS AVANT D'AVOIR TOUT TRAITÉ !
 """
         enhanced_system_prompt = system_prompt + style_instruction
-        enhanced_messages = [{"role": "system", "content": enhanced_system_prompt}] + messages_history
+
+        # Ajouter un rappel des instructions à la fin du dernier message utilisateur
+        # (technique de "bookending" pour les longs contextes)
+        enhanced_messages = [{"role": "system", "content": enhanced_system_prompt}]
+        for i, msg in enumerate(messages_history):
+            if i == len(messages_history) - 1 and msg["role"] == "user":
+                # Dernier message utilisateur : ajouter rappel à la fin
+                rappel = """
+
+---
+⚠️ RAPPEL FINAL : Ta réponse doit être EXHAUSTIVE et COMPLÈTE (minimum 5000 mots). Traite TOUS les moyens de TOUTES les parties. Ne t'arrête pas avant d'avoir tout couvert. Rédige en prose littéraire fluide, comme un arrêt de cour d'appel.
+"""
+                enhanced_messages.append({"role": msg["role"], "content": msg["content"] + rappel})
+            else:
+                enhanced_messages.append(msg)
 
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
