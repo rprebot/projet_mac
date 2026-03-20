@@ -535,14 +535,24 @@ def call_model(model_choice, system_prompt, messages_history):
         if not MISTRAL_API_KEY:
             raise ValueError("La clé API Mistral n'est pas configurée.")
 
-        # Renforcer l'instruction de style littéraire pour ce modèle
+        # Renforcer l'instruction de style et de complétude pour ce modèle
         style_instruction = """
 
-⚠️ INSTRUCTION CRITIQUE DE STYLE :
-Tu dois IMPÉRATIVEMENT rédiger en PROSE LITTÉRAIRE avec des paragraphes fluides et continus.
+⚠️ INSTRUCTIONS CRITIQUES :
+
+1. COMPLÉTUDE ABSOLUE :
+- Tu dois traiter INTÉGRALEMENT toutes les parties du document source
+- Ne t'arrête JAMAIS avant d'avoir couvert tous les moyens et arguments de chaque partie
+- Ta réponse doit être EXHAUSTIVE et DÉTAILLÉE (minimum 5000 mots)
+- Continue jusqu'à la fin complète de l'analyse, même si la réponse est longue
+
+2. STYLE LITTÉRAIRE :
+- Rédige en PROSE LITTÉRAIRE avec des paragraphes fluides et continus
 - INTERDIT : les listes à puces, les tirets, les numérotations (sauf pour les prétentions/dispositif)
 - OBLIGATOIRE : des phrases complètes reliées par des connecteurs logiques (En effet, Par ailleurs, Toutefois, Dès lors, En outre, De surcroît)
-- Le texte doit ressembler à un arrêt de cour d'appel, PAS à des notes ou un plan.
+- Le texte doit ressembler à un arrêt de cour d'appel, PAS à des notes ou un plan
+
+⚠️ NE T'ARRÊTE PAS AVANT D'AVOIR TOUT TRAITÉ !
 """
         enhanced_system_prompt = system_prompt + style_instruction
         enhanced_messages = [{"role": "system", "content": enhanced_system_prompt}] + messages_history
