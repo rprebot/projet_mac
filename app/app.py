@@ -500,8 +500,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-large-latest",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16384
+            temperature=0.3
         )
         return response.choices[0].message.content
 
@@ -514,8 +513,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-medium-2508",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16384
+            temperature=0.3
         )
         return response.choices[0].message.content
 
@@ -528,8 +526,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-large-2411",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16384
+            temperature=0.3
         )
         return response.choices[0].message.content
 
@@ -540,10 +537,10 @@ def call_model(model_choice, system_prompt, messages_history):
 
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
-            model="mistral-small-2503",
+            model="mistral-small-2603",
             messages=full_messages,
             temperature=0.3,
-            max_tokens=16384
+            max_tokens=32768
         )
         return response.choices[0].message.content
 
@@ -560,7 +557,6 @@ def call_model(model_choice, system_prompt, messages_history):
             model="openai/gpt-oss-120b",
             messages=full_messages,
             temperature=0.3,
-            max_tokens=16384,
             extra_body={
                 "reasoning": {
                     "effort": "high"
@@ -581,8 +577,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.completions.create(
             model="nvidia/nemotron-3-super-120b-a12b",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16384
+            temperature=0.3
         )
         return response.choices[0].message.content
 
