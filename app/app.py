@@ -542,6 +542,11 @@ def call_model(model_choice, system_prompt, messages_history):
             temperature=0.3,
             max_tokens=32768
         )
+        # Debug: afficher la raison d'arrêt
+        finish_reason = response.choices[0].finish_reason
+        print(f"[DEBUG] Mistral Small 4 - finish_reason: {finish_reason}")
+        if finish_reason == "length":
+            print(f"[DEBUG] Réponse tronquée ! Tokens utilisés: {response.usage}")
         return response.choices[0].message.content
 
     # GPT-OSS-120B via Nebius (OpenAI compatible) avec reasoning
