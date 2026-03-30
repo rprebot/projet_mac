@@ -4,12 +4,16 @@ import os
 import json
 import html
 import re
+from pathlib import Path
 from urllib.parse import urlencode
 from openai import OpenAI
 from mistralai import Mistral
 import requests
 from dotenv import load_dotenv
 import tiktoken
+
+# Répertoire de base (où se trouve app.py)
+BASE_DIR = Path(__file__).parent
 
 # Import du module de compression pour les documents longs
 from document_compression import (
@@ -107,18 +111,18 @@ st.title("Assistant Juridique IA - Résumé de conclusion et rédaction de l'exp
 
 # Mapping des noms de prompts vers les fichiers
 PROMPT_FILES = {
-    "Résumé Conclusions": "prompts/resume_conclusions.md",
-    "Synthèse Faits & Procédure": "prompts/synthese_faits_procedure.md",
-    "Synthèse Moyens": "prompts/synthese_moyens.md",
-    "Rapport de synthèse": "prompts/synthese_faits_procedure_moyens.md",
-    "Rédaction Exposé du Litige": "prompts/redaction_expose_litige.md"
+    "Résumé Conclusions": BASE_DIR / "prompts/resume_conclusions.md",
+    "Synthèse Faits & Procédure": BASE_DIR / "prompts/synthese_faits_procedure.md",
+    "Synthèse Moyens": BASE_DIR / "prompts/synthese_moyens.md",
+    "Rapport de synthèse": BASE_DIR / "prompts/synthese_faits_procedure_moyens.md",
+    "Rédaction Exposé du Litige": BASE_DIR / "prompts/redaction_expose_litige.md"
 }
 
 # Prompts chaînés (2 étapes)
 CHAINED_PROMPTS = {
     "Résumé Conclusions (2 étapes)": {
-        "etape1": "prompts_chaines/resume_conclusions_etape1_structure.md",
-        "etape2": "prompts_chaines/resume_conclusions_etape2_resume.md"
+        "etape1": BASE_DIR / "prompts_chaines/resume_conclusions_etape1_structure.md",
+        "etape2": BASE_DIR / "prompts_chaines/resume_conclusions_etape2_resume.md"
     }
 }
 
@@ -129,12 +133,11 @@ def load_chained_prompts():
     prompts = {}
     for name, files in CHAINED_PROMPTS.items():
         prompts[name] = {}
-        for etape, filename in files.items():
+        for etape, filepath in files.items():
             try:
-                with open(filename, 'r', encoding='utf-8') as f:
-                    prompts[name][etape] = f.read()
+                prompts[name][etape] = filepath.read_text(encoding='utf-8')
             except FileNotFoundError:
-                prompts[name][etape] = f"Erreur : Le fichier {filename} n'a pas été trouvé."
+                prompts[name][etape] = f"Erreur : Le fichier {filepath} n'a pas été trouvé."
     return prompts
 
 # Charger les prompts chaînés
@@ -149,20 +152,19 @@ def load_system_prompts():
 
     # Chemins des fichiers de prompts (ordre préservé avec Python 3.7+)
     prompt_files = [
-        ("Résumé Conclusions", "prompts/resume_conclusions.md"),
-        ("Synthèse Faits & Procédure", "prompts/synthese_faits_procedure.md"),
-        ("Synthèse Moyens", "prompts/synthese_moyens.md"),
-        ("Rapport de synthèse", "prompts/synthese_faits_procedure_moyens.md"),
-        ("Rédaction Exposé du Litige", "prompts/redaction_expose_litige.md")
+        ("Résumé Conclusions", BASE_DIR / "prompts/resume_conclusions.md"),
+        ("Synthèse Faits & Procédure", BASE_DIR / "prompts/synthese_faits_procedure.md"),
+        ("Synthèse Moyens", BASE_DIR / "prompts/synthese_moyens.md"),
+        ("Rapport de synthèse", BASE_DIR / "prompts/synthese_faits_procedure_moyens.md"),
+        ("Rédaction Exposé du Litige", BASE_DIR / "prompts/redaction_expose_litige.md")
     ]
 
     # Charger chaque fichier
-    for name, filename in prompt_files:
+    for name, filepath in prompt_files:
         try:
-            with open(filename, 'r', encoding='utf-8') as f:
-                prompts[name] = f.read()
+            prompts[name] = filepath.read_text(encoding='utf-8')
         except FileNotFoundError:
-            prompts[name] = f"Erreur : Le fichier {filename} n'a pas été trouvé."
+            prompts[name] = f"Erreur : Le fichier {filepath} n'a pas été trouvé."
 
     return prompts
 
@@ -174,32 +176,31 @@ def load_conclusion_files():
     files = {}
 
     conclusion_files = {
-        "Dossier 4 - Conclusion Appelante": "dossiers/Dossier_4_conclusion_appelante.txt",
-        "Dossier 4 - Conclusion Intimée": "dossiers/Dossier_4_conclusion_intimee.txt",
-        "Dossier 5 - Leonard (Employeur)": "dossiers/Dossier_5_Leonard_(employeur).txt",
-        "Dossier 5 - Leonard (Salarié)": "dossiers/Dossier_5_Leonard_(salarie).txt",
-        "Dossier 6 - Conclusion Appelant": "dossiers/Dossier_6_conclusion_appelant.txt",
-        "Dossier 6 - Conclusion Intimée": "dossiers/Dossier_6_conclusion_intimee.txt",
-        "Dossier 7 - Conclusion Appelante": "dossiers/Dossier_7_conculsion_appelante.txt",
-        "Dossier 7 - Conclusion Intimée": "dossiers/Dossier_7_conclusion_intimee.txt",
-        "Dossier 8 - Demandeur": "dossiers/Dossier_8_demandeur.txt",
-        "Dossier 8 - Intimée": "dossiers/Dossier_8_intimee.txt",
-        "Dossier 9-2 - Demandeur": "dossiers/Dossier_9-2_demandeur.txt",
-        "Dossier 9-2 - Défendeur": "dossiers/Dossier_9-2_defendeur.txt",
-        "Dossier 13 - Conclusion Défendeur": "dossiers/dossier_13_conclusion_defendeur.txt",
-        "Dossier 14 - Défendeur": "dossiers/Doissier 14 - defendeur.txt",
-        "Dossier 14 - Demandeur": "dossiers/Dossier 14 - demandeur.txt",
-        "Dossier 15 - Défendeur": "dossiers/Dossier_15_defendeur.txt",
-        "Dossier 15 - Demandeur": "dossiers/Dossier_15_demandeur.txt",
-        "Dossier 17-3 - Assignation": "dossiers/Dossier_17-3_Dossier  assignation sans def .txt"
+        "Dossier 4 - Conclusion Appelante": BASE_DIR / "dossiers/Dossier_4_conclusion_appelante.txt",
+        "Dossier 4 - Conclusion Intimée": BASE_DIR / "dossiers/Dossier_4_conclusion_intimee.txt",
+        "Dossier 5 - Leonard (Employeur)": BASE_DIR / "dossiers/Dossier_5_Leonard_(employeur).txt",
+        "Dossier 5 - Leonard (Salarié)": BASE_DIR / "dossiers/Dossier_5_Leonard_(salarie).txt",
+        "Dossier 6 - Conclusion Appelant": BASE_DIR / "dossiers/Dossier_6_conclusion_appelant.txt",
+        "Dossier 6 - Conclusion Intimée": BASE_DIR / "dossiers/Dossier_6_conclusion_intimee.txt",
+        "Dossier 7 - Conclusion Appelante": BASE_DIR / "dossiers/Dossier_7_conculsion_appelante.txt",
+        "Dossier 7 - Conclusion Intimée": BASE_DIR / "dossiers/Dossier_7_conclusion_intimee.txt",
+        "Dossier 8 - Demandeur": BASE_DIR / "dossiers/Dossier_8_demandeur.txt",
+        "Dossier 8 - Intimée": BASE_DIR / "dossiers/Dossier_8_intimee.txt",
+        "Dossier 9-2 - Demandeur": BASE_DIR / "dossiers/Dossier_9-2_demandeur.txt",
+        "Dossier 9-2 - Défendeur": BASE_DIR / "dossiers/Dossier_9-2_defendeur.txt",
+        "Dossier 13 - Conclusion Défendeur": BASE_DIR / "dossiers/dossier_13_conclusion_defendeur.txt",
+        "Dossier 14 - Défendeur": BASE_DIR / "dossiers/Doissier 14 - defendeur.txt",
+        "Dossier 14 - Demandeur": BASE_DIR / "dossiers/Dossier 14 - demandeur.txt",
+        "Dossier 15 - Défendeur": BASE_DIR / "dossiers/Dossier_15_defendeur.txt",
+        "Dossier 15 - Demandeur": BASE_DIR / "dossiers/Dossier_15_demandeur.txt",
+        "Dossier 17-3 - Assignation": BASE_DIR / "dossiers/Dossier_17-3_Dossier  assignation sans def .txt"
     }
 
-    for name, filename in conclusion_files.items():
+    for name, filepath in conclusion_files.items():
         try:
-            with open(filename, 'r', encoding='utf-8') as f:
-                files[name] = f.read()
+            files[name] = filepath.read_text(encoding='utf-8')
         except FileNotFoundError:
-            files[name] = f"Erreur : Le fichier {filename} n'a pas été trouvé."
+            files[name] = f"Erreur : Le fichier {filepath} n'a pas été trouvé."
 
     return files
 
@@ -280,8 +281,7 @@ def load_evaluation_criteria():
     Charge les critères d'évaluation depuis le fichier evaluation_criteria.json
     """
     try:
-        with open("evaluation_criteria.json", 'r', encoding='utf-8') as f:
-            return json.load(f)
+        return json.loads((BASE_DIR / "evaluation_criteria.json").read_text(encoding='utf-8'))
     except FileNotFoundError:
         return {}
 
@@ -293,8 +293,7 @@ def load_evaluation_prompt():
     Charge le prompt d'évaluation depuis le fichier evaluation_prompt.md
     """
     try:
-        with open("prompts/evaluation_prompt.md", 'r', encoding='utf-8') as f:
-            return f.read()
+        return (BASE_DIR / "prompts/evaluation_prompt.md").read_text(encoding='utf-8')
     except FileNotFoundError:
         return None
 
@@ -490,10 +489,9 @@ if prompt_choice != "Prompt personnalisable":
             label_visibility="collapsed"
         )
         if st.button("💾 Sauvegarder", use_container_width=True):
-            filename = PROMPT_FILES.get(prompt_choice)
-            if filename:
-                with open(filename, 'w', encoding='utf-8') as f:
-                    f.write(edited_prompt)
+            filepath = PROMPT_FILES.get(prompt_choice)
+            if filepath:
+                filepath.write_text(edited_prompt, encoding='utf-8')
                 st.success("✅ Sauvegardé !")
                 st.rerun()
 else:
