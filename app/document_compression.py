@@ -14,7 +14,11 @@ import json
 import math
 import re
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+
+# Répertoire des prompts
+PROMPTS_DIR = Path(__file__).parent / "prompts"
 
 
 # ============================================================
@@ -828,34 +832,30 @@ PAQUET À ANALYSER
 """.strip()
 
 
-def build_final_system_prompt() -> str:
-    """Prompt système pour la synthèse finale à partir des JSON intermédiaires."""
-    return normalize_space(
-        """
-        Rôle
-        Vous êtes un assistant juridique français chargé de rédiger un résumé final exploitable à partir de représentations intermédiaires déjà extraites.
+def build_final_system_prompt(prompt_type: str = "resume_conclusions") -> str:
+    """Prompt système pour la synthèse finale à partir des JSON intermédiaires.
 
-        Objectif
-        Rédiger un résumé clair, fidèle, structuré et directement utile à un juriste.
+    Args:
+        prompt_type: Type de prompt à charger:
+            - "resume_conclusions" : pour le résumé de conclusions
+            - "rapport_synthese" : pour le rapport de synthèse
 
-        Priorités
-        1. Fidélité au contenu extrait.
-        2. Respect de la structure juridique utile.
-        3. Exhaustivité raisonnable sur les moyens.
-        4. Lisibilité professionnelle.
+    Returns:
+        Le contenu du prompt système
+    """
+    prompt_files = {
+        "resume_conclusions": PROMPTS_DIR / "resume_conclusions_compression_mode.md",
+        "rapport_synthese": PROMPTS_DIR / "synthese_faits_procedure_moyens_compression_mode.md",
+    }
 
-        Règles
-        - Utiliser uniquement les données intermédiaires fournies.
-        - S'appuyer en priorité sur les champs "key_source_excerpt" et "key_verbatim_points" pour préserver la précision juridique et factuelle.
-        - Préserver autant que possible l'attribution des faits, arguments et demandes aux bons participants.
-        - Ne pas inventer de faits, d'articles ou de demandes.
-        - Préserver l'ordre général du document source.
-        - Préserver les intitulés lorsque ceux-ci structurent utilement le raisonnement.
-        - Les moyens doivent représenter la partie la plus substantielle du résumé.
-        - Si un dispositif final a été identifié, le reproduire aussi fidèlement que possible.
-        - Ne pas surcharger le texte d'avertissements méthodologiques.
-        """
-    )
+    prompt_file = prompt_files.get(prompt_type)
+    if not prompt_file:
+        raise ValueError(f"Type de prompt inconnu: {prompt_type}. Valeurs possibles: {list(prompt_files.keys())}")
+
+    try:
+        return prompt_file.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Fichier prompt non trouvé: {prompt_file}")
 
 
 def build_final_user_prompt(

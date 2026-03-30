@@ -121,30 +121,6 @@ PROMPT_FILES = {
     "Rédaction Exposé du Litige": BASE_DIR / "prompts/redaction_expose_litige.md"
 }
 
-# Prompts chaînés (2 étapes)
-CHAINED_PROMPTS = {
-    "Résumé Conclusions (2 étapes)": {
-        "etape1": BASE_DIR / "prompts_chaines/resume_conclusions_etape1_structure.md",
-        "etape2": BASE_DIR / "prompts_chaines/resume_conclusions_etape2_resume.md"
-    }
-}
-
-def load_chained_prompts():
-    """
-    Charge les prompts chaînés (2 étapes) depuis les fichiers markdown
-    """
-    prompts = {}
-    for name, files in CHAINED_PROMPTS.items():
-        prompts[name] = {}
-        for etape, filepath in files.items():
-            try:
-                prompts[name][etape] = filepath.read_text(encoding='utf-8')
-            except FileNotFoundError:
-                prompts[name][etape] = f"Erreur : Le fichier {filepath} n'a pas été trouvé."
-    return prompts
-
-# Charger les prompts chaînés
-SYSTEM_PROMPTS_CHAINED = load_chained_prompts()
 
 # Charger les prompts système depuis les fichiers .md
 def load_system_prompts():
@@ -432,56 +408,49 @@ model_choice = st.sidebar.selectbox(
     ["Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "Mistral Large 2", "Mistral Small 4", "GPT-OSS-120B (Nebius)", "Nemotron Super 120B (Nebius)"]
 )
 
-# Sélection du prompt système (incluant le prompt personnalisable)
-# Note: les prompts chaînés (2 étapes) sont désactivés pour l'instant mais le code reste disponible
-prompt_options = list(SYSTEM_PROMPTS.keys()) + ["Prompt personnalisable"]
+# Sélection du prompt système (5 options uniquement)
+prompt_options = [
+    "Résumé Conclusions",
+    "Résumé Conclusions (mode compression)",
+    "Rapport de synthèse",
+    "Rapport de synthèse (mode compression)",
+    "Prompt personnalisable"
+]
 prompt_choice = st.sidebar.selectbox(
     "Prompt système",
     prompt_options
 )
 
-# Indicateur si le prompt sélectionné est un prompt chaîné
-is_chained_prompt = prompt_choice in CHAINED_PROMPTS
+# Détecter automatiquement si le mode compression est activé
+enable_compression = "(mode compression)" in prompt_choice
 
-# Option de compression préalable (uniquement pour "Résumé Conclusions")
-enable_compression = False
-if prompt_choice == "Résumé Conclusions":
-    st.sidebar.markdown("---")
-    st.sidebar.header("Mode compression")
-    enable_compression = st.sidebar.checkbox(
-        "Compression préalable des fichiers",
-        value=False,
-        key="enable_compression",
-        help="Active le pipeline de compression pour les documents longs. Le document est découpé en paquets, chaque paquet est analysé séparément, puis une synthèse finale est générée."
-    )
-    if enable_compression:
-        st.sidebar.info("📦 Mode compression activé : le document sera découpé en paquets et traité en plusieurs étapes.")
+# Afficher une info si mode compression activé
+if enable_compression:
+    st.sidebar.info("📦 Mode compression : le document sera découpé en paquets et traité en plusieurs étapes.")
+
+# Mapping des prompts compression vers les fichiers
+COMPRESSION_PROMPT_FILES = {
+    "Résumé Conclusions (mode compression)": BASE_DIR / "prompts/resume_conclusions_compression_mode.md",
+    "Rapport de synthèse (mode compression)": BASE_DIR / "prompts/synthese_faits_procedure_moyens_compression_mode.md",
+}
+
+# Mapping des prompts standards vers les clés SYSTEM_PROMPTS
+PROMPT_MAPPING = {
+    "Résumé Conclusions": "Résumé Conclusions",
+    "Rapport de synthèse": "Rapport de synthèse",
+}
 
 # Récupérer le prompt système sélectionné
 if prompt_choice == "Prompt personnalisable":
     system_prompt = st.session_state.custom_prompt
-elif is_chained_prompt:
-    # Pour les prompts chaînés, on utilise le prompt de l'étape 1 comme référence
-    system_prompt = SYSTEM_PROMPTS_CHAINED[prompt_choice]["etape1"]
-elif prompt_choice == "Rédaction Exposé du Litige":
-    # Insérer automatiquement la trame de l'utilisateur dans le prompt
-    base_prompt = SYSTEM_PROMPTS[prompt_choice]
-    # Remplacer le placeholder par la trame de l'utilisateur
-    trame_placeholder = """```
-[TRAME À COMPLÉTER PAR L'UTILISATEUR]
-
-Insérez ici la structure et les consignes spécifiques pour la rédaction de l'exposé du litige.
-
-Exemple de trame possible :
-- Section 1 : [Titre et consignes]
-- Section 2 : [Titre et consignes]
-- Section 3 : [Titre et consignes]
-- ...
-
-```"""
-    system_prompt = base_prompt.replace(trame_placeholder, f"```\n{st.session_state.custom_trame}\n```")
+elif enable_compression:
+    # Pour les modes compression, le prompt sera chargé par document_compression.py
+    # On stocke juste une référence pour l'affichage
+    system_prompt = f"[Mode compression - prompt chargé depuis {COMPRESSION_PROMPT_FILES[prompt_choice].name}]"
 else:
-    system_prompt = SYSTEM_PROMPTS[prompt_choice]
+    # Pour les prompts standards, utiliser le mapping
+    prompt_key = PROMPT_MAPPING.get(prompt_choice, prompt_choice)
+    system_prompt = SYSTEM_PROMPTS.get(prompt_key, f"Prompt non trouvé: {prompt_choice}")
 
 # Éditeur du prompt sélectionné (sauf pour le prompt personnalisable qui a son propre onglet)
 if prompt_choice != "Prompt personnalisable":
@@ -517,20 +486,34 @@ def call_model(model_choice, system_prompt, messages_history):
     """
     Appelle le modèle sélectionné avec l'historique des messages
     """
+    import time
+    call_start = time.time()
+
     # Construire les messages avec le système + historique
     full_messages = [{"role": "system", "content": system_prompt}] + messages_history
+
+    # Calculer les tokens approximatifs
+    total_content = system_prompt + "".join([m.get("content", "") for m in messages_history])
+    approx_input_tokens = len(total_content) // 4
+
+    print(f"      📡 call_model() appelé", flush=True)
+    print(f"         └─ Modèle: {model_choice}", flush=True)
+    print(f"         └─ Tokens input estimés: ~{approx_input_tokens:,}", flush=True)
 
     # Mixtral 8x22B via Mistral
     if model_choice == "Mixtral 8x22B (Mistral)":
         if not MISTRAL_API_KEY:
             raise ValueError("La clé API Mistral n'est pas configurée.")
 
+        print(f"         └─ 🔄 Appel API Mistral (mistral-large-latest)...", flush=True)
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-large-latest",
             messages=full_messages,
             temperature=0.3
         )
+        elapsed = time.time() - call_start
+        print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
         return response.choices[0].message.content
 
     # Mistral Medium 2508 (modèle assistant numérique)
@@ -538,12 +521,15 @@ def call_model(model_choice, system_prompt, messages_history):
         if not MISTRAL_API_KEY:
             raise ValueError("La clé API Mistral n'est pas configurée.")
 
+        print(f"         └─ 🔄 Appel API Mistral (mistral-medium-2508)...", flush=True)
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-medium-2508",
             messages=full_messages,
             temperature=0.3
         )
+        elapsed = time.time() - call_start
+        print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
         return response.choices[0].message.content
 
     # Mistral Large 2 (modèle flagship)
@@ -551,12 +537,15 @@ def call_model(model_choice, system_prompt, messages_history):
         if not MISTRAL_API_KEY:
             raise ValueError("La clé API Mistral n'est pas configurée.")
 
+        print(f"         └─ 🔄 Appel API Mistral (mistral-large-2411)...", flush=True)
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-large-2411",
             messages=full_messages,
             temperature=0.3
         )
+        elapsed = time.time() - call_start
+        print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
         return response.choices[0].message.content
 
     # Mistral Small 4 (modèle compact performant)
@@ -600,6 +589,7 @@ def call_model(model_choice, system_prompt, messages_history):
             else:
                 enhanced_messages.append(msg)
 
+        print(f"         └─ 🔄 Appel API Mistral (mistral-small-2603)...", flush=True)
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
             model="mistral-small-2603",
@@ -607,6 +597,7 @@ def call_model(model_choice, system_prompt, messages_history):
             temperature=0.3,
             max_tokens=65536  # Augmenté pour éviter la troncature
         )
+        elapsed = time.time() - call_start
         # Debug: stocker la raison d'arrêt pour affichage
         finish_reason = response.choices[0].finish_reason
         usage = response.usage
@@ -614,7 +605,7 @@ def call_model(model_choice, system_prompt, messages_history):
         st.session_state["debug_usage"] = f"Tokens: {usage.prompt_tokens} (prompt) + {usage.completion_tokens} (completion) = {usage.total_tokens} (total)"
 
         # Log console pour debug supplémentaire
-        print(f"[DEBUG Mistral Small 4] finish_reason={finish_reason}, completion_tokens={usage.completion_tokens}, max_tokens=65536")
+        print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s (finish_reason={finish_reason}, tokens={usage.completion_tokens})", flush=True)
 
         return response.choices[0].message.content
 
@@ -623,6 +614,7 @@ def call_model(model_choice, system_prompt, messages_history):
         if not NEBIUS_API_KEY:
             raise ValueError("La clé API Nebius n'est pas configurée.")
 
+        print(f"         └─ 🔄 Appel API Nebius (gpt-oss-120b)...", flush=True)
         client = OpenAI(
             base_url="https://api.studio.nebius.ai/v1/",
             api_key=NEBIUS_API_KEY
@@ -637,6 +629,8 @@ def call_model(model_choice, system_prompt, messages_history):
                 }
             }
         )
+        elapsed = time.time() - call_start
+        print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
         return response.choices[0].message.content
 
     # Nemotron Super 120B via Nebius (OpenAI compatible)
@@ -644,6 +638,7 @@ def call_model(model_choice, system_prompt, messages_history):
         if not NEBIUS_API_KEY:
             raise ValueError("La clé API Nebius n'est pas configurée.")
 
+        print(f"         └─ 🔄 Appel API Nebius (nemotron-3-super-120b)...", flush=True)
         client = OpenAI(
             base_url="https://api.studio.nebius.ai/v1/",
             api_key=NEBIUS_API_KEY
@@ -653,47 +648,9 @@ def call_model(model_choice, system_prompt, messages_history):
             messages=full_messages,
             temperature=0.3
         )
+        elapsed = time.time() - call_start
+        print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
         return response.choices[0].message.content
-
-
-def call_model_chained(model_choice, prompt_choice, user_query):
-    """
-    Appelle le modèle en 2 étapes pour les prompts chaînés.
-    Étape 1 : Extraction de la structure
-    Étape 2 : Résumé avec la structure fournie
-    Retourne un dictionnaire avec les résultats des 2 étapes.
-    """
-    prompts = SYSTEM_PROMPTS_CHAINED[prompt_choice]
-
-    # ÉTAPE 1 : Extraction de la structure
-    prompt_etape1 = prompts["etape1"]
-    messages_etape1 = [{"role": "user", "content": user_query}]
-
-    structure_extraite = call_model(model_choice, prompt_etape1, messages_etape1)
-
-    # ÉTAPE 2 : Résumé avec la structure fournie
-    prompt_etape2 = prompts["etape2"]
-
-    # Construire le message pour l'étape 2 avec le document ET la structure
-    message_etape2 = f"""## DOCUMENT SOURCE (Conclusion juridique)
-
-{user_query}
-
----
-
-## STRUCTURE EXTRAITE (À suivre impérativement)
-
-{structure_extraite}
-"""
-
-    messages_etape2 = [{"role": "user", "content": message_etape2}]
-
-    resume_final = call_model(model_choice, prompt_etape2, messages_etape2)
-
-    return {
-        "etape1_structure": structure_extraite,
-        "etape2_resume": resume_final
-    }
 
 
 def extract_json_from_response(response_text: str) -> dict:
@@ -727,7 +684,59 @@ def extract_json_from_response(response_text: str) -> dict:
     raise ValueError("Aucun JSON valide trouvé dans la réponse")
 
 
-def call_model_with_compression(model_choice, user_query, progress_callback=None):
+def call_model_fast_extraction(system_prompt, messages_history, timeout_seconds=120):
+    """
+    Appelle Mistral Small directement pour les extractions JSON.
+    Optimisé pour être rapide avec un timeout explicite.
+
+    Args:
+        system_prompt: Le prompt système
+        messages_history: Liste des messages
+        timeout_seconds: Timeout en secondes (défaut: 120s = 2min)
+
+    Returns:
+        Le contenu de la réponse
+    """
+    import time
+    import sys
+
+    call_start = time.time()
+    print(f"         [EXTRACTION] Entrée dans call_model_fast_extraction()", flush=True)
+
+    if not MISTRAL_API_KEY:
+        raise ValueError("La clé API Mistral n'est pas configurée.")
+
+    print(f"         [EXTRACTION] API Key OK, construction messages...", flush=True)
+    full_messages = [{"role": "system", "content": system_prompt}] + messages_history
+    total_chars = sum(len(m.get("content", "")) for m in full_messages)
+    print(f"         [EXTRACTION] Messages construits: {len(full_messages)} messages, {total_chars:,} chars", flush=True)
+
+    # Créer un client Mistral
+    print(f"         [EXTRACTION] Création client Mistral...", flush=True)
+    client = Mistral(api_key=MISTRAL_API_KEY)
+    print(f"         [EXTRACTION] Client créé, appel API...", flush=True)
+    sys.stdout.flush()
+    sys.stderr.flush()
+
+    try:
+        response = client.chat.complete(
+            model="mistral-small-2603",  # Modèle rapide pour l'extraction
+            messages=full_messages,
+            temperature=0.1,  # Faible température pour JSON structuré
+            max_tokens=8000  # Suffisant pour le JSON d'extraction
+        )
+
+        elapsed = time.time() - call_start
+        print(f"         └─ ✅ Extraction reçue en {elapsed:.1f}s", flush=True)
+        return response.choices[0].message.content
+
+    except Exception as e:
+        elapsed = time.time() - call_start
+        print(f"         └─ ❌ Erreur après {elapsed:.1f}s: {type(e).__name__}: {str(e)[:200]}", flush=True)
+        raise
+
+
+def call_model_with_compression(model_choice, user_query, prompt_type="resume_conclusions", progress_callback=None):
     """
     Pipeline de compression pour les documents longs.
 
@@ -740,6 +749,7 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
     Args:
         model_choice: Le modèle LLM à utiliser
         user_query: Le document source (conclusions)
+        prompt_type: Type de prompt de synthèse ("resume_conclusions" ou "rapport_synthese")
         progress_callback: Fonction optionnelle pour afficher la progression
 
     Returns:
@@ -753,46 +763,52 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
         - "compression_ratio": ratio de compression
     """
     import time
+    import sys
     start_time = time.time()
 
-    print("\n" + "="*60)
-    print("🚀 PIPELINE DE COMPRESSION - DÉBUT")
-    print("="*60)
-    print(f"📋 Modèle sélectionné: {model_choice}")
+    def log(msg):
+        """Log avec timestamp et flush immédiat"""
+        elapsed = time.time() - start_time
+        print(f"[{elapsed:6.1f}s] {msg}", flush=True)
+
+    print("\n" + "="*60, flush=True)
+    log("🚀 PIPELINE DE COMPRESSION - DÉBUT")
+    print("="*60, flush=True)
+    log(f"📋 Modèle sélectionné: {model_choice}")
 
     # Calculer les tokens du document original
     tokens_original = approx_tokens_simple(user_query)
-    print(f"📄 Document original: {len(user_query):,} caractères, ~{tokens_original:,} tokens")
+    log(f"📄 Document original: {len(user_query):,} caractères, ~{tokens_original:,} tokens")
 
     # Étape 1 & 2 : Parser et découper en paquets
+    log("📊 ÉTAPE 1/3 - Parsing & Packetisation...")
     if progress_callback:
         progress_callback(f"Analyse du document ({tokens_original:,} tokens)...")
 
-    step1_start = time.time()
     nodes, packets = parse_and_packetize(
         user_query,
-        max_input_tokens=42000,
+        max_input_tokens=42000,  # Même config que le notebook
         prompt_budget_tokens=2500,
         output_budget_tokens=3000,
     )
-    step1_time = time.time() - step1_start
 
     nb_sections = len(nodes)
     nb_packets = len(packets)
 
-    print(f"\n📊 ÉTAPE 1 - Parsing & Packetisation ({step1_time:.2f}s)")
-    print(f"   └─ Sections détectées: {nb_sections}")
+    log(f"   ✅ Parsing terminé: {nb_sections} sections détectées")
     for node in nodes:
-        print(f"      • {node.id}: {node.title[:50]}... ({node.section_type}, ~{node.approx_tokens} tokens)")
-    print(f"   └─ Paquets créés: {nb_packets}")
+        log(f"      • {node.id}: {node.title[:50]}{'...' if len(node.title) > 50 else ''} ({node.section_type}, ~{node.approx_tokens} tokens)")
+    log(f"   ✅ Packetisation: {nb_packets} paquets créés")
     for packet in packets:
-        print(f"      • {packet.id}: {packet.total_tokens:,} tokens, sections: {', '.join(packet.titles[:3])}{'...' if len(packet.titles) > 3 else ''}")
+        log(f"      • {packet.id}: {packet.total_tokens:,} tokens, sections: {', '.join(packet.titles[:3])}{'...' if len(packet.titles) > 3 else ''}")
 
     if progress_callback:
         progress_callback(f"Document découpé : {nb_sections} sections, {nb_packets} paquet(s)")
 
     # Étape 3 : Extraire un JSON intermédiaire pour chaque paquet
-    print(f"\n📊 ÉTAPE 2 - Extraction LLM par paquet")
+    # On utilise Mistral Small pour l'extraction (plus rapide, suffisant pour le JSON)
+    log(f"📊 ÉTAPE 2/3 - Extraction LLM ({nb_packets} paquets)")
+    log(f"   ℹ️  Modèle d'extraction: Mistral Small (rapide)")
     extraction_system_prompt = build_extraction_system_prompt()
     extracted_jsons = []
 
@@ -800,28 +816,31 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
         if progress_callback:
             progress_callback(f"Extraction du paquet {i+1}/{nb_packets} ({packet.total_tokens} tokens)...")
 
-        print(f"\n   🔄 Paquet {i+1}/{nb_packets} ({packet.id})")
-        print(f"      └─ Tokens en entrée: {packet.total_tokens:,}")
+        log(f"   🔄 PAQUET {i+1}/{nb_packets} ({packet.id}) - Début extraction...")
+        log(f"      └─ Tokens contenu: {packet.total_tokens:,}")
 
         extraction_user_prompt = build_extraction_user_prompt(packet)
         prompt_tokens = approx_tokens_simple(extraction_user_prompt)
-        print(f"      └─ Tokens du prompt complet: ~{prompt_tokens:,}")
+        log(f"      └─ Tokens prompt total: ~{prompt_tokens:,}")
+        log(f"      └─ 📡 Envoi requête API (Mistral Small)...")
+        import sys
+        sys.stdout.flush()
+        sys.stderr.flush()
+        log(f"      └─ [DEBUG] Juste avant appel call_model_fast_extraction...")
 
-        # Appeler le LLM pour ce paquet
-        packet_start = time.time()
+        # Appeler Mistral Small pour l'extraction (plus rapide que Large)
         messages = [{"role": "user", "content": extraction_user_prompt}]
-        response = call_model(model_choice, extraction_system_prompt, messages)
-        packet_time = time.time() - packet_start
+        response = call_model_fast_extraction(extraction_system_prompt, messages)
 
         response_tokens = approx_tokens_simple(response)
-        print(f"      └─ Réponse LLM: ~{response_tokens:,} tokens en {packet_time:.1f}s")
+        log(f"      └─ 📥 Réponse reçue: ~{response_tokens:,} tokens")
 
         # Parser le JSON de la réponse
         try:
             extracted_json = extract_json_from_response(response)
             extracted_jsons.append(extracted_json)
             nb_sections_extracted = len(extracted_json.get("sections", []))
-            print(f"      └─ ✅ JSON extrait: {nb_sections_extracted} sections")
+            log(f"      └─ ✅ JSON parsé: {nb_sections_extracted} sections extraites")
         except (json.JSONDecodeError, ValueError) as e:
             # En cas d'erreur de parsing, on stocke quand même la réponse brute
             extracted_jsons.append({
@@ -829,26 +848,28 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
                 "error": f"Erreur parsing JSON: {str(e)}",
                 "raw_response": response[:2000]  # Tronquer pour éviter les problèmes
             })
-            print(f"      └─ ❌ Erreur parsing JSON: {str(e)[:50]}")
+            log(f"      └─ ❌ Erreur parsing JSON: {str(e)[:50]}")
 
     # Calculer les tokens du contenu compressé
     tokens_compressed = compute_compressed_tokens(extracted_jsons)
     compression_ratio = round((1 - tokens_compressed / tokens_original) * 100, 1) if tokens_original > 0 else 0
 
-    print(f"\n📊 RÉSULTAT COMPRESSION")
-    print(f"   └─ Tokens original: {tokens_original:,}")
-    print(f"   └─ Tokens compressé: {tokens_compressed:,}")
-    print(f"   └─ Ratio de compression: {compression_ratio}%")
+    log(f"📊 RÉSULTAT COMPRESSION INTERMÉDIAIRE")
+    log(f"   └─ Tokens original: {tokens_original:,}")
+    log(f"   └─ Tokens compressé: {tokens_compressed:,}")
+    log(f"   └─ Ratio de compression: {compression_ratio}%")
 
     if progress_callback:
         progress_callback(f"Compression : {tokens_original:,} → {tokens_compressed:,} tokens ({compression_ratio}% de réduction)")
 
-    # Étape 4 : Générer le résumé final
-    print(f"\n📊 ÉTAPE 3 - Génération du résumé final")
+    # Étape 4 : Générer le résumé final (avec le modèle choisi par l'utilisateur)
+    log(f"📊 ÉTAPE 3/3 - Génération du résumé final")
+    log(f"   ℹ️  Modèle de synthèse: {model_choice}")
+    log(f"   ℹ️  Type de prompt: {prompt_type}")
     if progress_callback:
         progress_callback("Génération du résumé final...")
 
-    final_system_prompt = build_final_system_prompt()
+    final_system_prompt = build_final_system_prompt(prompt_type)
     final_user_prompt = build_final_user_prompt(
         extracted_jsons,
         mode="resume_global",
@@ -856,21 +877,19 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
     )
 
     final_prompt_tokens = approx_tokens_simple(final_user_prompt)
-    print(f"   └─ Tokens du prompt final: ~{final_prompt_tokens:,}")
+    log(f"   └─ Tokens du prompt final: ~{final_prompt_tokens:,}")
+    log(f"   └─ 📡 Envoi requête API finale ({model_choice})...")
 
-    final_start = time.time()
     messages = [{"role": "user", "content": final_user_prompt}]
     final_response = call_model(model_choice, final_system_prompt, messages)
-    final_time = time.time() - final_start
 
     final_response_tokens = approx_tokens_simple(final_response)
-    print(f"   └─ Réponse finale: ~{final_response_tokens:,} tokens en {final_time:.1f}s")
+    log(f"   └─ 📥 Réponse finale reçue: ~{final_response_tokens:,} tokens")
 
-    total_time = time.time() - start_time
-    print(f"\n" + "="*60)
-    print(f"✅ PIPELINE TERMINÉ en {total_time:.1f}s")
-    print(f"   📄 {tokens_original:,} tokens → 📦 {tokens_compressed:,} tokens → 📝 {final_response_tokens:,} tokens")
-    print("="*60 + "\n")
+    print("\n" + "="*60, flush=True)
+    log(f"✅ PIPELINE TERMINÉ")
+    log(f"   📄 {tokens_original:,} tokens → 📦 {tokens_compressed:,} tokens → 📝 {final_response_tokens:,} tokens")
+    print("="*60 + "\n", flush=True)
 
     return {
         "nb_sections": nb_sections,
@@ -1056,6 +1075,12 @@ with tab1:
                 try:
                     # Vérifier si le mode compression est activé
                     if enable_compression:
+                        # Déterminer le type de prompt compression
+                        if "Rapport de synthèse" in prompt_choice:
+                            compression_prompt_type = "rapport_synthese"
+                        else:
+                            compression_prompt_type = "resume_conclusions"
+
                         # Pipeline de compression pour documents longs
                         progress_placeholder = st.empty()
 
@@ -1066,6 +1091,7 @@ with tab1:
                             result = call_model_with_compression(
                                 model_choice,
                                 user_query,
+                                prompt_type=compression_prompt_type,
                                 progress_callback=update_progress
                             )
 
@@ -1090,14 +1116,6 @@ with tab1:
 
                         response_text = result["final_response"]
 
-                    # Vérifier si c'est un prompt chaîné (2 étapes)
-                    elif is_chained_prompt:
-                        # Appel chaîné en 2 étapes
-                        with st.spinner("Analyse en 2 étapes en cours..."):
-                            result = call_model_chained(model_choice, prompt_choice, user_query)
-
-                        # Afficher uniquement le résultat de l'étape 2
-                        response_text = result["etape2_resume"]
                     else:
                         # Appel simple (1 étape)
                         with st.spinner("Génération de la réponse..."):
