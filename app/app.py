@@ -3,12 +3,24 @@ import streamlit.components.v1 as components
 import os
 import json
 import html
+import re
 from urllib.parse import urlencode
 from openai import OpenAI
 from mistralai import Mistral
 import requests
 from dotenv import load_dotenv
 import tiktoken
+
+# Import du module de compression pour les documents longs
+from document_compression import (
+    parse_and_packetize,
+    build_extraction_system_prompt,
+    build_extraction_user_prompt,
+    build_final_system_prompt,
+    build_final_user_prompt,
+    compute_compressed_tokens,
+    approximate_tokens as approx_tokens_simple,
+)
 
 # Charger les variables d'environnement depuis .env
 load_dotenv()
@@ -427,6 +439,20 @@ prompt_choice = st.sidebar.selectbox(
 # Indicateur si le prompt sélectionné est un prompt chaîné
 is_chained_prompt = prompt_choice in CHAINED_PROMPTS
 
+# Option de compression préalable (uniquement pour "Résumé Conclusions")
+enable_compression = False
+if prompt_choice == "Résumé Conclusions":
+    st.sidebar.markdown("---")
+    st.sidebar.header("Mode compression")
+    enable_compression = st.sidebar.checkbox(
+        "Compression préalable des fichiers",
+        value=False,
+        key="enable_compression",
+        help="Active le pipeline de compression pour les documents longs. Le document est découpé en paquets, chaque paquet est analysé séparément, puis une synthèse finale est générée."
+    )
+    if enable_compression:
+        st.sidebar.info("📦 Mode compression activé : le document sera découpé en paquets et traité en plusieurs étapes.")
+
 # Récupérer le prompt système sélectionné
 if prompt_choice == "Prompt personnalisable":
     system_prompt = st.session_state.custom_prompt
@@ -667,6 +693,140 @@ def call_model_chained(model_choice, prompt_choice, user_query):
     }
 
 
+def extract_json_from_response(response_text: str) -> dict:
+    """
+    Extrait un objet JSON d'une réponse LLM.
+    Gère les cas où le JSON est entouré de backticks markdown.
+    """
+    # Nettoyer les backticks markdown si présents
+    if "```json" in response_text:
+        match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
+        if match:
+            response_text = match.group(1)
+    elif "```" in response_text:
+        match = re.search(r'```\s*(.*?)\s*```', response_text, re.DOTALL)
+        if match:
+            response_text = match.group(1)
+
+    # Trouver le JSON dans la réponse
+    json_start = response_text.find('{')
+    json_end = response_text.rfind('}') + 1
+
+    if json_start != -1 and json_end > json_start:
+        json_str = response_text[json_start:json_end]
+        try:
+            return json.loads(json_str)
+        except json.JSONDecodeError:
+            # Nettoyer les caractères de contrôle
+            json_str_clean = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', json_str)
+            return json.loads(json_str_clean)
+
+    raise ValueError("Aucun JSON valide trouvé dans la réponse")
+
+
+def call_model_with_compression(model_choice, user_query, progress_callback=None):
+    """
+    Pipeline de compression pour les documents longs.
+
+    Étapes :
+    1. Parser le document en sections
+    2. Découper en paquets
+    3. Pour chaque paquet, extraire un JSON intermédiaire via LLM
+    4. Générer le résumé final à partir des JSON intermédiaires
+
+    Args:
+        model_choice: Le modèle LLM à utiliser
+        user_query: Le document source (conclusions)
+        progress_callback: Fonction optionnelle pour afficher la progression
+
+    Returns:
+        dict avec les clés:
+        - "nb_sections": nombre de sections détectées
+        - "nb_packets": nombre de paquets créés
+        - "extracted_jsons": liste des JSON intermédiaires
+        - "final_response": le résumé final
+        - "tokens_original": nombre de tokens du document original
+        - "tokens_compressed": nombre de tokens après compression
+        - "compression_ratio": ratio de compression
+    """
+    # Calculer les tokens du document original
+    tokens_original = approx_tokens_simple(user_query)
+
+    # Étape 1 & 2 : Parser et découper en paquets
+    if progress_callback:
+        progress_callback(f"Analyse du document ({tokens_original:,} tokens)...")
+
+    nodes, packets = parse_and_packetize(
+        user_query,
+        max_input_tokens=42000,
+        prompt_budget_tokens=2500,
+        output_budget_tokens=3000,
+    )
+
+    nb_sections = len(nodes)
+    nb_packets = len(packets)
+
+    if progress_callback:
+        progress_callback(f"Document découpé : {nb_sections} sections, {nb_packets} paquet(s)")
+
+    # Étape 3 : Extraire un JSON intermédiaire pour chaque paquet
+    extraction_system_prompt = build_extraction_system_prompt()
+    extracted_jsons = []
+
+    for i, packet in enumerate(packets):
+        if progress_callback:
+            progress_callback(f"Extraction du paquet {i+1}/{nb_packets} ({packet.total_tokens} tokens)...")
+
+        extraction_user_prompt = build_extraction_user_prompt(packet)
+
+        # Appeler le LLM pour ce paquet
+        messages = [{"role": "user", "content": extraction_user_prompt}]
+        response = call_model(model_choice, extraction_system_prompt, messages)
+
+        # Parser le JSON de la réponse
+        try:
+            extracted_json = extract_json_from_response(response)
+            extracted_jsons.append(extracted_json)
+        except (json.JSONDecodeError, ValueError) as e:
+            # En cas d'erreur de parsing, on stocke quand même la réponse brute
+            extracted_jsons.append({
+                "packet_id": packet.id,
+                "error": f"Erreur parsing JSON: {str(e)}",
+                "raw_response": response[:2000]  # Tronquer pour éviter les problèmes
+            })
+
+    # Calculer les tokens du contenu compressé
+    tokens_compressed = compute_compressed_tokens(extracted_jsons)
+    compression_ratio = round((1 - tokens_compressed / tokens_original) * 100, 1) if tokens_original > 0 else 0
+
+    if progress_callback:
+        progress_callback(f"Compression : {tokens_original:,} → {tokens_compressed:,} tokens ({compression_ratio}% de réduction)")
+
+    # Étape 4 : Générer le résumé final
+    if progress_callback:
+        progress_callback("Génération du résumé final...")
+
+    final_system_prompt = build_final_system_prompt()
+    final_user_prompt = build_final_user_prompt(
+        extracted_jsons,
+        mode="resume_global",
+        max_pages_hint=5
+    )
+
+    messages = [{"role": "user", "content": final_user_prompt}]
+    final_response = call_model(model_choice, final_system_prompt, messages)
+
+    return {
+        "nb_sections": nb_sections,
+        "nb_packets": nb_packets,
+        "extracted_jsons": extracted_jsons,
+        "final_response": final_response,
+        "tokens_original": tokens_original,
+        "tokens_compressed": tokens_compressed,
+        "compression_ratio": compression_ratio
+    }
+
+
 # Créer les onglets
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["💬 Chat", "📄 Fichiers de conclusions", "✏️ Prompt personnalisable", "📐 Modèle de trame", "📖 Guide d'utilisation"])
 
@@ -705,6 +865,24 @@ with tab1:
                     st.warning(f"⚠️ **Réponse tronquée** (finish_reason: `{finish_reason}`) - {usage_info}")
                 else:
                     st.info(f"✅ finish_reason: `{finish_reason}` - {usage_info}")
+
+            # Afficher les infos de compression si disponibles
+            if "compression_info" in message:
+                comp_info = message["compression_info"]
+                tokens_orig = comp_info.get('tokens_original', 0)
+                tokens_comp = comp_info.get('tokens_compressed', 0)
+                ratio = comp_info.get('compression_ratio', 0)
+                st.success(
+                    f"📦 **Mode compression** : {comp_info['nb_sections']} sections → {comp_info['nb_packets']} paquet(s)\n\n"
+                    f"📊 **Tokens** : {tokens_orig:,} → {tokens_comp:,} (**{ratio}%** de réduction)"
+                )
+                with st.expander("🔍 Voir les données intermédiaires extraites"):
+                    for i, packet_json in enumerate(comp_info.get("extracted_jsons", [])):
+                        st.markdown(f"**Paquet {i+1}**")
+                        if "error" in packet_json:
+                            st.warning(f"Erreur d'extraction : {packet_json['error']}")
+                        else:
+                            st.json(packet_json)
 
             # Récupérer la question de l'utilisateur (message précédent)
             user_question = ""
@@ -820,8 +998,44 @@ with tab1:
             # Générer et afficher la réponse
             with st.chat_message("assistant"):
                 try:
+                    # Vérifier si le mode compression est activé
+                    if enable_compression:
+                        # Pipeline de compression pour documents longs
+                        progress_placeholder = st.empty()
+
+                        def update_progress(msg):
+                            progress_placeholder.info(f"📦 {msg}")
+
+                        with st.spinner("Pipeline de compression en cours..."):
+                            result = call_model_with_compression(
+                                model_choice,
+                                user_query,
+                                progress_callback=update_progress
+                            )
+
+                        progress_placeholder.empty()
+
+                        # Afficher les statistiques de compression avec les tokens
+                        st.success(
+                            f"✅ Compression terminée : {result['nb_sections']} sections → {result['nb_packets']} paquet(s)\n\n"
+                            f"📊 **Tokens** : {result['tokens_original']:,} → {result['tokens_compressed']:,} "
+                            f"(**{result['compression_ratio']}%** de réduction)"
+                        )
+
+                        # Stocker les infos de compression pour affichage ultérieur
+                        compression_info = {
+                            "nb_sections": result["nb_sections"],
+                            "nb_packets": result["nb_packets"],
+                            "extracted_jsons": result["extracted_jsons"],
+                            "tokens_original": result["tokens_original"],
+                            "tokens_compressed": result["tokens_compressed"],
+                            "compression_ratio": result["compression_ratio"]
+                        }
+
+                        response_text = result["final_response"]
+
                     # Vérifier si c'est un prompt chaîné (2 étapes)
-                    if is_chained_prompt:
+                    elif is_chained_prompt:
                         # Appel chaîné en 2 étapes
                         with st.spinner("Analyse en 2 étapes en cours..."):
                             result = call_model_chained(model_choice, prompt_choice, user_query)
@@ -847,10 +1061,12 @@ with tab1:
                             "usage": usage_info
                         }
 
-                    # Ajouter la réponse à l'historique (avec debug_info si disponible)
+                    # Ajouter la réponse à l'historique (avec debug_info et compression_info si disponibles)
                     message_data = {"role": "assistant", "content": response_text}
                     if debug_info:
                         message_data["debug_info"] = debug_info
+                    if enable_compression and 'compression_info' in dir():
+                        message_data["compression_info"] = compression_info
                     st.session_state.messages.append(message_data)
 
                     # Évaluation automatique si activée
