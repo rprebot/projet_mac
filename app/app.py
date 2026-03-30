@@ -17,7 +17,9 @@ BASE_DIR = Path(__file__).parent
 PROJECT_ROOT = BASE_DIR.parent  # Racine du projet (POC_MAC)
 
 # Charger les variables d'environnement depuis .env à la racine du projet
-load_dotenv(PROJECT_ROOT / ".env")
+_env_path = PROJECT_ROOT / ".env"
+_env_loaded = load_dotenv(_env_path)
+print(f"[DEBUG] .env path: {_env_path.absolute()}, exists: {_env_path.exists()}, loaded: {_env_loaded}")
 
 # Import du module de compression pour les documents longs
 from document_compression import (
@@ -247,6 +249,8 @@ Exemple :
 # Clés API depuis les variables d'environnement
 NEBIUS_API_KEY = os.getenv("NEBIUS_API_KEY", "")
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY", "")
+print(f"[DEBUG] MISTRAL_API_KEY loaded: {bool(MISTRAL_API_KEY)} ({len(MISTRAL_API_KEY)} chars)")
+print(f"[DEBUG] NEBIUS_API_KEY loaded: {bool(NEBIUS_API_KEY)} ({len(NEBIUS_API_KEY)} chars)")
 
 # Limites de tokens par modèle (contexte d'entrée)
 MODEL_TOKEN_LIMITS = {
@@ -748,27 +752,47 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
         - "tokens_compressed": nombre de tokens après compression
         - "compression_ratio": ratio de compression
     """
+    import time
+    start_time = time.time()
+
+    print("\n" + "="*60)
+    print("🚀 PIPELINE DE COMPRESSION - DÉBUT")
+    print("="*60)
+    print(f"📋 Modèle sélectionné: {model_choice}")
+
     # Calculer les tokens du document original
     tokens_original = approx_tokens_simple(user_query)
+    print(f"📄 Document original: {len(user_query):,} caractères, ~{tokens_original:,} tokens")
 
     # Étape 1 & 2 : Parser et découper en paquets
     if progress_callback:
         progress_callback(f"Analyse du document ({tokens_original:,} tokens)...")
 
+    step1_start = time.time()
     nodes, packets = parse_and_packetize(
         user_query,
         max_input_tokens=42000,
         prompt_budget_tokens=2500,
         output_budget_tokens=3000,
     )
+    step1_time = time.time() - step1_start
 
     nb_sections = len(nodes)
     nb_packets = len(packets)
+
+    print(f"\n📊 ÉTAPE 1 - Parsing & Packetisation ({step1_time:.2f}s)")
+    print(f"   └─ Sections détectées: {nb_sections}")
+    for node in nodes:
+        print(f"      • {node.id}: {node.title[:50]}... ({node.section_type}, ~{node.approx_tokens} tokens)")
+    print(f"   └─ Paquets créés: {nb_packets}")
+    for packet in packets:
+        print(f"      • {packet.id}: {packet.total_tokens:,} tokens, sections: {', '.join(packet.titles[:3])}{'...' if len(packet.titles) > 3 else ''}")
 
     if progress_callback:
         progress_callback(f"Document découpé : {nb_sections} sections, {nb_packets} paquet(s)")
 
     # Étape 3 : Extraire un JSON intermédiaire pour chaque paquet
+    print(f"\n📊 ÉTAPE 2 - Extraction LLM par paquet")
     extraction_system_prompt = build_extraction_system_prompt()
     extracted_jsons = []
 
@@ -776,16 +800,28 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
         if progress_callback:
             progress_callback(f"Extraction du paquet {i+1}/{nb_packets} ({packet.total_tokens} tokens)...")
 
+        print(f"\n   🔄 Paquet {i+1}/{nb_packets} ({packet.id})")
+        print(f"      └─ Tokens en entrée: {packet.total_tokens:,}")
+
         extraction_user_prompt = build_extraction_user_prompt(packet)
+        prompt_tokens = approx_tokens_simple(extraction_user_prompt)
+        print(f"      └─ Tokens du prompt complet: ~{prompt_tokens:,}")
 
         # Appeler le LLM pour ce paquet
+        packet_start = time.time()
         messages = [{"role": "user", "content": extraction_user_prompt}]
         response = call_model(model_choice, extraction_system_prompt, messages)
+        packet_time = time.time() - packet_start
+
+        response_tokens = approx_tokens_simple(response)
+        print(f"      └─ Réponse LLM: ~{response_tokens:,} tokens en {packet_time:.1f}s")
 
         # Parser le JSON de la réponse
         try:
             extracted_json = extract_json_from_response(response)
             extracted_jsons.append(extracted_json)
+            nb_sections_extracted = len(extracted_json.get("sections", []))
+            print(f"      └─ ✅ JSON extrait: {nb_sections_extracted} sections")
         except (json.JSONDecodeError, ValueError) as e:
             # En cas d'erreur de parsing, on stocke quand même la réponse brute
             extracted_jsons.append({
@@ -793,15 +829,22 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
                 "error": f"Erreur parsing JSON: {str(e)}",
                 "raw_response": response[:2000]  # Tronquer pour éviter les problèmes
             })
+            print(f"      └─ ❌ Erreur parsing JSON: {str(e)[:50]}")
 
     # Calculer les tokens du contenu compressé
     tokens_compressed = compute_compressed_tokens(extracted_jsons)
     compression_ratio = round((1 - tokens_compressed / tokens_original) * 100, 1) if tokens_original > 0 else 0
 
+    print(f"\n📊 RÉSULTAT COMPRESSION")
+    print(f"   └─ Tokens original: {tokens_original:,}")
+    print(f"   └─ Tokens compressé: {tokens_compressed:,}")
+    print(f"   └─ Ratio de compression: {compression_ratio}%")
+
     if progress_callback:
         progress_callback(f"Compression : {tokens_original:,} → {tokens_compressed:,} tokens ({compression_ratio}% de réduction)")
 
     # Étape 4 : Générer le résumé final
+    print(f"\n📊 ÉTAPE 3 - Génération du résumé final")
     if progress_callback:
         progress_callback("Génération du résumé final...")
 
@@ -812,8 +855,22 @@ def call_model_with_compression(model_choice, user_query, progress_callback=None
         max_pages_hint=5
     )
 
+    final_prompt_tokens = approx_tokens_simple(final_user_prompt)
+    print(f"   └─ Tokens du prompt final: ~{final_prompt_tokens:,}")
+
+    final_start = time.time()
     messages = [{"role": "user", "content": final_user_prompt}]
     final_response = call_model(model_choice, final_system_prompt, messages)
+    final_time = time.time() - final_start
+
+    final_response_tokens = approx_tokens_simple(final_response)
+    print(f"   └─ Réponse finale: ~{final_response_tokens:,} tokens en {final_time:.1f}s")
+
+    total_time = time.time() - start_time
+    print(f"\n" + "="*60)
+    print(f"✅ PIPELINE TERMINÉ en {total_time:.1f}s")
+    print(f"   📄 {tokens_original:,} tokens → 📦 {tokens_compressed:,} tokens → 📝 {final_response_tokens:,} tokens")
+    print("="*60 + "\n")
 
     return {
         "nb_sections": nb_sections,
