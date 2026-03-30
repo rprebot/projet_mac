@@ -14,6 +14,10 @@ import tiktoken
 
 # Répertoire de base (où se trouve app.py)
 BASE_DIR = Path(__file__).parent
+PROJECT_ROOT = BASE_DIR.parent  # Racine du projet (POC_MAC)
+
+# Charger les variables d'environnement depuis .env à la racine du projet
+load_dotenv(PROJECT_ROOT / ".env")
 
 # Import du module de compression pour les documents longs
 from document_compression import (
@@ -25,9 +29,6 @@ from document_compression import (
     compute_compressed_tokens,
     approximate_tokens as approx_tokens_simple,
 )
-
-# Charger les variables d'environnement depuis .env
-load_dotenv()
 
 
 def copy_button(text: str, button_id: str):
