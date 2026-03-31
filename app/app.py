@@ -1189,6 +1189,7 @@ def call_model_with_compression(model_choice, user_query, prompt_type="resume_co
         "nb_sections": nb_sections,
         "nb_packets": nb_packets,
         "extracted_jsons": extracted_jsons,
+        "final_user_prompt": final_user_prompt,  # Prompt final envoyé au LLM
         "final_response": final_response,
         "tokens_original": tokens_original,
         "tokens_compressed": tokens_compressed,
@@ -1246,12 +1247,20 @@ with tab1:
                     f"📊 **Tokens** : {tokens_orig:,} → {tokens_comp:,} (**{ratio}%** de réduction)"
                 )
                 with st.expander("🔍 Voir les données intermédiaires extraites"):
+                    st.markdown("### 📦 JSON extraits par paquet")
                     for i, packet_json in enumerate(comp_info.get("extracted_jsons", [])):
                         st.markdown(f"**Paquet {i+1}**")
                         if "error" in packet_json:
                             st.warning(f"Erreur d'extraction : {packet_json['error']}")
                         else:
                             st.json(packet_json)
+
+                    # Afficher le prompt final utilisé pour la synthèse
+                    st.markdown("---")
+                    st.markdown("### 📝 Prompt final envoyé au LLM pour la synthèse")
+                    final_prompt = comp_info.get("final_user_prompt", "Non disponible")
+                    if final_prompt != "Non disponible":
+                        st.code(final_prompt, language=None)
 
             # Récupérer la question de l'utilisateur (message précédent)
             user_question = ""
@@ -1414,6 +1423,7 @@ with tab1:
                             "nb_sections": result["nb_sections"],
                             "nb_packets": result["nb_packets"],
                             "extracted_jsons": result["extracted_jsons"],
+                            "final_user_prompt": result["final_user_prompt"],
                             "tokens_original": result["tokens_original"],
                             "tokens_compressed": result["tokens_compressed"],
                             "compression_ratio": result["compression_ratio"]
