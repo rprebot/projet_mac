@@ -512,7 +512,8 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-large-latest",
             messages=full_messages,
-            temperature=0.3
+            temperature=0.3,
+            max_tokens=16000  # Suffisant pour ~10-12 pages
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
@@ -528,7 +529,8 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-medium-2508",
             messages=full_messages,
-            temperature=0.3
+            temperature=0.3,
+            max_tokens=16000  # Suffisant pour ~10-12 pages
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
@@ -544,7 +546,8 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-large-2411",
             messages=full_messages,
-            temperature=0.3
+            temperature=0.3,
+            max_tokens=16000  # Suffisant pour ~10-12 pages
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
@@ -625,6 +628,7 @@ def call_model(model_choice, system_prompt, messages_history):
             model="openai/gpt-oss-120b",
             messages=full_messages,
             temperature=0.3,
+            max_tokens=16000,  # Suffisant pour ~10-12 pages
             extra_body={
                 "reasoning": {
                     "effort": "high"
@@ -648,7 +652,8 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.completions.create(
             model="nvidia/nemotron-3-super-120b-a12b",
             messages=full_messages,
-            temperature=0.3
+            temperature=0.3,
+            max_tokens=16000  # Suffisant pour ~10-12 pages
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
