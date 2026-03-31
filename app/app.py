@@ -1189,7 +1189,8 @@ def call_model_with_compression(model_choice, user_query, prompt_type="resume_co
         "nb_sections": nb_sections,
         "nb_packets": nb_packets,
         "extracted_jsons": extracted_jsons,
-        "final_user_prompt": final_user_prompt,  # Prompt final envoyé au LLM
+        "final_system_prompt": final_system_prompt,  # Prompt système (instructions détaillées)
+        "final_user_prompt": final_user_prompt,  # Prompt user (JSON + consigne courte)
         "final_response": final_response,
         "tokens_original": tokens_original,
         "tokens_compressed": tokens_compressed,
@@ -1255,12 +1256,23 @@ with tab1:
                         else:
                             st.json(packet_json)
 
-                    # Afficher le prompt final utilisé pour la synthèse
+                    # Afficher les prompts finaux utilisés pour la synthèse
                     st.markdown("---")
-                    st.markdown("### 📝 Prompt final envoyé au LLM pour la synthèse")
-                    final_prompt = comp_info.get("final_user_prompt", "Non disponible")
-                    if final_prompt != "Non disponible":
-                        st.code(final_prompt, language=None)
+                    st.markdown("### 📝 Prompts envoyés au LLM pour la synthèse finale")
+
+                    # System prompt (instructions détaillées)
+                    final_system_prompt = comp_info.get("final_system_prompt", "Non disponible")
+                    if final_system_prompt != "Non disponible":
+                        st.markdown("#### 🎯 System Prompt (instructions)")
+                        with st.expander("Voir le system prompt complet", expanded=False):
+                            st.code(final_system_prompt, language="markdown")
+
+                    # User prompt (JSON + consigne courte)
+                    final_user_prompt = comp_info.get("final_user_prompt", "Non disponible")
+                    if final_user_prompt != "Non disponible":
+                        st.markdown("#### 💬 User Prompt (JSON + consigne)")
+                        with st.expander("Voir le user prompt complet", expanded=False):
+                            st.code(final_user_prompt, language=None)
 
             # Récupérer la question de l'utilisateur (message précédent)
             user_question = ""
