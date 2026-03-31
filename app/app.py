@@ -11,6 +11,8 @@ from mistralai import Mistral
 import requests
 from dotenv import load_dotenv
 import tiktoken
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
 
 # Répertoire de base (où se trouve app.py)
 BASE_DIR = Path(__file__).parent
@@ -653,35 +655,168 @@ def call_model(model_choice, system_prompt, messages_history):
         return response.choices[0].message.content
 
 
-def extract_json_from_response(response_text: str) -> dict:
+def repair_json_with_llm(malformed_json: str, max_length=10000) -> dict:
+    """
+    Fallback : utilise un petit LLM pour réparer un JSON malformé.
+
+    Args:
+        malformed_json: Le JSON malformé à réparer
+        max_length: Longueur max du JSON à envoyer (pour limiter les coûts)
+
+    Returns:
+        dict: Le JSON réparé et parsé
+    """
+    if not MISTRAL_API_KEY:
+        raise ValueError("Clé API Mistral non configurée pour le fallback JSON repair")
+
+    # Tronquer si trop long
+    json_to_repair = malformed_json[:max_length] if len(malformed_json) > max_length else malformed_json
+
+    repair_prompt = f"""Tu es un expert en réparation de JSON malformé.
+
+TÂCHE : Le JSON ci-dessous contient une ou plusieurs erreurs de syntaxe. Répare-le et retourne UNIQUEMENT le JSON corrigé, sans aucun texte avant ou après.
+
+ERREURS COURANTES À CORRIGER :
+- Virgules trailing (avant ] ou }})
+- Guillemets non échappés dans les chaînes
+- Sauts de ligne non échappés
+- Accolades/crochets non fermés
+- JSON tronqué (fermer proprement les structures ouvertes)
+
+JSON MALFORMÉ :
+```
+{json_to_repair}
+```
+
+RETOURNE UNIQUEMENT LE JSON CORRIGÉ (sans backticks, sans explication) :"""
+
+    try:
+        client = Mistral(api_key=MISTRAL_API_KEY)
+        response = client.chat.complete(
+            model="mistral-small-2603",
+            messages=[{"role": "user", "content": repair_prompt}],
+            temperature=0.0,
+            max_tokens=max_length + 1000  # Un peu plus pour les corrections
+        )
+
+        repaired_text = response.choices[0].message.content
+
+        # Extraire le JSON réparé (même logique que extract_json_from_response)
+        json_start = repaired_text.find('{')
+        json_end = repaired_text.rfind('}') + 1
+
+        if json_start != -1 and json_end > json_start:
+            json_str = repaired_text[json_start:json_end]
+            return json.loads(json_str)
+        else:
+            raise ValueError("Le LLM n'a pas retourné de JSON valide")
+
+    except Exception as e:
+        raise ValueError(f"Échec du fallback LLM repair: {str(e)}")
+
+
+def extract_json_from_response(response_text: str, debug=False) -> dict:
     """
     Extrait un objet JSON d'une réponse LLM.
     Gère les cas où le JSON est entouré de backticks markdown.
+    Applique plusieurs nettoyages pour corriger les erreurs JSON courantes.
     """
-    # Nettoyer les backticks markdown si présents
-    if "```json" in response_text:
-        match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
-        if match:
-            response_text = match.group(1)
-    elif "```" in response_text:
-        match = re.search(r'```\s*(.*?)\s*```', response_text, re.DOTALL)
-        if match:
-            response_text = match.group(1)
+    original_length = len(response_text)
 
-    # Trouver le JSON dans la réponse
+    # Stratégie 1 : Chercher le premier { et le dernier } (ignore les backticks)
+    # Cette approche est plus robuste que le regex si les backticks sont malformés
     json_start = response_text.find('{')
     json_end = response_text.rfind('}') + 1
 
-    if json_start != -1 and json_end > json_start:
-        json_str = response_text[json_start:json_end]
-        try:
-            return json.loads(json_str)
-        except json.JSONDecodeError:
-            # Nettoyer les caractères de contrôle
-            json_str_clean = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', json_str)
-            return json.loads(json_str_clean)
+    if json_start == -1 or json_end <= json_start:
+        raise ValueError("Aucune accolade { } trouvée dans la réponse")
 
-    raise ValueError("Aucun JSON valide trouvé dans la réponse")
+    json_str = response_text[json_start:json_end]
+
+    if debug:
+        print(f"[DEBUG extract_json] Original length: {original_length}, JSON extracted: {len(json_str)} chars")
+        print(f"[DEBUG extract_json] First 200 chars: {json_str[:200]}")
+
+    # Tentative 1 : Parser tel quel
+    try:
+        result = json.loads(json_str)
+        if debug:
+            print(f"[DEBUG extract_json] ✅ Parsed on attempt 1 (as-is)")
+        return result
+    except json.JSONDecodeError as e:
+        if debug:
+            print(f"[DEBUG extract_json] ❌ Attempt 1 failed: {str(e)[:100]}")
+
+    # Tentative 2 : Nettoyer les caractères de contrôle (sauf \n, \r, \t légitimes dans les strings)
+    try:
+        json_str_clean = re.sub(r'[\x00-\x08\x0b-\x0c\x0e-\x1f\x7f-\x9f]', '', json_str)
+        result = json.loads(json_str_clean)
+        if debug:
+            print(f"[DEBUG extract_json] ✅ Parsed on attempt 2 (remove control chars)")
+        return result
+    except json.JSONDecodeError as e:
+        if debug:
+            print(f"[DEBUG extract_json] ❌ Attempt 2 failed: {str(e)[:100]}")
+
+    # Tentative 3 : Nettoyer les virgules trailing (,] et ,})
+    try:
+        json_str_clean = re.sub(r',\s*([}\]])', r'\1', json_str)
+        json_str_clean = re.sub(r'[\x00-\x08\x0b-\x0c\x0e-\x1f\x7f-\x9f]', '', json_str_clean)
+        result = json.loads(json_str_clean)
+        if debug:
+            print(f"[DEBUG extract_json] ✅ Parsed on attempt 3 (remove trailing commas)")
+        return result
+    except json.JSONDecodeError as e:
+        if debug:
+            print(f"[DEBUG extract_json] ❌ Attempt 3 failed: {str(e)[:100]}")
+
+    # Tentative 4 : Remplacer les sauts de ligne non échappés dans les strings
+    try:
+        # Protéger les vraies nouvelles lignes échappées (\n)
+        json_str_clean = json_str.replace('\\n', '__NEWLINE__ESCAPED__')
+        json_str_clean = json_str_clean.replace('\\r', '__RETURN__ESCAPED__')
+        json_str_clean = json_str_clean.replace('\\t', '__TAB__ESCAPED__')
+
+        # Supprimer les vraies nouvelles lignes/retours (non échappés dans le JSON brut)
+        json_str_clean = json_str_clean.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+
+        # Restaurer les échappements
+        json_str_clean = json_str_clean.replace('__NEWLINE__ESCAPED__', '\\n')
+        json_str_clean = json_str_clean.replace('__RETURN__ESCAPED__', '\\r')
+        json_str_clean = json_str_clean.replace('__TAB__ESCAPED__', '\\t')
+
+        # Nettoyer virgules et caractères de contrôle
+        json_str_clean = re.sub(r',\s*([}\]])', r'\1', json_str_clean)
+        json_str_clean = re.sub(r'[\x00-\x08\x0b-\x0c\x0e-\x1f\x7f-\x9f]', '', json_str_clean)
+
+        result = json.loads(json_str_clean)
+        if debug:
+            print(f"[DEBUG extract_json] ✅ Parsed on attempt 4 (replace unescaped newlines)")
+        return result
+    except json.JSONDecodeError as e:
+        if debug:
+            print(f"[DEBUG extract_json] ❌ Attempt 4 failed: {str(e)[:100]}")
+            # Montrer où se trouve l'erreur
+            error_pos = getattr(e, 'pos', None)
+            if error_pos:
+                context_start = max(0, error_pos - 100)
+                context_end = min(len(json_str_clean), error_pos + 100)
+                print(f"[DEBUG extract_json] Error context: ...{json_str_clean[context_start:context_end]}...")
+
+    # Tentative 5 : FALLBACK - Utiliser un petit LLM pour réparer le JSON
+    try:
+        if debug:
+            print(f"[DEBUG extract_json] 🤖 Attempt 5: Fallback LLM repair...")
+        result = repair_json_with_llm(json_str)
+        if debug:
+            print(f"[DEBUG extract_json] ✅ Parsed on attempt 5 (LLM repair)")
+        return result
+    except Exception as e:
+        if debug:
+            print(f"[DEBUG extract_json] ❌ Attempt 5 failed: {str(e)[:100]}")
+
+        # Toutes les tentatives ont échoué
+        raise ValueError(f"Impossible de parser le JSON après tous les nettoyages + LLM repair. Erreur: {str(e)}")
 
 
 def call_model_fast_extraction(system_prompt, messages_history, timeout_seconds=120):
@@ -722,8 +857,8 @@ def call_model_fast_extraction(system_prompt, messages_history, timeout_seconds=
         response = client.chat.complete(
             model="mistral-small-2603",  # Modèle rapide pour l'extraction
             messages=full_messages,
-            temperature=0.1,  # Faible température pour JSON structuré
-            max_tokens=8000  # Suffisant pour le JSON d'extraction
+            temperature=0.0,  # Température = 0 pour JSON déterministe et valide
+            max_tokens=16000  # Augmenté pour éviter la troncature du JSON
         )
 
         elapsed = time.time() - call_start
@@ -734,6 +869,152 @@ def call_model_fast_extraction(system_prompt, messages_history, timeout_seconds=
         elapsed = time.time() - call_start
         print(f"         └─ ❌ Erreur après {elapsed:.1f}s: {type(e).__name__}: {str(e)[:200]}", flush=True)
         raise
+
+
+def extract_packet_parallel(packet, packet_index, extraction_system_prompt, log_fn, max_retries=1):
+    """
+    Extrait un paquet en appelant l'API Mistral (thread-safe).
+    En cas d'erreur de parsing JSON, réessaie une fois avec un prompt plus strict.
+
+    Args:
+        packet: Le paquet à extraire
+        packet_index: Index du paquet (pour logs et ordre)
+        extraction_system_prompt: Le prompt système d'extraction
+        log_fn: Fonction de logging (thread-safe)
+        max_retries: Nombre de tentatives en cas d'erreur JSON (défaut: 1)
+
+    Returns:
+        tuple: (packet_index, packet, extracted_json, error)
+    """
+    log_fn(f"      └─ 🔄 PAQUET {packet_index+1} - Début extraction...")
+    log_fn(f"         └─ Tokens contenu: {packet.total_tokens:,}")
+
+    extraction_user_prompt = build_extraction_user_prompt(packet)
+    prompt_tokens = approx_tokens_simple(extraction_user_prompt)
+    log_fn(f"         └─ Tokens prompt total: ~{prompt_tokens:,}")
+
+    # Boucle de retry
+    last_response = None  # Pour stocker la dernière réponse brute
+    for attempt in range(max_retries + 1):
+        try:
+            if attempt > 0:
+                log_fn(f"         └─ 🔁 RETRY {attempt}/{max_retries} - Nouvelle tentative avec prompt strict...")
+                # Ajouter un avertissement strict au prompt pour le retry
+                strict_warning = """
+
+⚠️ ATTENTION CRITIQUE - RETRY SUITE À ERREUR JSON :
+Votre précédente réponse contenait une erreur de syntaxe JSON.
+VOUS DEVEZ ABSOLUMENT :
+1. Générer un JSON STRICTEMENT VALIDE (pas d'erreur de virgule, de guillemet, de crochet)
+2. Vérifier CHAQUE virgule, CHAQUE guillemet, CHAQUE accolade/crochet
+3. Ne PAS mettre de virgule après le dernier élément d'un tableau ou objet
+4. Échapper correctement les guillemets à l'intérieur des chaînes (utiliser \\\" ou éviter les guillemets)
+5. Retourner UNIQUEMENT le JSON, sans texte avant ou après
+"""
+                retry_prompt = extraction_user_prompt + strict_warning
+                messages = [{"role": "user", "content": retry_prompt}]
+            else:
+                log_fn(f"         └─ 📡 Envoi requête API (Mistral Small)...")
+                messages = [{"role": "user", "content": extraction_user_prompt}]
+
+            response = call_model_fast_extraction(extraction_system_prompt, messages)
+            last_response = response  # Sauvegarder pour debug
+
+            response_tokens = approx_tokens_simple(response)
+            log_fn(f"         └─ 📥 Réponse reçue: ~{response_tokens:,} tokens")
+
+            # Parser le JSON de la réponse (avec debug activé si on est en retry)
+            extracted_json = extract_json_from_response(response, debug=(attempt > 0))
+            nb_sections_extracted = len(extracted_json.get("sections", []))
+
+            if attempt > 0:
+                log_fn(f"         └─ ✅ RETRY RÉUSSI ! JSON parsé: {nb_sections_extracted} sections extraites")
+            else:
+                log_fn(f"         └─ ✅ JSON parsé: {nb_sections_extracted} sections extraites")
+
+            return (packet_index, packet, extracted_json, None)
+
+        except (json.JSONDecodeError, ValueError) as e:
+            error_msg = f"Erreur parsing JSON: {str(e)}"
+
+            if attempt < max_retries:
+                log_fn(f"         └─ ⚠️ {error_msg[:80]} - Retry en cours...")
+                # Logger un échantillon de la réponse pour debug
+                if last_response:
+                    # Trouver le début et la fin du JSON
+                    json_start = last_response.find('{')
+                    json_end = last_response.rfind('}')
+
+                    if json_start != -1 and json_end != -1:
+                        # Montrer le début ET la fin
+                        sample_start_begin = max(0, json_start - 50)
+                        sample_end_begin = min(len(last_response), json_start + 200)
+                        sample_begin = last_response[sample_start_begin:sample_end_begin]
+                        if sample_start_begin > 0:
+                            sample_begin = "..." + sample_begin
+
+                        sample_start_end = max(0, json_end - 200)
+                        sample_end_end = min(len(last_response), json_end + 50)
+                        sample_end = last_response[sample_start_end:sample_end_end]
+                        if sample_end_end < len(last_response):
+                            sample_end = sample_end + "..."
+
+                        log_fn(f"         └─ 🔍 Début JSON: {sample_begin}")
+                        log_fn(f"         └─ 🔍 Fin JSON: ...{sample_end}")
+                        log_fn(f"         └─ 📏 Longueur JSON: {json_end - json_start + 1} chars (total response: {len(last_response)} chars)")
+                    else:
+                        sample = last_response[:300] + "..." if len(last_response) > 300 else last_response
+                        log_fn(f"         └─ 🔍 Échantillon réponse: {sample}")
+                continue  # Réessayer
+            else:
+                log_fn(f"         └─ ❌ {error_msg[:120]} (après {max_retries} retry)")
+                # Logger un échantillon plus long pour le dernier échec
+                if last_response:
+                    # Trouver le début et la fin du JSON
+                    json_start = last_response.find('{')
+                    json_end = last_response.rfind('}')
+
+                    if json_start != -1 and json_end != -1:
+                        # Montrer le début ET la fin
+                        sample_start_begin = max(0, json_start - 100)
+                        sample_end_begin = min(len(last_response), json_start + 400)
+                        sample_begin = last_response[sample_start_begin:sample_end_begin]
+                        if sample_start_begin > 0:
+                            sample_begin = "..." + sample_begin
+
+                        sample_start_end = max(0, json_end - 400)
+                        sample_end_end = min(len(last_response), json_end + 100)
+                        sample_end = last_response[sample_start_end:sample_end_end]
+                        if sample_end_end < len(last_response):
+                            sample_end = sample_end + "..."
+
+                        log_fn(f"         └─ 🔍 DÉBUT JSON:\n{sample_begin}")
+                        log_fn(f"         └─ 🔍 FIN JSON:\n...{sample_end}")
+                        log_fn(f"         └─ 📏 Longueur: JSON={json_end - json_start + 1} chars, Total={len(last_response)} chars")
+                    else:
+                        sample = last_response[:500] + "..." if len(last_response) > 500 else last_response
+                        log_fn(f"         └─ 🔍 Échantillon réponse brute:\n{sample}")
+
+                # Créer un résultat d'erreur avec la réponse brute tronquée
+                error_result = {
+                    "packet_id": packet.id,
+                    "error": error_msg,
+                    "raw_response_sample": last_response[:2000] if last_response else "N/A"
+                }
+                return (packet_index, packet, error_result, error_msg)
+
+        except Exception as e:
+            error_msg = f"Erreur extraction: {str(e)}"
+            log_fn(f"         └─ ❌ {error_msg[:120]}")
+            error_result = {
+                "packet_id": packet.id,
+                "error": error_msg,
+                "raw_response_sample": last_response[:2000] if last_response else "N/A"
+            }
+            return (packet_index, packet, error_result, error_msg)
+
+    # Ne devrait jamais arriver ici
+    return (packet_index, packet, None, "Erreur inconnue")
 
 
 def call_model_with_compression(model_choice, user_query, prompt_type="resume_conclusions", progress_callback=None):
@@ -805,50 +1086,58 @@ def call_model_with_compression(model_choice, user_query, prompt_type="resume_co
     if progress_callback:
         progress_callback(f"Document découpé : {nb_sections} sections, {nb_packets} paquet(s)")
 
-    # Étape 3 : Extraire un JSON intermédiaire pour chaque paquet
+    # Étape 3 : Extraire un JSON intermédiaire pour chaque paquet (EN PARALLÈLE)
     # On utilise Mistral Small pour l'extraction (plus rapide, suffisant pour le JSON)
-    log(f"📊 ÉTAPE 2/3 - Extraction LLM ({nb_packets} paquets)")
+    log(f"📊 ÉTAPE 2/3 - Extraction LLM ({nb_packets} paquets) - MODE PARALLÈLE (2 workers)")
     log(f"   ℹ️  Modèle d'extraction: Mistral Small (rapide)")
     extraction_system_prompt = build_extraction_system_prompt()
-    extracted_jsons = []
 
-    for i, packet in enumerate(packets):
-        if progress_callback:
-            progress_callback(f"Extraction du paquet {i+1}/{nb_packets} ({packet.total_tokens} tokens)...")
+    # Dictionnaire pour conserver l'ordre des paquets
+    extracted_jsons_dict = {}
+    max_workers = 2  # Traiter 2 paquets simultanément
 
-        log(f"   🔄 PAQUET {i+1}/{nb_packets} ({packet.id}) - Début extraction...")
-        log(f"      └─ Tokens contenu: {packet.total_tokens:,}")
+    # Lock pour les callbacks progress thread-safe
+    progress_lock = threading.Lock()
 
-        extraction_user_prompt = build_extraction_user_prompt(packet)
-        prompt_tokens = approx_tokens_simple(extraction_user_prompt)
-        log(f"      └─ Tokens prompt total: ~{prompt_tokens:,}")
-        log(f"      └─ 📡 Envoi requête API (Mistral Small)...")
-        import sys
-        sys.stdout.flush()
-        sys.stderr.flush()
-        log(f"      └─ [DEBUG] Juste avant appel call_model_fast_extraction...")
+    # Utiliser ThreadPoolExecutor pour traiter les paquets en parallèle
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # Soumettre tous les paquets
+        future_to_packet = {
+            executor.submit(extract_packet_parallel, packet, i, extraction_system_prompt, log): (i, packet)
+            for i, packet in enumerate(packets)
+        }
 
-        # Appeler Mistral Small pour l'extraction (plus rapide que Large)
-        messages = [{"role": "user", "content": extraction_user_prompt}]
-        response = call_model_fast_extraction(extraction_system_prompt, messages)
+        log(f"   🚀 {len(future_to_packet)} paquets soumis pour extraction parallèle")
 
-        response_tokens = approx_tokens_simple(response)
-        log(f"      └─ 📥 Réponse reçue: ~{response_tokens:,} tokens")
+        # Récupérer les résultats au fur et à mesure
+        completed_count = 0
+        for future in as_completed(future_to_packet):
+            packet_index, packet, extracted_json, error = future.result()
+            completed_count += 1
 
-        # Parser le JSON de la réponse
-        try:
-            extracted_json = extract_json_from_response(response)
-            extracted_jsons.append(extracted_json)
-            nb_sections_extracted = len(extracted_json.get("sections", []))
-            log(f"      └─ ✅ JSON parsé: {nb_sections_extracted} sections extraites")
-        except (json.JSONDecodeError, ValueError) as e:
-            # En cas d'erreur de parsing, on stocke quand même la réponse brute
-            extracted_jsons.append({
-                "packet_id": packet.id,
-                "error": f"Erreur parsing JSON: {str(e)}",
-                "raw_response": response[:2000]  # Tronquer pour éviter les problèmes
-            })
-            log(f"      └─ ❌ Erreur parsing JSON: {str(e)[:50]}")
+            # Callback progress (thread-safe)
+            with progress_lock:
+                if progress_callback:
+                    progress_callback(f"Extraction : {completed_count}/{nb_packets} paquets traités")
+
+            # Stocker le résultat dans le dictionnaire (avec ou sans erreur)
+            if error:
+                # Si erreur, extracted_json contient déjà le dict d'erreur avec raw_response_sample
+                if isinstance(extracted_json, dict):
+                    extracted_jsons_dict[packet_index] = extracted_json
+                else:
+                    # Fallback si le format n'est pas correct
+                    extracted_jsons_dict[packet_index] = {
+                        "packet_id": packet.id,
+                        "error": f"Erreur: {error}",
+                        "raw_response": ""
+                    }
+            else:
+                extracted_jsons_dict[packet_index] = extracted_json
+
+    # Reconstituer la liste dans l'ordre original
+    extracted_jsons = [extracted_jsons_dict[i] for i in range(nb_packets)]
+    log(f"   ✅ Extraction parallèle terminée: {len(extracted_jsons)} paquets traités")
 
     # Calculer les tokens du contenu compressé
     tokens_compressed = compute_compressed_tokens(extracted_jsons)
@@ -1050,26 +1339,37 @@ with tab1:
         st.session_state.messages.append({"role": "user", "content": user_query})
         st.session_state.message_count += 1
 
-        # Vérifier le nombre de tokens avant l'appel
-        estimated_tokens = count_messages_tokens(system_prompt, st.session_state.messages)
-        token_limit = MODEL_TOKEN_LIMITS.get(model_choice, 32000)
+        # Vérifier le nombre de tokens avant l'appel (sauf en mode compression)
+        should_proceed = True
 
-        if estimated_tokens > token_limit:
-            st.error(f"""
-            ⚠️ **Limite de tokens dépassée**
+        if not enable_compression:
+            # Mode normal : vérifier la limite de tokens
+            estimated_tokens = count_messages_tokens(system_prompt, st.session_state.messages)
+            token_limit = MODEL_TOKEN_LIMITS.get(model_choice, 32000)
 
-            - Tokens estimés : **{estimated_tokens:,}** tokens
-            - Limite du modèle ({model_choice}) : **{token_limit:,}** tokens
-            - Dépassement : **{estimated_tokens - token_limit:,}** tokens
+            if estimated_tokens > token_limit:
+                st.error(f"""
+                ⚠️ **Limite de tokens dépassée**
 
-            Veuillez réduire la taille de votre texte ou démarrer une nouvelle conversation.
-            """)
-            st.session_state.messages.pop()
-            st.session_state.message_count -= 1
+                - Tokens estimés : **{estimated_tokens:,}** tokens
+                - Limite du modèle ({model_choice}) : **{token_limit:,}** tokens
+                - Dépassement : **{estimated_tokens - token_limit:,}** tokens
+
+                Veuillez réduire la taille de votre texte ou démarrer une nouvelle conversation.
+                """)
+                st.session_state.messages.pop()
+                st.session_state.message_count -= 1
+                should_proceed = False
+            else:
+                # Afficher info tokens dans la sidebar
+                st.sidebar.info(f"📊 Tokens estimés : {estimated_tokens:,} / {token_limit:,}")
         else:
-            # Afficher info tokens dans la sidebar
-            st.sidebar.info(f"📊 Tokens estimés : {estimated_tokens:,} / {token_limit:,}")
+            # Mode compression : pas de limite de tokens
+            # Le document sera découpé en paquets respectant les limites
+            st.sidebar.success(f"📦 Mode compression : pas de limite de tokens")
 
+        # Générer et afficher la réponse si autorisé
+        if should_proceed:
             # Générer et afficher la réponse
             with st.chat_message("assistant"):
                 try:

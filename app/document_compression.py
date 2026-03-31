@@ -759,6 +759,15 @@ def build_extraction_system_prompt() -> str:
 
         Format de sortie
         Retourner exclusivement un JSON valide conforme au schéma demandé par l'utilisateur.
+
+        RÈGLES JSON STRICTES (CRITIQUE) :
+        1. Vérifiez CHAQUE virgule : pas de virgule après le dernier élément d'un tableau [] ou objet {}
+        2. Échappez les guillemets à l'intérieur des chaînes avec \" ou évitez-les
+        3. Vérifiez que chaque accolade ouvrante { a sa fermante }
+        4. Vérifiez que chaque crochet ouvrant [ a son fermant ]
+        5. N'utilisez PAS de commentaires dans le JSON (// ou /* */)
+        6. Retournez UNIQUEMENT le JSON, sans texte avant ou après
+        7. En cas de doute sur un caractère spécial, simplifiez la formulation
         """
     )
 
