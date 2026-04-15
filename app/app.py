@@ -34,6 +34,9 @@ from document_compression import (
     approximate_tokens as approx_tokens_simple,
 )
 
+# Import du module de compression simplifiée
+from simple_compression import simple_compression_pipeline
+
 
 def copy_button(text: str, button_id: str):
     """Génère un bouton HTML/JS pour copier du texte dans le presse-papiers (format Word)"""
@@ -410,10 +413,11 @@ model_choice = st.sidebar.selectbox(
     ["Mixtral 8x22B (Mistral)", "Mistral-medium-2508", "Mistral Large 2", "Mistral Small 4", "GPT-OSS-120B (Nebius)", "Nemotron Super 120B (Nebius)"]
 )
 
-# Sélection du prompt système (5 options uniquement)
+# Sélection du prompt système
 prompt_options = [
     "Résumé Conclusions",
     "Résumé Conclusions (mode compression)",
+    "Résumé Conclusions (compression simplifiée)",
     "Rapport de synthèse",
     "Rapport de synthèse (mode compression)",
     "Prompt personnalisable"
@@ -424,10 +428,13 @@ prompt_choice = st.sidebar.selectbox(
 )
 
 # Détecter automatiquement si le mode compression est activé
-enable_compression = "(mode compression)" in prompt_choice
+enable_compression = "(mode compression)" in prompt_choice or "(compression simplifiée)" in prompt_choice
+enable_simple_compression = "(compression simplifiée)" in prompt_choice
 
 # Afficher une info si mode compression activé
-if enable_compression:
+if enable_simple_compression:
+    st.sidebar.info("✂️ Mode compression simplifiée : les sections volumineuses seront réduites avant le résumé final.")
+elif enable_compression:
     st.sidebar.info("📦 Mode compression : le document sera découpé en paquets et traité en plusieurs étapes.")
 
 # Mapping des prompts compression vers les fichiers
@@ -445,8 +452,11 @@ PROMPT_MAPPING = {
 # Récupérer le prompt système sélectionné
 if prompt_choice == "Prompt personnalisable":
     system_prompt = st.session_state.custom_prompt
+elif enable_simple_compression:
+    # Pour la compression simplifiée, les prompts sont gérés par simple_compression.py
+    system_prompt = "[Mode compression simplifiée - prompts: identification_structure.md, resume_subsection.md, resume_conclusions.md]"
 elif enable_compression:
-    # Pour les modes compression, le prompt sera chargé par document_compression.py
+    # Pour les modes compression standard, le prompt sera chargé par document_compression.py
     # On stocke juste une référence pour l'affichage
     system_prompt = f"[Mode compression - prompt chargé depuis {COMPRESSION_PROMPT_FILES[prompt_choice].name}]"
 else:
@@ -1225,6 +1235,37 @@ with tab1:
             else:
                 st.markdown(content)
 
+            # Ajouter le document reconstitué pour la compression simplifiée
+            if message["role"] == "assistant" and "compression_info" in message:
+                comp_info = message["compression_info"]
+                if comp_info.get("type") == "simple" and "document_reconstitue" in comp_info:
+                    st.markdown("---")
+                    st.markdown("### 📄 Document intermédiaire (conclusion compressée)")
+
+                    tokens_orig = comp_info.get('tokens_original', 0)
+                    tokens_reconst = comp_info.get('tokens_reconstitue', 0)
+                    reduction_pct = comp_info.get('reduction_pct', 0)
+
+                    st.info(
+                        f"**Taux de compression réalisé** : {tokens_orig:,} tokens → {tokens_reconst:,} tokens "
+                        f"(**{reduction_pct}%** de réduction)"
+                    )
+
+                    doc_reconstitue = comp_info.get("document_reconstitue", "")
+
+                    # Afficher un extrait + expandeur pour le document complet
+                    if len(doc_reconstitue) > 2000:
+                        st.markdown(f"{doc_reconstitue[:2000]}...\n\n*[Document reconstitué - {len(doc_reconstitue):,} caractères]*")
+                        with st.expander("📄 Voir le document reconstitué complet"):
+                            st.text_area(
+                                "Document reconstitué",
+                                doc_reconstitue,
+                                height=400,
+                                key=f"doc_reconst_main_{idx}"
+                            )
+                    else:
+                        st.markdown(doc_reconstitue)
+
         # Afficher le lien vers le formulaire Tally après chaque réponse de l'assistant
         if message["role"] == "assistant":
             # Afficher les infos de debug si disponibles (Mistral Small 4)
@@ -1240,39 +1281,80 @@ with tab1:
             # Afficher les infos de compression si disponibles
             if "compression_info" in message:
                 comp_info = message["compression_info"]
-                tokens_orig = comp_info.get('tokens_original', 0)
-                tokens_comp = comp_info.get('tokens_compressed', 0)
-                ratio = comp_info.get('compression_ratio', 0)
-                st.success(
-                    f"📦 **Mode compression** : {comp_info['nb_sections']} sections → {comp_info['nb_packets']} paquet(s)\n\n"
-                    f"📊 **Tokens** : {tokens_orig:,} → {tokens_comp:,} (**{ratio}%** de réduction)"
-                )
-                with st.expander("🔍 Voir les données intermédiaires extraites"):
-                    st.markdown("### 📦 JSON extraits par paquet")
-                    for i, packet_json in enumerate(comp_info.get("extracted_jsons", [])):
-                        st.markdown(f"**Paquet {i+1}**")
-                        if "error" in packet_json:
-                            st.warning(f"Erreur d'extraction : {packet_json['error']}")
-                        else:
-                            st.json(packet_json)
+                compression_type = comp_info.get("type", "standard")
 
-                    # Afficher les prompts finaux utilisés pour la synthèse
-                    st.markdown("---")
-                    st.markdown("### 📝 Prompts envoyés au LLM pour la synthèse finale")
+                if compression_type == "simple":
+                    # Affichage pour compression simplifiée
+                    nb_reductions = comp_info.get('nb_reductions', 0)
+                    tokens_orig = comp_info.get('tokens_original', 0)
+                    tokens_reconst = comp_info.get('tokens_reconstitue', 0)
+                    tokens_final = comp_info.get('tokens_final', 0)
+                    reduction_pct = comp_info.get('reduction_pct', 0)
 
-                    # System prompt (instructions détaillées)
-                    final_system_prompt = comp_info.get("final_system_prompt", "Non disponible")
-                    if final_system_prompt != "Non disponible":
-                        st.markdown("#### 🎯 System Prompt (instructions)")
-                        with st.expander("Voir le system prompt complet", expanded=False):
-                            st.code(final_system_prompt, language="markdown")
+                    st.success(
+                        f"✂️ **Mode compression simplifiée** : {nb_reductions} sous-section(s) réduite(s)\n\n"
+                        f"📊 **Tokens** : {tokens_orig:,} → {tokens_reconst:,} (reconstitué) → {tokens_final:,} (final)\n"
+                        f"(**{reduction_pct}%** de réduction avant résumé final)"
+                    )
 
-                    # User prompt (JSON + consigne courte)
-                    final_user_prompt = comp_info.get("final_user_prompt", "Non disponible")
-                    if final_user_prompt != "Non disponible":
-                        st.markdown("#### 💬 User Prompt (JSON + consigne)")
-                        with st.expander("Voir le user prompt complet", expanded=False):
-                            st.code(final_user_prompt, language=None)
+                    with st.expander("🔍 Voir les sous-sections réduites"):
+                        st.markdown("### ✂️ Sous-sections traitées")
+                        for subsection in comp_info.get("sous_sections_reduites", []):
+                            section_name = subsection.get("section", "")
+                            titre = subsection.get("titre", "Sans titre")
+                            tokens_orig_sub = subsection.get("tokens_original", 0)
+                            tokens_red = subsection.get("tokens_reduit", 0)
+                            reduction_sub = round((1 - tokens_red / tokens_orig_sub) * 100, 1) if tokens_orig_sub > 0 else 0
+
+                            st.markdown(f"**{section_name.upper()} - {titre}**")
+                            st.info(f"📊 {tokens_orig_sub:,} tokens → {tokens_red:,} tokens ({reduction_sub}% de réduction)")
+
+                        # Afficher le document reconstitué
+                        st.markdown("---")
+                        st.markdown("### 📄 Document reconstitué (avant résumé final)")
+                        with st.expander("Voir le document reconstitué complet", expanded=False):
+                            st.text_area(
+                                "Document reconstitué",
+                                comp_info.get("document_reconstitue", "Non disponible"),
+                                height=400,
+                                key=f"reconstitue_{idx}"
+                            )
+
+                else:
+                    # Affichage pour compression standard (par paquets)
+                    tokens_orig = comp_info.get('tokens_original', 0)
+                    tokens_comp = comp_info.get('tokens_compressed', 0)
+                    ratio = comp_info.get('compression_ratio', 0)
+                    st.success(
+                        f"📦 **Mode compression** : {comp_info['nb_sections']} sections → {comp_info['nb_packets']} paquet(s)\n\n"
+                        f"📊 **Tokens** : {tokens_orig:,} → {tokens_comp:,} (**{ratio}%** de réduction)"
+                    )
+                    with st.expander("🔍 Voir les données intermédiaires extraites"):
+                        st.markdown("### 📦 JSON extraits par paquet")
+                        for i, packet_json in enumerate(comp_info.get("extracted_jsons", [])):
+                            st.markdown(f"**Paquet {i+1}**")
+                            if "error" in packet_json:
+                                st.warning(f"Erreur d'extraction : {packet_json['error']}")
+                            else:
+                                st.json(packet_json)
+
+                        # Afficher les prompts finaux utilisés pour la synthèse
+                        st.markdown("---")
+                        st.markdown("### 📝 Prompts envoyés au LLM pour la synthèse finale")
+
+                        # System prompt (instructions détaillées)
+                        final_system_prompt = comp_info.get("final_system_prompt", "Non disponible")
+                        if final_system_prompt != "Non disponible":
+                            st.markdown("#### 🎯 System Prompt (instructions)")
+                            with st.expander("Voir le system prompt complet", expanded=False):
+                                st.code(final_system_prompt, language="markdown")
+
+                        # User prompt (JSON + consigne courte)
+                        final_user_prompt = comp_info.get("final_user_prompt", "Non disponible")
+                        if final_user_prompt != "Non disponible":
+                            st.markdown("#### 💬 User Prompt (JSON + consigne)")
+                            with st.expander("Voir le user prompt complet", expanded=False):
+                                st.code(final_user_prompt, language=None)
 
             # Récupérer la question de l'utilisateur (message précédent)
             user_question = ""
@@ -1401,47 +1483,98 @@ with tab1:
                 try:
                     # Vérifier si le mode compression est activé
                     if enable_compression:
-                        # Déterminer le type de prompt compression
-                        if "Rapport de synthèse" in prompt_choice:
-                            compression_prompt_type = "rapport_synthese"
-                        else:
-                            compression_prompt_type = "resume_conclusions"
-
-                        # Pipeline de compression pour documents longs
                         progress_placeholder = st.empty()
 
                         def update_progress(msg):
                             progress_placeholder.info(f"📦 {msg}")
 
-                        with st.spinner("Pipeline de compression en cours..."):
-                            result = call_model_with_compression(
-                                model_choice,
-                                user_query,
-                                prompt_type=compression_prompt_type,
-                                progress_callback=update_progress
+                        # Choisir le pipeline selon le type de compression
+                        if enable_simple_compression:
+                            # Pipeline de compression simplifiée
+                            with st.spinner("Pipeline de compression simplifiée en cours..."):
+                                # Récupérer la clé API Mistral
+                                mistral_api_key = os.getenv("MISTRAL_API_KEY")
+                                if not mistral_api_key:
+                                    raise ValueError("MISTRAL_API_KEY non trouvée dans .env")
+
+                                final_summary, intermediary_data = simple_compression_pipeline(
+                                    document=user_query,
+                                    api_key=mistral_api_key,
+                                    final_model="mistral-large-latest",
+                                    final_prompt="resume_conclusions",
+                                    threshold_tokens=7000,
+                                    reduction_pct=20.0,
+                                    progress_callback=update_progress
+                                )
+
+                            progress_placeholder.empty()
+
+                            # Afficher les statistiques
+                            nb_reductions = len(intermediary_data["sous_sections_reduites"])
+                            tokens_original = intermediary_data["tokens_original"]
+                            tokens_reconstitue = intermediary_data["tokens_reconstitue"]
+                            tokens_final = intermediary_data["tokens_final"]
+
+                            reduction_pct = round((1 - tokens_reconstitue / tokens_original) * 100, 1) if tokens_original > 0 else 0
+
+                            st.success(
+                                f"✅ Compression simplifiée terminée : {nb_reductions} sous-section(s) réduite(s)\n\n"
+                                f"📊 **Tokens** : {tokens_original:,} → {tokens_reconstitue:,} (reconstitué) → {tokens_final:,} (final)\n"
+                                f"(**{reduction_pct}%** de réduction avant résumé final)"
                             )
 
-                        progress_placeholder.empty()
+                            # Stocker les infos pour affichage ultérieur
+                            compression_info = {
+                                "type": "simple",
+                                "nb_reductions": nb_reductions,
+                                "sous_sections_reduites": intermediary_data["sous_sections_reduites"],
+                                "document_reconstitue": intermediary_data["document_reconstitue"],
+                                "tokens_original": tokens_original,
+                                "tokens_reconstitue": tokens_reconstitue,
+                                "tokens_final": tokens_final,
+                                "reduction_pct": reduction_pct
+                            }
 
-                        # Afficher les statistiques de compression avec les tokens
-                        st.success(
-                            f"✅ Compression terminée : {result['nb_sections']} sections → {result['nb_packets']} paquet(s)\n\n"
-                            f"📊 **Tokens** : {result['tokens_original']:,} → {result['tokens_compressed']:,} "
-                            f"(**{result['compression_ratio']}%** de réduction)"
-                        )
+                            response_text = final_summary
 
-                        # Stocker les infos de compression pour affichage ultérieur
-                        compression_info = {
-                            "nb_sections": result["nb_sections"],
-                            "nb_packets": result["nb_packets"],
-                            "extracted_jsons": result["extracted_jsons"],
-                            "final_user_prompt": result["final_user_prompt"],
-                            "tokens_original": result["tokens_original"],
-                            "tokens_compressed": result["tokens_compressed"],
-                            "compression_ratio": result["compression_ratio"]
-                        }
+                        else:
+                            # Pipeline de compression standard (par paquets)
+                            # Déterminer le type de prompt compression
+                            if "Rapport de synthèse" in prompt_choice:
+                                compression_prompt_type = "rapport_synthese"
+                            else:
+                                compression_prompt_type = "resume_conclusions"
 
-                        response_text = result["final_response"]
+                            with st.spinner("Pipeline de compression en cours..."):
+                                result = call_model_with_compression(
+                                    model_choice,
+                                    user_query,
+                                    prompt_type=compression_prompt_type,
+                                    progress_callback=update_progress
+                                )
+
+                            progress_placeholder.empty()
+
+                            # Afficher les statistiques de compression avec les tokens
+                            st.success(
+                                f"✅ Compression terminée : {result['nb_sections']} sections → {result['nb_packets']} paquet(s)\n\n"
+                                f"📊 **Tokens** : {result['tokens_original']:,} → {result['tokens_compressed']:,} "
+                                f"(**{result['compression_ratio']}%** de réduction)"
+                            )
+
+                            # Stocker les infos de compression pour affichage ultérieur
+                            compression_info = {
+                                "type": "standard",
+                                "nb_sections": result["nb_sections"],
+                                "nb_packets": result["nb_packets"],
+                                "extracted_jsons": result["extracted_jsons"],
+                                "final_user_prompt": result["final_user_prompt"],
+                                "tokens_original": result["tokens_original"],
+                                "tokens_compressed": result["tokens_compressed"],
+                                "compression_ratio": result["compression_ratio"]
+                            }
+
+                            response_text = result["final_response"]
 
                     else:
                         # Appel simple (1 étape)
