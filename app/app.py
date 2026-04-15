@@ -517,10 +517,10 @@ def call_model(model_choice, system_prompt, messages_history):
         if not MISTRAL_API_KEY:
             raise ValueError("La clé API Mistral n'est pas configurée.")
 
-        print(f"         └─ 🔄 Appel API Mistral (mistral-large-latest)...", flush=True)
+        print(f"         └─ 🔄 Appel API Mistral (open-mixtral-8x22b)...", flush=True)
         client = Mistral(api_key=MISTRAL_API_KEY)
         response = client.chat.complete(
-            model="mistral-large-latest",
+            model="open-mixtral-8x22b",
             messages=full_messages,
             temperature=0.3,
             max_tokens=16000  # Suffisant pour ~10-12 pages
