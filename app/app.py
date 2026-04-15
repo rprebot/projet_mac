@@ -624,7 +624,7 @@ def call_model(model_choice, system_prompt, messages_history):
 
         return response.choices[0].message.content
 
-    # GPT-OSS-120B via Nebius (OpenAI compatible) avec reasoning
+    # GPT-OSS-120B via Nebius (OpenAI compatible)
     elif model_choice == "GPT-OSS-120B (Nebius)":
         if not NEBIUS_API_KEY:
             raise ValueError("La clé API Nebius n'est pas configurée.")
@@ -638,12 +638,7 @@ def call_model(model_choice, system_prompt, messages_history):
             model="openai/gpt-oss-120b",
             messages=full_messages,
             temperature=0.3,
-            max_tokens=16000,  # Suffisant pour ~10-12 pages
-            extra_body={
-                "reasoning": {
-                    "effort": "high"
-                }
-            }
+            max_tokens=16000  # Suffisant pour ~10-12 pages
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
