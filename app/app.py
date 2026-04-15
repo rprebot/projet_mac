@@ -522,8 +522,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="open-mixtral-8x22b",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16000  # Suffisant pour ~10-12 pages
+            temperature=0.3
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
@@ -539,8 +538,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-medium-2508",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16000  # Suffisant pour ~10-12 pages
+            temperature=0.3
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
@@ -556,8 +554,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-large-2411",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16000  # Suffisant pour ~10-12 pages
+            temperature=0.3
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
@@ -609,8 +606,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.complete(
             model="mistral-small-2603",
             messages=enhanced_messages,
-            temperature=0.3,
-            max_tokens=65536  # Augmenté pour éviter la troncature
+            temperature=0.3
         )
         elapsed = time.time() - call_start
         # Debug: stocker la raison d'arrêt pour affichage
@@ -637,8 +633,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.completions.create(
             model="openai/gpt-oss-120b",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16000  # Suffisant pour ~10-12 pages
+            temperature=0.3
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
@@ -657,8 +652,7 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.completions.create(
             model="nvidia/nemotron-3-super-120b-a12b",
             messages=full_messages,
-            temperature=0.3,
-            max_tokens=16000  # Suffisant pour ~10-12 pages
+            temperature=0.3
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
