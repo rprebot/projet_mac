@@ -23,19 +23,9 @@ _env_path = PROJECT_ROOT / ".env"
 _env_loaded = load_dotenv(_env_path)
 print(f"[DEBUG] .env path: {_env_path.absolute()}, exists: {_env_path.exists()}, loaded: {_env_loaded}")
 
-# Import du module de compression pour les documents longs
-from document_compression import (
-    parse_and_packetize,
-    build_extraction_system_prompt,
-    build_extraction_user_prompt,
-    build_final_system_prompt,
-    build_final_user_prompt,
-    compute_compressed_tokens,
-    approximate_tokens as approx_tokens_simple,
-)
-
-# Import du module de compression simplifiée
-from simple_compression import simple_compression_pipeline
+# Import des modules de compression réorganisés
+from compression_simple import run_simple_compression_pipeline
+from compression_standard import run_standard_compression_pipeline
 
 
 def copy_button(text: str, button_id: str):
@@ -859,7 +849,7 @@ def call_model_fast_extraction(system_prompt, messages_history, timeout_seconds=
 
     try:
         response = client.chat.complete(
-            model="mistral-small-2603",  # Modèle rapide pour l'extraction
+            model="mistral-large-latest",  # Modèle pour l'extraction
             messages=full_messages,
             temperature=0.0,  # Température = 0 pour JSON déterministe et valide
             max_tokens=16000  # Augmenté pour éviter la troncature du JSON
@@ -1021,7 +1011,9 @@ VOUS DEVEZ ABSOLUMENT :
     return (packet_index, packet, None, "Erreur inconnue")
 
 
-def call_model_with_compression(model_choice, user_query, prompt_type="resume_conclusions", progress_callback=None):
+# FONCTION OBSOLÈTE - Remplacée par run_standard_compression_pipeline
+# Conservée pour compatibilité temporaire
+def call_model_with_compression_DEPRECATED(model_choice, user_query, prompt_type="resume_conclusions", progress_callback=None):
     """
     Pipeline de compression pour les documents longs.
 
@@ -1486,7 +1478,7 @@ with tab1:
                                 if not mistral_api_key:
                                     raise ValueError("MISTRAL_API_KEY non trouvée dans .env")
 
-                                final_summary, intermediary_data = simple_compression_pipeline(
+                                final_summary, intermediary_data = run_simple_compression_pipeline(
                                     document=user_query,
                                     api_key=mistral_api_key,
                                     final_model="mistral-large-latest",
@@ -1535,11 +1527,13 @@ with tab1:
                                 compression_prompt_type = "resume_conclusions"
 
                             with st.spinner("Pipeline de compression en cours..."):
-                                result = call_model_with_compression(
-                                    model_choice,
-                                    user_query,
+                                result = run_standard_compression_pipeline(
+                                    document=user_query,
+                                    model_choice=model_choice,
                                     prompt_type=compression_prompt_type,
-                                    progress_callback=update_progress
+                                    progress_callback=update_progress,
+                                    call_model_fn=call_model,
+                                    call_extraction_fn=call_model_fast_extraction
                                 )
 
                             progress_placeholder.empty()

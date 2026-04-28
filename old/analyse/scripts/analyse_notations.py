@@ -26,7 +26,7 @@ OUTPUTS GÉNÉRÉS :
     - ../output/graphique_moyennes_llm.png : Graphique des moyennes par modèle
 
 DONNÉES D'ENTRÉE :
-    - ../data/Notation assistant_Submissions_2026-02-26.csv
+    - ../data/Notation assistant_Submissions_2026-03-27.csv
 
 USAGE :
     python analyse_notations.py
@@ -39,7 +39,7 @@ import numpy as np
 from scipy import stats
 
 # Charger les données enrichies (avec colonne Dossier)
-df = pd.read_csv('../data/Notation assistant_Submissions_2026-02-26.csv')
+df = pd.read_csv('../data/Notation assistant_Submissions_2026-03-27.csv')
 
 
 # =============================================================================
@@ -171,7 +171,9 @@ df['Modèle_court'] = df['Modèle'].replace({
     'Mistral-medium-2508 (modèle assistant numérique)': 'Mistral-medium',
     'Mistral-medium-2508': 'Mistral-medium',
     'GPT-OSS-120B (Nebius)': 'GPT-OSS-120B',
-    'Llama 3.3 70B (Nebius)': 'Llama 3.3 70B'
+    'Llama 3.3 70B (Nebius)': 'Llama 3.3 70B',
+    'Nemotron Super 120B (Nebius)': 'Nemotron Super 120B',
+    'Mistral Small 4': 'Mistral Small 4'
 })
 
 # Nettoyer les noms de prompts pour l'affichage

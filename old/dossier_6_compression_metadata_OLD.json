@@ -1,0 +1,26 @@
+{
+  "configuration": {
+    "threshold_tokens": 10000,
+    "reduction_pct": 20.0
+  },
+  "tokens": {
+    "original": 50834,
+    "reconstitue": 15460,
+    "reduction_globale_pct": 69.59
+  },
+  "structure": {
+    "nb_faits": 1,
+    "nb_procedure": 1,
+    "nb_moyens": 12,
+    "nb_pretentions": 1
+  },
+  "sections_reduites": [
+    {
+      "section": "moyens",
+      "titre": "2- EN L'ESPECE",
+      "tokens_original": 40265,
+      "tokens_reduit": 4862,
+      "reduction_pct": 87.92499689556686
+    }
+  ]
+}

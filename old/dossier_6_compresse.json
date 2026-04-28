@@ -1,0 +1,1700 @@
+[
+  {
+    "packet_id": "P1",
+    "document_role": "appelant",
+    "packet_summary": "L'Association [Personne Morale 1] conteste un jugement du Conseil de Prud'hommes de Charleville-Mézières du 05 avril 2024 ayant requalifié le licenciement pour inaptitude en licenciement nul pour harcèlement moral. L'appel porte sur la recevabilité des demandes, la qualification du licenciement, et le montant des condamnations (plus de 70 000 €). L'employeur conteste les faits de harcèlement moral allégués et argue que les manquements reprochés ne justifient pas une résiliation judiciaire du contrat de travail.",
+    "sections": [
+      {
+        "title": "CONCLUSIONS D'APPELANT",
+        "path": [
+          "CONCLUSIONS D'APPELANT"
+        ],
+        "section_type": "header",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1] ([Personne Morale 2])",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          },
+          {
+            "name": "Maître [F] [E]",
+            "kind": "lawyer",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "L'Association [Personne Morale 1] demande l'infirmation du jugement du Conseil de Prud'hommes du 05 avril 2024, notamment en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul pour harcèlement moral et condamné l'Association à des sommes excessives.",
+        "facts": [
+          "L'Association [Personne Morale 1] a licencié Monsieur [B] [G] pour inaptitude et impossibilité de reclassement le 23 septembre 2022.",
+          "Monsieur [B] [G] a déposé une requête aux fins de résiliation judiciaire devant le Conseil de Prud'hommes le 31 mars 2022, puis une seconde requête le 14 décembre 2022 pour contester son licenciement."
+        ],
+        "arguments": [
+          "Les manquements reprochés à l'employeur ne sont pas suffisamment graves pour justifier une résiliation judiciaire du contrat de travail.",
+          "Les condamnations prononcées par le Conseil de Prud'hommes sont disproportionnées et certaines sommes avaient déjà été versées."
+        ],
+        "legal_references": [
+          "Article 4 du contrat de travail",
+          "Article 11 du contrat de travail",
+          "Article 700 du Code de Procédure Civile"
+        ],
+        "dates_amounts": [
+          "23 septembre 2022",
+          "05 avril 2024",
+          "plus de 70 000 €"
+        ],
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "APPELANTE",
+        "path": [
+          "APPELANTE"
+        ],
+        "section_type": "header",
+        "participants": [
+          {
+            "name": "Maître [F] [E]",
+            "kind": "lawyer",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Représentation de l'Association [Personne Morale 1] en appel.",
+        "importance": "low"
+      },
+      {
+        "title": "INTIME",
+        "path": [
+          "INTIME"
+        ],
+        "section_type": "header",
+        "participants": [
+          {
+            "name": "Maître [B] [Q]",
+            "kind": "lawyer",
+            "role": "intimé",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Représentation de Monsieur [B] [G] en appel.",
+        "importance": "low"
+      },
+      {
+        "title": "I. LES FAITS",
+        "path": [
+          "I. LES FAITS"
+        ],
+        "section_type": "facts",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Récapitulatif des faits relatifs à l'embauche, au parcours professionnel et au licenciement de Monsieur [B] [G].",
+        "facts": [
+          "Monsieur [B] [G] a été embauché en CDI le 01 septembre 2019 en tant que Directeur du Développement.",
+          "Il a été licencié pour inaptitude et impossibilité de reclassement le 23 septembre 2022 après avoir été déclaré inapte par le médecin du travail le 02 septembre 2022.",
+          "Monsieur [B] [G] a déposé une requête aux fins de résiliation judiciaire le 31 mars 2022, puis une seconde requête le 14 décembre 2022 pour contester son licenciement."
+        ],
+        "dates_amounts": [
+          "01 septembre 2019",
+          "02 septembre 2022",
+          "23 septembre 2022"
+        ],
+        "importance": "high",
+        "argument_density": "medium"
+      },
+      {
+        "title": "II. LA PROCEDURE",
+        "path": [
+          "II. LA PROCEDURE"
+        ],
+        "section_type": "procedure",
+        "participants": [
+          {
+            "name": "Conseil de Prud'hommes de Charleville-Mézières",
+            "kind": "institution",
+            "role": null,
+            "side": "neutral"
+          },
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Association [Adresse 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Détail de la procédure devant le Conseil de Prud'hommes et du jugement rendu le 05 avril 2024.",
+        "facts": [
+          "Monsieur [B] [G] a déposé une requête le 31 mars 2022 aux fins de résiliation judiciaire de son contrat de travail.",
+          "Le Conseil de Prud'hommes a rendu un jugement le 05 avril 2024 requalifiant le licenciement pour inaptitude en licenciement nul pour harcèlement moral et condamnant l'employeur à plus de 70 000 €."
+        ],
+        "arguments": [
+          "L'employeur conteste la recevabilité de certaines demandes de Monsieur [B] [G] car elles étaient redondantes.",
+          "Les condamnations prononcées sont disproportionnées et certaines sommes avaient déjà été versées."
+        ],
+        "legal_references": [
+          "Article 700 du Code de Procédure Civile"
+        ],
+        "dates_amounts": [
+          "31 mars 2022",
+          "05 avril 2024",
+          "plus de 70 000 €"
+        ],
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "DISCUSSION",
+        "path": [
+          "DISCUSSION"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Analyse des arguments de l'employeur sur la recevabilité des demandes et la proportionnalité des condamnations.",
+        "arguments": [
+          "Les demandes de Monsieur [B] [G] étaient redondantes et certaines condamnations concernaient des sommes déjà versées.",
+          "Les condamnations prononcées par le Conseil de Prud'hommes sont disproportionnées par rapport aux faits de l'affaire."
+        ],
+        "legal_references": [
+          "Article 700 du Code de Procédure Civile"
+        ],
+        "dates_amounts": [
+          "05 avril 2024"
+        ],
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Analyse des arguments de l'employeur sur la demande de résiliation judiciaire du contrat de travail.",
+        "arguments": [
+          "Seuls les manquements graves et actuels de l'employeur peuvent justifier une résiliation judiciaire du contrat de travail.",
+          "Les manquements anciens ne peuvent pas justifier une telle résiliation."
+        ],
+        "legal_references": [
+          "Cass. soc., 14 déc. 2011, n° 10-13.542",
+          "Cass. soc., 16 févr. 2005, n° 02-46.649",
+          "Cass. soc., 26 mars 2014, n° 12-21.372",
+          "Cass. soc., 6 févr. 2019, n° 17-26.562"
+        ],
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL > 1- EN DROIT",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "1- EN DROIT"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rappel des principes juridiques applicables à la résiliation judiciaire du contrat de travail.",
+        "arguments": [
+          "Seuls les manquements graves et actuels de l'employeur peuvent justifier une résiliation judiciaire du contrat de travail.",
+          "Les manquements anciens ne peuvent pas justifier une telle résiliation."
+        ],
+        "legal_references": [
+          "Cass. soc., 14 déc. 2011, n° 10-13.542",
+          "Cass. soc., 16 févr. 2005, n° 02-46.649",
+          "Cass. soc., 26 mars 2014, n° 12-21.372",
+          "Cass. soc., 6 févr. 2019, n° 17-26.562"
+        ],
+        "key_verbatim_points": [
+          "Seuls les manquements graves d'un employeur qui sont actuels peuvent justifier une résiliation judiciaire du contrat de travail.",
+          "Les manquements anciens ne peuvent pas justifier la résiliation judiciaire du contrat de travail du salarié."
+        ],
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL > 2- EN L'ESPECE",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "2- EN L'ESPECE"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Application des principes juridiques à la situation factuelle de l'espèce.",
+        "arguments": [
+          "Les manquements reprochés ne sont pas suffisamment graves ou actuels pour justifier une résiliation judiciaire.",
+          "Les demandes de résiliation judiciaire sont irrecevables en l'espèce."
+        ],
+        "legal_references": [
+          "Cass. soc., 14 déc. 2011, n° 10-13.542",
+          "Cass. soc., 16 févr. 2005, n° 02-46.649"
+        ],
+        "importance": "high",
+        "argument_density": "high"
+      }
+    ]
+  },
+  {
+    "packet_id": "P2",
+    "document_role": "appelant",
+    "packet_summary": "Le paquet contient des conclusions d'appel de l'Association [Personne Morale 1] contre Monsieur [B] [A] (intimé) concernant un licenciement pour inaptitude. L'employeur conteste la requalification du licenciement en licenciement nul pour harcèlement moral et demande l'infirmation du jugement du Conseil de Prud'hommes. Les griefs portent sur des manquements contractuels, des retards de paiement, des conditions de travail dégradées, et une falsification présumée des statuts de l'association par le salarié.",
+    "sections": [
+      {
+        "title": "GRIEF 23 :",
+        "path": [
+          "GRIEF 23"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [YZ] [N]",
+            "kind": "person",
+            "role": "Président",
+            "side": "current_party"
+          },
+          {
+            "name": "Madame [J] [Z]",
+            "kind": "person",
+            "role": "RH",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party",
+            "canonical_name": "Monsieur [B] [G]"
+          }
+        ],
+        "thesis": "Réponse aux griefs adverses concernant la gestion des salaires et des codes d'accès, avec mise en cause de la responsabilité du salarié dans une dégradation des conditions de travail.",
+        "facts": [
+          "Le salaire de février 2022 a été versé en deux fois en raison de la perte des codes d'accès par le président (pièce 42).",
+          "Un compte rendu de réunion du 26 février 2022 mentionne à tort que le salarié a été demandé de fournir les codes d'accès, ce qui est contesté (pièce 43).",
+          "Échanges de mails entre le président, la RH et le salarié en février 2022 pour débloquer la situation des salaires (pièces 42 à 43).",
+          "Le président admet avoir égaré les codes et avoir dû gérer seul les virements de salaire (mail du 01/03/2022)."
+        ],
+        "arguments": [
+          "La mise en cause du salarié dans la dégradation des conditions de travail est infondée et relève d'une stratégie de défense inadmissible.",
+          "Le président assume pleinement la responsabilité de la gestion des codes et des virements, sans faute imputable au salarié.",
+          "Les échanges de mails démontrent une volonté de régularisation rapide et une absence de volonté de nuire au salarié."
+        ],
+        "rebuttals": [
+          "Les conclusions adverses accusent à tort le salarié d'être responsable des difficultés de gestion, alors que la responsabilité incombe au président.",
+          "La dégradation des conditions de travail est imputable à la gouvernance chaotique de l'association, et non au salarié."
+        ],
+        "legal_references": [
+          "Article L 1152-1 (harcèlement moral)",
+          "Article L 1152-4 (obligation de prévention de l'employeur)"
+        ],
+        "dates_amounts": [
+          "26 février 2022",
+          "01 mars 2022",
+          "28 février 2022"
+        ],
+        "key_source_excerpt": "« Attendu que le salaire de février de Monsieur [B] [G] lui a été versé en 2 fois car n'ayant plus de trésorier, le président avait égaré les codes (pièce 42). Que pourtant, dans le compte rendu d'une réunion du 26 février 2022, ce qui est dès lors inexact, il est mentionné (pièce 43) : « Par l'intermédiaire de [J] [Z], RH de l'association, il a été demandé à [B] [G] de nous donner les codes d'accès au compte courant du [Personne Morale 23]. Malheureusement ceux-ci ne fonctionnent pas ». »",
+        "key_verbatim_points": [
+          "« Le compte en banque : Je ne me souvenais plus du mot de passe, c'est tout ! Effectivement c'est moi qui l'avais créé au début de ma présidence, je l'ai inscrit dans un coin bien planqué pour que personne ne le trouve .... même pas moi ! C'est aussi bête que ça ! » (mail du président du 01/03/2022).",
+          "« Que de ce fait, en tant que Président, sans trésorier et donc sans mandataire de l'opération, il était certain de bien faire en virant le salaire de Monsieur [B] [G], pour prévenir les réclamations de celui-ci : d'où le double salaire du mois de février. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 24 :",
+        "path": [
+          "GRIEF 24"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Madame [X] [U]",
+            "kind": "person",
+            "role": "Trésorière",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party",
+            "canonical_name": "Monsieur [B] [G]"
+          }
+        ],
+        "thesis": "Réponse aux griefs adverses concernant les retards de paiement du maintien de salaire pendant l'arrêt maladie et les allégations de harcèlement moral.",
+        "facts": [
+          "L'association conteste les retards de paiement du maintien de salaire, imputant ces retards à son expert-comptable.",
+          "Le salarié allègue des manquements répétés ayant dégradé ses conditions de travail et porté atteinte à sa dignité.",
+          "L'association nie toute responsabilité et souligne que le salarié n'a produit aucune preuve des allégations de harcèlement moral.",
+          "Le salarié est accusé d'avoir utilisé des mots durs et d'avoir provoqué des tensions au sein de l'association."
+        ],
+        "arguments": [
+          "Les retards de paiement sont imputables à l'expert-comptable, et non à l'association, qui a agi avec diligence.",
+          "Les griefs de harcèlement moral sont infondés et non prouvés, le salarié n'ayant produit aucune pièce justificative.",
+          "Les allégations de harcèlement moral sont contredites par les faits et les témoignages internes."
+        ],
+        "rebuttals": [
+          "Les griefs de harcèlement moral sont une stratégie de défense du salarié pour obtenir des indemnités excessives.",
+          "L'association a toujours agi dans l'intérêt du salarié, notamment en maintenant son salaire à 100% pendant son arrêt maladie."
+        ],
+        "legal_references": [
+          "Article L 1152-1 (harcèlement moral)",
+          "Article L 1226-14 (maintien de salaire)"
+        ],
+        "dates_amounts": [
+          "28 mai 2022",
+          "30 mai 2022"
+        ],
+        "key_source_excerpt": "« Les manquements qui sont reprochés par Monsieur [G] ne sont en rien imputables à l'Association, mais à son Expert-Comptable auprès de qui elle c'est manifesté avec diligence, sans efficacité. »",
+        "key_verbatim_points": [
+          "« Dommages - intérêts pour privation de la portabilité du maintien de salaire à 87 % par la garantie Prévoyance de la mutuelle [Personne Morale 5] ............ 16 185,36 € » alors même que nous avons maintenu son salaire à 100%.",
+          "« Il n'est pas possible de répondre à ce grief dans la mesure ou Monsieur [G] ne produit aucune pièce à ce sujet. De quelle agression parle-t-il ? de quel mutisme ? de quel retard de réponse ? »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "B- S'AGISSANT DU MONTANT DES INDEMNISATIONS SOLLICITEES PAR MONSIEUR [G] ET ALLOUEES PAR LE CONSEIL DE PRUD'HOMMES",
+        "path": [
+          "B- S'AGISSANT DU MONTANT DES INDEMNISATIONS SOLLICITEES PAR MONSIEUR [G] ET ALLOUEES PAR LE CONSEIL DE PRUD'HOMMES"
+        ],
+        "section_type": "claims",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Contestation des montants alloués par le Conseil de Prud'hommes au titre des dommages et intérêts pour licenciement nul et harcèlement moral, avec application des barèmes légaux.",
+        "facts": [
+          "Le Conseil de Prud'hommes a alloué 38 060,40 € de dommages et intérêts pour licenciement nul.",
+          "L'association conteste cette décision, arguant que le licenciement est justifié par l'inaptitude professionnelle et l'impossibilité de reclassement.",
+          "L'ancienneté de 3 ans du salarié limite son droit à indemnisation selon les barèmes MACRON (3 à 4 mois de salaire brut).",
+          "Le licenciement pour inaptitude est justifié par un avis médical du 2 septembre 2022."
+        ],
+        "arguments": [
+          "Le licenciement est justifié par l'inaptitude professionnelle et l'impossibilité de reclassement, et non par un harcèlement moral.",
+          "Les barèmes MACRON s'appliquent, limitant l'indemnisation à 3-4 mois de salaire brut pour 3 ans d'ancienneté.",
+          "Le salarié ne peut prétendre à une indemnisation supérieure au plafond légal, même en cas de requalification du licenciement.",
+          "La Cour de cassation a validé l'application des barèmes MACRON (avis du 17 juillet 2019, arrêt du 15 décembre 2021)."
+        ],
+        "rebuttals": [
+          "Les griefs de harcèlement moral sont une stratégie pour contourner les barèmes légaux et obtenir une indemnisation excessive.",
+          "Le salarié ne rapporte pas la preuve d'un préjudice justifiant une indemnisation supérieure au plafond légal."
+        ],
+        "legal_references": [
+          "Article L 1235-3 (indemnisation pour licenciement sans cause réelle et sérieuse)",
+          "Article L 1226-14 (licenciement pour inaptitude)",
+          "Barèmes MACRON (CC, décision n°2018-761 DC du 21-03-2018)"
+        ],
+        "dates_amounts": [
+          "02 septembre 2022",
+          "22 septembre 2022",
+          "38 060,40 €"
+        ],
+        "key_source_excerpt": "« A l'évidence, les 1ers Juges ont commis une erreur d'appréciation en allouant à Monsieur [G] une indemnisation d'un montant de 38 060,40 € de dommages et intérêts du seul chef des dommages et intérêts pour licenciement nul. »",
+        "key_verbatim_points": [
+          "« En application de l'article L 1235-3 du Code du travail, Monsieur [G] ne pourra obtenir, si le Conseil de prud'hommes, juge son licenciement comme étant dépourvu de cause réelle et sérieuse, à une indemnité qui ne pourra être comprise qu'entre 3 et 4 mois de salaire brut (ancienneté de 3 ans). »",
+          "« C'est dans le seul but que de voir écarter les barèmes MACRON que le demandeur sollicite des dommages et intérêts pour licenciement nul et se prévaut de prétendus faits de harcèlement moral. »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "SUR LES DEMANDES INDEMNITAIRES DU SALARIE",
+        "path": [
+          "SUR LES DEMANDES INDEMNITAIRES DU SALARIE"
+        ],
+        "section_type": "claims",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Contestation des demandes indemnitaires du salarié, avec rappel des plafonds légaux et de l'obligation de preuve du préjudice.",
+        "facts": [
+          "Le salarié demande des dommages et intérêts pour licenciement sans cause réelle et sérieuse, pour un montant de 9 513 € à 12 684 € (3 à 4 mois de salaire).",
+          "Le salarié demande une indemnité compensatrice de préavis de 6 342 € (2 mois de salaire).",
+          "Le salarié doit justifier du préjudice subi pour obtenir des dommages et intérêts.",
+          "Le salarié ne justifie pas de sa situation professionnelle et financière actuelle."
+        ],
+        "arguments": [
+          "Les demandes indemnitaires du salarié sont excessives et doivent être revues à la baisse.",
+          "Le salarié ne rapporte pas la preuve du préjudice subi, ce qui est une condition légale pour obtenir des dommages et intérêts.",
+          "Le salarié ne justifie pas de sa situation actuelle, ce qui affaiblit ses demandes."
+        ],
+        "rebuttals": [
+          "Les demandes du salarié sont disproportionnées et ne respectent pas les principes de réparation du préjudice.",
+          "Le salarié n'a pas droit à une indemnisation automatique, mais doit prouver son préjudice."
+        ],
+        "legal_references": [
+          "Article 1353 (charge de la preuve)",
+          "Article 700 (frais irrépétibles)"
+        ],
+        "dates_amounts": [
+          "3 171 € (salaire moyen)",
+          "9 513 € à 12 684 € (D&I pour licenciement sans cause réelle et sérieuse)",
+          "6 342 € (indemnité compensatrice de préavis)"
+        ],
+        "key_source_excerpt": "« Il convient de rappeler que le revenu moyen de Monsieur [G] à prendre en compte pour apprécier les calculs du demandeur est : 3171 €. Compte tenu de son ancienneté de 3 ans, il ne peut formuler des demandes supérieures à : D§I pour licenciement sans cause réelle et sérieuse : 9 513 € à 12 684 € (3 à 4 mois de salaire). »",
+        "key_verbatim_points": [
+          "« La réparation du préjudice n'est plus automatique. Il appartient au salarié d'apporter la preuve du préjudice subi. »",
+          "« En l'espèce, Monsieur [G] ne justifie pas de sa situation actuelle professionnelle et financière. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "III- SUR LA DEMANDE DE DOMMAGES ET INTERETS POUR PRIVATION DE LA PORTABILITE DU MAINTIEN DE SALAIRE",
+        "path": [
+          "III- SUR LA DEMANDE DE DOMMAGES ET INTERETS POUR PRIVATION DE LA PORTABILITE DU MAINTIEN DE SALAIRE"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Contestation de la demande de dommages et intérêts pour privation de la portabilité du maintien de salaire, avec rappel de la jurisprudence sur la preuve du préjudice.",
+        "facts": [
+          "Le salarié demande 16 185,36 € de dommages et intérêts pour privation de la portabilité du maintien de salaire à 87% par la garantie prévoyance de la mutuelle.",
+          "L'association conteste cette demande, arguant que le salarié n'a pas rapporté la preuve du préjudice subi.",
+          "La jurisprudence exige que le salarié prouve le préjudice pour obtenir une indemnisation (Cass. Soc 25 mai 2016 n°14-20.578, Cass. Soc 30 juin 2016 n°15-16.066)."
+        ],
+        "arguments": [
+          "Le salarié ne rapporte pas la preuve du préjudice subi, ce qui est une condition légale pour obtenir des dommages et intérêts.",
+          "La demande de dommages et intérêts est excessive et doit être rejetée.",
+          "L'association a agi avec diligence pour mettre en place la portabilité, mais le salarié n'a pas fourni les documents nécessaires."
+        ],
+        "rebuttals": [
+          "Les griefs du salarié sont infondés et relèvent d'une stratégie pour obtenir une indemnisation excessive.",
+          "L'association a respecté ses obligations légales et contractuelles."
+        ],
+        "legal_references": [
+          "Cass. Soc 25 mai 2016 n°14-20.578",
+          "Cass. Soc 30 juin 2016 n°15-16.066",
+          "Article L 1226-14 (maintien de salaire)"
+        ],
+        "dates_amounts": [
+          "16 185,36 € (demande du salarié)"
+        ],
+        "key_source_excerpt": "« En l'espèce, Monsieur [G] ne rapporte pas la preuve du préjudice qu'il estime avoir subi. Il sera purement et simplement débouté de sa demande en réparation. »",
+        "key_verbatim_points": [
+          "« La réparation du préjudice subi par un salarié n'est plus automatique. »",
+          "« La jurisprudence a ainsi opéré des revirements de jurisprudence : CASS. SOC 13 avril 2016 n°14-28-293 : la remise tardive des documents de fin de contrat ne peut être indemnisée que si le salarié rapporte la preuve qu'il a subi un préjudice. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "IV- S'AGISSANT DE LA MODIFICATION FRAUDULEUSE PAR MONSIEUR [G] DES STATUTS DE L'ASSOCIATION.",
+        "path": [
+          "IV- S'AGISSANT DE LA MODIFICATION FRAUDULEUSE PAR MONSIEUR [G] DES STATUTS DE L'ASSOCIATION."
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party",
+            "canonical_name": "Monsieur [B] [G]"
+          }
+        ],
+        "thesis": "Accusation de falsification des statuts de l'association par le salarié, avec détails des modifications frauduleuses et des preuves de la supercherie.",
+        "facts": [
+          "Le salarié est accusé d'avoir frauduleusement modifié les statuts de l'association en mars 2020, en y ajoutant des noms de démissionnaires fictifs.",
+          "Les statuts modifiés par le salarié comportent des signatures falsifiées (Présidente et Trésorier) et des dates erronées.",
+          "Le salarié a reconnu avoir retravaillé les statuts dans un courriel du 24 juin 2020.",
+          "Les modifications frauduleuses visent à discréditer l'association et à préparer un dossier contentieux."
+        ],
+        "arguments": [
+          "Les modifications des statuts sont frauduleuses et visent à nuire à l'association.",
+          "Le salarié a agi de manière préméditée pour préparer un dossier contentieux contre l'association.",
+          "Les signatures sur les statuts modifiés sont des imitations, ce qui est prouvé par des échantillons de signatures authentiques."
+        ],
+        "rebuttals": [
+          "Les accusations de falsification sont fondées sur des preuves solides et incontestables.",
+          "Le salarié a agi de manière malhonnête pour discréditer l'association et obtenir des avantages financiers."
+        ],
+        "legal_references": [
+          "Article 441-1 (faux et usage de faux)",
+          "Article 1382 (responsabilité civile)"
+        ],
+        "dates_amounts": [
+          "07 mars 2020 (adoption des nouveaux statuts)",
+          "10 juillet 2020 (statuts signés avec dates falsifiées)",
+          "16 mai 2020 (date falsifiée sur les statuts)"
+        ],
+        "key_source_excerpt": "« De cet enchainement de courriels et de statuts, il ressort que Monsieur [G], pour des motivations qui restent obscures, a frauduleusement altéré le contenu du procès-verbal de conseil d'administration du 07 mars 2020, ainsi que des statuts qui en sont le fruit. »",
+        "key_verbatim_points": [
+          "« Les statuts qui apparaissent dans les mails échangés au sein de l'Association diffèrent de ceux adoptés le 07 mars 2020. »",
+          "« Il est également fort vraisemblable que la signature de Madame [UB] ait été imitée, dans la mesure où elle n'a strictement aucune raison d'avoir signée ces statuts. »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "PAR CES MOTIFS",
+        "path": [
+          "PAR CES MOTIFS"
+        ],
+        "section_type": "claims",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Demande d'infirmation du jugement du Conseil de Prud'hommes et de condamnation du salarié à payer des dommages et intérêts pour procédure abusive.",
+        "facts": [
+          "L'association demande l'infirmation du jugement du Conseil de Prud'hommes de Charleville-Mézières du 5 avril 2024.",
+          "L'association demande le déboutement du salarié de l'intégralité de ses prétentions.",
+          "L'association demande la condamnation du salarié à payer 6 000 € sur le fondement de l'article 700 du Code de Procédure Civile.",
+          "L'association demande la condamnation du salarié aux entiers dépens de première instance et d'appel."
+        ],
+        "requests": [
+          "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul.",
+          "Débouter Monsieur [G] de l'intégralité de ses prétentions.",
+          "Condamner Monsieur [G] à payer à l'Association la somme de 6 000 € sur le fondement de l'article 700 du Code de Procédure Civile.",
+          "Condamner Monsieur [G] aux entiers dépens de première instance et d'appel."
+        ],
+        "legal_references": [
+          "Article 700 (frais irrépétibles)",
+          "Article L 1235-3 (indemnisation pour licenciement sans cause réelle et sérieuse)"
+        ],
+        "dates_amounts": [
+          "6 000 € (demande de dommages et intérêts)",
+          "5 avril 2024 (jugement du Conseil de Prud'hommes)"
+        ],
+        "key_source_excerpt": "« Infirmer le jugement rendu par le Conseil de Prud'hommes de CHARLEVILLE-MEZIERES en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul, en raison du harcèlement subi par Monsieur [G] [B], en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à payer à Monsieur [G] [B] les sommes de 186,07 € à titre de régularisation du salaire de base de mai 2022 à septembre 2022, de 18,60 € à titre d'indemnité compensatrice de congés payés sur régularisation du salaire de base de mai à septembre 2022, de 3 239,75 € au titre de l'indemnité compensatrice de congés payés, de 188,08 € à titre de restitution par l'employeur des [Personne Morale 4] perçues postérieurement à la rupture du contrat de travail, de 137,87 € à titre de dommages et intérêts pour privation de la portabilité du maintien de salaire à 87% par la garantie prévoyance de la mutuelle [Personne Morale 5], de 19 030,20 € à titre de dommages et intérêts en réparation du préjudice moral subi, de 6 343,40 € au titre de l'indemnité compensatrice d'un montant égal à l'indemnité compensatrice de préavis de droit commun, de 2 890,70 € à titre de solde de l'indemnité spéciale de licenciement, de 38 060,40 € à titre de dommages et intérêts pour licenciement nul, »",
+        "key_verbatim_points": [
+          "« Débouter Monsieur [G] [B] de l'intégralité de ses prétentions, »",
+          "« Le condamner à payer à l'ASSOCIATION [Personne Morale 3] la somme de 6 000 € sur le fondement de l'article 700 du Code de Procédure Civile ainsi qu'aux entiers dépens de 1ère instance et d'Appel. »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "RAPPEL DES FAITS",
+        "path": [
+          "RAPPEL DES FAITS"
+        ],
+        "section_type": "facts",
+        "participants": [
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Récapitulatif des faits concernant l'embauche, la gouvernance chaotique de l'association, les conditions de travail dégradées, et les événements ayant conduit au licenciement pour inaptitude.",
+        "facts": [
+          "Monsieur [B] [A] a été embauché le 1er septembre 2019 comme directeur du développement avec une rémunération mensuelle brute de 2 766,31 €.",
+          "La gouvernance de l'association a été tumultueuse, avec des changements fréquents de président et de trésorier.",
+          "Monsieur [B] [A] a subi des conditions de travail dégradées, des agressions verbales, et des manquements contractuels.",
+          "Un avis d'inaptitude a été rendu par le médecin du travail le 2 septembre 2022, justifiant le licenciement pour inaptitude.",
+          "Monsieur [B] [A] a été licencié pour inaptitude et impossibilité de reclassement le 23 septembre 2022."
+        ],
+        "arguments": [
+          "Les conditions de travail de Monsieur [B] [A] ont été gravement dégradées en raison de la gouvernance chaotique et des manquements de l'employeur.",
+          "Le licenciement pour inaptitude est justifié par l'avis médical et l'impossibilité de reclassement.",
+          "Les griefs de harcèlement moral sont infondés et relèvent d'une stratégie de défense du salarié."
+        ],
+        "legal_references": [
+          "Article L 1226-14 (licenciement pour inaptitude)",
+          "Article L 1152-1 (harcèlement moral)"
+        ],
+        "dates_amounts": [
+          "01 septembre 2019 (embauche)",
+          "02 septembre 2022 (avis d'inaptitude)",
+          "23 septembre 2022 (licenciement)"
+        ],
+        "key_source_excerpt": "« Attendu que Monsieur [B] [A] est entré au service de l'Association [Personne Morale 1] en qualité de directeur du développement, au coefficient 400, à temps complet, par contrat à durée indéterminée en date du 1er septembre 2019 à effet du même jour, ce pour une rémunération mensuelle brute de 2.766 € 31 (pièce 1). »",
+        "key_verbatim_points": [
+          "« Que l'Association [Personne Morale 1] a remis à Monsieur [B] [A] une fiche de poste comportant des missions précises et définies (pièce 2). »",
+          "« Attendu que la gouvernance de l'Association [Personne Morale 1] a été tumultueuse ce qui a dégradé les conditions de travail de Monsieur [B] [A]. »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "1. SUR LE CONTEXTE DE L'EMBAUCHE DE MONSIEUR [B] [A]",
+        "path": [
+          "1. SUR LE CONTEXTE DE L'EMBAUCHE DE MONSIEUR [B] [A]"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Réponse aux allégations du salarié concernant le contexte de son embauche, avec rappel des engagements non tenus et des manquements de l'employeur.",
+        "facts": [
+          "L'association affirme que l'embauche de Monsieur [B] [A] était motivée par trois raisons : développer l'association, aider un ami en difficulté, et mettre ses compétences au service de l'association.",
+          "Le salarié conteste ces motivations et affirme que l'association a menti sur les engagements pris à l'embauche.",
+          "Les engagements non tenus incluent un salaire minimum de 2 000 € net, 25 jours de congés payés, un 13ème mois, et une prime de 150 € brut en juillet et août.",
+          "Le salarié a dû relancer l'employeur à maintes reprises pour obtenir ce qui lui était promis."
+        ],
+        "arguments": [
+          "Les motivations avancées par l'association pour justifier l'embauche de Monsieur [B] [A] sont fallacieuses et de mauvaise foi.",
+          "L'association a menti sur les engagements pris à l'embauche, ce qui est prouvé par des pièces factuelles.",
+          "Les manquements de l'employeur ont contribué à la dégradation des conditions de travail du salarié."
+        ],
+        "rebuttals": [
+          "Les allégations du salarié sont étayées par des preuves solides et incontestables.",
+          "L'association a agi de manière malhonnête en mentant sur les engagements pris à l'embauche."
+        ],
+        "legal_references": [
+          "Article 9 du Code de Procédure Civile (charge de la preuve)"
+        ],
+        "dates_amounts": [
+          "2 000 € net (salaire promis)",
+          "25 jours de congés payés (engagement non tenu)"
+        ],
+        "key_source_excerpt": "« Attendu que l'Association [Personne Morale 1] expose que la création d'un poste de Directeur du Développement et l'embauche de Monsieur [B] [A] était motivées pour 3 raisons : Créer un poste afin de développer l'association ; Aider un ami et membre de cette association en grande difficulté professionnelle et émotionnelle ; Mettre professionnellement les compétences de Monsieur [B] [A] au service de l'Association. Or que ces trois raisons aujourd'hui avancées par l'Association [Personne Morale 1] pour justifier l'embauche de Monsieur [B] [A] laisse apparaitre une différence avec celles qui lui ont été présentées à l'embauche et rappelées dans le « point d'étape » relatif au salarié (pièce 15 - chapitre genèse - pages 3 et 4) … »",
+        "key_verbatim_points": [
+          "« Que ce document a été transmis par la Présidente de l'Association [Personne Morale 1] le 21 février 2021 à 11 heure 34 par courriel à toutes les personnes concernées … »",
+          "« Que la présentation faite par l'Association [Personne Morale 1] est donc inexacte, fallacieuse et de totale mauvaise foi … »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "2. SUR LES SOMMES DUES EN EXECUTION DU CONTRAT DE TRAVAIL",
+        "path": [
+          "2. SUR LES SOMMES DUES EN EXECUTION DU CONTRAT DE TRAVAIL"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Réponse aux anomalies dans les sommes dues au salarié, avec rappel des obligations légales et contractuelles de l'employeur.",
+        "facts": [
+          "Le salarié a notifié une mise en demeure à l'association le 22 octobre 2022 pour des anomalies dans les sommes dues.",
+          "Les anomalies incluent : bulletins de salaire incorrects, régularisation du salaire de base non effectuée, solde de l'indemnité compensatrice de congés payés non versé, indemnités journalières de sécurité sociale non reversées, et portabilité de la prévoyance non mise en place.",
+          "L'association conteste certaines de ces anomalies, mais reconnaît des manquements partiels."
+        ],
+        "arguments": [
+          "Les anomalies dans les sommes dues sont imputables à l'association, qui a manqué à ses obligations légales et contractuelles.",
+          "L'association doit régulariser les sommes dues et verser les indemnités correspondantes.",
+          "Les manquements de l'association ont causé un préjudice financier au salarié."
+        ],
+        "rebuttals": [
+          "Les griefs du salarié sont fondés et doivent être pris en compte par le juge.",
+          "L'association a agi avec négligence en ne respectant pas ses obligations contractuelles."
+        ],
+        "legal_references": [
+          "Article L 3141-22 (congés payés)",
+          "Article 1353 (charge de la preuve)",
+          "Article L 1226-14 (maintien de salaire)"
+        ],
+        "dates_amounts": [
+          "22 octobre 2022 (mise en demeure)",
+          "186,07 € (rappel de salaire)",
+          "18,61 € (indemnité compensatrice de congés payés)",
+          "3 239,75 € (solde de l'indemnité compensatrice de congés payés)",
+          "188,08 € (indemnités journalières de sécurité sociale non reversées)"
+        ],
+        "key_source_excerpt": "« Attendu qu'en raison d'un grand nombre d'anomalie dans les sommes dues Monsieur [B] [A] a notifié le 22 octobre 2022 à l'Association [Personne Morale 1] une mise en demeure explicative (pièce 54). Que l'Association [Personne Morale 1] n'a pas daigné répondre à cette notification. »",
+        "key_verbatim_points": [
+          "« Que selon l'article L 3141-22 du Code du Travail le dixième de ce rappel est dû à titre d'indemnité compensatrice de congés payés, soit 18 € 61. »",
+          "« Que cela est établi par le fait que les congés payés ont toujours été prévus, posés sur agenda, acceptés et pris (pièce 58). »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "3. SUR LA REPONSE A CERTAINES ALLEGATIONS",
+        "path": [
+          "3. SUR LA REPONSE A CERTAINES ALLEGATIONS"
+        ],
+        "section_type": "discussion",
+        "path_sub": [
+          "a) Sur les conditions juridiques du harcèlement moral"
+        ],
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Réponse aux allégations de harcèlement moral, avec rappel des conditions juridiques et de la charge de la preuve.",
+        "facts": [
+          "Le salarié allègue avoir subi des faits de harcèlement moral, mais l'association conteste ces allégations.",
+          "En matière de harcèlement moral, le salarié doit établir la matérialité de faits précis et concordants pour présumer l'existence d'un harcèlement.",
+          "L'employeur doit alors prouver que les agissements ne sont pas constitutifs de harcèlement moral et sont justifiés par des éléments objectifs.",
+          "Le salarié n'a produit aucune preuve des allégations de harcèlement moral."
+        ],
+        "arguments": [
+          "Les allégations de harcèlement moral sont infondées et non prouvées.",
+          "Le salarié n'a pas rapporté la preuve des faits qu'il allègue, ce qui est une condition légale pour présumer l'existence d'un harcèlement moral.",
+          "L'association a agi avec diligence pour prévenir les agissements de harcèlement moral."
+        ],
+        "rebuttals": [
+          "Les griefs de harcèlement moral sont une stratégie de défense du salarié pour obtenir des indemnités excessives.",
+          "L'association a toujours agi dans le respect de la légalité et des obligations contractuelles."
+        ],
+        "legal_references": [
+          "Article L 1152-1 (harcèlement moral)",
+          "Article L 1152-4 (obligation de prévention de l'employeur)",
+          "CASS. SOC. 21 NOVEMBRE 2012 N° 11-20352"
+        ],
+        "dates_amounts": [],
+        "key_source_excerpt": "« Attendu que Monsieur [B] [A] a subi de très nombreux faits d'harcèlement moral ce au mépris des dispositions légales du Code du Travail selon, lesquelles : Article L 1152-1 du Code du Travail : « Aucun salarié ne doit subir les agissements répétés de harcèlement moral qui ont pour objet ou pour effet une dégradation de ses conditions de travail susceptible de porter atteinte à ses droits et à sa dignité, d'altérer sa santé physique ou mentale ou de compromettre son avenir professionnel. » »",
+        "key_verbatim_points": [
+          "« Qu'il appartient alors au juge d'apprécier si ces éléments, pris dans leur ensemble, permettent de présumer l'existence d'un harcèlement moral (CASS. SOC. 21 NOVEMBRE 2012 N° 11-20352). »",
+          "« Que ce n'est que dans l'affirmative qu'il incombe à l'employeur de prouver que ces agissements ne sont pas constitutifs d'un tel harcèlement et que les mesures en cause sont étrangères à tout harcèlement moral et justifiées par des éléments objectifs étrangers à tout harcèlement. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      }
+    ],
+    "carry_forward": {
+      "main_issues": [
+        "Licenciement pour inaptitude vs. requalification en licenciement nul pour harcèlement moral",
+        "Montant des indemnités allouées par le Conseil de Prud'hommes",
+        "Preuve des griefs de harcèlement moral",
+        "Falsification présumée des statuts de l'association par le salarié",
+        "Responsabilité de l'employeur dans les manquements contractuels"
+      ],
+      "open_threads": [
+        "Évaluation de la crédibilité des témoignages et des preuves produites par les parties",
+        "Appréciation de la gravité des manquements de l'employeur",
+        "Vérification de la régularité des procédures de licenciement et de reclassement"
+      ],
+      "claims_block_present": true,
+      "participants_to_track": [
+        {
+          "name": "Monsieur [B] [A]",
+          "role": "salarié (intimé)",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "role": "employeur (appelant)",
+          "side": "current_party"
+        },
+        {
+          "name": "Madame [X] [U]",
+          "role": "Trésorière",
+          "side": "current_party"
+        },
+        {
+          "name": "Monsieur [YZ] [N]",
+          "role": "Président",
+          "side": "current_party"
+        }
+      ]
+    }
+  },
+  {
+    "packet_id": "P3",
+    "document_role": "appelant",
+    "packet_summary": "Le paquet traite de la matérialité de faits de harcèlement moral subis par Monsieur [B] [A] au sein de l'Association [Personne Morale 1], avec 23 faits détaillés illustrant des agissements répétés, une absence de mesures préventives de l'employeur, et une dégradation avérée de la santé du salarié. L'argumentaire insiste sur l'absence d'intention de nuire comme critère non requis pour qualifier le harcèlement moral, et demande une indemnisation pour préjudice subi. Une section est dédiée à la contestation d'une prétendue falsification des statuts de l'association par le salarié.",
+    "sections": [
+      {
+        "title": "b) Sur l'établissement par Monsieur [B] [A] de la matérialité de faits précis et concordants constituant un harcèlement moral",
+        "path": [
+          "4. SUR LE HARCELEMENT MORAL",
+          "b) Sur l'établissement par Monsieur [B] [A] de la matérialité de faits précis et concordants constituant un harcèlement moral"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [K] [J] [T]",
+            "kind": "person",
+            "role": "président",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [U] [H]",
+            "kind": "person",
+            "role": "trésorier",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Conseil de Prud'hommes",
+            "kind": "institution",
+            "role": null,
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Établir la matérialité de 23 faits précis et concordants constituant un harcèlement moral subi par Monsieur [B] [A], avec preuves documentaires et témoignages, malgré les dénégations de l'Association [Personne Morale 1].",
+        "facts": [
+          "Conflits répétés entre dirigeants (Monsieur [K] [J] [T], Madame [U] [H]) dès septembre 2019, dégradant les conditions de travail de Monsieur [B] [A].",
+          "Remise en cause unilatérale des règles contractuelles (ex : frais de mission) par le président démissionnaire puis réintégré.",
+          "Perturbations constantes (appels, SMS, emails hors horaires) par des bénévoles et dirigeants, violant le droit à la déconnexion.",
+          "Obligation pour Monsieur [B] [A] de rédiger des rapports journaliers pour se justifier, malgré l'absence de demande de la direction.",
+          "Remarques homophobes d'un bénévole (Monsieur [ON] [EJ]) en août 2020, non sanctionnées par l'employeur.",
+          "Changements incessants de gouvernance (4 présidences en 25 mois) et de missions contractuelles, générant une instabilité professionnelle.",
+          "Agression verbale violente le 16 juin 2021 par Monsieur [OJ] [YJ], reconnue comme accident de travail.",
+          "Non-respect des engagements financiers et conventionnels (ex : prime Macron, télétravail), malgré des promesses répétées.",
+          "Exclusion progressive de Monsieur [B] [A] des instances décisionnelles (ex : convocation du CA par un tiers).",
+          "Retards et irrégularités dans le versement des salaires et indemnités pendant l'arrêt maladie (janvier à septembre 2022)."
+        ],
+        "arguments": [
+          "Les faits sont documentés par des pièces (emails, SMS, procès-verbaux, certificats médicaux) et corroborés par des témoignages (médecine du travail, Conseil de Prud'hommes).",
+          "L'article L 1152-1 du Code du travail ne requiert pas l'intention de nuire pour caractériser le harcèlement moral, seul l'effet sur le salarié compte.",
+          "L'employeur n'a pris aucune mesure concrète pour prévenir ou faire cesser les agissements, malgré les alertes répétées de Monsieur [B] [A].",
+          "Les explications de l'Association [Personne Morale 1] sont contredites par les documents produits (ex : procès-verbal du CA du 5 octobre 2019 ne mentionne pas les modifications des frais de mission).",
+          "Les changements de gouvernance et les conflits internes sont imputables à l'Association [Personne Morale 1], et non à Monsieur [B] [A], comme en témoignent les démissions en cascade des dirigeants."
+        ],
+        "rebuttals": [
+          "L'Association [Personne Morale 1] conteste la matérialité des faits en affirmant que les rapports entre dirigeants étaient cordiaux (pièce 5) ou que Monsieur [B] [A] n'était pas au cœur des tensions (pièce 26).",
+          "Elle argue que les agissements isolés ne constituent pas du harcèlement moral, mais les preuves montrent une répétition et une systématicité des actes.",
+          "Elle minimise l'impact des conflits en invoquant des problèmes de santé préexistants de Monsieur [K] [J] [T], mais les dates des pièces (ex : pièce 26 datée d'avril 2020) contredisent cette assertion."
+        ],
+        "legal_references": [
+          "Article L 1152-1 du Code du travail",
+          "Cass. Soc. 10 novembre 2009, n° 08-41497",
+          "Cass. Soc. 2 février 2011, n° 09-42733",
+          "Cass. Soc. 15 novembre 2011, n° 10-30463",
+          "Cass. Soc. 1er mars 2011, n° 09-69616"
+        ],
+        "pieces_cited": [
+          "Pièce 5 (démission de Monsieur [K] [J] [T])",
+          "Pièce 81 (conversations du 28 juillet 2020)",
+          "Pièce 82 (conversations du 14 août 2020)",
+          "Pièce 6 (contrat de travail, article 7)",
+          "Pièce 7 (9 appels le 20 mai 2021)",
+          "Pièce 8 (SMS automatique de janvier 2020)",
+          "Pièce 14 (courriel du 12 février 2021)",
+          "Pièce 20 (certificats médicaux post-agression)",
+          "Pièce 21 (déclaration d'accident de travail)",
+          "Pièce 22 (reconnaissance AT par [Personne Morale 11])",
+          "Pièce 26 (souci de santé de Monsieur [K] [J] [T] en avril 2020)",
+          "Pièce 27 (convocation du CA du 26 août 2021)",
+          "Pièce 2 (fiche de poste de Monsieur [B] [A])",
+          "Pièce 3 (procès-verbal du CA du 5 octobre 2019)",
+          "Pièce 74 (visite de pré-reprise du 5 juillet 2021)",
+          "Pièce 80 (échange WhatsApp du 11 novembre 2021)",
+          "Pièce 89 (SMS du 26 novembre 2021)",
+          "Pièce 90 (réunion du CA du 9 juillet 2022)",
+          "Pièce 91 (courriel du 29 juillet 2021)",
+          "Pièce 95 (avenant 182)",
+          "Pièce 105 (mise en demeure du 5 avril 2022)",
+          "Pièce 109 (procès-verbal du CA du 22 octobre 2021)",
+          "Pièce 112 (simulations de salaire)",
+          "Pièce 113 (guide d'application de l'avenant 182)"
+        ],
+        "dates_amounts": [
+          "29 septembre 2019",
+          "20 mai 2021",
+          "16 juin 2021",
+          "5 juillet 2021",
+          "11 novembre 2021",
+          "26 novembre 2021",
+          "27 janvier 2022",
+          "15 février 2022",
+          "8 juillet 2022",
+          "16 août 2022",
+          "23 septembre 2022",
+          "3.200 € (salaire brut)",
+          "200 € (prime mensuelle nette proposée)",
+          "3.106 € (salaire brut après augmentation)",
+          "230 € (augmentation nette mensuelle)",
+          "19.030 € (indemnisation allouée par le Conseil de Prud'hommes)"
+        ],
+        "requests": [
+          "Reconnaissance de la matérialité des 23 faits de harcèlement moral.",
+          "Condamnation de l'Association [Personne Morale 1] pour manquement à son obligation de sécurité de résultat.",
+          "Indemnisation pour préjudice subi (physique, moral, professionnel)."
+        ],
+        "key_source_excerpt": "« Attendu que ces faits matériellement établis sont les suivants : [...] Que ces perturbations permanentes avaient pour objet ou pour effet une dégradation des conditions de travail de Monsieur [B] [A] susceptible de porter atteinte d'altérer sa santé physique ou mentale et de compromettre son avenir professionnel. »",
+        "key_verbatim_points": [
+          "« 28/07/2020 à 10:11 - [U] [H]: Tu es certain? »",
+          "« Si je suis parti, c'est uniquement pour des raisons humaines. Mes dernières semaines de Présidence ont été jalonnées par des attaques et des remises en question répétées sur ma façon d'agir et d'être avec vous et avec l'équipe de direction. »",
+          "« Que l'article L 1152-1 du Code du Travail étant muet sur la personne du harceleur il en résulte que le harcèlement moral est constitué quelle que soit la personne qui en soit à l'origine. »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "c) Sur l'absence d'intention de nuire et même de faute en situation d'harcèlement moral",
+        "path": [
+          "4. SUR LE HARCELEMENT MORAL",
+          "c) Sur l'absence d'intention de nuire et même de faute en situation d'harcèlement moral"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Démontrer que le harcèlement moral est constitué indépendamment de l'intention de nuire de l'employeur, et que ce dernier a manqué à son obligation de sécurité de résultat en ne prenant pas de mesures préventives ou correctives.",
+        "facts": [
+          "Le harcèlement moral est caractérisé par des agissements répétés ayant pour effet une dégradation des conditions de travail, même sans intention de nuire (Cass. Soc. 10 novembre 2009, n° 08-41497).",
+          "L'employeur est tenu d'une obligation de sécurité de résultat en matière de protection de la santé et de la sécurité des travailleurs (Cass. Soc. 1er mars 2011, n° 09-69616).",
+          "L'absence de faute de l'employeur ne l'exonère pas de sa responsabilité si le salarié subit un harcèlement moral (Cass. Soc. 21 juin 2006, n° 05-43914).",
+          "L'Association [Personne Morale 1] n'a pris aucune mesure concrète pour prévenir ou faire cesser les agissements de harcèlement moral subis par Monsieur [B] [A].",
+          "Les alertes répétées de Monsieur [B] [A] (dès 2019) n'ont pas été suivies d'effets par l'employeur."
+        ],
+        "arguments": [
+          "Le harcèlement moral est une notion objective : seul le résultat compte, pas l'intention de l'auteur.",
+          "L'employeur ne peut se prévaloir de l'absence de faute pour échapper à sa responsabilité, car il a manqué à son obligation de sécurité de résultat.",
+          "Les mesures prises par l'employeur (ex : démissions en cascade des dirigeants) sont insuffisantes et ne protègent pas le salarié.",
+          "Monsieur [B] [A] a alerté l'employeur et la médecine du travail à plusieurs reprises, mais ses demandes sont restées sans réponse.",
+          "L'Association [Personne Morale 1] tente de minimiser les faits en invoquant des actes isolés, mais les preuves montrent une systématicité et une répétition des agissements."
+        ],
+        "rebuttals": [
+          "L'Association [Personne Morale 1] argue qu'un acte isolé ne peut constituer du harcèlement moral, mais les faits sont multiples et répétés.",
+          "Elle affirme avoir pris des mesures pour protéger Monsieur [B] [A], mais ces mesures sont inefficaces ou inexistantes (ex : démissions en cascade, absence de compte rendu d'entretien).",
+          "Elle conteste les alertes de Monsieur [B] [A] en affirmant qu'il n'a pas alerté l'employeur avant de saisir le Conseil de Prud'hommes, mais les preuves (emails, SMS) contredisent cette assertion."
+        ],
+        "legal_references": [
+          "Article L 1152-1 du Code du travail",
+          "Article L 1154-1 du Code du travail",
+          "Article L 4121-1 du Code du travail",
+          "Cass. Soc. 10 novembre 2009, n° 08-41497",
+          "Cass. Soc. 2 février 2011, n° 09-67855",
+          "Cass. Soc. 15 novembre 2011, n° 10-30463",
+          "Cass. Soc. 1er mars 2011, n° 09-69616",
+          "Cass. Soc. 3 février 2010, n° 08-44019",
+          "Cass. Soc. 21 juin 2006, n° 05-43914",
+          "Cass. Soc. 13 juillet 2017, n° 16-13734",
+          "Cass. Soc. 6 janvier 2011, n° 09-66704",
+          "Cass. Soc. 5 juillet 2017, n° 16-14216"
+        ],
+        "pieces_cited": [
+          "Pièce 71 (échange WhatsApp du 29 septembre 2019)",
+          "Pièce 73 (courriel du 24 juin 2021)",
+          "Pièce 74 (visite de pré-reprise du 5 juillet 2021)",
+          "Pièce 75 (courriel du 13 décembre 2021)",
+          "Pièce 46 (certificat médical du médecin traitant)",
+          "Pièce 47 (certificat du psychiatre)",
+          "Pièce 48 (courriel du 28 mai 2022)",
+          "Pièce 54 (mise en demeure du 5 avril 2022)"
+        ],
+        "dates_amounts": [
+          "29 septembre 2019",
+          "24 juin 2021",
+          "5 juillet 2021",
+          "11 novembre 2021",
+          "13 décembre 2021",
+          "27 janvier 2022",
+          "15 février 2022",
+          "8 juillet 2022",
+          "16 août 2022"
+        ],
+        "requests": [
+          "Reconnaissance du harcèlement moral indépendamment de l'intention de nuire.",
+          "Condamnation de l'Association [Personne Morale 1] pour manquement à son obligation de sécurité de résultat.",
+          "Indemnisation pour préjudice subi (physique, moral, professionnel)."
+        ],
+        "key_source_excerpt": "« Attendu que le harcèlement moral est constitué dès lors que le salarié harcelé a été victime d'agissements répétés ayant eu pour effet la dégradation de ses conditions de travail et cela même si l'auteur des agissements visés n'avait aucune intention de nuire au salarié harcelé (CASS. SOC. 10 NOVEMBRE 2009 N° 08- 41497). »",
+        "key_verbatim_points": [
+          "« l'employeur est tenu envers ses salariés d'une obligation de sécurité de résultat en matière de protection de la santé et de la sécurité des travailleurs dans l'entreprise, notamment en matière de harcèlement moral et que l'absence de faute de sa part ne peut l'exonérer de sa responsabilité »",
+          "« Que même en l'absence de faute de sa part (CASS. SOC. 21 JUIN 2006 N° 05-43914). »",
+          "« Que l'employeur, tenu d'une obligation de sécurité de résultat en matière de protection de la santé et de la sécurité des travailleurs, manque à cette obligation lorsqu'un salarié est victime sur le lieu de travail d'agissements de harcèlement moral ou sexuel quand bien même il aurait pris des mesures en vue de faire cesser ces agissements (CASS. SOC. 13 JUILLET 2017 N° 16-13734). »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "d) Sur l'indemnisation du harcèlement moral subi",
+        "path": [
+          "4. SUR LE HARCELEMENT MORAL",
+          "d) Sur l'indemnisation du harcèlement moral subi"
+        ],
+        "section_type": "claims",
+        "participants": [
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Conseil de Prud'hommes",
+            "kind": "institution",
+            "role": null,
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Demander une indemnisation pour le préjudice subi par Monsieur [B] [A] en raison des faits de harcèlement moral, avec une estimation du préjudice moral, physique et professionnel.",
+        "facts": [
+          "Les faits de harcèlement moral ont duré deux ans et demi, avec une dégradation avérée de l'état de santé de Monsieur [B] [A].",
+          "Monsieur [B] [A] a été contraint de consulter un médecin traitant et un psychiatre pour un syndrome anxiodépressif en relation avec ses conditions de travail.",
+          "Le Conseil de Prud'hommes a alloué une indemnisation de 19.030 € à Monsieur [B] [A] pour le préjudice subi.",
+          "L'état de santé de Monsieur [B] [A] s'est dégradé au point de nécessiter un arrêt maladie à compter du 27 janvier 2022.",
+          "L'employeur n'a pas pris de mesures pour indemniser le préjudice subi par Monsieur [B] [A]."
+        ],
+        "arguments": [
+          "Le préjudice subi par Monsieur [B] [A] est considérable, avec des certificats médicaux attestant d'un trouble anxieux généralisé réactionnel, des attaques de panique, et un syndrome anxiodépressif.",
+          "L'indemnisation allouée par le Conseil de Prud'hommes (19.030 €) doit être confirmée en appel.",
+          "L'employeur a manqué à son obligation de sécurité de résultat, aggravant le préjudice de Monsieur [B] [A].",
+          "Les retards et irrégularités dans le versement des salaires et indemnités pendant l'arrêt maladie ont aggravé la situation financière et psychologique de Monsieur [B] [A]."
+        ],
+        "rebuttals": [
+          "L'Association [Personne Morale 1] conteste le montant de l'indemnisation, mais le jugement du Conseil de Prud'hommes doit être confirmé en appel."
+        ],
+        "legal_references": [
+          "Article L 1152-2 du Code du travail",
+          "Article L 1152-3 du Code du travail"
+        ],
+        "pieces_cited": [
+          "Pièce 46 (certificat médical du médecin traitant)",
+          "Pièce 47 (certificat du psychiatre)",
+          "Pièce 48 (courriel du 28 mai 2022)",
+          "Pièce 54 (mise en demeure du 5 avril 2022)"
+        ],
+        "dates_amounts": [
+          "16 juin 2021 (accident de travail)",
+          "3 janvier 2022 (dégradation de l'état de santé)",
+          "27 janvier 2022 (début de l'arrêt maladie)",
+          "5 avril 2024 (jugement du Conseil de Prud'hommes)",
+          "19.030 € (indemnisation allouée)"
+        ],
+        "requests": [
+          "Confirmation de l'indemnisation de 19.030 € allouée par le Conseil de Prud'hommes.",
+          "Indemnisation complémentaire pour préjudice moral, physique et professionnel."
+        ],
+        "key_source_excerpt": "« Attendu que les faits d'harcèlement moral subis par Monsieur [B] [A] durant l'exécution du contrat de travail doivent recevoir indemnisation. Que le préjudice subi est considérable. Que ces faits, multiples et répétitifs, graves, ont duré pendant deux années et demi. »",
+        "key_verbatim_points": [
+          "« Je soussigné, médecin traitant de Mr [A] [B] depuis 2002, certifie que ce patient présente depuis le 16 juin 2021 (accident de travail) un trouble anxieux généralisé réactionnel avec bouffées d'angoisse, attaques de panique, épisodes dépressif, majoration de symptômes organiques, épisodes de boulimie-anorexie… »",
+          "« Syndrome anxiodépressif en relation à ses conditions de travail »",
+          "« Que le premier Juge a alloué à titre de réparation de ce préjudice la somme de 19.030 € 20. Que le jugement du Conseil des Prud'hommes de [Localité 3] - MEZIERES du 5 avril 2024 dont Appel sera confirmé de ce chef. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "high",
+        "argument_density": "medium"
+      },
+      {
+        "title": "5. SUR LA PRETENDUE MODIFICATION FRAUDULEUSE PAR MONSIEUR [A] DES STATUTS DE L'ASSOCIATION",
+        "path": [
+          "5. SUR LA PRETENDUE MODIFICATION FRAUDULEUSE PAR MONSIEUR [A] DES STATUTS DE L'ASSOCIATION"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [U] [H]",
+            "kind": "person",
+            "role": "président",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [XL] [T]",
+            "kind": "person",
+            "role": null,
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contester l'accusation de falsification des statuts de l'Association [Personne Morale 1] par Monsieur [B] [A], et démontrer que cette accusation est calomnieuse et diffamatoire, dans la continuité des faits de harcèlement moral subis.",
+        "facts": [
+          "L'Association [Personne Morale 1] accuse Monsieur [B] [A] d'avoir falsifié les statuts de l'association, une accusation jugée calomnieuse et diffamatoire.",
+          "Les modifications des statuts ont été initiées par Monsieur [XL] [T] dès janvier 2020, relues par Madame [U] [H] en janvier 2020, et validées par la Ligue de l'Enseignement en juin 2020.",
+          "Monsieur [B] [A] n'a pas participé à la rédaction ou à la modification des statuts, contrairement aux accusations de l'Association [Personne Morale 1].",
+          "Les incohérences de dates et de signatures relèvent de la gouvernance de l'Association [Personne Morale 1], et non de Monsieur [B] [A].",
+          "Cette accusation s'inscrit dans une stratégie de discrédit de Monsieur [B] [A], dans la continuité des faits de harcèlement moral subis."
+        ],
+        "arguments": [
+          "L'accusation de falsification des statuts est infondée et relève d'une tentative de discrédit de Monsieur [B] [A].",
+          "Les modifications des statuts ont été réalisées par la Ligue de l'Enseignement et Madame [U] [H], avec la participation de Monsieur [XL] [T], et non par Monsieur [B] [A].",
+          "L'Association [Personne Morale 1] n'a fourni aucune preuve de la falsification des statuts par Monsieur [B] [A].",
+          "Cette accusation est sans incidence sur les faits de harcèlement moral ou sur les circonstances du licenciement de Monsieur [B] [A].",
+          "Elle s'inscrit dans une stratégie de harcèlement moral continu, visant à nuire à la réputation et à l'honneur de Monsieur [B] [A]."
+        ],
+        "rebuttals": [
+          "L'Association [Personne Morale 1] affirme que Monsieur [B] [A] a falsifié les statuts, mais aucune preuve n'est apportée.",
+          "Elle tente de justifier cette accusation en invoquant des incohérences de gouvernance, mais ces incohérences sont imputables à l'Association [Personne Morale 1] elle-même."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce 120 (statuts relus par Madame [U] [H] en janvier 2020)",
+          "Pièce 121 (demande de Monsieur [XL] [T] du 27 mars 2020)",
+          "Pièce 122 (statuts non mis à jour depuis 2001)",
+          "Pièce 51 (pièce adverse mentionnant la Ligue de l'Enseignement)"
+        ],
+        "dates_amounts": [
+          "3 janvier 2020 (travail des statuts par Monsieur [XL] [T])",
+          "6 janvier 2020 (relecture par Madame [U] [H])",
+          "9 juin 2020 (validation par la Ligue de l'Enseignement)",
+          "2 octobre 2020 (transmission des éléments à la Préfecture)"
+        ],
+        "requests": [
+          "Rejet de l'accusation de falsification des statuts de l'Association [Personne Morale 1] par Monsieur [B] [A].",
+          "Condamnation de l'Association [Personne Morale 1] pour diffamation et calomnie."
+        ],
+        "key_source_excerpt": "« Attendu que l'Association [Personne Morale 1] n'hésite pas, à hauteur d'Appel, a maintenant accuser Monsieur [B] [A] d'avoir falsifier les statuts de l'Association, ce aux termes d'une argumentation peu démonstrative. Que cette accusation est calomnieuse et diffamatoire. »",
+        "key_verbatim_points": [
+          "« Que les incohérences de dates et de signatures relèvent de la gouvernance, et non du salarié, s'agissant d'un problème chronique de gouvernance. »",
+          "« Que cette prétendue falsification, inexistante, est sans effet dans le présent litige puisque sans aucune incidence sur les faits d'harcèlement moral invoqués par Monsieur [B] [A] ni sur les circonstances du licenciement, qui n'a pas été prononcé pour ces prétendus faites de falsification, mais pour inaptitude. »",
+          "« Que néanmoins ce comportement de la part de l'Association [Personne Morale 1] est dans le droit fil des faits d'harcèlement subi par Monsieur [B] [A] et ne peut donc être surprenant. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "medium",
+        "argument_density": "medium"
+      }
+    ],
+    "carry_forward": {
+      "main_issues": [
+        "Qualification des 23 faits de harcèlement moral subis par Monsieur [B] [A].",
+        "Responsabilité de l'employeur pour manquement à son obligation de sécurité de résultat.",
+        "Indemnisation du préjudice subi par Monsieur [B] [A].",
+        "Contestation de l'accusation de falsification des statuts de l'Association [Personne Morale 1]."
+      ],
+      "open_threads": [
+        "Vérification des pièces citées et de leur admissibilité en appel.",
+        "Évaluation des preuves médicales et psychologiques pour confirmer le préjudice subi.",
+        "Analyse des arguments de l'Association [Personne Morale 1] en défense et préparation des répliques."
+      ],
+      "claims_block_present": true,
+      "participants_to_track": [
+        {
+          "name": "Monsieur [B] [A]",
+          "role": "salarié victime de harcèlement moral",
+          "side": "current_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "role": "employeur",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [U] [H]",
+          "role": "présidente puis responsable RH",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Monsieur [EW] [DC]",
+          "role": "président",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Monsieur [K] [J] [T]",
+          "role": "ancien président",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Conseil de Prud'hommes",
+          "role": "juridiction de première instance",
+          "side": "neutral"
+        }
+      ]
+    }
+  },
+  {
+    "packet_id": "P4",
+    "document_role": "appelant",
+    "packet_summary": "Le paquet P4 traite de la contestation par l'Association [Personne Morale 1] d'une résiliation judiciaire du contrat de travail pour harcèlement moral, d'une demande de remise de documents sous astreinte, et d'une indemnité de l'article 700 du CPC. L'appel est rejeté, confirmant le jugement de première instance et condamnant l'employeur à verser des indemnités substantielles au salarié, Monsieur [B] [A].",
+    "sections": [
+      {
+        "title": "6. SUR LA RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL ET LA CONTESTATION DU LICENCIEMENT",
+        "path": [
+          "6. SUR LA RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL ET LA CONTESTATION DU LICENCIEMENT"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Cour d'Appel",
+            "kind": "institution",
+            "role": null,
+            "side": "neutral"
+          }
+        ],
+        "thesis": "La résiliation judiciaire du contrat de travail est justifiée par des faits de harcèlement moral imputables à l'employeur, rendant impossible la poursuite du contrat.",
+        "facts": [
+          "Monsieur [B] [A] a subi un harcèlement moral entraînant une dégradation de son état de santé (pièces 46, 47).",
+          "Il a été placé en arrêt maladie à compter du 27 janvier 2022 (pièce 40) et déclaré inapte par le médecin du travail le 2 septembre 2022 (pièce 49).",
+          "Licenciement prononcé pour inaptitude et impossibilité de reclassement le 23 septembre 2022 (pièce 52).",
+          "L'inaptitude est directement liée au harcèlement moral subi (article L 1152-2 du Code du Travail)."
+        ],
+        "arguments": [
+          "Le harcèlement moral constitue un manquement grave de l'employeur à ses obligations contractuelles (articles L 1152-1 et L 1152-4 du Code du Travail).",
+          "L'employeur est tenu à une obligation de sécurité de résultat en matière de protection de la santé des travailleurs (Cass. Soc. 26 septembre 2012, n°11-21003).",
+          "La résiliation judiciaire du contrat de travail produit les effets d'un licenciement nul (article L 1152-3 du Code du Travail).",
+          "Le licenciement pour inaptitude d'origine professionnelle (harcèlement moral) est nul (Cass. Soc. 29 septembre 2011, n°10-12722)."
+        ],
+        "rebuttals": [
+          "L'Association [Personne Morale 1] argue qu'aucun manquement n'aurait persisté jusqu'au licenciement, mais les faits de harcèlement moral sont établis."
+        ],
+        "legal_references": [
+          "Article L 1152-1 du Code du Travail",
+          "Article L 1152-2 du Code du Travail",
+          "Article L 1152-3 du Code du Travail",
+          "Article L 1152-4 du Code du Travail",
+          "Article L 1226-14 du Code du Travail",
+          "Article L 1234-1 du Code du Travail",
+          "Cass. Soc. 15 mars 2012, n°10-27879",
+          "Cass. Soc. 26 septembre 2012, n°11-21003",
+          "Cass. Soc. 20 février 2013, n°11-26560"
+        ],
+        "pieces_cited": [
+          "Pièce 40",
+          "Pièce 46",
+          "Pièce 47",
+          "Pièce 49",
+          "Pièce 52"
+        ],
+        "dates_amounts": [
+          "27 janvier 2022",
+          "2 septembre 2022",
+          "23 septembre 2022",
+          "6.343 € 40",
+          "2.890 € 70",
+          "18.884 € 58",
+          "38.060 € 00"
+        ],
+        "requests": [
+          "Demande de confirmation de la résiliation judiciaire du contrat de travail aux torts de l'employeur.",
+          "Demande de requalification du licenciement en licenciement nul.",
+          "Demande d'indemnisation pour préjudice subi (6 mois de salaire minimum, soit 18.884 € 58)."
+        ],
+        "key_source_excerpt": "Attendu que des faits de harcèlement moral subi par un salarié constituent un manquement suffisamment grave de la part de l'employeur à ses obligations contractuelles pour justifier une résiliation judiciaire du contrat de travail (CASS. SOC. 15 MARS 2012 N° 10-27879).",
+        "key_verbatim_points": [
+          "« Le harcèlement moral constitue un manquement suffisamment grave pour justifier une résiliation judiciaire. »",
+          "« L'employeur est tenu à une obligation de sécurité de résultat. »",
+          "« Le licenciement pour inaptitude d'origine professionnelle est nul. »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "7. SUR LA REMISE DE DOCUMENTS SOUS ASTREINTE",
+        "path": [
+          "7. SUR LA REMISE DE DOCUMENTS SOUS ASTREINTE"
+        ],
+        "section_type": "procedure",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "L'employeur est tenu de remettre des documents sous astreinte en cas de non-respect de ses obligations légales.",
+        "facts": [
+          "L'employeur doit remettre un bulletin de salaire, un certificat de travail et une attestation à [Personne Morale 3].",
+          "L'astreinte est fixée à 20 € par jour de retard et par document (articles L 131-1 à L 131-4 du Code des Procédures Civiles d'Exécution)."
+        ],
+        "arguments": [
+          "L'article L 3243-2 du Code du Travail impose la remise des bulletins de salaire.",
+          "L'article L 1234-19 et D 1234-6 du Code du Travail encadrent la remise du certificat de travail.",
+          "L'article R 1234-9 du Code du Travail impose la transmission d'attestations à [Personne Morale 3]."
+        ],
+        "rebuttals": [],
+        "legal_references": [
+          "Article L 3243-2 du Code du Travail",
+          "Article L 1234-19 du Code du Travail",
+          "Article D 1234-6 du Code du Travail",
+          "Article R 1234-9 du Code du Travail",
+          "Articles L 131-1 à L 131-4 du Code des Procédures Civiles d'Exécution"
+        ],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "20 € par jour de retard"
+        ],
+        "requests": [
+          "Ordonnance de remise des documents sous astreinte de 20 € par jour de retard."
+        ],
+        "key_source_excerpt": "Qu'en considération des condamnations à intervenir il y aura lieu d'ordonner à l'Association [Personne Morale 1] d'avoir à délivrer à Monsieur [B] [A], sous astreinte : Bulletin de salaire conforme aux condamnations prononcées.",
+        "key_verbatim_points": [
+          "« L'employeur est tenu de remettre les bulletins de salaire. »",
+          "« L'astreinte est fixée à 20 € par jour de retard et par document. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "medium"
+      },
+      {
+        "title": "8. SUR L'INDEMNITE DE L'ARTICLE 700 DU CODE DE PROCEDURE CIVILE ET LES DEPENS",
+        "path": [
+          "8. SUR L'INDEMNITE DE L'ARTICLE 700 DU CODE DE PROCEDURE CIVILE ET LES DEPENS"
+        ],
+        "section_type": "procedure",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "L'indemnité de l'article 700 du CPC et les dépens doivent être supportés par la partie perdante.",
+        "facts": [
+          "L'Association [Personne Morale 1] succombe en appel et doit supporter les dépens.",
+          "L'indemnité de l'article 700 est fixée à 3.600 € pour la procédure d'appel."
+        ],
+        "arguments": [
+          "Il est inéquitable de laisser à la charge de Monsieur [B] [A] les frais non compris dans les dépens.",
+          "L'article 696 du Code de Procédure Civile impose la condamnation aux dépens de la partie perdante."
+        ],
+        "rebuttals": [],
+        "legal_references": [
+          "Article 700 du Code de Procédure Civile",
+          "Article 696 du Code de Procédure Civile"
+        ],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "900 € (première instance)",
+          "3.600 € (appel)"
+        ],
+        "requests": [
+          "Condamnation de l'Association [Personne Morale 1] à payer 3.600 € au titre de l'article 700 du CPC.",
+          "Condamnation aux entiers dépens de l'instance d'appel."
+        ],
+        "key_source_excerpt": "Attendu qu'il est inéquitable de laisser à la charge de Monsieur [B] [A] les frais non compris dans les dépens qu'il a dû engager pour faire assurer sa défense à hauteur d'Appel. Qu'il lui sera alloué, au titre de l'indemnité de l'article 700 du Code de Procédure Civile, concernant la procédure d'Appel la somme de 3.600 € 00.",
+        "key_verbatim_points": [
+          "« L'indemnité de l'article 700 est fixée à 3.600 € pour l'appel. »",
+          "« L'Association [Personne Morale 1] succombe et doit supporter les dépens. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "medium"
+      },
+      {
+        "title": "PAR CES MOTIF S",
+        "path": [
+          "PAR CES MOTIF S"
+        ],
+        "section_type": "claims",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [B] [A]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "L'appel de l'Association [Personne Morale 1] est rejeté, et elle est condamnée à verser des indemnités à Monsieur [B] [A].",
+        "facts": [
+          "Le jugement du Conseil des Prud'hommes de [Localité 3] - MEZIERES du 5 avril 2024 est confirmé en toutes ses dispositions."
+        ],
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [],
+        "requests": [
+          "Déclarer recevable mais mal fondée l'Association [Personne Morale 1] en son Appel.",
+          "Débouter l'Association [Personne Morale 1] de l'ensemble de ses moyens et demandes.",
+          "Condamner l'Association [Personne Morale 1] à payer à Monsieur [B] [A] :",
+          "- Indemnité de l'article 700 du CPC : 3.600 €",
+          "- Indemnités pour préjudice (6.343 € 40, 2.890 € 70, 36.060 € 40, 19.030 € 20, etc.).",
+          "- Remise de documents sous astreinte."
+        ],
+        "key_source_excerpt": "Déclarer recevable mais mal fondée l'Association [Personne Morale 1] en son Appel. Débouter purement et simplement l'Association [Personne Morale 1] de l'ensemble de ses moyens prétentions et demandes. Confirmer le jugement du Conseil des Prud'hommes de [Localité 3] - MEZIERES du 5 avril 2024 dont Appel en toutes ses dispositions.",
+        "key_verbatim_points": [
+          "« L'appel est déclaré recevable mais mal fondé. »",
+          "« L'Association [Personne Morale 1] est déboutée de ses demandes. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "high",
+        "argument_density": "low"
+      },
+      {
+        "title": "SOUS TOUTES RESERVES",
+        "path": [
+          "SOUS TOUTES RESERVES"
+        ],
+        "section_type": "other",
+        "participants": [],
+        "thesis": "Clause de réserve générale.",
+        "facts": [],
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "SOUS TOUTES RESERVES",
+        "key_verbatim_points": [
+          "« Sous toutes réserves. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "low",
+        "argument_density": "low"
+      },
+      {
+        "title": "PIECES PRODUITES",
+        "path": [
+          "PIECES PRODUITES"
+        ],
+        "section_type": "other",
+        "participants": [],
+        "thesis": "Liste des pièces produites dans le cadre de la procédure.",
+        "facts": [
+          "Contrat de travail (pièce 1), fiches de poste (pièce 2), avenants (pièce 3), courriels (pièces 4 à 126), certificats médicaux (pièces 46, 47), avis d'inaptitude (pièce 49), etc."
+        ],
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce 1 à Pièce 126"
+        ],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "Pièce 1 : Contrat de travail à durée indéterminée souscrit entre l'Association [Personne Morale 1] et Monsieur [B] [A] du 01.09.2019",
+        "key_verbatim_points": [
+          "« Pièce 1 : Contrat de travail du 01.09.2019. »",
+          "« Pièce 49 : Avis d'inaptitude du 02.09.2022. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "medium",
+        "argument_density": "low"
+      },
+      {
+        "title": "PIECES PRODUITES MAIS NON COMMUNIQUEES CAR COMMUNES",
+        "path": [
+          "PIECES PRODUITES MAIS NON COMMUNIQUEES CAR COMMUNES"
+        ],
+        "section_type": "other",
+        "participants": [],
+        "thesis": "Pièces produites mais non communiquées car communes aux parties.",
+        "facts": [
+          "Bulletins de salaire de Monsieur [B] [A] de janvier 2020 à septembre 2022."
+        ],
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "Bulletins de salaire de Monsieur [B] [A] de janvier 2020 à septembre 2022",
+        "key_verbatim_points": [
+          "« Pièces produites mais non communiquées car communes. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "low",
+        "argument_density": "low"
+      },
+      {
+        "title": "DONT ACTE",
+        "path": [
+          "DONT ACTE"
+        ],
+        "section_type": "other",
+        "participants": [
+          {
+            "name": "Maître [KB] [QU]",
+            "kind": "lawyer",
+            "role": null,
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Notification de l'avocat constitué par RPVA.",
+        "facts": [
+          "Notification par RPVA à Maître [KB] [QU] de la S.C.P. [QU] ET ASSOCIES, avocat constitué."
+        ],
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "11 septembre 2024"
+        ],
+        "requests": [],
+        "key_source_excerpt": "Notification par R.P.V.A. à : Maître [KB] [QU] de la S.C.P. [QU] ET ASSOCIES, Avocat constitué. Le Greffier en chef. L'AN DEUX MILLE VINGT QUATRE, et le 11 septembre",
+        "key_verbatim_points": [
+          "« Notification par RPVA à Maître [KB] [QU]. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "low",
+        "argument_density": "low"
+      }
+    ],
+    "carry_forward": {
+      "main_issues": [
+        "Validité de la résiliation judiciaire du contrat de travail pour harcèlement moral.",
+        "Nullité du licenciement pour inaptitude d'origine professionnelle.",
+        "Indemnisation du préjudice subi par Monsieur [B] [A].",
+        "Remise de documents sous astreinte.",
+        "Condamnation aux dépens et indemnité de l'article 700 du CPC."
+      ],
+      "open_threads": [
+        "Vérification des montants d'indemnisation et des pièces manquantes."
+      ],
+      "claims_block_present": true,
+      "participants_to_track": [
+        {
+          "name": "Association [Personne Morale 1]",
+          "role": "employeur",
+          "side": "current_party"
+        },
+        {
+          "name": "Monsieur [B] [A]",
+          "role": "salarié",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Maître [KB] [QU]",
+          "role": "avocat",
+          "side": "neutral"
+        }
+      ]
+    }
+  }
+]
