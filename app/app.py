@@ -813,15 +813,15 @@ def extract_json_from_response(response_text: str, debug=False) -> dict:
         raise ValueError(f"Impossible de parser le JSON après tous les nettoyages + LLM repair. Erreur: {str(e)}")
 
 
-def call_model_fast_extraction(system_prompt, messages_history, timeout_seconds=120):
+def call_model_fast_extraction(system_prompt, messages_history, max_retries=2):
     """
-    Appelle Mistral Small directement pour les extractions JSON.
-    Optimisé pour être rapide avec un timeout explicite.
+    Appelle Mistral directement pour les extractions JSON.
+    Inclut un retry avec backoff en cas d'erreur API (503, timeout, etc.).
 
     Args:
         system_prompt: Le prompt système
         messages_history: Liste des messages
-        timeout_seconds: Timeout en secondes (défaut: 120s = 2min)
+        max_retries: Nombre de tentatives en cas d'erreur API (défaut: 2)
 
     Returns:
         Le contenu de la réponse
@@ -840,29 +840,35 @@ def call_model_fast_extraction(system_prompt, messages_history, timeout_seconds=
     total_chars = sum(len(m.get("content", "")) for m in full_messages)
     print(f"         [EXTRACTION] Messages construits: {len(full_messages)} messages, {total_chars:,} chars", flush=True)
 
-    # Créer un client Mistral
-    print(f"         [EXTRACTION] Création client Mistral...", flush=True)
-    client = Mistral(api_key=MISTRAL_API_KEY)
-    print(f"         [EXTRACTION] Client créé, appel API...", flush=True)
-    sys.stdout.flush()
-    sys.stderr.flush()
+    for attempt in range(max_retries + 1):
+        try:
+            print(f"         [EXTRACTION] Création client Mistral (tentative {attempt+1}/{max_retries+1})...", flush=True)
+            client = Mistral(api_key=MISTRAL_API_KEY, timeout_ms=300_000)
+            print(f"         [EXTRACTION] Client créé, appel API...", flush=True)
+            sys.stdout.flush()
+            sys.stderr.flush()
 
-    try:
-        response = client.chat.complete(
-            model="mistral-large-latest",  # Modèle pour l'extraction
-            messages=full_messages,
-            temperature=0.0,  # Température = 0 pour JSON déterministe et valide
-            max_tokens=16000  # Augmenté pour éviter la troncature du JSON
-        )
+            response = client.chat.complete(
+                model="mistral-large-latest",
+                messages=full_messages,
+                temperature=0.0,
+                max_tokens=16000
+            )
 
-        elapsed = time.time() - call_start
-        print(f"         └─ ✅ Extraction reçue en {elapsed:.1f}s", flush=True)
-        return response.choices[0].message.content
+            elapsed = time.time() - call_start
+            print(f"         └─ ✅ Extraction reçue en {elapsed:.1f}s", flush=True)
+            return response.choices[0].message.content
 
-    except Exception as e:
-        elapsed = time.time() - call_start
-        print(f"         └─ ❌ Erreur après {elapsed:.1f}s: {type(e).__name__}: {str(e)[:200]}", flush=True)
-        raise
+        except Exception as e:
+            elapsed = time.time() - call_start
+            print(f"         └─ ⚠️ Tentative {attempt+1} échouée après {elapsed:.1f}s: {type(e).__name__}: {str(e)[:200]}", flush=True)
+            if attempt < max_retries:
+                wait = 10 * (attempt + 1)
+                print(f"         └─ Retry dans {wait}s...", flush=True)
+                time.sleep(wait)
+            else:
+                print(f"         └─ ❌ Échec définitif après {max_retries+1} tentatives", flush=True)
+                raise
 
 
 def extract_packet_parallel(packet, packet_index, extraction_system_prompt, log_fn, max_retries=1):
@@ -1064,7 +1070,7 @@ def call_model_with_compression_DEPRECATED(model_choice, user_query, prompt_type
 
     nodes, packets = parse_and_packetize(
         user_query,
-        max_input_tokens=42000,  # Même config que le notebook
+        max_input_tokens=20000,  # Paquets plus petits pour éviter les timeouts et troncatures
         prompt_budget_tokens=2500,
         output_budget_tokens=3000,
     )

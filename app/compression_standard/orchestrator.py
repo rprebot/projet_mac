@@ -96,7 +96,7 @@ def run_standard_compression_pipeline(
 
     nodes, packets = parse_and_packetize(
         document,
-        max_input_tokens=42000,
+        max_input_tokens=20000,
         prompt_budget_tokens=2500,
         output_budget_tokens=3000,
     )
