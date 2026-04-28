@@ -1,0 +1,797 @@
+{
+  "packet_id": "P2",
+  "document_role": "intimé",
+  "packet_summary": "Paquet structuré en 11 griefs (8 à 18) contestant la résiliation judiciaire du contrat de travail de Monsieur [B] [G], salarié de l'Association [Personne Morale 1]. L'employeur (Association [Personne Morale 1]) conteste systématiquement les griefs en invoquant des manquements de preuve, des interprétations unilatérales des faits par le salarié, et des mesures de soutien effectives (télétravail, augmentations, accompagnement RH). Les griefs portent sur des allégations de dégradation des conditions de travail, harcèlement moral, et modifications unilatérales des missions contractuelles.",
+  "sections": [
+    {
+      "title": "GRIEF 8",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 8"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [J] [Z]",
+          "kind": "person",
+          "role": "présidente",
+          "side": "current_party"
+        },
+        {
+          "name": "médecin du travail",
+          "kind": "institutional_actor",
+          "role": null,
+          "side": "neutral"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief pour absence de preuve et manipulation des pièces par le salarié.",
+      "facts": [
+        "Courriel du 12/02/2021 à 10h17 (pièce 37) vs allégation de rédaction à 02h50 par le salarié.",
+        "Absence de traçabilité de l'expéditeur/destinataire dans la pièce 14 adverse.",
+        "Préconisations du médecin du travail (télétravail) suivies à la lettre (pièce 38).",
+        "Mise en place du télétravail et indemnisation du salarié (pièce 29)."
+      ],
+      "arguments": [
+        "Le grief fait doublon avec le grief N°4 déjà traité.",
+        "Le salarié n'a pas alerté la présidence sur des 'rumeurs' (pièce 14).",
+        "L'employeur a toujours protégé la santé des salariés.",
+        "Le salarié a travesti les pièces pour simuler un état de détresse."
+      ],
+      "rebuttals": [
+        "Les critiques des administrateurs ne pouvaient évaluer son activité (peu de contacts).",
+        "Le PV du CA du 09/07/2021 confirme la mise en veille de son activité bénévole et l'aménagement en télétravail."
+      ],
+      "legal_references": [
+        "Article 4 (contrat de travail)"
+      ],
+      "pieces_cited": [
+        "14",
+        "37",
+        "38",
+        "28",
+        "29"
+      ],
+      "dates_amounts": [
+        "12/02/2021",
+        "10/02/2021",
+        "02h50",
+        "10h17",
+        "300 €",
+        "800 €"
+      ],
+      "requests": [],
+      "key_source_excerpt": "« La manœuvre apparait d'ailleurs grossièrement lorsque l'ont fait l'étude comparée des pièces qu'il verse aux débats. Ainsi s'agissant des pièces 12 et 13 de Monsieur [G], il verse des mails en intégralité avec les adresses d'expéditeurs, de destinataires et l'heure du mail. Mais s'agissant de sa pièce 14, il ne verse que le texte du mail, sans aucun traçabilité de l'expéditeur, du destinataire et de l'heure. »",
+      "key_verbatim_points": [
+        "« Des administrateurs jetant leur fiel à mon endroit... la propagation de propos commence à avoir des conséquences sur ma qualité de vie au travail... » (pièce 14 adverse).",
+        "« L'employeur est en mesure démontrer qu'il s'agit d'une manœuvre puisque ce mail a bien été adressé à 10h17 (pièce 37). »",
+        "« Les préconisations du médecin du travail ont été suivies à la lettre, le télétravail ayant été mis en place et Monsieur [G] en ayant été indemnisé, contrairement à ce qu'ont retenu les 1ers Juges. »"
+      ],
+      "compression_ratio_hint": "medium",
+      "importance": "high",
+      "argument_density": "high"
+    },
+    {
+      "title": "GRIEF 9",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 9"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [D] [O]",
+          "kind": "person",
+          "role": "présidente",
+          "side": "current_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : l'employeur a répondu aux demandes du salarié (augmentation, point d'étape).",
+      "facts": [
+        "Point d'étape salarié organisé le 06/03/2021 (pièce 15).",
+        "Avenant du 26/05/2021 classant le salarié au coefficient 491 (3106 € brut/mois) (pièce 3 adverse).",
+        "Création d'un Comité Directeur pour accélérer les décisions (CODIR 26/05/21)."
+      ],
+      "arguments": [
+        "Le salarié n'a pas apporté la preuve de ses allégations (pression, menaces de départ).",
+        "L'augmentation de salaire est une réponse aux revendications, pas une conséquence de menaces.",
+        "Le PV du CA du 11/12/2021 mentionne des pressions du salarié sur le CA."
+      ],
+      "rebuttals": [
+        "Le salarié a obtenu des augmentations répétées (PV CA 09/07/2021, 29/12/2021, CODIR 27/11/2021).",
+        "L'association a proposé une augmentation de 300 € refusée par le salarié."
+      ],
+      "legal_references": [],
+      "pieces_cited": [
+        "15",
+        "3",
+        "30",
+        "12",
+        "13",
+        "28"
+      ],
+      "dates_amounts": [
+        "06/03/2021",
+        "26/05/2021",
+        "3106 €",
+        "300 €"
+      ],
+      "requests": [],
+      "key_source_excerpt": "« Il convient de rappeler que selon avenant du 26.05.2021, le salarié a été classé au coefficient 491, sa rémunération mensuelle brute étant portée à 3106 € (pièce adverse 3). Il s'agit d'une augmentation conséquente. »",
+      "key_verbatim_points": [
+        "« La discussion était envisagée depuis longtemps et ne découlait que des revendications du salarié. »",
+        "« Pression d'autant plus forte que Monsieur [G] n'hésitait pas, tout en disant 'je ne vous reproche rien, ne le prenez pas pour vous', à leur signifier leur incompétence et leur manque de professionnalisme... » (PV CA 11/12/2021)."
+      ],
+      "compression_ratio_hint": "medium",
+      "importance": "high",
+      "argument_density": "high"
+    },
+    {
+      "title": "GRIEF 10",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 10"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [MH] [K]",
+          "kind": "person",
+          "role": "bénévole",
+          "side": "neutral"
+        },
+        {
+          "name": "Monsieur [L] [I] [M]",
+          "kind": "person",
+          "role": "membre du CA",
+          "side": "neutral"
+        },
+        {
+          "name": "Monsieur [CF] [WX]",
+          "kind": "person",
+          "role": "bénévole",
+          "side": "neutral"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : absence de preuve de propos homophobe et témoignages contraires.",
+      "facts": [
+        "Témoignages de bénévoles et membres du CA (pièces 17, 19, 20) niant tout propos homophobe.",
+        "Propos 'tu devrais prendre rose, ça t'irait bien' interprété à tort comme homophobe.",
+        "L'association tolère toute orientation sexuelle et réagirait en cas de propos offensants (statuts)."
+      ],
+      "arguments": [
+        "Les propos incriminés relèvent du domaine privé ou de plaisanteries.",
+        "Aucun signalement n'a été fait à l'association.",
+        "Le salarié participait aux mêmes plaisanteries."
+      ],
+      "rebuttals": [
+        "L'association aurait réagi immédiatement en cas de propos homophobe (procédure d'exclusion prévue).",
+        "Les échanges n'ont pas eu lieu lors d'une séance officielle mais lors d'un événement ludique ('Crime à La Cassine')."
+      ],
+      "legal_references": [],
+      "pieces_cited": [
+        "17",
+        "19",
+        "20",
+        "32",
+        "28"
+      ],
+      "dates_amounts": [],
+      "requests": [],
+      "key_source_excerpt": "« Je n'ai jamais entendu un quelconque mot à l'encontre de la communauté gay. Lui-même plaisantait allègrement sur les personnes gays. [...] 'ce ne sont pas les pédales qui manquent ici, on va te faire un vélo spécial.' » (Madame [MH] [K], pièce 17).",
+      "key_verbatim_points": [
+        "« La sexualité de M. [G] n'a jamais été une question à la [Personne Morale 15], ni dans son activité bénévole, ni dans son activité salariée. » (Monsieur [L] [I] [M], pièce 19).",
+        "« L'association accepte toute personne voulant faire partie de son activité, quelle que soit sa couleur de peau, son origine sociale, ses intérêts politiques ou sa sexualité. » (PV CA 09/07/2021, charte de l'Association)."
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "high",
+      "argument_density": "medium"
+    },
+    {
+      "title": "GRIEF 11",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 11"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Monsieur [YZ] [N]",
+          "kind": "person",
+          "role": "président",
+          "side": "current_party"
+        },
+        {
+          "name": "Madame [X] [U]",
+          "kind": "person",
+          "role": "Trésorière",
+          "side": "current_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : le salarié a lui-même demandé le changement de gouvernance.",
+      "facts": [
+        "Le salarié était bénévole depuis 10 ans et connaissait les règles de renouvellement annuel du CA.",
+        "Le salarié a suggéré la nomination de Monsieur [YZ] [N] comme président (pièce 21).",
+        "Changement de stratégie (spectacle comme activité annexe) cohérent avec les objectifs initiaux de l'association (mail de 2019)."
+      ],
+      "arguments": [
+        "Le salarié ne peut reprocher un changement qu'il a lui-même demandé.",
+        "La création du Comité Directeur a été initiée par le salarié pour pallier un manque de professionnalisme perçu.",
+        "Le spectacle a été mis à l'arrêt pendant 2 étés (crise sanitaire), sans impact sur le salarié."
+      ],
+      "rebuttals": [
+        "Le salarié a été impliqué dans les décisions (ex : choix de la convention collective).",
+        "Les outils de travail et l'organisation du temps n'ont pas changé."
+      ],
+      "legal_references": [],
+      "pieces_cited": [
+        "21",
+        "4",
+        "22"
+      ],
+      "dates_amounts": [
+        "20/08/2019"
+      ],
+      "requests": [],
+      "key_source_excerpt": "« Courant janvier, Monsieur [G] me fait alors la remarque qu'il serait souhaitable d'avoir à la tête de l'A.C.C.C une personne impliquée et durable [...] [B] [G] m'a alors rassuré en disant : '[YZ], je serai là de toute façon, je ne te laisserai jamais tomber, tu peux compter sur moi !'. » (Monsieur [YZ] [N], pièce 21).",
+      "key_verbatim_points": [
+        "« Les différentes variations de gouvernance [...] sont l'œuvre de Monsieur [G] qui se plaignait constamment des différents Présidents et membres du Bureau [...] Il est à l'origine de la création du Comité Directeur. » (Madame [X] [U], pièce 22).",
+        "« J'en ai marre de [J] (Présidente de l'époque) qui procrastine tout le temps, il ne faudrait pas qu'elle repasse (en parlant de l'AG) je ne le supporterais pas. » (Madame [X] [U], pièce 22)."
+      ],
+      "compression_ratio_hint": "medium",
+      "importance": "high",
+      "argument_density": "high"
+    },
+    {
+      "title": "GRIEF 12",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 12"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [X] [U]",
+          "kind": "person",
+          "role": "Responsable RH",
+          "side": "current_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : l'entretien a permis des actions concrètes et une écoute effective.",
+      "facts": [
+        "Entretien annuel d'évaluation reporté du 04/10/2021 au 05/10/2021 (14h30).",
+        "Madame [U] a pris des notes et répondu à toutes les demandes (avenants, bulletins de paie).",
+        "Actions menées dans les 2 mois suivant l'entretien (pièce 31)."
+      ],
+      "arguments": [
+        "Le 'manque de professionnalisme' reproché est un grief informe sans impact sur la santé.",
+        "L'entretien a conduit à des améliorations concrètes (documents, indemnisation).",
+        "L'humanité des échanges prime sur le formalisme."
+      ],
+      "rebuttals": [
+        "Madame [U] a présenté des excuses pour la qualité de l'entretien (pièce 36).",
+        "Les demandes du salarié ont été entendues et traitées."
+      ],
+      "legal_references": [],
+      "pieces_cited": [
+        "36",
+        "4",
+        "22",
+        "31"
+      ],
+      "dates_amounts": [
+        "04/10/2021",
+        "05/10/2021"
+      ],
+      "requests": [],
+      "key_source_excerpt": "« La qualité de l'entretien ne se mesure pas à l'ensemble des documents que l'on peut fournir mais dans le cœur et l'oreille qu'on y prête. [...] L'ensemble des requêtes formulées le jour de l'entretien ont été entendues et les solutions apportées si l'on excepte les demandes financières. » (Madame [X] [U], pièce 4).",
+      "key_verbatim_points": [
+        "« Le seul manque de professionnalisme dont j'ai fait preuve a été l'entretien avec [B] où il m'a dit que ce n'était pas professionnel et il avait raison. » (Madame [X] [U], pièce 36).",
+        "« Peu importe la forme, du moment qu'il y a eu de l'écoute, de l'empathie et que le travail a suivi à l'issue de cet entretien. »"
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "medium",
+      "argument_density": "medium"
+    },
+    {
+      "title": "GRIEF 13",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 13"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Monsieur [YZ] [N]",
+          "kind": "person",
+          "role": "président",
+          "side": "current_party"
+        },
+        {
+          "name": "Madame [X] [U]",
+          "kind": "person",
+          "role": "Responsable RH",
+          "side": "current_party"
+        },
+        {
+          "name": "Monsieur [ZR]",
+          "kind": "person",
+          "role": "ancien président",
+          "side": "neutral"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : l'employeur a protégé le salarié et l'agression est un fait isolé.",
+      "facts": [
+        "Réunion du 16/06/2021 : agression verbale de Monsieur [ZR] envers le salarié et Madame [U] (pièces 18, 19, 20).",
+        "Certificats médicaux mentionnant 'agression verbale et stress réactionnel' et 'trouble anxieux' (pièce 21).",
+        "Accident de travail reconnu par la [Personne Morale 20] (pièce 22).",
+        "Démission collective des membres du CA impliqués (pièce 23)."
+      ],
+      "arguments": [
+        "L'employeur a tout mis en œuvre pour protéger le salarié (soutien moral, administratif, démission collective).",
+        "Un fait isolé ne caractérise pas du harcèlement moral (nécessité de répétition).",
+        "Le salarié a repris le travail après l'arrêt (14/07/2021) et n'a fait un nouvel arrêt que le 27/01/2022 (lien non prouvé avec l'incident)."
+      ],
+      "rebuttals": [
+        "Les témoignages (pièces 18, 19, 20) contredisent l'état de détresse allégué.",
+        "Le salarié a plaisanté après l'incident (témoignage de Madame [W]).",
+        "Antécédents psychologiques du salarié (burn-out chez un précédent employeur)."
+      ],
+      "legal_references": [],
+      "pieces_cited": [
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "5"
+      ],
+      "dates_amounts": [
+        "16/06/2021",
+        "17/06/2021",
+        "14/07/2021",
+        "23/06/2021"
+      ],
+      "requests": [],
+      "key_source_excerpt": "« Depuis hier 1 heures 15, je n'ai pas fermé l'œil et suis dans un état d'anxiété tel que je vomi sans cesse et tremble en permanence. Autant dire que je n'ai pas mangé et en suis à mon 3ème malaise à la suite de ce choc psychologique. » (Courriel du salarié du 17/06/2021, pièce 20).",
+      "key_verbatim_points": [
+        "« J'ai réussi tant bien que mal à aller au bout de ma matinée de travail ce jour et j'ai contacté la médecine du travail qui m'a orienté vers un médecin que je rencontre demain à 9h30. »",
+        "« L'ensemble des personnes à l'origine de cette altercation ont toutes démissionnées, juste après. » (Madame [X] [U], pièce 22)."
+      ],
+      "compression_ratio_hint": "medium",
+      "importance": "high",
+      "argument_density": "high"
+    },
+    {
+      "title": "GRIEF 14",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 14"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [X] [U]",
+          "kind": "person",
+          "role": "Responsable RH",
+          "side": "current_party"
+        },
+        {
+          "name": "Monsieur [A]",
+          "kind": "person",
+          "role": "trésorier",
+          "side": "neutral"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : changements de gouvernance normaux et sans lien avec du harcèlement.",
+      "facts": [
+        "Démission de Monsieur [A] (trésorier) le 24/06/2021 pendant l'arrêt maladie du salarié (17/06/2021 au 14/07/2021).",
+        "Nomination de Madame [U] comme Responsable RH (pièce 6).",
+        "Le salarié a lui-même demandé ces changements (pièce 6)."
+      ],
+      "arguments": [
+        "Les changements de gouvernance sont normaux dans une association.",
+        "Madame [U] a été nommée pour répondre à un besoin (défaillance de Madame [Z] en RH).",
+        "Le salarié a été à l'origine de la création du poste de RH."
+      ],
+      "rebuttals": [
+        "Le salarié a été impliqué dans la nomination (PV CODIR 26/05/21).",
+        "Les changements n'ont pas affecté la charge de travail ou les conditions de travail du salarié."
+      ],
+      "legal_references": [],
+      "pieces_cited": [
+        "23",
+        "24",
+        "6",
+        "22"
+      ],
+      "dates_amounts": [
+        "24/06/2021",
+        "17/06/2021",
+        "14/07/2021",
+        "6 000 €"
+      ],
+      "requests": [],
+      "key_source_excerpt": "« Mr [G], est à l'origine de tous les changements de poste. C'est lui qui a demandé que ce soit moi la responsable RH car Mme [Z] ne faisait pas son boulot, selon ses dires. [...] Il n'apporte que des contrariétés mais devant sa détresse et comme Mme [Z] ne donnait pas de nouvelle depuis l'élection, j'étais la plus qualifiée pour reprendre le poste et j'ai accepté. » (Madame [X] [U], pièce 6).",
+      "key_verbatim_points": [
+        "« A cette période, j'étais bien sûr membre du CA, mais surtout j'étais Pilote du Comité directeur. [...] Il n'apporte que des contrariétés mais devant sa détresse [...] j'ai accepté. »",
+        "« Je m'étonne qu'il n'y ait pas de réclamation concernant la mise en place de Mme [J] [Z], en tant que responsable des ressources humaines alors même qu'elle était présidente et sans plus de formalité ? »"
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "medium",
+      "argument_density": "medium"
+    },
+    {
+      "title": "GRIEF 15",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 15"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Monsieur [YZ] [N]",
+          "kind": "person",
+          "role": "président",
+          "side": "current_party"
+        },
+        {
+          "name": "Madame [U]",
+          "kind": "person",
+          "role": "Trésorière",
+          "side": "current_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : modification des missions justifiée par la charge de travail et accord du salarié.",
+      "facts": [
+        "Fiche de poste mentionnant des missions évolutives (Article 4 du contrat).",
+        "Envoi des convocations au CA par Madame [U] sur demande du président (accord du salarié).",
+        "Présence du salarié non obligatoire à chaque CA (seulement pour les sujets le concernant)."
+      ],
+      "arguments": [
+        "La modification vise à soulager le salarié d'une mission sans plus-value.",
+        "Le salarié a été consulté et a donné son accord.",
+        "La présence du salarié n'est pas requise contractuellement pour tous les CA."
+      ],
+      "rebuttals": [
+        "Le salarié a été invité aux réunions suivantes (pièces 4, 6, 7, 8, 9, 10).",
+        "Le président a réitéré sa confiance envers le salarié (pièce 20)."
+      ],
+      "legal_references": [
+        "Article 4 (contrat de travail)"
+      ],
+      "pieces_cited": [
+        "26",
+        "27",
+        "1",
+        "20"
+      ],
+      "dates_amounts": [],
+      "requests": [],
+      "key_source_excerpt": "« Pour soulager le salarié, en accord avec lui, Monsieur [N], Président, a demandé à Madame [U] (pilote du CODIR) d'envoyer les convocations au Conseil d'administration. [...] Au surplus, il n'est pas indiqué dans sa fiche de poste que le Directeur de Développement doit siéger en Conseil d'Administration. »",
+      "key_verbatim_points": [
+        "« Les missions détaillées ci-dessus présentent un caractère non limitatif et pourront évoluer dans le temps compte tenu des besoins de la société. » (Article 4).",
+        "« Il s'agit d'une modification unilatérale de la part de l'employeur, marquant une défiance à son égard... » (position adverse)."
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "medium",
+      "argument_density": "medium"
+    },
+    {
+      "title": "GRIEF 16",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 16"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : absence d'obligation contractuelle de rédiger les comptes rendus.",
+      "facts": [
+        "Le salarié n'est pas contractuellement tenu de rédiger les comptes rendus des CA.",
+        "Il a été invité aux réunions pertinentes (pièces 4, 6, 7, 8, 9, 10).",
+        "Sa présence n'est pas requise à chaque CA."
+      ],
+      "arguments": [
+        "Le grief est infondé : le salarié n'a pas de mission contractuelle pour cette tâche.",
+        "Les convocations ont été envoyées (pièces 4, 6, 7, 8, 9, 10).",
+        "La présence du salarié n'est pas nécessaire pour tous les sujets abordés en CA."
+      ],
+      "rebuttals": [],
+      "legal_references": [],
+      "pieces_cited": [
+        "4",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "dates_amounts": [],
+      "requests": [],
+      "key_source_excerpt": "« Pour rappel, il n'est pas contractuellement prévu qu'il rédige ces comptes rendus. Contrairement à ce qu'il prétend, il a été invité aux réunions suivantes où sa présence était pertinente pour le développement de projets. »",
+      "key_verbatim_points": [
+        "« Il n'est pas indiqué dans sa fiche de poste que le Directeur de Développement doit siéger en Conseil d'Administration. »",
+        "« La présence du Directeur de Développement n'est pas nécessaire à chaque Conseil d'Administration. Elle ne l'est que lorsque sont évoqués les grands projets, les demandes de subvention... »"
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "low",
+      "argument_density": "low"
+    },
+    {
+      "title": "GRIEF 17",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 17"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Monsieur [N]",
+          "kind": "person",
+          "role": "président",
+          "side": "current_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : l'employeur a respecté ses engagements et répondu dans un délai raisonnable.",
+      "facts": [
+        "Réunion de la commission Finances le 11/11/2021 : le salarié demande des clarifications.",
+        "Réponse orale le 26/11/2021 et écrite le 07/12/2021 (pièces 29, 30).",
+        "Avenants et propositions remis au salarié (pièce 30)."
+      ],
+      "arguments": [
+        "Le salarié a lui-même reconnu que l'employeur a respecté ses engagements (pièce 30).",
+        "L'employeur a répondu dans un délai raisonnable (16 jours entre la demande et la réponse écrite).",
+        "Le salarié a remercié l'employeur pour les réponses obtenues."
+      ],
+      "rebuttals": [
+        "Le salarié a des doutes sur la faisabilité de ses demandes de revalorisation salariale.",
+        "L'employeur a agi en accord avec le salarié (propositions discutées et validées)."
+      ],
+      "legal_references": [],
+      "pieces_cited": [
+        "28",
+        "29",
+        "30",
+        "12"
+      ],
+      "dates_amounts": [
+        "11/11/2021",
+        "26/11/2021",
+        "07/12/2021",
+        "18/11/23",
+        "26/11/23",
+        "27/11/2021"
+      ],
+      "requests": [],
+      "key_source_excerpt": "« D'ailleurs, Monsieur [G] indique avoir lui-même des doutes sur la possibilité de réalisation de ses demandes de revalorisation salariale. [...] Monsieur [G] a été informé le jour même des décisions prises dans le cadre de la réunion du 26/11/23 et il lui a été remis le jour même les avenants demandés... »",
+      "key_verbatim_points": [
+        "« L'employeur lui a communiqué les informations le 26 novembre oralement. Monsieur [G] a d'ailleurs remercié l'Association à ce sujet. »",
+        "« Quelques jours après (PV de réunion rédigé le 27 novembre 2021), il a pu avoir l'ensemble de la proposition. »"
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "medium",
+      "argument_density": "low"
+    },
+    {
+      "title": "GRIEF 18",
+      "path": [
+        "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "GRIEF 18"
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "Monsieur [B] [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Monsieur [YZ] [N]",
+          "kind": "person",
+          "role": "président",
+          "side": "current_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "kind": "organization",
+          "role": "appelant",
+          "side": "current_party"
+        }
+      ],
+      "thesis": "Rejet du grief : absence d'obligation de présence du salarié à chaque CA et information tardive non prouvée.",
+      "facts": [
+        "Le salarié n'est pas contractuellement tenu de convoquer les CA.",
+        "Il a été informé de la réunion du 11/12/2021 par mail le 09/12/2021 (pièce 11).",
+        "Le salarié avait des impératifs personnels (week-end parisien) qu'il a modifiés pour assister au CA."
+      ],
+      "arguments": [
+        "La présence du salarié n'est pas requise à chaque CA (seulement pour les sujets le concernant).",
+        "L'information tardive est contestée : le salarié a été invité en temps utile.",
+        "Le salarié a lui-même souhaité sortir des débats lors des CA pour ne pas peser sur les discussions."
+      ],
+      "rebuttals": [
+        "Le salarié a annulé des impératifs personnels pour assister au CA.",
+        "L'employeur a agi pour soulager le salarié (envoi des convocations par Madame [U])."
+      ],
+      "legal_references": [],
+      "pieces_cited": [
+        "24",
+        "11"
+      ],
+      "dates_amounts": [
+        "08/12/2021",
+        "09/12/2021",
+        "10/12/2021",
+        "11/12/2021",
+        "02h30"
+      ],
+      "requests": [],
+      "key_source_excerpt": "« L'employeur s'interroge sur cette accusation puisqu'à chaque réunion où le salaire et le travail du Directeur du Développement étaient abordés, Monsieur [G] souhaitait sortir pour ne pas peser sur les débats. [...] C'est à son retour d'arrêt maladie, lors d'un échange avec le Président, que Monsieur [G] a indiqué qu'il avait beaucoup de travail pour se mettre à jour sur les dossiers. Pour soulager le salarié, en accord avec lui, Monsieur [N] a demandé à Madame [U] d'envoyer les convocations au Conseil d'Administration. »",
+      "key_verbatim_points": [
+        "« La présence du Directeur de Développement n'est pas nécessaire à chaque Conseil d'Administration. [...] Aucun débat ne peut avoir lieu en la présence du salarié. »",
+        "« Il est même sain que les membres du CA puissent se réunir hors de sa présence, afin de parler de sujets de gouvernance et même de débats le concernant pour pouvoir ensuite les soumettre de façon sereine. »"
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "low",
+      "argument_density": "low"
+    }
+  ],
+  "carry_forward": {
+    "main_issues": [
+      "Caractère isolé ou répété des faits allégués de harcèlement moral (griefs 8, 13).",
+      "Preuve des dégradations des conditions de travail et lien avec la santé du salarié.",
+      "Validité des modifications unilatérales des missions contractuelles (griefs 15, 16, 18).",
+      "Respect des procédures par l'employeur (réponses aux demandes, procédures disciplinaires)."
+    ],
+    "open_threads": [
+      "Évaluation de la charge de la preuve des allégations de harcèlement moral.",
+      "Impact des antécédents psychologiques du salarié sur l'évaluation des faits.",
+      "Conformité des procédures de modification des missions contractuelles."
+    ],
+    "claims_block_present": false,
+    "participants_to_track": [
+      {
+        "name": "Monsieur [B] [G]",
+        "role": "salarié (intimé)",
+        "side": "opposing_party"
+      },
+      {
+        "name": "Madame [X] [U]",
+        "role": "Responsable RH / Trésorière",
+        "side": "current_party"
+      },
+      {
+        "name": "Monsieur [YZ] [N]",
+        "role": "président",
+        "side": "current_party"
+      },
+      {
+        "name": "Association [Personne Morale 1]",
+        "role": "employeur",
+        "side": "current_party"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2508 @@
+[
+  {
+    "packet_id": "P1",
+    "document_role": "appelant",
+    "packet_summary": "L'Association [Personne Morale 1] conteste un jugement du Conseil de Prud'hommes de Charleville-Mézières du 05 avril 2024 ayant requalifié le licenciement pour inaptitude en licenciement nul pour harcèlement moral, condamné l'employeur à plus de 70 000 € et ordonné la remise de documents. L'appel se limite aux chefs de jugement critiqués, contestant la qualification de harcèlement moral et la proportionnalité des condamnations.",
+    "sections": [
+      {
+        "title": "CONCLUSIONS D'APPELANT",
+        "path": [
+          "CONCLUSIONS D'APPELANT"
+        ],
+        "section_type": "header",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          },
+          {
+            "name": "Maître [F] [E]",
+            "kind": "lawyer",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "L'Association [Personne Morale 1] forme un appel limité contre le jugement du Conseil de Prud'hommes de Charleville-Mézières du 05 avril 2024, contestant la requalification du licenciement pour inaptitude en licenciement nul pour harcèlement moral et la proportionnalité des condamnations.",
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [],
+        "requests": [
+          "Infirmation du jugement en ce qu'il a déclaré les demandes de Monsieur [G] recevables, a requalifié le licenciement pour inaptitude en licenciement nul, en raison du prétendu harcèlement subi, a condamné l'Association [Personne Morale 3] à payer des sommes supérieures à 70 000 €, a ordonné la remise de documents et a condamné aux dépens."
+        ],
+        "key_source_excerpt": "POUR : L'Association [Personne Morale 1] ([Personne Morale 2]), association régie par la loi du 1er juillet 1901, dont le siège social est situé [Adresse 1], prise en la personne de son représentant.",
+        "key_verbatim_points": [
+          "L'Association [Personne Morale 1] forme un appel limité aux chefs de jugement expressément critiqués."
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "low"
+      },
+      {
+        "title": "APPELANTE",
+        "path": [
+          "APPELANTE"
+        ],
+        "section_type": "header",
+        "participants": [
+          {
+            "name": "Maître [F] [E]",
+            "kind": "lawyer",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Identification de l'avocat de l'Association [Personne Morale 1] dans le cadre de l'appel.",
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "APPELANTE : Maître [F] [E]",
+        "key_verbatim_points": [
+          "Maître [F] [E] est l'avocat de l'Association [Personne Morale 1]."
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "low",
+        "argument_density": "low"
+      },
+      {
+        "title": "INTIME",
+        "path": [
+          "INTIME"
+        ],
+        "section_type": "header",
+        "participants": [
+          {
+            "name": "Maître [B] [Q]",
+            "kind": "lawyer",
+            "role": "intimé",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Identification de l'avocat de l'intimé, Monsieur [B] [G].",
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "INTIME : Maître [B] [Q]",
+        "key_verbatim_points": [
+          "Maître [B] [Q] est l'avocat de Monsieur [B] [G]."
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "low",
+        "argument_density": "low"
+      },
+      {
+        "title": "I. LES FAITS",
+        "path": [
+          "I. LES FAITS"
+        ],
+        "section_type": "facts",
+        "participants": [
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Exposé des faits relatifs à l'embauche, au parcours professionnel et au licenciement de Monsieur [G].",
+        "facts": [
+          "Monsieur [G] a été embauché par l'Association [Personne Morale 3] en CDI le 01.09.2019 en tant que Directeur du Développement (cadre, coefficient 400).",
+          "Il était âgé de 45 ans à son embauche et membre de l'Association avant son embauche.",
+          "L'Association a découvert postérieurement à l'embauche le parcours professionnel heurté de Monsieur [G].",
+          "Il a été licencié pour inaptitude et impossibilité de reclassement le 23.09.2022 après avoir déposé une requête aux fins de résiliation judiciaire devant le Conseil de Prud'hommes."
+        ],
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "01.09.2019",
+          "23.09.2022"
+        ],
+        "requests": [],
+        "key_source_excerpt": "Monsieur [G] est entré au service de L'ASSOCIATION [Personne Morale 3] aux termes d'un contrat de travail à durée indéterminée en date du 1er septembre 2019. [...] Il était âgé de 45 ans lors de son embauche. [...] Il serait licencié pour inaptitude et impossibilité de reclassement le 23 septembre 2022, après avoir déposé une requête aux fins de résiliation judiciaire devant le Conseil de Prud'hommes.",
+        "key_verbatim_points": [
+          "Monsieur [G] a été embauché le 01.09.2019 en tant que Directeur du Développement.",
+          "Licenciement pour inaptitude le 23.09.2022."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "low"
+      },
+      {
+        "title": "II. LA PROCEDURE",
+        "path": [
+          "II. LA PROCEDURE"
+        ],
+        "section_type": "procedure",
+        "participants": [
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Conseil de Prud'hommes",
+            "kind": "institution",
+            "role": null,
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Récapitulatif de la procédure engagée par Monsieur [G] devant le Conseil de Prud'hommes et des condamnations prononcées.",
+        "facts": [
+          "Monsieur [G] a déposé une requête devant le Conseil de Prud'hommes le 31.03.2022 aux fins d'obtenir la résiliation judiciaire de son contrat de travail.",
+          "Il a déposé une seconde requête le 14.12.2022 pour contester son licenciement.",
+          "Le Conseil de Prud'hommes a rendu un jugement le 05.04.2024 requalifiant le licenciement pour inaptitude en licenciement nul pour harcèlement moral et condamnant l'employeur à plus de 70 000 €.",
+          "L'Association a formé un appel limité aux chefs de jugement critiqués le 06.05.2024."
+        ],
+        "arguments": [],
+        "rebuttals": [
+          "Les condamnations prononcées sont hors de proportion avec les données de l'affaire.",
+          "Une partie des condamnations avait déjà été réglée lors du jugement."
+        ],
+        "legal_references": [
+          "article 700 CPC"
+        ],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "31.03.2022",
+          "14.12.2022",
+          "05.04.2024",
+          "06.05.2024",
+          "30 000 €",
+          "57 000 €",
+          "70 000 €"
+        ],
+        "requests": [
+          "Infirmation du jugement en ce qu'il a déclaré les demandes de Monsieur [G] recevables, a requalifié le licenciement pour inaptitude en licenciement nul, a condamné l'Association à payer des sommes supérieures à 70 000 €, a ordonné la remise de documents et a condamné aux dépens."
+        ],
+        "key_source_excerpt": "Par jugement rendu par le Conseil de Prud'hommes de CHARLEVILLE-MEZIERES le 05 avril 2024, il était jugé : « Le Conseil de prud'hommes [...] déclare les demandes de Monsieur [G] recevables, requalifie le licenciement pour inaptitude en licenciement nul, en raison du harcèlement subi par Monsieur [G], condamne l'Association [Adresse 3] à payer à Monsieur [G] les sommes suivantes : [...] ».",
+        "key_verbatim_points": [
+          "Jugement du Conseil de Prud'hommes du 05.04.2024 : requalification du licenciement pour inaptitude en licenciement nul pour harcèlement moral.",
+          "Condamnations totales supérieures à 70 000 €."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "medium"
+      },
+      {
+        "title": "DISCUSSION",
+        "path": [
+          "DISCUSSION"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Développement des arguments de l'employeur sur la proportionnalité des condamnations et la redondance des prétentions de Monsieur [G].",
+        "facts": [
+          "Monsieur [G] a été embauché le 01.09.2019 avec une rémunération brute de 2 806 €, portée à 3 106 € par avenant du 26.05.2021.",
+          "L'ancienneté de Monsieur [G] est de 3 ans au moment du licenciement.",
+          "Monsieur [G] a déposé deux requêtes devant le Conseil de Prud'hommes, avec des prétentions redondantes.",
+          "Le Conseil de Prud'hommes a condamné à nouveau l'employeur pour des sommes déjà versées."
+        ],
+        "arguments": [
+          "Les condamnations prononcées par le Conseil de Prud'hommes portant sur des sommes déjà versées doivent être infirmées.",
+          "Les prétentions de Monsieur [G] étaient redondantes entre ses deux requêtes."
+        ],
+        "rebuttals": [
+          "Les condamnations sont hors de proportion avec les données de l'affaire.",
+          "Les sommes déjà versées ne pouvaient être condamnées à nouveau."
+        ],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "01.09.2019",
+          "26.05.2021",
+          "23.09.2022"
+        ],
+        "requests": [],
+        "key_source_excerpt": "A titre préliminaire : S'agissant des condamnations prononcées par le Conseil de Prud'hommes portant sur des sommes qui avaient d'ores et déjà été versées dans le cadre du 1er solde pour tout compte : Monsieur [G] a déposé successivement 2 requêtes devant le Conseil de Prud'hommes l'une aux fins de résiliation judiciaire le 31 mars 2022, la 2nde aux fins de contestation de son licenciement le 14 décembre 2022. [...] le Conseil de Prud'hommes, suivant en cela Monsieur [G] qui maintenait ses prétentions, n'a pas hésité à condamner à nouveau l'Association à payer à Monsieur [G] l'indemnité légale de licenciement, l'indemnité compensatrice de congés payés, qui lui avaient d'ores et déjà été versées.",
+        "key_verbatim_points": [
+          "Redondance des prétentions entre les deux requêtes de Monsieur [G].",
+          "Condamnations à nouveau pour des sommes déjà versées."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation de la demande de résiliation judiciaire du contrat de travail de Monsieur [G] pour absence de manquements graves de l'employeur.",
+        "arguments": [
+          "Seuls les manquements graves actuels de l'employeur peuvent justifier une résiliation judiciaire du contrat de travail.",
+          "Les manquements anciens ne peuvent justifier une telle résiliation.",
+          "La jurisprudence exige que les manquements persistent jusqu'au jour du licenciement pour justifier une résiliation judiciaire."
+        ],
+        "rebuttals": [
+          "Monsieur [G] a continué à travailler après sa demande de résiliation judiciaire, ce qui exclut la justification de sa demande.",
+          "L'employeur a régularisé ses manquements avant le licenciement."
+        ],
+        "legal_references": [
+          "Cass. soc., 26 mars 2014, n° 12-21.372",
+          "Cass. soc., 6 févr. 2019, n° 17-26.562",
+          "Cass. soc., 16 févr. 2005, n° 02-46.649",
+          "Cass. soc., 14 déc. 2011, n° 10-13.542",
+          "Cass. soc., 29 janv. 2014, n° 12-24.951",
+          "Cass. soc., 28 nov. 2018, n° 17-22.724"
+        ],
+        "pieces_cited": [],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "Il convient à titre préliminaire de rappeler que seuls les manquements graves d'un employeur qui sont actuels peuvent justifier une résiliation judiciaire du contrat de travail. Les manquements anciens ne peuvent pas justifier la résiliation judiciaire du contrat de travail du salarié. [...] La résiliation judiciaire du contrat de travail du salarié ne peut être prononcée qu'en cas de manquement grave de l'employeur à ses obligations contractuelles empêchant la poursuite du contrat de travail.",
+        "key_verbatim_points": [
+          "Seuls les manquements graves actuels justifient une résiliation judiciaire.",
+          "La jurisprudence exige la persistance des manquements jusqu'au licenciement."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "1- EN DROIT",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "1- EN DROIT"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Exposé des principes juridiques applicables à la demande de résiliation judiciaire du contrat de travail.",
+        "arguments": [
+          "La résiliation judiciaire ne peut être prononcée qu'en cas de manquement grave de l'employeur empêchant la poursuite du contrat.",
+          "Les manquements doivent être actuels et persister jusqu'au jour du licenciement.",
+          "L'employeur peut régulariser ses manquements tant que le contrat n'est pas rompu.",
+          "Le juge doit d'abord rechercher si la demande de résiliation est justifiée par des manquements graves avant d'examiner les motifs du licenciement."
+        ],
+        "rebuttals": [],
+        "legal_references": [
+          "Cass. soc., 26 mars 2014, n° 12-21.372",
+          "Cass. soc., 6 févr. 2019, n° 17-26.562",
+          "Cass. soc., 16 févr. 2005, n° 02-46.649",
+          "Cass. soc., 14 déc. 2011, n° 10-13.542",
+          "Cass. soc., 29 janv. 2014, n° 12-24.951",
+          "Cass. soc., 28 nov. 2018, n° 17-22.724"
+        ],
+        "pieces_cited": [],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "Il convient à titre préliminaire de rappeler que seuls les manquements graves d'un employeur qui sont actuels peuvent justifier une résiliation judiciaire du contrat de travail. [...] La résiliation judiciaire du contrat de travail du salarié ne peut être prononcée qu'en cas de manquement grave de l'employeur à ses obligations contractuelles empêchant la poursuite du contrat de travail. [...] Selon la Cour de cassation, le juge doit d'abord rechercher si la demande de résiliation est justifiée par des manquements graves de l'employeur (Cass. soc., 26 mars 2014, n° 12-21.372).",
+        "key_verbatim_points": [
+          "La résiliation judiciaire exige des manquements graves actuels.",
+          "Le juge doit d'abord vérifier la justification de la demande de résiliation avant d'examiner le licenciement."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "2- EN L'ESPECE",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "2- EN L'ESPECE"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation des griefs de harcèlement moral invoqués par Monsieur [G] pour justifier sa demande de résiliation judiciaire.",
+        "arguments": [
+          "Monsieur [G] présente 32 griefs, souvent redondants, pour justifier sa demande de résiliation judiciaire.",
+          "Les griefs invoqués relèvent de la gestion courante d'une association et ne constituent pas des manquements graves.",
+          "Les changements de gouvernance au sein de l'association ne constituent pas du harcèlement moral.",
+          "Monsieur [G] n'a pas apporté la preuve d'un préjudice financier ou d'un manquement grave de l'employeur.",
+          "Les documents invoqués par Monsieur [G] sont non datés, non signés ou non transmis à l'employeur."
+        ],
+        "rebuttals": [
+          "Les griefs invoqués par Monsieur [G] sont des interprétations personnelles sans preuve matérielle.",
+          "Les relations au sein de l'association sont normales et ne constituent pas du harcèlement moral.",
+          "Monsieur [G] n'a pas prouvé son préjudice financier."
+        ],
+        "legal_references": [
+          "article L 1152-2"
+        ],
+        "pieces_cited": [
+          "Pièce adverse n°14"
+        ],
+        "dates_amounts": [
+          "11.12.2021"
+        ],
+        "requests": [],
+        "key_source_excerpt": "S'agissant du prétendu Harcèlement moral. Monsieur [G] présente 32 griefs. L'étude de ceux-ci montrent qu'en réalité il existe entre eux de très nombreux doublons, Monsieur [G] présentant un même grief sous deux, voir parfois trois aspects différents, les démultipliant ainsi artificiellement. [...] Ce qu'évoque le salarié dans ses écritures ne se rapporte qu'à la gestion courante d'une Association. [...] Monsieur [G] prétend avoir subi un préjudice financier mais n'en apporte pas la preuve.",
+        "key_verbatim_points": [
+          "32 griefs invoqués par Monsieur [G], souvent redondants.",
+          "Absence de preuve d'un préjudice financier ou de manquements graves."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 1",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 1"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation du grief n°1 invoqué par Monsieur [G] relatif à des tensions entre dirigeants de l'association.",
+        "arguments": [
+          "Les tensions invoquées par Monsieur [G] relèvent de divergences de gouvernance normales au sein d'une association.",
+          "Monsieur [G] n'était pas directement concerné par ces tensions.",
+          "Les pièces invoquées par Monsieur [G] sont postérieures aux faits qu'il prétend dénoncer.",
+          "Les relations entre les dirigeants étaient bonnes, comme en témoignent les échanges ultérieurs."
+        ],
+        "rebuttals": [
+          "Les griefs invoqués par Monsieur [G] sont des interprétations personnelles sans preuve matérielle.",
+          "Les tensions invoquées ne concernaient pas directement Monsieur [G]."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce adverse n°5",
+          "Pièce 24",
+          "Pièce 25",
+          "Pièce 26"
+        ],
+        "dates_amounts": [
+          "10.06.2020"
+        ],
+        "requests": [],
+        "key_source_excerpt": "Il s'agit ici de faits interprétés par Monsieur [G]. Il n'y a ici aucun fait précis, matériellement étayé. [...] Le fait que Monsieur [L] [I] [M] ait, quelques jours plus tard après sa démission, décidé de reprendre la Présidence, démontre qu'il n'y avait pas de véritables tensions dans l'Association. [...] Monsieur [G] n'était pas à la Direction de cette Association. Les rapports dans la Direction lui sont étrangers.",
+        "key_verbatim_points": [
+          "Absence de faits précis et matériellement étayés.",
+          "Les tensions invoquées ne concernaient pas directement Monsieur [G]."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 2",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 2"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation du grief n°2 invoqué par Monsieur [G] relatif à la remise en cause de règles contractuelles.",
+        "arguments": [
+          "La note invoquée par Monsieur [G] visait à clarifier les modalités de remboursement des frais de mission et non à modifier son contrat de travail.",
+          "La situation a été assainie lors du Conseil d'Administration du 05.10.2019.",
+          "Les règles invoquées par Monsieur [G] n'étaient pas précisées dans son contrat de travail."
+        ],
+        "rebuttals": [
+          "La note n'avait pas pour objet de modifier le contrat de travail de Monsieur [G].",
+          "La situation a été assainie lors du Conseil d'Administration."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce 3",
+          "Pièce 33"
+        ],
+        "dates_amounts": [
+          "02.10.2019",
+          "05.10.2019"
+        ],
+        "requests": [],
+        "key_source_excerpt": "A l'occasion du Conseil d'Administration suivant le mail de Monsieur [M], a été débattu sur tous les points abordés dans le mail cité en pièce adverse 5. Après ces échanges, sur demande de l'ensemble des membres, Monsieur [M] a accepté de revenir sur sa décision. Sa démission n'a donc pas été validée. La situation a donc été assainie. [...] Cette note n'a donc pas pour objet de modifier le contrat de travail de Monsieur [G] ni même les conditions de travail, mais de préciser, dans un cadre conforme à la réglementation, la procédure de remboursement des frais de mission.",
+        "key_verbatim_points": [
+          "La note visait à clarifier les modalités de remboursement des frais de mission.",
+          "La situation a été assainie lors du Conseil d'Administration du 05.10.2019."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 3",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 3"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation du grief n°3 invoqué par Monsieur [G] relatif à des perturbations permanentes de son travail par des bénévoles et le président.",
+        "arguments": [
+          "Un cadre a été posé pour limiter les perturbations, comme en témoignent les attestations de membres du Conseil d'Administration.",
+          "Les échanges entre Monsieur [G] et Monsieur [M] relevaient de la collaboration professionnelle normale.",
+          "Monsieur [G] n'a jamais signalé de plainte en ce sens avant sa saisine du Conseil de Prud'hommes."
+        ],
+        "rebuttals": [
+          "Les perturbations invoquées relèvent de la gestion normale d'une association.",
+          "Monsieur [G] n'a jamais signalé de plainte avant sa saisine du Conseil de Prud'hommes."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce 17",
+          "Pièce 18"
+        ],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "Le fait que le salarié soutienne ne pas avoir pu se concentrer sur son travail au motif qu'il recevait des visites de nombreux bénévoles, n'est pas un fait générateur de harcèlement moral. [...] Les appels successifs ne sont liés qu'à des problèmes de réseau au domicile de Monsieur [M] [...] Par conséquent, pour assurer le suivi et l'accompagnement du salarié, il était convenu qu'il y aurait des échanges quotidiens entre eux, en particulier dans les premiers mois de prise de fonction de Monsieur [G].",
+        "key_verbatim_points": [
+          "Un cadre a été posé pour limiter les perturbations.",
+          "Les échanges entre Monsieur [G] et Monsieur [M] relevaient de la collaboration professionnelle normale."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 4",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 4"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation du grief n°4 invoqué par Monsieur [G] relatif à des dénigrements et rumeurs mettant en cause sa légitimité.",
+        "arguments": [
+          "Aucun dénigrement ou rumeur n'a été porté à la connaissance de l'employeur ou du Conseil d'Administration.",
+          "Monsieur [G] n'a jamais été demandé de justifier son travail au quotidien.",
+          "Les rapports journaliers évoqués par Monsieur [G] étaient une initiative personnelle sans demande de la Direction."
+        ],
+        "rebuttals": [
+          "Aucun dénigrement ou rumeur n'a été porté à la connaissance de l'employeur.",
+          "Les rapports journaliers étaient une initiative personnelle de Monsieur [G]."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce adverse 18"
+        ],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "L'association a toujours reconnue l'implication, l'engagement et les compétences de Monsieur [G] (recrutement à un salaire valorisant l'expérience, réévaluation de son salaire, nombreux échanges positifs avec le bureau…). [...] Il n'a jamais été demandé à Monsieur [G] de justifier de son travail. A aucun moment il n'a été demandé l'établissement d'un relevé de tâches quotidien. Cela relève de l'organisation personnelle du salarié et de son initiative.",
+        "key_verbatim_points": [
+          "Aucun dénigrement ou rumeur n'a été porté à la connaissance de l'employeur.",
+          "Les rapports journaliers étaient une initiative personnelle de Monsieur [G]."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 5",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 5"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation du grief n°5 invoqué par Monsieur [G] relatif à une présentation inexacte des modalités d'activité partielle.",
+        "arguments": [
+          "La formulation « congés à ta demande » était une maladresse rapidement corrigée à la demande de Monsieur [G].",
+          "Cette formulation visait à marquer une différence avec les autres périodes de chômage partiel."
+        ],
+        "rebuttals": [
+          "La maladresse a été immédiatement corrigée.",
+          "La formulation n'avait pas pour objet de nuire à Monsieur [G]."
+        ],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "06.04.2020",
+          "07.04.2020"
+        ],
+        "requests": [],
+        "key_source_excerpt": "Il s'agissait simplement d'une maladresse dans la formulation utilisée. « Congés à ta demande ». Cette formulation n'avait pour but que de marquer une vraie différence avec les autres périodes organisées par l'employeur dans le cadre du chômage partiel. Cette formulation a ensuite été changée à la demande du salarié.",
+        "key_verbatim_points": [
+          "La maladresse a été immédiatement corrigée.",
+          "La formulation n'avait pas pour objet de nuire à Monsieur [G]."
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "medium",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 6",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 6"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation du grief n°6 invoqué par Monsieur [G] relatif à des modifications et changements de gouvernance au sein de l'association.",
+        "arguments": [
+          "Ce grief est un doublon du grief n°1.",
+          "Monsieur [G] connaissait parfaitement le fonctionnement statutaire de l'association, ayant été bénévole pendant près de 10 ans.",
+          "Les changements de gouvernance sont normaux au sein d'une association."
+        ],
+        "rebuttals": [
+          "Les griefs invoqués relèvent de la gestion normale d'une association.",
+          "Monsieur [G] connaissait parfaitement le fonctionnement statutaire de l'association."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce adverse 2",
+          "Pièce adverse 11"
+        ],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "Ce grief est un doublon du grief N°1. [...] Au sujet de la gouvernance de l'association, rappelons que Monsieur [G] a été bénévole dans l'association pendant près de 10 ans. Il avait donc une parfaite connaissance du fonctionnement statutaire de cette Association. [...] Il a pourtant accepté sa mission salariée au sein de l'association en toute connaissance de cause.",
+        "key_verbatim_points": [
+          "Ce grief est un doublon du grief n°1.",
+          "Monsieur [G] connaissait parfaitement le fonctionnement statutaire de l'association."
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "medium",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 7",
+        "path": [
+          "DISCUSSION",
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 7"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": "employeur",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [G]",
+            "kind": "person",
+            "role": "salarié",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Contestation du grief n°7 invoqué par Monsieur [G] relatif à une intervention intempestive d'un bénévole.",
+        "arguments": [
+          "Le mail invoqué par Monsieur [G] n'était pas adressé directement à lui mais à la présidente de l'association.",
+          "Le bénévole n'a pas donné d'instructions à Monsieur [G] mais a répondu à un mail de la présidente.",
+          "Aucun propos déplacé n'a été tenu par le bénévole."
+        ],
+        "rebuttals": [
+          "Le mail invoqué n'était pas adressé directement à Monsieur [G].",
+          "Aucun propos déplacé n'a été tenu par le bénévole."
+        ],
+        "legal_references": [
+          "article L 1152-2",
+          "CASS. SOC. 6 AVRIL 2011 N° 10-30284"
+        ],
+        "pieces_cited": [
+          "Pièce adverse 12",
+          "Pièce 34",
+          "Pièce 35",
+          "Pièce 36"
+        ],
+        "dates_amounts": [
+          "11.02.2021"
+        ],
+        "requests": [],
+        "key_source_excerpt": "Il convient de préciser sur ce point que le mail de réponse de Monsieur [V] n'était pas adressé à Monsieur [G] en tant que Directeur du Développement mais en réponse au mail de Madame [Z], Présidente, envoyé via l'adresse email de Monsieur [G]. [...] Monsieur [V] n'a donc pas donné d'instructions à Monsieur [G]. [...] Enfin, il convient de préciser que dans ce mail, Monsieur [V] ne tient pas de propos déplacés.",
+        "key_verbatim_points": [
+          "Le mail invoqué n'était pas adressé directement à Monsieur [G].",
+          "Aucun propos déplacé n'a été tenu par le bénévole."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      }
+    ],
+    "carry_forward": {
+      "main_issues": [
+        "Qualification du licenciement pour inaptitude en licenciement nul pour harcèlement moral",
+        "Proportionnalité des condamnations prononcées par le Conseil de Prud'hommes",
+        "Redondance des prétentions de Monsieur [G] entre ses deux requêtes",
+        "Absence de preuves des griefs invoqués par Monsieur [G]"
+      ],
+      "open_threads": [
+        "Examen des griefs restants (GRIEF 8 à GRIEF 32) non détaillés dans ce paquet.",
+        "Analyse des pièces adverses non encore examinées en détail."
+      ],
+      "claims_block_present": true,
+      "participants_to_track": [
+        {
+          "name": "Monsieur [G]",
+          "role": "salarié, intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Association [Personne Morale 3]",
+          "role": "employeur, appelant",
+          "side": "current_party"
+        },
+        {
+          "name": "Conseil de Prud'hommes de Charleville-Mézières",
+          "role": "juridiction de première instance",
+          "side": "neutral"
+        }
+      ]
+    }
+  },
+  {
+    "packet_id": "P2",
+    "document_role": "intimé",
+    "packet_summary": "Paquet structuré en 11 griefs (8 à 18) contestant la résiliation judiciaire du contrat de travail de Monsieur [B] [G], salarié de l'Association [Personne Morale 1]. L'employeur (Association [Personne Morale 1]) conteste systématiquement les griefs en invoquant des manquements de preuve, des interprétations unilatérales des faits par le salarié, et des mesures de soutien effectives (télétravail, augmentations, accompagnement RH). Les griefs portent sur des allégations de dégradation des conditions de travail, harcèlement moral, et modifications unilatérales des missions contractuelles.",
+    "sections": [
+      {
+        "title": "GRIEF 8",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 8"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [J] [Z]",
+            "kind": "person",
+            "role": "présidente",
+            "side": "current_party"
+          },
+          {
+            "name": "médecin du travail",
+            "kind": "institutional_actor",
+            "role": null,
+            "side": "neutral"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief pour absence de preuve et manipulation des pièces par le salarié.",
+        "facts": [
+          "Courriel du 12/02/2021 à 10h17 (pièce 37) vs allégation de rédaction à 02h50 par le salarié.",
+          "Absence de traçabilité de l'expéditeur/destinataire dans la pièce 14 adverse.",
+          "Préconisations du médecin du travail (télétravail) suivies à la lettre (pièce 38).",
+          "Mise en place du télétravail et indemnisation du salarié (pièce 29)."
+        ],
+        "arguments": [
+          "Le grief fait doublon avec le grief N°4 déjà traité.",
+          "Le salarié n'a pas alerté la présidence sur des 'rumeurs' (pièce 14).",
+          "L'employeur a toujours protégé la santé des salariés.",
+          "Le salarié a travesti les pièces pour simuler un état de détresse."
+        ],
+        "rebuttals": [
+          "Les critiques des administrateurs ne pouvaient évaluer son activité (peu de contacts).",
+          "Le PV du CA du 09/07/2021 confirme la mise en veille de son activité bénévole et l'aménagement en télétravail."
+        ],
+        "legal_references": [
+          "Article 4 (contrat de travail)"
+        ],
+        "pieces_cited": [
+          "14",
+          "37",
+          "38",
+          "28",
+          "29"
+        ],
+        "dates_amounts": [
+          "12/02/2021",
+          "10/02/2021",
+          "02h50",
+          "10h17",
+          "300 €",
+          "800 €"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« La manœuvre apparait d'ailleurs grossièrement lorsque l'ont fait l'étude comparée des pièces qu'il verse aux débats. Ainsi s'agissant des pièces 12 et 13 de Monsieur [G], il verse des mails en intégralité avec les adresses d'expéditeurs, de destinataires et l'heure du mail. Mais s'agissant de sa pièce 14, il ne verse que le texte du mail, sans aucun traçabilité de l'expéditeur, du destinataire et de l'heure. »",
+        "key_verbatim_points": [
+          "« Des administrateurs jetant leur fiel à mon endroit... la propagation de propos commence à avoir des conséquences sur ma qualité de vie au travail... » (pièce 14 adverse).",
+          "« L'employeur est en mesure démontrer qu'il s'agit d'une manœuvre puisque ce mail a bien été adressé à 10h17 (pièce 37). »",
+          "« Les préconisations du médecin du travail ont été suivies à la lettre, le télétravail ayant été mis en place et Monsieur [G] en ayant été indemnisé, contrairement à ce qu'ont retenu les 1ers Juges. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 9",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 9"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [D] [O]",
+            "kind": "person",
+            "role": "présidente",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : l'employeur a répondu aux demandes du salarié (augmentation, point d'étape).",
+        "facts": [
+          "Point d'étape salarié organisé le 06/03/2021 (pièce 15).",
+          "Avenant du 26/05/2021 classant le salarié au coefficient 491 (3106 € brut/mois) (pièce 3 adverse).",
+          "Création d'un Comité Directeur pour accélérer les décisions (CODIR 26/05/21)."
+        ],
+        "arguments": [
+          "Le salarié n'a pas apporté la preuve de ses allégations (pression, menaces de départ).",
+          "L'augmentation de salaire est une réponse aux revendications, pas une conséquence de menaces.",
+          "Le PV du CA du 11/12/2021 mentionne des pressions du salarié sur le CA."
+        ],
+        "rebuttals": [
+          "Le salarié a obtenu des augmentations répétées (PV CA 09/07/2021, 29/12/2021, CODIR 27/11/2021).",
+          "L'association a proposé une augmentation de 300 € refusée par le salarié."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "15",
+          "3",
+          "30",
+          "12",
+          "13",
+          "28"
+        ],
+        "dates_amounts": [
+          "06/03/2021",
+          "26/05/2021",
+          "3106 €",
+          "300 €"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« Il convient de rappeler que selon avenant du 26.05.2021, le salarié a été classé au coefficient 491, sa rémunération mensuelle brute étant portée à 3106 € (pièce adverse 3). Il s'agit d'une augmentation conséquente. »",
+        "key_verbatim_points": [
+          "« La discussion était envisagée depuis longtemps et ne découlait que des revendications du salarié. »",
+          "« Pression d'autant plus forte que Monsieur [G] n'hésitait pas, tout en disant 'je ne vous reproche rien, ne le prenez pas pour vous', à leur signifier leur incompétence et leur manque de professionnalisme... » (PV CA 11/12/2021)."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 10",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 10"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [MH] [K]",
+            "kind": "person",
+            "role": "bénévole",
+            "side": "neutral"
+          },
+          {
+            "name": "Monsieur [L] [I] [M]",
+            "kind": "person",
+            "role": "membre du CA",
+            "side": "neutral"
+          },
+          {
+            "name": "Monsieur [CF] [WX]",
+            "kind": "person",
+            "role": "bénévole",
+            "side": "neutral"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : absence de preuve de propos homophobe et témoignages contraires.",
+        "facts": [
+          "Témoignages de bénévoles et membres du CA (pièces 17, 19, 20) niant tout propos homophobe.",
+          "Propos 'tu devrais prendre rose, ça t'irait bien' interprété à tort comme homophobe.",
+          "L'association tolère toute orientation sexuelle et réagirait en cas de propos offensants (statuts)."
+        ],
+        "arguments": [
+          "Les propos incriminés relèvent du domaine privé ou de plaisanteries.",
+          "Aucun signalement n'a été fait à l'association.",
+          "Le salarié participait aux mêmes plaisanteries."
+        ],
+        "rebuttals": [
+          "L'association aurait réagi immédiatement en cas de propos homophobe (procédure d'exclusion prévue).",
+          "Les échanges n'ont pas eu lieu lors d'une séance officielle mais lors d'un événement ludique ('Crime à La Cassine')."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "17",
+          "19",
+          "20",
+          "32",
+          "28"
+        ],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "« Je n'ai jamais entendu un quelconque mot à l'encontre de la communauté gay. Lui-même plaisantait allègrement sur les personnes gays. [...] 'ce ne sont pas les pédales qui manquent ici, on va te faire un vélo spécial.' » (Madame [MH] [K], pièce 17).",
+        "key_verbatim_points": [
+          "« La sexualité de M. [G] n'a jamais été une question à la [Personne Morale 15], ni dans son activité bénévole, ni dans son activité salariée. » (Monsieur [L] [I] [M], pièce 19).",
+          "« L'association accepte toute personne voulant faire partie de son activité, quelle que soit sa couleur de peau, son origine sociale, ses intérêts politiques ou sa sexualité. » (PV CA 09/07/2021, charte de l'Association)."
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "high",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 11",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 11"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [YZ] [N]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Madame [X] [U]",
+            "kind": "person",
+            "role": "Trésorière",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : le salarié a lui-même demandé le changement de gouvernance.",
+        "facts": [
+          "Le salarié était bénévole depuis 10 ans et connaissait les règles de renouvellement annuel du CA.",
+          "Le salarié a suggéré la nomination de Monsieur [YZ] [N] comme président (pièce 21).",
+          "Changement de stratégie (spectacle comme activité annexe) cohérent avec les objectifs initiaux de l'association (mail de 2019)."
+        ],
+        "arguments": [
+          "Le salarié ne peut reprocher un changement qu'il a lui-même demandé.",
+          "La création du Comité Directeur a été initiée par le salarié pour pallier un manque de professionnalisme perçu.",
+          "Le spectacle a été mis à l'arrêt pendant 2 étés (crise sanitaire), sans impact sur le salarié."
+        ],
+        "rebuttals": [
+          "Le salarié a été impliqué dans les décisions (ex : choix de la convention collective).",
+          "Les outils de travail et l'organisation du temps n'ont pas changé."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "21",
+          "4",
+          "22"
+        ],
+        "dates_amounts": [
+          "20/08/2019"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« Courant janvier, Monsieur [G] me fait alors la remarque qu'il serait souhaitable d'avoir à la tête de l'A.C.C.C une personne impliquée et durable [...] [B] [G] m'a alors rassuré en disant : '[YZ], je serai là de toute façon, je ne te laisserai jamais tomber, tu peux compter sur moi !'. » (Monsieur [YZ] [N], pièce 21).",
+        "key_verbatim_points": [
+          "« Les différentes variations de gouvernance [...] sont l'œuvre de Monsieur [G] qui se plaignait constamment des différents Présidents et membres du Bureau [...] Il est à l'origine de la création du Comité Directeur. » (Madame [X] [U], pièce 22).",
+          "« J'en ai marre de [J] (Présidente de l'époque) qui procrastine tout le temps, il ne faudrait pas qu'elle repasse (en parlant de l'AG) je ne le supporterais pas. » (Madame [X] [U], pièce 22)."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 12",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 12"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [X] [U]",
+            "kind": "person",
+            "role": "Responsable RH",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : l'entretien a permis des actions concrètes et une écoute effective.",
+        "facts": [
+          "Entretien annuel d'évaluation reporté du 04/10/2021 au 05/10/2021 (14h30).",
+          "Madame [U] a pris des notes et répondu à toutes les demandes (avenants, bulletins de paie).",
+          "Actions menées dans les 2 mois suivant l'entretien (pièce 31)."
+        ],
+        "arguments": [
+          "Le 'manque de professionnalisme' reproché est un grief informe sans impact sur la santé.",
+          "L'entretien a conduit à des améliorations concrètes (documents, indemnisation).",
+          "L'humanité des échanges prime sur le formalisme."
+        ],
+        "rebuttals": [
+          "Madame [U] a présenté des excuses pour la qualité de l'entretien (pièce 36).",
+          "Les demandes du salarié ont été entendues et traitées."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "36",
+          "4",
+          "22",
+          "31"
+        ],
+        "dates_amounts": [
+          "04/10/2021",
+          "05/10/2021"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« La qualité de l'entretien ne se mesure pas à l'ensemble des documents que l'on peut fournir mais dans le cœur et l'oreille qu'on y prête. [...] L'ensemble des requêtes formulées le jour de l'entretien ont été entendues et les solutions apportées si l'on excepte les demandes financières. » (Madame [X] [U], pièce 4).",
+        "key_verbatim_points": [
+          "« Le seul manque de professionnalisme dont j'ai fait preuve a été l'entretien avec [B] où il m'a dit que ce n'était pas professionnel et il avait raison. » (Madame [X] [U], pièce 36).",
+          "« Peu importe la forme, du moment qu'il y a eu de l'écoute, de l'empathie et que le travail a suivi à l'issue de cet entretien. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "medium",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 13",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 13"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [YZ] [N]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Madame [X] [U]",
+            "kind": "person",
+            "role": "Responsable RH",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [ZR]",
+            "kind": "person",
+            "role": "ancien président",
+            "side": "neutral"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : l'employeur a protégé le salarié et l'agression est un fait isolé.",
+        "facts": [
+          "Réunion du 16/06/2021 : agression verbale de Monsieur [ZR] envers le salarié et Madame [U] (pièces 18, 19, 20).",
+          "Certificats médicaux mentionnant 'agression verbale et stress réactionnel' et 'trouble anxieux' (pièce 21).",
+          "Accident de travail reconnu par la [Personne Morale 20] (pièce 22).",
+          "Démission collective des membres du CA impliqués (pièce 23)."
+        ],
+        "arguments": [
+          "L'employeur a tout mis en œuvre pour protéger le salarié (soutien moral, administratif, démission collective).",
+          "Un fait isolé ne caractérise pas du harcèlement moral (nécessité de répétition).",
+          "Le salarié a repris le travail après l'arrêt (14/07/2021) et n'a fait un nouvel arrêt que le 27/01/2022 (lien non prouvé avec l'incident)."
+        ],
+        "rebuttals": [
+          "Les témoignages (pièces 18, 19, 20) contredisent l'état de détresse allégué.",
+          "Le salarié a plaisanté après l'incident (témoignage de Madame [W]).",
+          "Antécédents psychologiques du salarié (burn-out chez un précédent employeur)."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "5"
+        ],
+        "dates_amounts": [
+          "16/06/2021",
+          "17/06/2021",
+          "14/07/2021",
+          "23/06/2021"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« Depuis hier 1 heures 15, je n'ai pas fermé l'œil et suis dans un état d'anxiété tel que je vomi sans cesse et tremble en permanence. Autant dire que je n'ai pas mangé et en suis à mon 3ème malaise à la suite de ce choc psychologique. » (Courriel du salarié du 17/06/2021, pièce 20).",
+        "key_verbatim_points": [
+          "« J'ai réussi tant bien que mal à aller au bout de ma matinée de travail ce jour et j'ai contacté la médecine du travail qui m'a orienté vers un médecin que je rencontre demain à 9h30. »",
+          "« L'ensemble des personnes à l'origine de cette altercation ont toutes démissionnées, juste après. » (Madame [X] [U], pièce 22)."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 14",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 14"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [X] [U]",
+            "kind": "person",
+            "role": "Responsable RH",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [A]",
+            "kind": "person",
+            "role": "trésorier",
+            "side": "neutral"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : changements de gouvernance normaux et sans lien avec du harcèlement.",
+        "facts": [
+          "Démission de Monsieur [A] (trésorier) le 24/06/2021 pendant l'arrêt maladie du salarié (17/06/2021 au 14/07/2021).",
+          "Nomination de Madame [U] comme Responsable RH (pièce 6).",
+          "Le salarié a lui-même demandé ces changements (pièce 6)."
+        ],
+        "arguments": [
+          "Les changements de gouvernance sont normaux dans une association.",
+          "Madame [U] a été nommée pour répondre à un besoin (défaillance de Madame [Z] en RH).",
+          "Le salarié a été à l'origine de la création du poste de RH."
+        ],
+        "rebuttals": [
+          "Le salarié a été impliqué dans la nomination (PV CODIR 26/05/21).",
+          "Les changements n'ont pas affecté la charge de travail ou les conditions de travail du salarié."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "23",
+          "24",
+          "6",
+          "22"
+        ],
+        "dates_amounts": [
+          "24/06/2021",
+          "17/06/2021",
+          "14/07/2021",
+          "6 000 €"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« Mr [G], est à l'origine de tous les changements de poste. C'est lui qui a demandé que ce soit moi la responsable RH car Mme [Z] ne faisait pas son boulot, selon ses dires. [...] Il n'apporte que des contrariétés mais devant sa détresse et comme Mme [Z] ne donnait pas de nouvelle depuis l'élection, j'étais la plus qualifiée pour reprendre le poste et j'ai accepté. » (Madame [X] [U], pièce 6).",
+        "key_verbatim_points": [
+          "« A cette période, j'étais bien sûr membre du CA, mais surtout j'étais Pilote du Comité directeur. [...] Il n'apporte que des contrariétés mais devant sa détresse [...] j'ai accepté. »",
+          "« Je m'étonne qu'il n'y ait pas de réclamation concernant la mise en place de Mme [J] [Z], en tant que responsable des ressources humaines alors même qu'elle était présidente et sans plus de formalité ? »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "medium",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 15",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 15"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [YZ] [N]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Madame [U]",
+            "kind": "person",
+            "role": "Trésorière",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : modification des missions justifiée par la charge de travail et accord du salarié.",
+        "facts": [
+          "Fiche de poste mentionnant des missions évolutives (Article 4 du contrat).",
+          "Envoi des convocations au CA par Madame [U] sur demande du président (accord du salarié).",
+          "Présence du salarié non obligatoire à chaque CA (seulement pour les sujets le concernant)."
+        ],
+        "arguments": [
+          "La modification vise à soulager le salarié d'une mission sans plus-value.",
+          "Le salarié a été consulté et a donné son accord.",
+          "La présence du salarié n'est pas requise contractuellement pour tous les CA."
+        ],
+        "rebuttals": [
+          "Le salarié a été invité aux réunions suivantes (pièces 4, 6, 7, 8, 9, 10).",
+          "Le président a réitéré sa confiance envers le salarié (pièce 20)."
+        ],
+        "legal_references": [
+          "Article 4 (contrat de travail)"
+        ],
+        "pieces_cited": [
+          "26",
+          "27",
+          "1",
+          "20"
+        ],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "« Pour soulager le salarié, en accord avec lui, Monsieur [N], Président, a demandé à Madame [U] (pilote du CODIR) d'envoyer les convocations au Conseil d'administration. [...] Au surplus, il n'est pas indiqué dans sa fiche de poste que le Directeur de Développement doit siéger en Conseil d'Administration. »",
+        "key_verbatim_points": [
+          "« Les missions détaillées ci-dessus présentent un caractère non limitatif et pourront évoluer dans le temps compte tenu des besoins de la société. » (Article 4).",
+          "« Il s'agit d'une modification unilatérale de la part de l'employeur, marquant une défiance à son égard... » (position adverse)."
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "medium",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 16",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 16"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : absence d'obligation contractuelle de rédiger les comptes rendus.",
+        "facts": [
+          "Le salarié n'est pas contractuellement tenu de rédiger les comptes rendus des CA.",
+          "Il a été invité aux réunions pertinentes (pièces 4, 6, 7, 8, 9, 10).",
+          "Sa présence n'est pas requise à chaque CA."
+        ],
+        "arguments": [
+          "Le grief est infondé : le salarié n'a pas de mission contractuelle pour cette tâche.",
+          "Les convocations ont été envoyées (pièces 4, 6, 7, 8, 9, 10).",
+          "La présence du salarié n'est pas nécessaire pour tous les sujets abordés en CA."
+        ],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [
+          "4",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "dates_amounts": [],
+        "requests": [],
+        "key_source_excerpt": "« Pour rappel, il n'est pas contractuellement prévu qu'il rédige ces comptes rendus. Contrairement à ce qu'il prétend, il a été invité aux réunions suivantes où sa présence était pertinente pour le développement de projets. »",
+        "key_verbatim_points": [
+          "« Il n'est pas indiqué dans sa fiche de poste que le Directeur de Développement doit siéger en Conseil d'Administration. »",
+          "« La présence du Directeur de Développement n'est pas nécessaire à chaque Conseil d'Administration. Elle ne l'est que lorsque sont évoqués les grands projets, les demandes de subvention... »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "low",
+        "argument_density": "low"
+      },
+      {
+        "title": "GRIEF 17",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 17"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [N]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : l'employeur a respecté ses engagements et répondu dans un délai raisonnable.",
+        "facts": [
+          "Réunion de la commission Finances le 11/11/2021 : le salarié demande des clarifications.",
+          "Réponse orale le 26/11/2021 et écrite le 07/12/2021 (pièces 29, 30).",
+          "Avenants et propositions remis au salarié (pièce 30)."
+        ],
+        "arguments": [
+          "Le salarié a lui-même reconnu que l'employeur a respecté ses engagements (pièce 30).",
+          "L'employeur a répondu dans un délai raisonnable (16 jours entre la demande et la réponse écrite).",
+          "Le salarié a remercié l'employeur pour les réponses obtenues."
+        ],
+        "rebuttals": [
+          "Le salarié a des doutes sur la faisabilité de ses demandes de revalorisation salariale.",
+          "L'employeur a agi en accord avec le salarié (propositions discutées et validées)."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "28",
+          "29",
+          "30",
+          "12"
+        ],
+        "dates_amounts": [
+          "11/11/2021",
+          "26/11/2021",
+          "07/12/2021",
+          "18/11/23",
+          "26/11/23",
+          "27/11/2021"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« D'ailleurs, Monsieur [G] indique avoir lui-même des doutes sur la possibilité de réalisation de ses demandes de revalorisation salariale. [...] Monsieur [G] a été informé le jour même des décisions prises dans le cadre de la réunion du 26/11/23 et il lui a été remis le jour même les avenants demandés... »",
+        "key_verbatim_points": [
+          "« L'employeur lui a communiqué les informations le 26 novembre oralement. Monsieur [G] a d'ailleurs remercié l'Association à ce sujet. »",
+          "« Quelques jours après (PV de réunion rédigé le 27 novembre 2021), il a pu avoir l'ensemble de la proposition. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "medium",
+        "argument_density": "low"
+      },
+      {
+        "title": "GRIEF 18",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 18"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [YZ] [N]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          },
+          {
+            "name": "Association [Personne Morale 1]",
+            "kind": "organization",
+            "role": "appelant",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Rejet du grief : absence d'obligation de présence du salarié à chaque CA et information tardive non prouvée.",
+        "facts": [
+          "Le salarié n'est pas contractuellement tenu de convoquer les CA.",
+          "Il a été informé de la réunion du 11/12/2021 par mail le 09/12/2021 (pièce 11).",
+          "Le salarié avait des impératifs personnels (week-end parisien) qu'il a modifiés pour assister au CA."
+        ],
+        "arguments": [
+          "La présence du salarié n'est pas requise à chaque CA (seulement pour les sujets le concernant).",
+          "L'information tardive est contestée : le salarié a été invité en temps utile.",
+          "Le salarié a lui-même souhaité sortir des débats lors des CA pour ne pas peser sur les discussions."
+        ],
+        "rebuttals": [
+          "Le salarié a annulé des impératifs personnels pour assister au CA.",
+          "L'employeur a agi pour soulager le salarié (envoi des convocations par Madame [U])."
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "24",
+          "11"
+        ],
+        "dates_amounts": [
+          "08/12/2021",
+          "09/12/2021",
+          "10/12/2021",
+          "11/12/2021",
+          "02h30"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« L'employeur s'interroge sur cette accusation puisqu'à chaque réunion où le salaire et le travail du Directeur du Développement étaient abordés, Monsieur [G] souhaitait sortir pour ne pas peser sur les débats. [...] C'est à son retour d'arrêt maladie, lors d'un échange avec le Président, que Monsieur [G] a indiqué qu'il avait beaucoup de travail pour se mettre à jour sur les dossiers. Pour soulager le salarié, en accord avec lui, Monsieur [N] a demandé à Madame [U] d'envoyer les convocations au Conseil d'Administration. »",
+        "key_verbatim_points": [
+          "« La présence du Directeur de Développement n'est pas nécessaire à chaque Conseil d'Administration. [...] Aucun débat ne peut avoir lieu en la présence du salarié. »",
+          "« Il est même sain que les membres du CA puissent se réunir hors de sa présence, afin de parler de sujets de gouvernance et même de débats le concernant pour pouvoir ensuite les soumettre de façon sereine. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "low",
+        "argument_density": "low"
+      }
+    ],
+    "carry_forward": {
+      "main_issues": [
+        "Caractère isolé ou répété des faits allégués de harcèlement moral (griefs 8, 13).",
+        "Preuve des dégradations des conditions de travail et lien avec la santé du salarié.",
+        "Validité des modifications unilatérales des missions contractuelles (griefs 15, 16, 18).",
+        "Respect des procédures par l'employeur (réponses aux demandes, procédures disciplinaires)."
+      ],
+      "open_threads": [
+        "Évaluation de la charge de la preuve des allégations de harcèlement moral.",
+        "Impact des antécédents psychologiques du salarié sur l'évaluation des faits.",
+        "Conformité des procédures de modification des missions contractuelles."
+      ],
+      "claims_block_present": false,
+      "participants_to_track": [
+        {
+          "name": "Monsieur [B] [G]",
+          "role": "salarié (intimé)",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [X] [U]",
+          "role": "Responsable RH / Trésorière",
+          "side": "current_party"
+        },
+        {
+          "name": "Monsieur [YZ] [N]",
+          "role": "président",
+          "side": "current_party"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "role": "employeur",
+          "side": "current_party"
+        }
+      ]
+    }
+  },
+  {
+    "packet_id": "P3",
+    "document_role": "appelant",
+    "packet_summary": "Le paquet analyse les griefs internes de Monsieur [B] [G] (intimé) contre l'Association [Personne Morale 1] (employeur, appelant). Il conteste les décisions de valorisation salariale, les retards de paiement et les conditions de travail. L'employeur répond point par point, niant tout harcèlement moral et invoquant l'inaptitude professionnelle pour justifier le licenciement.",
+    "sections": [
+      {
+        "title": "GRIEF 19",
+        "path": [
+          "I- SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU CONTRAT DE TRAVAIL",
+          "GRIEF 19"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [J] [Z]",
+            "kind": "person",
+            "role": "responsable RH / président",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [N]",
+            "kind": "person",
+            "role": "Président",
+            "side": "current_party"
+          },
+          {
+            "name": "Monsieur [WG] [VZ]",
+            "kind": "person",
+            "role": "trésorier",
+            "side": "neutral"
+          },
+          {
+            "name": "Monsieur [YZ] [N]",
+            "kind": "person",
+            "role": "président",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Démonstration que les griefs de souffrance et de non-reconnaissance de Monsieur [G] sont infondés, compte tenu des augmentations salariales et des propositions validées par le Conseil d'Administration.",
+        "facts": [
+          "Décembre 2020 : Augmentation de coefficient de 400 à 444 pour Monsieur [G].",
+          "Mai 2021 : Nouvelle augmentation de coefficient de 444 à 491.",
+          "26/11/2021 : Proposition en CODIR d'une augmentation de coefficient à 501, d'une prime Macron de 2 000€ et d'une indemnité télétravail de 2,50€ par jour (soit 257,40€).",
+          "11/12/2021 : Réunion du Conseil d'Administration où Monsieur [G] n'est pas convié mais se présente. Les propositions ne sont pas jugées suffisantes.",
+          "13/12/2021 : Échange de négociation entre Madame [J] [Z] et Monsieur [B] [G].",
+          "17/12/2021 : Monsieur [G] remercie le Conseil d'Administration par mail pour les propositions, alors qu'elles ne sont pas encore validées."
+        ],
+        "arguments": [
+          "Les augmentations salariales de décembre 2020 et mai 2021 prouvent la reconnaissance du travail de Monsieur [G] par l'employeur.",
+          "Les propositions du 26/11/2021 (prime Macron, augmentation de coefficient, indemnité télétravail) ont été faites pour répondre à ses demandes répétées.",
+          "Les échanges du 17 et 23 décembre 2021 sur les réseaux sociaux [Personne Morale 22] montrent une remise en cause des décisions validées, causant une dégradation des conditions de travail."
+        ],
+        "rebuttals": [
+          "Les griefs de souffrance et de non-reconnaissance sont infondés : Monsieur [G] a bénéficié de deux augmentations en 27 mois.",
+          "Les conflits décrits sont liés à la personnalité forte de Monsieur [G], exigeant le respect scrupuleux de ses volontés.",
+          "Aucun fait de harcèlement moral n'est caractérisé : 27 mois de travail, 2 augmentations, versement de primes."
+        ],
+        "legal_references": [
+          "Article L 1235-3 du Code du travail (barème Macron d'indemnisation)",
+          "Cass.Soc 15 décembre 2021 n°20-18782 (application stricte du barème)",
+          "Cass.Soc 16 novembre 2022 n°21-17.255 (licenciement pour inaptitude sans obligation de reclassement)"
+        ],
+        "pieces_cited": [
+          "Pièce 21 (attestation de Monsieur [WC] [MX], Président)",
+          "Pièce adverse 37 (PV du CODIR du 26/11/2021)",
+          "Pièce adverse 30 (mail de Monsieur [G] du 29/11/2021)",
+          "Pièce 13 (PV de CODIR du 26/11/2021)",
+          "Pièce 31, 32, 33, 34, 35, 36, 38 (documents adverses)"
+        ],
+        "dates_amounts": [
+          "11 décembre 2020",
+          "17 mai 2021",
+          "26 novembre 2021",
+          "2 000€ (prime Macron)",
+          "257,40€ (indemnité télétravail rétroactive)",
+          "13 décembre 2021",
+          "17 décembre 2021",
+          "23 décembre 2021",
+          "28 décembre 2021 (réunion du CA par téléphone)"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« Monsieur [G] oublie de mentionner l'augmentation dont il a déjà̀ bénéficié en décembre 2020. Il est passé du coefficient 400 au coefficient 444 (après 15 mois de contrat). En mai 2021 soit, 5 mois plus tard, il bénéficie d'une nouvelle augmentation du coefficient 444 il passe au coefficient 491. » (Pièce 21).",
+        "key_verbatim_points": [
+          "« Décembre 2020 : Augmentation de Monsieur [G] (400 au coefficient 444) »",
+          "« Juillet 2021 : Demande de Mr [G] pour augmentation + prime télétravail + prime sur objectifs »",
+          "« Le 11/11/2021 : Commission finances. (...) Cette demande est étudiée. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 20",
+        "path": [
+          "INTERNE",
+          "GRIEF 20"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [X] [U]",
+            "kind": "person",
+            "role": "Responsable RH / Trésorière",
+            "side": "current_party"
+          },
+          {
+            "name": "Madame [Z]",
+            "kind": "person",
+            "role": "responsable RH",
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Réponse aux griefs de Monsieur [G] concernant les accusations de dénigrement et de non-paiement de salaire, en démontrant l'absence de fondement juridique et factuel.",
+        "facts": [
+          "Le 28 décembre 2021 : Monsieur [G] s'étonne de l'absence de salaire pour décembre via un mail à Madame [J] [Z] (copie au CA).",
+          "Madame [X] [U] indique dans un mail du même jour : « le seul point sur lequel, je n'ai pas été́ dans le sens de [B] est l'ensemble de ses demandes financières que je juge disproportionnées sans pour autant avoir tout refusé. »",
+          "Le salaire de décembre 2021 a été versé après la réunion du CA du 28 décembre 2021."
+        ],
+        "arguments": [
+          "Le mail litigieux (pièce adverse 37) est un courriel adressé par Madame [Z] à Monsieur [VZ] et [G] le 28 décembre 2021 en vue du Conseil d'Administration, et non un document accusateur ou dénigrant.",
+          "Les accusations de harcèlement moral sont infondées : 27 mois de travail, 2 augmentations, versement de primes.",
+          "Les demandes financières de Monsieur [G] étaient disproportionnées au vu des avantages déjà reçus (6 000€ de primes validées par le CA)."
+        ],
+        "rebuttals": [
+          "« Aucun fait de harcèlement n'est caractérisé : 27 mois de travail : 2 augmentations, versement de primes. »",
+          "« Comment peut-on remercier un Conseil d'Administration de payer un ensemble de primes d'un montant de plus de 6 000€ sur un dossier de 28 mois en étant seulement en poste que depuis 27 mois ? »"
+        ],
+        "legal_references": [
+          "Article L 1235-3 du Code du travail (barème Macron d'indemnisation)",
+          "Cass.Soc 15 décembre 2021 n°20-18782 (application stricte du barème)"
+        ],
+        "pieces_cited": [
+          "Pièce adverse 37 (mail de Madame [X] [U] du 28 décembre 2021)",
+          "Pièce 22 (attestation de Madame [X] [U])"
+        ],
+        "dates_amounts": [
+          "28 décembre 2021",
+          "6 000€ (montant total des primes versées)"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« (...) cela fait plus de 17 ans que je suis chef d'entreprise et que j'ai eu plus de 40 salariés dont j'ai fait les contrats, avenants, fiches de paie, entretiens ... Que je sais de quoi je parle. » (Pièce adverse 37, Madame [X] [U]).",
+        "key_verbatim_points": [
+          "« (...) le salaire couvre largement le travail effectué. N'oublions pas que deux augmentations ont eu lieu depuis le début du contrat en décembre 2020 et seulement 4 mois après. »",
+          "« (...) 37 demi-journées de travail à temps partiel comptabilisées comme journées complètes car lorsqu'un cadre travaille 2h la journée est comptabilisée. »"
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "GRIEF 21",
+        "path": [
+          "INTERNE",
+          "GRIEF 21"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [N]",
+            "kind": "person",
+            "role": "Président",
+            "side": "current_party"
+          },
+          {
+            "name": "Madame [U]",
+            "kind": "person",
+            "role": "Responsable RH / Pilote du Comité Directeur",
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Démonstration que la remarque de Monsieur [N] concernant l'absence de Madame [U] dans les destinataires du mail est fondée et ne constitue pas une remise en cause de la légitimité de Madame [Z] comme interlocuteur unique.",
+        "facts": [
+          "Le 26 janvier 2022 : Monsieur [G] envoie un mail à Monsieur [N] pour une relecture du bilan 2021 de l'Association.",
+          "Monsieur [N] répond par mail le même jour : « Je ne vois toujours pas pourquoi [J] [Z] est destinataire, alors que [X] [U], pilote du comité directeur n'y est pas !???? ».",
+          "Madame [X] [U] indique : « Comme dit précédemment ce n'est qu'à la demande, l'exigence même de M. [G], que le changement de RH s'est produit parce que je n'ai pas accédé à ses exigences financières. »"
+        ],
+        "arguments": [
+          "La remarque de Monsieur [N] est fondée : elle repose sur le fait que Madame [U] qui pilote le Comité Directeur doit être destinataire du mail pour le bon fonctionnement de l'association.",
+          "Les conflits entre les dirigeants de l'Association sont liés à la personnalité forte de Monsieur [G], exigeant le respect scrupuleux de ses volontés.",
+          "Aucun fait de harcèlement moral n'est caractérisé : 27 mois de travail, 2 augmentations, versement de primes."
+        ],
+        "rebuttals": [
+          "« (...) ce n'est qu'à la demande, l'exigence même de M. [G], que le changement de RH s'est produit parce que je n'ai pas accédé à ses exigences financières. » (Madame [X] [U])"
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce adverse 39 (mail de Monsieur [N] du 26 janvier 2022)",
+          "Pièce 22 (attestation de Madame [X] [U])"
+        ],
+        "dates_amounts": [
+          "26 janvier 2022"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« (...) ce n'est qu'à la demande, l'exigence même de M. [G], que le changement de RH s'est produit parce que je n'ai pas accédé à ses exigences financières. » (Madame [X] [U], Pièce 22).",
+        "key_verbatim_points": [
+          "« (...) ce n'est qu'à la demande, l'exigence même de M. [G], que le changement de RH s'est produit parce que je n'ai pas accédé à ses exigences financières. »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "medium",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 22",
+        "path": [
+          "INTERNE",
+          "GRIEF 22"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [WG] [VZ]",
+            "kind": "person",
+            "role": "trésorier / bénévole",
+            "side": "neutral"
+          },
+          {
+            "name": "Madame [TR] [VO] [W]",
+            "kind": "person",
+            "role": "secrétaire",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Analyse des témoignages de Monsieur [WG] [VZ] (trésorier) et Madame [TR] [VO] [W] (secrétaire) concernant les griefs de Monsieur [G], en démontrant leur caractère subjectif et non pertinent.",
+        "facts": [
+          "Le 27 janvier 2022 : Monsieur [G] est placé en arrêt maladie.",
+          "Le 28 janvier 2022 : Monsieur [WG] [VZ], trésorier et bénévole, démissionne avec un mail décrivant des conflits internes et une gestion autoritaire de l'Association.",
+          "Madame [TR] [VO] [W] indique : « Les propos de M. [WG] [VZ] sont effectivement des ressentis d'un bénévole envers d'autre bénévole. »"
+        ],
+        "arguments": [
+          "Le témoignage de Monsieur [WG] [VZ] est un ressenti de bénévole envers d'autres bénévoles, sans valeur juridique ou factuelle.",
+          "Depuis le départ de Monsieur [G], plus aucune démission n'a eu lieu au sein de l'association, et la sérénité est retrouvée.",
+          "Les démissions dont il est fait état dans ce dossier sont toujours liées à Monsieur [G]."
+        ],
+        "rebuttals": [
+          "« (...) ce n'est qu'à la demande, l'exigence même de M. [G], que le changement de RH s'est produit parce que je n'ai pas accédé à ses exigences financières. » (Madame [X] [U])",
+          "« (...) Les propos de M. [WG] [VZ] sont effectivement des ressentis d'un bénévole envers d'autre bénévole. » (Madame [TR] [VO] [W])"
+        ],
+        "legal_references": [],
+        "pieces_cited": [
+          "Pièce adverse 41 (mail de démission de Monsieur [WG] [VZ] du 28 janvier 2022)",
+          "Pièce 23 (attestation de Madame [TR] [VO] [W])",
+          "Pièce 22 (attestation de Madame [X] [U])"
+        ],
+        "dates_amounts": [
+          "27 janvier 2022 (placement en arrêt maladie)",
+          "28 janvier 2022 (démission de Monsieur [WG] [VZ])"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« (...) je ne retrouve plus mes valeurs personnelles et associatives au sein de cette association. (...) De même pour les comptes rendus de conseil d'administration ne reflétant pas la réalité́. (...) » (Pièce adverse 41, Monsieur [WG] [VZ]).",
+        "key_verbatim_points": [
+          "« (...) Les propos de M. [WG] [VZ] sont effectivement des ressentis d'un bénévole envers d'autre bénévole. »",
+          "« (...) aucun PV de CA ne reflétant pas la réalité́. »"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "medium",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 23",
+        "path": [
+          "INTERNE",
+          "GRIEF 23"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Monsieur [YZ] [N]",
+            "kind": "person",
+            "role": "Président",
+            "side": "current_party"
+          },
+          {
+            "name": "Madame [X] [U]",
+            "kind": "person",
+            "role": "Trésorière / Responsable RH",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Réponse aux griefs de Monsieur [G] concernant l'accusation de responsabilité dans la perte des codes d'accès au compte bancaire de l'Association, en démontrant l'absence de fondement et la bonne foi de l'employeur.",
+        "facts": [
+          "Le 26 février 2022 : Réunion du CA où il est mentionné que Monsieur [G] doit fournir les codes d'accès au compte bancaire de l'Association (pièce adverse 43).",
+          "Monsieur [G] n'est pas responsable de cette situation : les codes ont été égarés par le Président.",
+          "Le salaire de février 2022 a été versé en double par erreur administrative."
+        ],
+        "arguments": [
+          "Monsieur [G] n'était pas destinataire des informations échangées dans la pièce adverse 37, et ces éléments ne sont pas obtenus loyalement.",
+          "Les accusations de mise en cause de responsabilité de Monsieur [G] sont infondées : il n'a pas signé les avenants proposés, et les codes d'accès n'étaient pas de sa responsabilité.",
+          "La procédure de licenciement pour inaptitude a été parfaitement menée, sans obligation de reclassement."
+        ],
+        "rebuttals": [
+          "« (...) il n'est pas le seul à percevoir de l'argent de l'association mais qu'il y a aussi entre autres les fournisseurs à payer et que cela nous a mis dans une situation difficile. Qui s'amuserait à faire semblant de se tromper ? » (Madame [X] [U])"
+        ],
+        "legal_references": [
+          "Article L 1226-14 du Code du travail (licenciement pour inaptitude sans obligation de reclassement)"
+        ],
+        "pieces_cited": [
+          "Pièce adverse 42 (courriel de Monsieur [G] du 28 mai 2022)",
+          "Pièce adverse 43 (PV de réunion du 26 février 2022)",
+          "Pièce 15 (mails du 23/12/2021 au 29/12/2021)"
+        ],
+        "dates_amounts": [
+          "26 février 2022 (réunion du CA)",
+          "28 décembre 2021 (réunion du CA par téléphone)"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« (...) le salaire de février de Monsieur [B] [G] lui a été́ versé en 2 fois car n'ayant plus de trésorier, le président avait égaré́ les codes (pièce 42). » (Pièce adverse 42).",
+        "key_verbatim_points": [
+          "« (...) le président avait égaré́ les codes (pièce 42). »",
+          "« (...) il n'était pas le seul à percevoir de l'argent de l'association mais qu'il y avait aussi entre autres les fournisseurs à payer et que cela nous a mis dans une situation difficile. » (Madame [X] [U])"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "medium",
+        "argument_density": "medium"
+      },
+      {
+        "title": "GRIEF 24",
+        "path": [
+          "INTERNE",
+          "GRIEF 24"
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Madame [X] [U]",
+            "kind": "person",
+            "role": "Trésorière / Responsable RH",
+            "side": "current_party"
+          }
+        ],
+        "thesis": "Démonstration que les manquements reprochés par Monsieur [G] concernant le maintien de salaire pendant son arrêt maladie ne sont pas imputables à l'Association, mais à son Expert-Comptable.",
+        "facts": [
+          "Le 28 mai 2022 : Monsieur [G] envoie un courriel à l'Association pour se plaindre du non-versement de son maintien de salaire à 87% par la garantie Prévoyance de la mutuelle [Personne Morale 5].",
+          "L'Association a versé 28 797,10€ de maintien de salaire à Monsieur [G] pendant son arrêt maladie, alors que la mutuelle [Personne Morale 5] n'a reversé que 10 087,80€ + mutuelle 7 387,50€ = 17 475,30€.",
+          "Un virement de 2 000€ a été fait le 30/05/2022 à titre d'acompte."
+        ],
+        "arguments": [
+          "Les griefs de Monsieur [G] concernant le maintien de salaire pendant son arrêt maladie sont infondés : l'Association a versé 100% du salaire, et les retards sont dus à l'Expert-Comptable.",
+          "Aucun fait de harcèlement moral n'est caractérisé : 27 mois de travail, 2 augmentations, versement de primes.",
+          "La procédure de licenciement pour inaptitude a été parfaitement menée, sans obligation de reclassement."
+        ],
+        "rebuttals": [
+          "« (...) le maintien de salaire n'est pas une obligation mais encore une fois, dans l'intérêt de M. [G] et certainement pas dans celui de l'association (...) » (Madame [X] [U])"
+        ],
+        "legal_references": [
+          "Article L 1226-14 du Code du travail (licenciement pour inaptitude sans obligation de reclassement)"
+        ],
+        "pieces_cited": [
+          "Pièce adverse 48 (courriel de Monsieur [G] du 28 mai 2022)",
+          "Pièce 22 (attestation de Madame [X] [U])"
+        ],
+        "dates_amounts": [
+          "2 septembre 2022 (avis d'inaptitude du médecin du travail)",
+          "22 septembre 2022 (lettre de licenciement pour inaptitude)",
+          "28 mai 2022 (courriel de réclamation de Monsieur [G])",
+          "2 000€ (acompte de maintien de salaire versé le 30/05/2022)"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« (...) le maintien de salaire n'est pas une obligation mais encore une fois, dans l'intérêt de M. [G] et certainement pas dans celui de l'association (...) » (Madame [X] [U], Pièce 22).",
+        "key_verbatim_points": [
+          "« (...) le maintien de salaire n'est pas une obligation (...) »",
+          "« (...) nous avons versé 28 797,10 € alors même que la [Personne Morale 25] n'a reversé que 10 087,80 € (...) » (Madame [X] [U])"
+        ],
+        "compression_ratio_hint": "low",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "B- S'AGISSANT DU MONTANT DES INDEMNISATIONS SOLLICITEES PAR MONSIEUR [G] ET ALLOUEES PAR LE CONSEIL DE PRUD'HOMMES",
+        "path": [
+          "INTERNE",
+          "B- S'AGISSANT DU MONTANT DES INDEMNISATIONS SOLLICITEES PAR MONSIEUR [G] ET ALLOUEES PAR LE CONSEIL DE PRUD'HOMMES"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Conseil de prud'hommes",
+            "kind": "institution",
+            "role": "juridiction",
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Démonstration que l'indemnisation allouée par le Conseil de prud'hommes à Monsieur [G] (38 060,40€) est excessive et non conforme aux barèmes légaux d'indemnisation, notamment en l'absence de preuve de harcèlement moral.",
+        "facts": [
+          "Le Conseil de prud'hommes a alloué à Monsieur [G] une indemnisation de 38 060,40€ pour licenciement nul et prétendus faits de harcèlement moral.",
+          "Monsieur [G] a une ancienneté de 3 ans au moment du licenciement.",
+          "L'employeur conteste cette indemnisation au motif qu'elle dépasse les plafonds légaux."
+        ],
+        "arguments": [
+          "Les 1ers Juges ont commis une erreur d'appréciation en allouant à Monsieur [G] une indemnisation d'un montant de 38 060,40€ de dommages et intérêts du seul chef des dommages et intérêts pour licenciement nul.",
+          "Force est de constater qu'une telle preuve n'est pas rapportée en l'espèce, Monsieur [G] n'ayant qu'une ancienneté de 3 ans au moment du licenciement.",
+          "En application de l'article L 1235-3 du Code du travail, Monsieur [G] ne pourra obtenir, si le Conseil de prud'hommes juge son licenciement comme étant dépourvu de cause réelle et sérieuse, à une indemnité qui ne pourra être comprise qu'entre 3 et 4 mois de salaire brut."
+        ],
+        "rebuttals": [],
+        "legal_references": [
+          "Article L 1235-3 du Code du travail (barème Macron d'indemnisation)",
+          "Cass.Soc 15 décembre 2021 n°20-18782 (application stricte du barème)",
+          "CC décision n°2018-761 DC du 21-03-2018 (conformité constitutionnelle du barème)"
+        ],
+        "pieces_cited": [
+          "Pièce adverse (décision du Conseil de prud'hommes)"
+        ],
+        "dates_amounts": [
+          "2 septembre 2022 (avis d'inaptitude du médecin du travail)",
+          "22 septembre 2022 (lettre de licenciement pour inaptitude)",
+          "38 060,40€ (montant total des dommages et intérêts alloués par le Conseil de prud'hommes)"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« (...) les 1ers Juges ont commis une erreur d'appréciation en allouant à Monsieur [B] [G] une indemnisation d'un montant de 38 060,40 € de dommages et intérêts du seul chef des dommages et intérêts pour licenciement nul. » (Section B).",
+        "key_verbatim_points": [
+          "« (...) Monsieur [G] avec 3 ans d'ancienneté se voit appliquer les barèmes MACRON, limitant son droit à indemnisation. »",
+          "« (...) il convient de rappeler que si par extraordinaire le Conseil de prud'hommes requalifie le licenciement du demandeur en un licenciement sans cause réelle et sérieuse, la loi fixe un plafond maximum d'indemnisation. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "SUR LES DEMANDES INDEMNITAIRES DU SALARIE",
+        "path": [
+          "SUR LES DEMANDES INDEMNITAIRES DU SALARIE"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          }
+        ],
+        "thesis": "Réponse aux demandes indemnitaires excessives de Monsieur [G], en démontrant que ses calculs sont erronés et que le préjudice doit être justifié.",
+        "facts": [
+          "Le revenu moyen de Monsieur [G] à prendre en compte pour apprécier les calculs du demandeur est : 3 171€.",
+          "Monsieur [G] a une ancienneté de 3 ans au moment du licenciement.",
+          "L'employeur conteste les demandes indemnitaires excessives de Monsieur [G]."
+        ],
+        "arguments": [
+          "Il convient de rappeler que le revenu moyen de Monsieur [G] à prendre en compte pour apprécier les calculs du demandeur est : 3 171€.",
+          "Compte tenu de son ancienneté de 3 ans, il ne peut formuler des demandes supérieures à : D§I pour licenciement sans cause réelle et sérieuse : 9 513€ à 12 684€ (3 à 4 mois de salaire).",
+          "La réparation du préjudice n'est plus automatique. Il appartient au salarié d'apporter la preuve du préjudice subi."
+        ],
+        "rebuttals": [
+          "« (...) Monsieur [G] ne justifie pas de sa situation actuelle professionnelle et financière. »"
+        ],
+        "legal_references": [
+          "Article L 1235-3 du Code du travail (barème Macron d'indemnisation)"
+        ],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "3 ans d'ancienneté (licenciement)",
+          "9 513€ à 12 684€ (plafond d'indemnisation pour licenciement sans cause réelle et sérieuse)"
+        ],
+        "requests": [],
+        "key_source_excerpt": "« (...) il ne peut formuler des demandes supérieures à : D§I pour licenciement sans cause réelle et sérieuse : 9 513€ à 12 684€ (3 à 4 mois de salaire). » (Section SUR LES DEMANDES INDEMNITAIRES DU SALARIE).",
+        "key_verbatim_points": [
+          "« (...) le revenu moyen de Monsieur [G] à prendre en compte pour apprécier les calculs du demandeur est : 3171 €. »",
+          "« (...) il appartient au salarié d'apporter la preuve du préjudice subi. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "III- SUR LA DEMANDE DE DOMMAGES ET INTERETS POUR PRIVATION DE LA PORTABILITE DU MAINTIEN DE SALAIRE",
+        "path": [
+          "III- SUR LA DEMANDE DE DOMMAGES ET INTERETS POUR PRIVATION DE LA PORTABILITE DU MAINTIEN DE SALAIRE"
+        ],
+        "section_type": "argument",
+        "participants": [
+          {
+            "name": "Monsieur [B] [G]",
+            "kind": "person",
+            "role": "salarié / intimé",
+            "side": "opposing_party"
+          },
+          {
+            "name": "Conseil de prud'hommes",
+            "kind": "institution",
+            "role": "juridiction",
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Démonstration que la demande de dommages et intérêts de Monsieur [G] pour privation de la portabilité du maintien de salaire à 87% (16 185,36€) est infondée, en l'absence de preuve de préjudice.",
+        "facts": [
+          "Monsieur [G] sollicite une somme de 16 185,36€ pour privation de la portabilité du maintien de salaire à 87% par la garantie Prévoyance de la mutuelle [Personne Morale 26].",
+          "La réparation du préjudice subi par un salarié n'est plus automatique.",
+          "L'employeur entend démontrer que Monsieur [G] ne rapporte pas la preuve du préjudice qu'il estime avoir subi."
+        ],
+        "arguments": [
+          "Le salarié sollicite à ce titre une somme de 16 185,36€.",
+          "Il convient de rappeler que la réparation du préjudice subi par un salarié n'est plus automatique.",
+          "La jurisprudence a ainsi opéré des revirements de jurisprudence : Cass.SOC 13 avril 2016 n°14-28-293, Cass.SOC 25 mai 2016 n°14-20.578, Cass.SOC 17 mai 2016 n°1421.872, Cass.SOC 30 juin 2016 n°15-16.066."
+        ],
+        "rebuttals": [],
+        "legal_references": [
+          "Article L 1226-14 du Code du travail (licenciement pour inaptitude sans obligation de reclassement)",
+          "Cass.SOC 13 avril 2016 n°14-28-293 (preuve du préjudice nécessaire)",
+          "Cass.SOC 25 mai 2016 n°14-20.578 (solution étendue pour nullité de clause)",
+          "Cass.SOC 30 juin 2016 n°15-16.066 (application stricte pour procédure de licenciement)"
+        ],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "13 avril 2016 (n°14-28-293)",
+          "25 mai 2016 (n°14-20.578)",
+          "30 juin 2016 (n°15-16.066)"
+        ],
+        "requests": [
+          "Débouté de sa demande en réparation pour absence de preuve de préjudice."
+        ],
+        "key_source_excerpt": "« (...) Monsieur [G] ne rapporte pas la preuve du préjudice qu'il estime avoir subi. Il sera purement et simplement débouté de sa demande en réparation. » (Section III).",
+        "key_verbatim_points": [
+          "« (...) la remise tardive des documents de fin de contrat ne peut être indemnisée que si le salarié rapporte la preuve qu'il a subi un préjudice. »",
+          "« (...) l'employeur c'est manifesté avec diligence, sans efficacité. »"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "high",
+        "argument_density": "high"
+      }
+    ],
+    "carry_forward": {
+      "main_issues": [
+        "Validité des griefs internes de Monsieur [G] (licenciement pour inaptitude vs prétendus faits de harcèlement moral)",
+        "Montant des indemnités sollicitées par Monsieur [G] (38 060,40€) vs plafonds légaux (3 à 4 mois de salaire)",
+        "Preuve du préjudice subi par Monsieur [G] pour justifier ses demandes de dommages et intérêts (notamment pour privation de portabilité du maintien de salaire à 87%)",
+        "Responsabilité de l'Expert-Comptable dans les retards de paiement du maintien de salaire pendant l'arrêt maladie de Monsieur [G]"
+      ],
+      "open_threads": [
+        "Point à trancher : l'employeur a-t-il correctement appliqué les barèmes MACRON pour limiter l'indemnisation de Monsieur [G] ?",
+        "Évaluation de la proportionnalité des demandes financières de Monsieur [G] (6 000€ de primes validées par le CA) vs ses prétendus souffrances et dégradation des conditions de travail.",
+        "Analyse de la bonne foi de l'employeur dans la gestion des conflits internes (témoignages de bénévoles vs attestations de membres du CA)."
+      ],
+      "claims_block_present": true,
+      "participants_to_track": [
+        {
+          "name": "Monsieur [B] [G]",
+          "role": "salarié / intimé (à suivre pour ses prétentions et griefs)",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [X] [U]",
+          "role": "Trésorière / Responsable RH (témoin clé pour les griefs internes et les demandes indemnitaires)",
+          "side": "current_party"
+        },
+        {
+          "name": "Monsieur [YZ] [N]",
+          "role": "Président (décideur principal pour les réponses aux griefs et les demandes indemnitaires)",
+          "side": "current_party"
+        },
+        {
+          "name": "Conseil de prud'hommes",
+          "role": "juridiction (à suivre pour ses décisions sur les montants des indemnités)",
+          "side": "neutral"
+        },
+        {
+          "name": "Association [Personne Morale 1]",
+          "role": "employeur (à suivre pour ses réponses aux griefs et ses demandes de limitation des indemnités)",
+          "side": "current_party"
+        }
+      ]
+    }
+  },
+  {
+    "packet_id": "P4",
+    "document_role": "inconnu",
+    "packet_summary": "Le paquet traite de la modification frauduleuse des statuts d'une association par Monsieur [G], avec des falsifications documentaires et des incohérences chronologiques. Il contient également des conclusions sur l'infirmation d'un jugement du Conseil de Prud'hommes et des demandes de condamnation à l'article 700 du CPC.",
+    "sections": [
+      {
+        "title": "IV- S'AGISSANT DE LA MODIFICATION FRAUDULEUSE PAR MONSIEUR [G] DES STATUTS DE L'ASSOCIATION.",
+        "path": [
+          "IV- S'AGISSANT DE LA MODIFICATION FRAUDULEUSE PAR MONSIEUR [G] DES STATUTS DE L'ASSOCIATION."
+        ],
+        "section_type": "discussion",
+        "participants": [
+          {
+            "name": "MONSIEUR [G]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party",
+            "canonical_name": "Monsieur [B] [G]"
+          },
+          {
+            "name": "Madame [Z]",
+            "kind": "person",
+            "role": "Trésorière",
+            "side": null
+          },
+          {
+            "name": "Monsieur [IU] [M]",
+            "kind": "person",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "Monsieur [M]",
+            "kind": "person",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "Madame [UD] [GT]",
+            "kind": "person",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "Madame [UB]",
+            "kind": "person",
+            "role": "Secrétaire",
+            "side": null
+          },
+          {
+            "name": "Madame [Z]",
+            "kind": "person",
+            "role": "Trésorière",
+            "side": null
+          },
+          {
+            "name": "Madame [GT]",
+            "kind": "person",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "Monsieur [A]",
+            "kind": "person",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "Maître [TZ]",
+            "kind": "lawyer",
+            "role": "président",
+            "side": "neutral"
+          },
+          {
+            "name": "[NQ]",
+            "kind": "person",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "Association [Adresse 3]",
+            "kind": "organization",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "Association [Personne Morale 3]",
+            "kind": "organization",
+            "role": null,
+            "side": null
+          }
+        ],
+        "thesis": "Monsieur [G] est accusé d'avoir frauduleusement modifié les statuts de l'association, avec des falsifications documentaires et des incohérences chronologiques, dans le but de préparer un dossier contentieux contre l'association.",
+        "facts": [
+          "En mars 2020, l'Association souhaitait modifier ses statuts (pièce 39, adoptés le 28 février 2009).",
+          "Le 07 mars 2020, de nouveaux statuts sont adoptés lors du Conseil d'Administration et signés par Monsieur [M] et Madame [UD] [GT] (pièce 40).",
+          "Le 30 mars 2020, Monsieur [G] transmet à Madame [UB] la liste des membres du CA élus le 07 mars 2020 (pièce 41).",
+          "Le 30 avril 2020, Monsieur [G] envoie un récapitulatif des modifications effectuées (pièce 45).",
+          "Le 05 mai 2020, Monsieur [G] envoie les nouveaux statuts à Madame [Z], Trésorière (pièce 46).",
+          "À partir de la démission de Maître [TZ], les statuts dans les mails diffèrent de ceux adoptés le 07 mars 2020.",
+          "Le 09 juin 2020, Monsieur [G] adresse un courriel à [NQ] en précisant des informations erronées sur les élections (pièce 47).",
+          "Le 25 juin 2020, Monsieur [G] envoie des statuts modifiés non conformes à ceux de mars (pièces 48 et 49).",
+          "Les statuts modifiés comportent 20 articles et une liste de 17 démissionnaires, dont Monsieur [G] à tort comme Trésorier (pièce 49).",
+          "Monsieur [G] reconnaît avoir retravaillé les statuts dans un courriel du 24 juin 2020 (pièce 51).",
+          "Le 10 juillet 2020, Monsieur [G] envoie des statuts à [NQ] en indiquant qu'ils seront signés par « [J] » ([Z], Nouvelle Présidente) (pièce 52).",
+          "Le 28 juillet 2020, Monsieur [G] envoie le PV et les statuts signés par Madame [Z] (Présidente) et Monsieur [A] (Trésorier) (pièces 53 et 54), datés du 16 mai 2020, alors que ces fonctions n'étaient pas occupées à cette date.",
+          "Le 10 septembre 2020, Monsieur [G] envoie des statuts datés du 07 mars 2020 avec des modifications supplémentaires (pièces 55 et 56).",
+          "Le 10 septembre 2020, [NQ] renvoie un Cerfa de modification d'Association avec des statuts modifiés (pièce 59).",
+          "Le 11 septembre 2020, Monsieur [G] transfère des documents à Madame [Z] et Madame [W] en demandant à Monsieur [IU] [M] de ne signer que certaines feuilles (pièce 60).",
+          "Le 02 octobre 2020, Monsieur [G] envoie des documents officiels pour la Préfecture, non signés par Monsieur [M] mais avec un tampon reproduisant sa signature (pièces 63 à 66).",
+          "Le 16 janvier 2021, Monsieur [G] envoie un nouvel exemplaire des statuts retravaillés à Madame [Z] (pièces 68 et 69).",
+          "La signature de Monsieur [A] sur les statuts du 16 mai 2020 diffère de sa signature réelle (pièce 70).",
+          "La signature de Madame [UB] sur les statuts est vraisemblablement imitée."
+        ],
+        "arguments": [
+          "Monsieur [G] a frauduleusement altéré le contenu du procès-verbal de conseil d'administration du 07 mars 2020 et des statuts qui en sont issus.",
+          "Les modifications des statuts ont été réalisées dans le but de préparer un dossier contentieux contre l'association.",
+          "Les incohérences chronologiques et les falsifications documentaires remettent en cause la sincérité des pièces versées par Monsieur [G].",
+          "Madame [Z] a été informée des modifications des statuts."
+        ],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [
+          "pièce 39",
+          "pièce 40",
+          "pièce 41",
+          "pièce 44",
+          "pièce 45",
+          "pièce 46",
+          "pièce 47",
+          "pièce 48",
+          "pièce 49",
+          "pièce 50",
+          "pièce 51",
+          "pièce 52",
+          "pièce 53",
+          "pièce 54",
+          "pièce 55",
+          "pièce 56",
+          "pièce 59",
+          "pièce 60",
+          "pièce 62",
+          "pièce 63",
+          "pièce 64",
+          "pièce 65",
+          "pièce 66",
+          "pièce 68",
+          "pièce 69",
+          "pièce 70"
+        ],
+        "dates_amounts": [
+          "28 février 2009",
+          "07 mars 2020",
+          "30 mars 2020",
+          "30 avril 2020",
+          "05 mai 2020",
+          "09 juin 2020",
+          "24 juin 2020",
+          "25 juin 2020",
+          "10 juillet 2020",
+          "28 juillet 2020",
+          "10 septembre 2020",
+          "11 septembre 2020",
+          "02 octobre 2020",
+          "16 janvier 2021",
+          "16 mai 2020"
+        ],
+        "requests": [],
+        "key_source_excerpt": "Le présent contentieux a contraint l'Association à étudier en détail les prétentions de son ancien salarié. Elle a mis au jour une falsification des statuts commise par Monsieur [G] dans les conditions qui seront ci-après décrites. Cette falsification ne peut qu'amener à s'interroger d'une part sur les conditions dans lesquelles Monsieur [G] a constitué le présent dossier contentieux et sur la sincérité des pièces qu'il verse aux débats.",
+        "key_verbatim_points": [
+          "Monsieur [G] a frauduleusement altéré le contenu du procès-verbal de conseil d'administration du 07 mars 2020.",
+          "Les statuts qui apparaissent dans les mails échangés au sein de l'Association diffèrent de ceux adoptés le 07 mars 2020.",
+          "La signature de Monsieur [A] sur les statuts portant la date du 16 mai 2020 diffèrent singulièrement de la réelle signature de Monsieur [A]."
+        ],
+        "compression_ratio_hint": "medium",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "PAR CES MOTIFS",
+        "path": [
+          "PAR CES MOTIFS"
+        ],
+        "section_type": "claims",
+        "participants": [
+          {
+            "name": "MONSIEUR [G] [B]",
+            "kind": "person",
+            "role": "intimé",
+            "side": "opposing_party",
+            "canonical_name": "Monsieur [B] [G]"
+          },
+          {
+            "name": "ASSOCIATION [Adresse 3]",
+            "kind": "organization",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "ASSOCIATION [Personne Morale 3]",
+            "kind": "organization",
+            "role": null,
+            "side": null
+          },
+          {
+            "name": "Conseil de Prud'hommes",
+            "kind": "institution",
+            "role": null,
+            "side": "neutral"
+          }
+        ],
+        "thesis": "Infirmer le jugement du Conseil de Prud'hommes et condamner Monsieur [G] [B] à payer des sommes à l'association sur le fondement de l'article 700 du CPC.",
+        "facts": [],
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [
+          "article 700 du Code de Procédure Civile"
+        ],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "186,07 €",
+          "18,60 €",
+          "3 239,75 €",
+          "188,08 €",
+          "137,87 €",
+          "19 030,20 €",
+          "6 343,40 €",
+          "2 890,70 €",
+          "38 060,40 €",
+          "900 €",
+          "6 000 €"
+        ],
+        "requests": [
+          "Infirmer le jugement rendu par le Conseil de Prud'hommes de CHARLEVILLE-MEZIERES en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul.",
+          "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à payer à Monsieur [G] [B] des sommes spécifiques.",
+          "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à remettre à Monsieur [G] [B] des documents spécifiques.",
+          "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à payer à Monsieur [G] [B] la somme de 900 € au titre de l'article 700 du CPC.",
+          "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a condamné l'ASSOCIATION [Personne Morale 3] aux dépens.",
+          "Débouter Monsieur [G] [B] de l'intégralité de ses prétentions.",
+          "Condamner Monsieur [G] [B] à payer à l'ASSOCIATION [Personne Morale 3] la somme de 6 000 € sur le fondement de l'article 700 du CPC ainsi qu'aux entiers dépens de 1ère instance et d'Appel."
+        ],
+        "key_source_excerpt": "Infirmer le jugement rendu par le Conseil de Prud'hommes de CHARLEVILLE-MEZIERES en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul, en raison du harcèlement subi par Monsieur [G] [B], en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à payer à Monsieur [G] [B] les sommes de 186,07 € à titre de régularisation du salaire de base de mai 2022 à septembre 2022, de 18,60 € à titre d'indemnité compensatrice de congés payés sur régularisation du salaire de base de mai à septembre 2022, de 3 239,75 € au titre de l'indemnité compensatrice de congés payés, de 188,08 € à titre de restitution par l'employeur des [Personne Morale 4] perçues postérieurement à la rupture du contrat de travail, de 137,87 € à titre de dommages et intérêts pour privation de la portabilité du maintien de salaire à 87% par la garantie prévoyance de la mutuelle [Personne Morale 5], de 19 030,20 € à titre de dommages et intérêts en réparation du préjudice moral subi, de 6 343,40 € au titre de l'indemnité compensatrice d'un montant égal à l'indemnité compensatrice de préavis de droit commun, de 2 890,70 € à titre de solde de l'indemnité spéciale de licenciement, de 38 060,40 € à titre de dommages et intérêts pour licenciement nul.",
+        "key_verbatim_points": [
+          "Infirmer le jugement rendu par le Conseil de Prud'hommes de CHARLEVILLE-MEZIERES en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul.",
+          "Débouter Monsieur [G] [B] de l'intégralité de ses prétentions.",
+          "Condamner Monsieur [G] [B] à payer à l'ASSOCIATION [Personne Morale 3] la somme de 6 000 € sur le fondement de l'article 700 du Code de Procédure Civile ainsi qu'aux entiers dépens de 1ère instance et d'Appel."
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "high",
+        "argument_density": "high"
+      },
+      {
+        "title": "SOUS TOUTES RESERVES",
+        "path": [
+          "SOUS TOUTES RESERVES"
+        ],
+        "section_type": "other",
+        "participants": [],
+        "thesis": "Clause de réserve générale.",
+        "facts": [],
+        "arguments": [],
+        "rebuttals": [],
+        "legal_references": [],
+        "pieces_cited": [],
+        "dates_amounts": [
+          "06 août 2024"
+        ],
+        "requests": [],
+        "key_source_excerpt": "CHARLEVILLE-MEZIERES, le 06 août 2024",
+        "key_verbatim_points": [
+          "CHARLEVILLE-MEZIERES, le 06 août 2024"
+        ],
+        "compression_ratio_hint": "high",
+        "importance": "low",
+        "argument_density": "low"
+      }
+    ],
+    "carry_forward": {
+      "main_issues": [
+        "Modification frauduleuse des statuts de l'association par Monsieur [G].",
+        "Infirmation du jugement du Conseil de Prud'hommes et condamnation de Monsieur [G] [B] à l'article 700 du CPC."
+      ],
+      "open_threads": [
+        "Vérification des signatures et tampons sur les documents officiels.",
+        "Analyse des motivations de Monsieur [G] dans la falsification des statuts."
+      ],
+      "claims_block_present": true,
+      "participants_to_track": [
+        {
+          "name": "MONSIEUR [G]",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Monsieur [G] [B]",
+          "role": "intimé",
+          "side": "opposing_party"
+        },
+        {
+          "name": "Madame [Z]",
+          "role": "Trésorière",
+          "side": null
+        },
+        {
+          "name": "Madame [UB]",
+          "role": "Secrétaire",
+          "side": null
+        },
+        {
+          "name": "Monsieur [A]",
+          "role": "Trésorier (signataire fictif)",
+          "side": null
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,316 @@
+{
+  "packet_id": "P4",
+  "document_role": "inconnu",
+  "packet_summary": "Le paquet traite de la modification frauduleuse des statuts d'une association par Monsieur [G], avec des falsifications documentaires et des incohérences chronologiques. Il contient également des conclusions sur l'infirmation d'un jugement du Conseil de Prud'hommes et des demandes de condamnation à l'article 700 du CPC.",
+  "sections": [
+    {
+      "title": "IV- S'AGISSANT DE LA MODIFICATION FRAUDULEUSE PAR MONSIEUR [G] DES STATUTS DE L'ASSOCIATION.",
+      "path": [
+        "IV- S'AGISSANT DE LA MODIFICATION FRAUDULEUSE PAR MONSIEUR [G] DES STATUTS DE L'ASSOCIATION."
+      ],
+      "section_type": "discussion",
+      "participants": [
+        {
+          "name": "MONSIEUR [G]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party",
+          "canonical_name": "Monsieur [B] [G]"
+        },
+        {
+          "name": "Madame [Z]",
+          "kind": "person",
+          "role": "Trésorière",
+          "side": null
+        },
+        {
+          "name": "Monsieur [IU] [M]",
+          "kind": "person",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "Monsieur [M]",
+          "kind": "person",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "Madame [UD] [GT]",
+          "kind": "person",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "Madame [UB]",
+          "kind": "person",
+          "role": "Secrétaire",
+          "side": null
+        },
+        {
+          "name": "Madame [Z]",
+          "kind": "person",
+          "role": "Trésorière",
+          "side": null
+        },
+        {
+          "name": "Madame [GT]",
+          "kind": "person",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "Monsieur [A]",
+          "kind": "person",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "Maître [TZ]",
+          "kind": "lawyer",
+          "role": "président",
+          "side": "neutral"
+        },
+        {
+          "name": "[NQ]",
+          "kind": "person",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "Association [Adresse 3]",
+          "kind": "organization",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "Association [Personne Morale 3]",
+          "kind": "organization",
+          "role": null,
+          "side": null
+        }
+      ],
+      "thesis": "Monsieur [G] est accusé d'avoir frauduleusement modifié les statuts de l'association, avec des falsifications documentaires et des incohérences chronologiques, dans le but de préparer un dossier contentieux contre l'association.",
+      "facts": [
+        "En mars 2020, l'Association souhaitait modifier ses statuts (pièce 39, adoptés le 28 février 2009).",
+        "Le 07 mars 2020, de nouveaux statuts sont adoptés lors du Conseil d'Administration et signés par Monsieur [M] et Madame [UD] [GT] (pièce 40).",
+        "Le 30 mars 2020, Monsieur [G] transmet à Madame [UB] la liste des membres du CA élus le 07 mars 2020 (pièce 41).",
+        "Le 30 avril 2020, Monsieur [G] envoie un récapitulatif des modifications effectuées (pièce 45).",
+        "Le 05 mai 2020, Monsieur [G] envoie les nouveaux statuts à Madame [Z], Trésorière (pièce 46).",
+        "À partir de la démission de Maître [TZ], les statuts dans les mails diffèrent de ceux adoptés le 07 mars 2020.",
+        "Le 09 juin 2020, Monsieur [G] adresse un courriel à [NQ] en précisant des informations erronées sur les élections (pièce 47).",
+        "Le 25 juin 2020, Monsieur [G] envoie des statuts modifiés non conformes à ceux de mars (pièces 48 et 49).",
+        "Les statuts modifiés comportent 20 articles et une liste de 17 démissionnaires, dont Monsieur [G] à tort comme Trésorier (pièce 49).",
+        "Monsieur [G] reconnaît avoir retravaillé les statuts dans un courriel du 24 juin 2020 (pièce 51).",
+        "Le 10 juillet 2020, Monsieur [G] envoie des statuts à [NQ] en indiquant qu'ils seront signés par « [J] » ([Z], Nouvelle Présidente) (pièce 52).",
+        "Le 28 juillet 2020, Monsieur [G] envoie le PV et les statuts signés par Madame [Z] (Présidente) et Monsieur [A] (Trésorier) (pièces 53 et 54), datés du 16 mai 2020, alors que ces fonctions n'étaient pas occupées à cette date.",
+        "Le 10 septembre 2020, Monsieur [G] envoie des statuts datés du 07 mars 2020 avec des modifications supplémentaires (pièces 55 et 56).",
+        "Le 10 septembre 2020, [NQ] renvoie un Cerfa de modification d'Association avec des statuts modifiés (pièce 59).",
+        "Le 11 septembre 2020, Monsieur [G] transfère des documents à Madame [Z] et Madame [W] en demandant à Monsieur [IU] [M] de ne signer que certaines feuilles (pièce 60).",
+        "Le 02 octobre 2020, Monsieur [G] envoie des documents officiels pour la Préfecture, non signés par Monsieur [M] mais avec un tampon reproduisant sa signature (pièces 63 à 66).",
+        "Le 16 janvier 2021, Monsieur [G] envoie un nouvel exemplaire des statuts retravaillés à Madame [Z] (pièces 68 et 69).",
+        "La signature de Monsieur [A] sur les statuts du 16 mai 2020 diffère de sa signature réelle (pièce 70).",
+        "La signature de Madame [UB] sur les statuts est vraisemblablement imitée."
+      ],
+      "arguments": [
+        "Monsieur [G] a frauduleusement altéré le contenu du procès-verbal de conseil d'administration du 07 mars 2020 et des statuts qui en sont issus.",
+        "Les modifications des statuts ont été réalisées dans le but de préparer un dossier contentieux contre l'association.",
+        "Les incohérences chronologiques et les falsifications documentaires remettent en cause la sincérité des pièces versées par Monsieur [G].",
+        "Madame [Z] a été informée des modifications des statuts."
+      ],
+      "rebuttals": [],
+      "legal_references": [],
+      "pieces_cited": [
+        "pièce 39",
+        "pièce 40",
+        "pièce 41",
+        "pièce 44",
+        "pièce 45",
+        "pièce 46",
+        "pièce 47",
+        "pièce 48",
+        "pièce 49",
+        "pièce 50",
+        "pièce 51",
+        "pièce 52",
+        "pièce 53",
+        "pièce 54",
+        "pièce 55",
+        "pièce 56",
+        "pièce 59",
+        "pièce 60",
+        "pièce 62",
+        "pièce 63",
+        "pièce 64",
+        "pièce 65",
+        "pièce 66",
+        "pièce 68",
+        "pièce 69",
+        "pièce 70"
+      ],
+      "dates_amounts": [
+        "28 février 2009",
+        "07 mars 2020",
+        "30 mars 2020",
+        "30 avril 2020",
+        "05 mai 2020",
+        "09 juin 2020",
+        "24 juin 2020",
+        "25 juin 2020",
+        "10 juillet 2020",
+        "28 juillet 2020",
+        "10 septembre 2020",
+        "11 septembre 2020",
+        "02 octobre 2020",
+        "16 janvier 2021",
+        "16 mai 2020"
+      ],
+      "requests": [],
+      "key_source_excerpt": "Le présent contentieux a contraint l'Association à étudier en détail les prétentions de son ancien salarié. Elle a mis au jour une falsification des statuts commise par Monsieur [G] dans les conditions qui seront ci-après décrites. Cette falsification ne peut qu'amener à s'interroger d'une part sur les conditions dans lesquelles Monsieur [G] a constitué le présent dossier contentieux et sur la sincérité des pièces qu'il verse aux débats.",
+      "key_verbatim_points": [
+        "Monsieur [G] a frauduleusement altéré le contenu du procès-verbal de conseil d'administration du 07 mars 2020.",
+        "Les statuts qui apparaissent dans les mails échangés au sein de l'Association diffèrent de ceux adoptés le 07 mars 2020.",
+        "La signature de Monsieur [A] sur les statuts portant la date du 16 mai 2020 diffèrent singulièrement de la réelle signature de Monsieur [A]."
+      ],
+      "compression_ratio_hint": "medium",
+      "importance": "high",
+      "argument_density": "high"
+    },
+    {
+      "title": "PAR CES MOTIFS",
+      "path": [
+        "PAR CES MOTIFS"
+      ],
+      "section_type": "claims",
+      "participants": [
+        {
+          "name": "MONSIEUR [G] [B]",
+          "kind": "person",
+          "role": "intimé",
+          "side": "opposing_party",
+          "canonical_name": "Monsieur [B] [G]"
+        },
+        {
+          "name": "ASSOCIATION [Adresse 3]",
+          "kind": "organization",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "ASSOCIATION [Personne Morale 3]",
+          "kind": "organization",
+          "role": null,
+          "side": null
+        },
+        {
+          "name": "Conseil de Prud'hommes",
+          "kind": "institution",
+          "role": null,
+          "side": "neutral"
+        }
+      ],
+      "thesis": "Infirmer le jugement du Conseil de Prud'hommes et condamner Monsieur [G] [B] à payer des sommes à l'association sur le fondement de l'article 700 du CPC.",
+      "facts": [],
+      "arguments": [],
+      "rebuttals": [],
+      "legal_references": [
+        "article 700 du Code de Procédure Civile"
+      ],
+      "pieces_cited": [],
+      "dates_amounts": [
+        "186,07 €",
+        "18,60 €",
+        "3 239,75 €",
+        "188,08 €",
+        "137,87 €",
+        "19 030,20 €",
+        "6 343,40 €",
+        "2 890,70 €",
+        "38 060,40 €",
+        "900 €",
+        "6 000 €"
+      ],
+      "requests": [
+        "Infirmer le jugement rendu par le Conseil de Prud'hommes de CHARLEVILLE-MEZIERES en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul.",
+        "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à payer à Monsieur [G] [B] des sommes spécifiques.",
+        "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à remettre à Monsieur [G] [B] des documents spécifiques.",
+        "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à payer à Monsieur [G] [B] la somme de 900 € au titre de l'article 700 du CPC.",
+        "Infirmer le jugement du Conseil de Prud'hommes en ce qu'il a condamné l'ASSOCIATION [Personne Morale 3] aux dépens.",
+        "Débouter Monsieur [G] [B] de l'intégralité de ses prétentions.",
+        "Condamner Monsieur [G] [B] à payer à l'ASSOCIATION [Personne Morale 3] la somme de 6 000 € sur le fondement de l'article 700 du CPC ainsi qu'aux entiers dépens de 1ère instance et d'Appel."
+      ],
+      "key_source_excerpt": "Infirmer le jugement rendu par le Conseil de Prud'hommes de CHARLEVILLE-MEZIERES en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul, en raison du harcèlement subi par Monsieur [G] [B], en ce qu'il a condamné l'ASSOCIATION [Adresse 3] à payer à Monsieur [G] [B] les sommes de 186,07 € à titre de régularisation du salaire de base de mai 2022 à septembre 2022, de 18,60 € à titre d'indemnité compensatrice de congés payés sur régularisation du salaire de base de mai à septembre 2022, de 3 239,75 € au titre de l'indemnité compensatrice de congés payés, de 188,08 € à titre de restitution par l'employeur des [Personne Morale 4] perçues postérieurement à la rupture du contrat de travail, de 137,87 € à titre de dommages et intérêts pour privation de la portabilité du maintien de salaire à 87% par la garantie prévoyance de la mutuelle [Personne Morale 5], de 19 030,20 € à titre de dommages et intérêts en réparation du préjudice moral subi, de 6 343,40 € au titre de l'indemnité compensatrice d'un montant égal à l'indemnité compensatrice de préavis de droit commun, de 2 890,70 € à titre de solde de l'indemnité spéciale de licenciement, de 38 060,40 € à titre de dommages et intérêts pour licenciement nul.",
+      "key_verbatim_points": [
+        "Infirmer le jugement rendu par le Conseil de Prud'hommes de CHARLEVILLE-MEZIERES en ce qu'il a requalifié le licenciement pour inaptitude en licenciement nul.",
+        "Débouter Monsieur [G] [B] de l'intégralité de ses prétentions.",
+        "Condamner Monsieur [G] [B] à payer à l'ASSOCIATION [Personne Morale 3] la somme de 6 000 € sur le fondement de l'article 700 du Code de Procédure Civile ainsi qu'aux entiers dépens de 1ère instance et d'Appel."
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "high",
+      "argument_density": "high"
+    },
+    {
+      "title": "SOUS TOUTES RESERVES",
+      "path": [
+        "SOUS TOUTES RESERVES"
+      ],
+      "section_type": "other",
+      "participants": [],
+      "thesis": "Clause de réserve générale.",
+      "facts": [],
+      "arguments": [],
+      "rebuttals": [],
+      "legal_references": [],
+      "pieces_cited": [],
+      "dates_amounts": [
+        "06 août 2024"
+      ],
+      "requests": [],
+      "key_source_excerpt": "CHARLEVILLE-MEZIERES, le 06 août 2024",
+      "key_verbatim_points": [
+        "CHARLEVILLE-MEZIERES, le 06 août 2024"
+      ],
+      "compression_ratio_hint": "high",
+      "importance": "low",
+      "argument_density": "low"
+    }
+  ],
+  "carry_forward": {
+    "main_issues": [
+      "Modification frauduleuse des statuts de l'association par Monsieur [G].",
+      "Infirmation du jugement du Conseil de Prud'hommes et condamnation de Monsieur [G] [B] à l'article 700 du CPC."
+    ],
+    "open_threads": [
+      "Vérification des signatures et tampons sur les documents officiels.",
+      "Analyse des motivations de Monsieur [G] dans la falsification des statuts."
+    ],
+    "claims_block_present": true,
+    "participants_to_track": [
+      {
+        "name": "MONSIEUR [G]",
+        "role": "intimé",
+        "side": "opposing_party"
+      },
+      {
+        "name": "Monsieur [G] [B]",
+        "role": "intimé",
+        "side": "opposing_party"
+      },
+      {
+        "name": "Madame [Z]",
+        "role": "Trésorière",
+        "side": null
+      },
+      {
+        "name": "Madame [UB]",
+        "role": "Secrétaire",
+        "side": null
+      },
+      {
+        "name": "Monsieur [A]",
+        "role": "Trésorier (signataire fictif)",
+        "side": null
+      }
+    ]
+  }
+}

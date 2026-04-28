@@ -1,0 +1,86 @@
+[
+  {
+    "packet_id": "P1",
+    "total_tokens": 13939,
+    "nb_sections": 16,
+    "titles": [
+      "CONCLUSIONS D'APPELANT",
+      "APPELANTE",
+      "INTIME",
+      "I. LES FAITS",
+      "II. LA PROCEDURE",
+      "DISCUSSION",
+      "I- <u>SUR LA DEMANDE DE RESILIATION JUDICIAIRE DU</u> CONTRAT DE TRAVAIL",
+      "1- EN DROIT",
+      "2- EN L'ESPECE",
+      "GRIEF 1",
+      "GRIEF 2",
+      "GRIEF 3",
+      "GRIEF 4 :",
+      "GRIEF 5 :",
+      "GRIEF 6",
+      "GRIEF 7 :"
+    ],
+    "section_types": [
+      "header",
+      "facts",
+      "procedure",
+      "discussion"
+    ]
+  },
+  {
+    "packet_id": "P2",
+    "total_tokens": 13132,
+    "nb_sections": 11,
+    "titles": [
+      "GRIEF 8",
+      "GRIEF 9",
+      "GRIEF 10 :",
+      "GRIEF 11",
+      "GRIEF 12 :",
+      "GRIEF 13 :",
+      "GRIEF 14",
+      "GRIEF 15 :",
+      "GRIEF 16 :",
+      "GRIEF 17",
+      "GRIEF 18"
+    ],
+    "section_types": [
+      "discussion"
+    ]
+  },
+  {
+    "packet_id": "P3",
+    "total_tokens": 13053,
+    "nb_sections": 10,
+    "titles": [
+      "GRIEF 19",
+      "INTERNE",
+      "GRIEF 20",
+      "GRIEF 21 :",
+      "GRIEF 22 :",
+      "GRIEF 23 :",
+      "GRIEF 24 :",
+      "B- S'AGISSANT DU MONTANT DES INDEMNISATIONS SOLLICITEES PAR MONSIEUR [G] ET ALLOUEES PAR LE CONSEIL DE PRUD'HOMMES",
+      "SUR LES DEMANDES INDEMNITAIRES DU SALARIE",
+      "III- SUR LA DEMANDE DE DOMMAGES ET INTERETS POUR PRIVATION DE LA PORTABILITE DU MAINTIEN DE SALAIRE"
+    ],
+    "section_types": [
+      "discussion"
+    ]
+  },
+  {
+    "packet_id": "P4",
+    "total_tokens": 2306,
+    "nb_sections": 3,
+    "titles": [
+      "IV- S'AGISSANT DE LA MODIFICATION FRAUDULEUSE PAR MONSIEUR [G] DES STATUTS DE L'ASSOCIATION.",
+      "PAR CES MOTIFS",
+      "SOUS TOUTES RESERVES"
+    ],
+    "section_types": [
+      "discussion",
+      "claims"
+    ]
+  }
+]
