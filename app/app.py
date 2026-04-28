@@ -849,7 +849,7 @@ def call_model_fast_extraction(system_prompt, messages_history, max_retries=2):
             sys.stderr.flush()
 
             response = client.chat.complete(
-                model="mistral-large-latest",
+                model="mistral-small-latest",
                 messages=full_messages,
                 temperature=0.0,
                 max_tokens=16000
