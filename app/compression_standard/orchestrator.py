@@ -117,9 +117,43 @@ def run_standard_compression_pipeline(
     extraction_system_prompt = build_extraction_system_prompt()
 
     extracted_jsons_dict = {}
-    max_workers = 2
+    max_workers = 1  # Séquentiel pour éviter les timeouts API
 
     progress_lock = threading.Lock()
+
+    def clean_and_parse_json(response_text):
+        """Nettoie la réponse LLM (blocs markdown, etc.) et parse le JSON."""
+        import json
+        import re
+
+        # Nettoyer les blocs markdown ```json ... ```
+        cleaned = response_text.strip()
+        if cleaned.startswith("```"):
+            lines = cleaned.split("\n")
+            cleaned = "\n".join(lines[1:])
+            if cleaned.rstrip().endswith("```"):
+                cleaned = cleaned.rstrip()[:-3].rstrip()
+
+        # Tentative 1 : tel quel
+        try:
+            return json.loads(cleaned)
+        except json.JSONDecodeError:
+            pass
+
+        # Tentative 2 : extraire entre premier { et dernier }
+        json_start = cleaned.find('{')
+        json_end = cleaned.rfind('}') + 1
+        if json_start != -1 and json_end > json_start:
+            json_str = cleaned[json_start:json_end]
+            try:
+                return json.loads(json_str)
+            except json.JSONDecodeError:
+                pass
+            # Tentative 3 : nettoyer les virgules trailing
+            json_str_clean = re.sub(r',\s*([}\]])', r'\1', json_str)
+            return json.loads(json_str_clean)
+
+        raise ValueError("Aucun JSON valide trouvé dans la réponse")
 
     # Fonction d'extraction pour un paquet (compatible avec l'app.py existant)
     def extract_packet_parallel(packet, packet_index):
@@ -131,10 +165,9 @@ def run_standard_compression_pipeline(
 
         try:
             response = call_extraction_fn(extraction_system_prompt, messages)
+            log(f"         └─ 📥 Réponse reçue: {len(response)} chars")
 
-            # Parser le JSON
-            import json
-            extracted_json = json.loads(response)
+            extracted_json = clean_and_parse_json(response)
 
             log(f"         └─ ✅ JSON parsé pour paquet {packet_index+1}")
             return (packet_index, packet, extracted_json, None)
