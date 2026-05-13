@@ -592,12 +592,56 @@ def call_model(model_choice, system_prompt, messages_history):
                 enhanced_messages.append(msg)
 
         print(f"         └─ 🔄 Appel API Mistral (mistral-small-2603)...", flush=True)
-        client = Mistral(api_key=MISTRAL_API_KEY)
-        response = client.chat.complete(
-            model="mistral-small-2603",
-            messages=enhanced_messages,
-            temperature=0.3
-        )
+        import httpx
+        _payload = {
+            "model": "mistral-small-2603",
+            "messages": enhanced_messages,
+            "temperature": 0.7,
+            "max_tokens": 32768
+        }
+        print(f"         └─ 📦 Payload: {len(enhanced_messages)} messages, max_tokens=32768", flush=True)
+        try:
+            _resp = httpx.post(
+                "https://api.mistral.ai/v1/chat/completions",
+                headers={"Authorization": f"Bearer {MISTRAL_API_KEY}", "Content-Type": "application/json"},
+                json=_payload,
+                timeout=600
+            )
+            print(f"         └─ 📡 HTTP status: {_resp.status_code}", flush=True)
+            if _resp.status_code != 200:
+                print(f"         └─ ❌ Erreur API: {_resp.text[:1000]}", flush=True)
+            _resp.raise_for_status()
+            _data = _resp.json()
+        except httpx.ReadError as e:
+            print(f"         └─ ❌ ReadError (serveur déconnecté): {e}", flush=True)
+            raise ValueError(f"Le serveur Mistral a coupé la connexion: {e}")
+        except httpx.TimeoutException as e:
+            print(f"         └─ ❌ Timeout après 600s: {e}", flush=True)
+            raise ValueError(f"Timeout Mistral après 600s: {e}")
+        except httpx.HTTPStatusError as e:
+            print(f"         └─ ❌ HTTP {e.response.status_code}: {e.response.text[:1000]}", flush=True)
+            raise
+        except Exception as e:
+            print(f"         └─ ❌ Erreur inattendue ({type(e).__name__}): {e}", flush=True)
+            raise
+
+        class _Usage:
+            def __init__(self, d):
+                self.prompt_tokens = d.get("prompt_tokens", 0)
+                self.completion_tokens = d.get("completion_tokens", 0)
+                self.total_tokens = d.get("total_tokens", 0)
+
+        class _Choice:
+            def __init__(self, d):
+                self.finish_reason = d.get("finish_reason")
+                self.message = type("M", (), {"content": d["message"]["content"]})()
+
+        class _Response:
+            def __init__(self, data):
+                self.choices = [_Choice(c) for c in data["choices"]]
+                self.usage = _Usage(data.get("usage", {}))
+
+        response = _Response(_data)
         elapsed = time.time() - call_start
         # Debug: stocker la raison d'arrêt pour affichage
         finish_reason = response.choices[0].finish_reason
@@ -1357,10 +1401,19 @@ with tab1:
             }
             tally_url = f"https://tally.so/r/9qZx9X?{urlencode(tally_params)}"
 
-            # Boutons d'action : Copier + Feedback
-            col_copy, col_feedback = st.columns([1, 1])
+            # Boutons d'action : Copier + Télécharger + Feedback
+            col_copy, col_download, col_feedback = st.columns([1, 1, 1])
             with col_copy:
                 copy_button(content, f"copy_btn_{idx}")
+            with col_download:
+                st.download_button(
+                    label="📥 Télécharger la réponse brute",
+                    data=content,
+                    file_name=f"reponse_brute_{idx}.md",
+                    mime="text/markdown",
+                    key=f"download_raw_{idx}",
+                    use_container_width=True
+                )
             with col_feedback:
                 st.link_button("📝 Donner votre avis", tally_url, type="secondary", use_container_width=True)
 
