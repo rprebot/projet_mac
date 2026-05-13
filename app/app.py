@@ -600,7 +600,8 @@ def call_model(model_choice, system_prompt, messages_history):
             "model": "mistral-small-2603",
             "messages": enhanced_messages,
             "temperature": 0.7,
-            "max_tokens": 32768
+            "max_tokens": 32768,
+            "reasoning_effort": "high"
         }
         print(f"         └─ 📦 Payload: {len(enhanced_messages)} messages, max_tokens=32768", flush=True)
         try:
