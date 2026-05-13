@@ -634,6 +634,7 @@ def call_model(model_choice, system_prompt, messages_history):
                 self.prompt_tokens = d.get("prompt_tokens", 0)
                 self.completion_tokens = d.get("completion_tokens", 0)
                 self.total_tokens = d.get("total_tokens", 0)
+                self.reasoning_tokens = d.get("reasoning_tokens", 0)
 
         class _Choice:
             def __init__(self, d):
@@ -652,7 +653,12 @@ def call_model(model_choice, system_prompt, messages_history):
         finish_reason = response.choices[0].finish_reason
         usage = response.usage
         st.session_state["debug_finish_reason"] = finish_reason
-        st.session_state["debug_usage"] = f"Tokens: {usage.prompt_tokens} (prompt) + {usage.completion_tokens} (completion) = {usage.total_tokens} (total)"
+        reasoning_info = f" dont {usage.reasoning_tokens} reasoning" if usage.reasoning_tokens > 0 else ""
+        visible_tokens = usage.completion_tokens - usage.reasoning_tokens if usage.reasoning_tokens > 0 else usage.completion_tokens
+        st.session_state["debug_usage"] = (
+            f"Tokens: {usage.prompt_tokens:,} (prompt) + {usage.completion_tokens:,} (completion{reasoning_info}) = {usage.total_tokens:,} (total) | "
+            f"Sortie visible: {visible_tokens:,} / max 32768"
+        )
 
         # Log console pour debug supplémentaire
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s (finish_reason={finish_reason}, tokens={usage.completion_tokens})", flush=True)
@@ -1311,10 +1317,27 @@ with tab1:
                 debug = message["debug_info"]
                 finish_reason = debug.get("finish_reason", "")
                 usage_info = debug.get("usage", "")
+
+                # Extraire les tokens de completion depuis le texte usage_info pour la barre de progression
+                import re as _re
+                _comp_match = _re.search(r'(\d[\d,]*)\s*\(completion', usage_info)
+                _reason_match = _re.search(r'dont\s+(\d[\d,]*)\s*reasoning', usage_info)
+                _comp_tokens = int(_comp_match.group(1).replace(",", "")) if _comp_match else 0
+                _reason_tokens = int(_reason_match.group(1).replace(",", "")) if _reason_match else 0
+                _visible_tokens = _comp_tokens - _reason_tokens
+                _max_tokens = 32768
+                _pct_used = min(_comp_tokens / _max_tokens, 1.0) if _max_tokens > 0 else 0
+
                 if finish_reason == "length":
-                    st.warning(f"⚠️ **Réponse tronquée** (finish_reason: `{finish_reason}`) - {usage_info}")
+                    st.warning(f"⚠️ **Réponse tronquée** (finish_reason: `{finish_reason}`)")
                 else:
-                    st.info(f"✅ finish_reason: `{finish_reason}` - {usage_info}")
+                    st.info(f"✅ finish_reason: `{finish_reason}`")
+
+                # Barre de progression tokens de sortie
+                st.progress(_pct_used, text=f"Tokens sortie : {_comp_tokens:,} / {_max_tokens:,} ({_pct_used*100:.0f}%)")
+                if _reason_tokens > 0:
+                    st.caption(f"Dont {_reason_tokens:,} tokens reasoning + {_visible_tokens:,} tokens réponse visible")
+                st.caption(usage_info)
 
             # Afficher les infos de compression si disponibles
             if "compression_info" in message:
