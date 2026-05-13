@@ -516,6 +516,7 @@ def call_model(model_choice, system_prompt, messages_history):
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
+        st.session_state["raw_api_response"] = response.model_dump_json(indent=2)
         return response.choices[0].message.content
 
     # Mistral Medium 2508 (modèle assistant numérique)
@@ -532,6 +533,7 @@ def call_model(model_choice, system_prompt, messages_history):
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
+        st.session_state["raw_api_response"] = response.model_dump_json(indent=2)
         return response.choices[0].message.content
 
     # Mistral Large 2 (modèle flagship)
@@ -548,6 +550,7 @@ def call_model(model_choice, system_prompt, messages_history):
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
+        st.session_state["raw_api_response"] = response.model_dump_json(indent=2)
         return response.choices[0].message.content
 
     # Mistral Small 4 (modèle compact performant)
@@ -643,6 +646,7 @@ def call_model(model_choice, system_prompt, messages_history):
 
         response = _Response(_data)
         elapsed = time.time() - call_start
+        st.session_state["raw_api_response"] = json.dumps(_data, indent=2, ensure_ascii=False)
         # Debug: stocker la raison d'arrêt pour affichage
         finish_reason = response.choices[0].finish_reason
         usage = response.usage
@@ -671,6 +675,7 @@ def call_model(model_choice, system_prompt, messages_history):
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
+        st.session_state["raw_api_response"] = response.model_dump_json(indent=2)
         return response.choices[0].message.content
 
     # Nemotron Super 120B via Nebius (OpenAI compatible)
@@ -690,6 +695,7 @@ def call_model(model_choice, system_prompt, messages_history):
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
+        st.session_state["raw_api_response"] = response.model_dump_json(indent=2)
         return response.choices[0].message.content
 
 
@@ -1406,11 +1412,12 @@ with tab1:
             with col_copy:
                 copy_button(content, f"copy_btn_{idx}")
             with col_download:
+                raw_data = message.get("raw_api_response", content)
                 st.download_button(
                     label="📥 Télécharger la réponse brute",
-                    data=content,
-                    file_name=f"reponse_brute_{idx}.md",
-                    mime="text/markdown",
+                    data=raw_data,
+                    file_name=f"reponse_brute_{idx}.json",
+                    mime="application/json",
                     key=f"download_raw_{idx}",
                     use_container_width=True
                 )
@@ -1637,8 +1644,13 @@ with tab1:
                             "usage": usage_info
                         }
 
+                    # Récupérer la réponse brute de l'API si disponible
+                    raw_api_response = st.session_state.pop("raw_api_response", None)
+
                     # Ajouter la réponse à l'historique (avec debug_info et compression_info si disponibles)
                     message_data = {"role": "assistant", "content": response_text}
+                    if raw_api_response:
+                        message_data["raw_api_response"] = raw_api_response
                     if debug_info:
                         message_data["debug_info"] = debug_info
                     if enable_compression and 'compression_info' in dir():
