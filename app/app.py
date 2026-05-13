@@ -685,11 +685,27 @@ def call_model(model_choice, system_prompt, messages_history):
         response = client.chat.completions.create(
             model="openai/gpt-oss-120b",
             messages=full_messages,
-            temperature=0.3
+            temperature=0.7,
+            max_tokens=32768,
+            extra_body={"reasoning_effort": "high"}
         )
         elapsed = time.time() - call_start
         print(f"         └─ ✅ Réponse reçue en {elapsed:.1f}s", flush=True)
         st.session_state["raw_api_response"] = response.model_dump_json(indent=2)
+
+        # Debug: stocker finish_reason et usage pour affichage
+        finish_reason = response.choices[0].finish_reason
+        usage = response.usage
+        reasoning_tokens = getattr(usage, 'reasoning_tokens', 0) or 0
+        reasoning_info = f" dont {reasoning_tokens} reasoning" if reasoning_tokens > 0 else ""
+        visible_tokens = usage.completion_tokens - reasoning_tokens if reasoning_tokens > 0 else usage.completion_tokens
+        st.session_state["debug_finish_reason"] = finish_reason
+        st.session_state["debug_usage"] = (
+            f"Tokens: {usage.prompt_tokens:,} (prompt) + {usage.completion_tokens:,} (completion{reasoning_info}) = {usage.total_tokens:,} (total) | "
+            f"Sortie visible: {visible_tokens:,} / max 32768"
+        )
+        print(f"         └─ ✅ finish_reason={finish_reason}, tokens={usage.completion_tokens}", flush=True)
+
         return response.choices[0].message.content
 
     # Nemotron Super 120B via Nebius (OpenAI compatible)
