@@ -639,7 +639,14 @@ def call_model(model_choice, system_prompt, messages_history):
         class _Choice:
             def __init__(self, d):
                 self.finish_reason = d.get("finish_reason")
-                self.message = type("M", (), {"content": d["message"]["content"]})()
+                raw_content = d["message"]["content"]
+                # Avec reasoning_effort, content est une liste de blocs [{type: "thinking", ...}, {type: "text", ...}]
+                if isinstance(raw_content, list):
+                    text_parts = [block["text"] for block in raw_content if block.get("type") == "text"]
+                    parsed_content = "\n".join(text_parts) if text_parts else str(raw_content)
+                else:
+                    parsed_content = raw_content
+                self.message = type("M", (), {"content": parsed_content})()
 
         class _Response:
             def __init__(self, data):
